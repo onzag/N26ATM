@@ -4,7 +4,8 @@
  */
 
 import React from 'react';
-//import NavBar from './components/NavBar';
+import NavBar from './components/NavBar';
+import Button from './components/Button';
 
 import './css/WaitingForCard.css';
 
@@ -19,12 +20,13 @@ export default class WaitingForCard extends React.Component {
 	 * Render function
 	 * @returns {React.Component}
 	 */
-	render(){//<Button>Insert Card</Button><NavBar />
+	render(){
 		return (<div className="WaitingForCard">
-			
+			<NavBar canAbort={false}/>
 			<div className="ion ion-card color dark-gray text full-width centered"/>
 			<p className="text full-width centered light lg color dark-gray">Insert your card to begin</p>
 			<div className="ion ion-chevron-down color light-gray text full-width centered"/>
+			<Button full large color="blue" className="insert-card-button" textType="light white lg" onClick={this.props.onCardInserted}>Insert Card</Button>
 		</div>);
 	}
 }

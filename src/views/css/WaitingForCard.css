@@ -30,6 +30,13 @@
 	-moz-animation: mover 2s infinite alternate;
 	animation: mover 2s infinite alternate;
 }
+
+.WaitingForCard > .insert-card-button {
+	position:absolute;
+	left:0;
+	bottom:0;
+}
+
 @-moz-keyframes mover {
 	0% { transform: translateY(0); }
 	100% { transform: translateY(20px); }
