@@ -35,6 +35,8 @@ class App extends React.Component {
 		switch (this.props.ATMState.state){
 			case States.WAITING_FOR_CARD:
 				return (<controllers.WaitingForCard AMTState={this.props.ATMState} actions={this.props.actions}/>);
+			case States.PROCESSING_CARD:
+				return (<controllers.ProcessingCard AMTState={this.props.ATMState} actions={this.props.actions}/>);
 			default:
 				return (<div>NOT IMPLEMENTED</div>);
 		}
