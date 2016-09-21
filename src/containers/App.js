@@ -34,9 +34,13 @@ class App extends React.Component {
 	render(){
 		switch (this.props.ATMState.state){
 			case States.WAITING_FOR_CARD:
-				return (<controllers.WaitingForCard AMTState={this.props.ATMState} actions={this.props.actions}/>);
+				return (<controllers.WaitingForCard ATMState={this.props.ATMState} actions={this.props.actions}/>);
 			case States.PROCESSING_CARD:
-				return (<controllers.ProcessingCard AMTState={this.props.ATMState} actions={this.props.actions}/>);
+				return (<controllers.ProcessingCard ATMState={this.props.ATMState} actions={this.props.actions}/>);
+			case States.WAITING_FOR_PIN:
+				return (<controllers.WaitingForPin ATMState={this.props.ATMState} actions={this.props.actions}/>);
+			case States.ABORTING:
+				return (<controllers.Aborting ATMState={this.props.ATMState} actions={this.props.actions}/>);
 			default:
 				return (<div>NOT IMPLEMENTED</div>);
 		}
