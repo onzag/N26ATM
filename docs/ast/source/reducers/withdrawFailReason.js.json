@@ -10,8 +10,8 @@
             "type": "Identifier",
             "name": "ActionTypes",
             "range": [
-              114,
-              125
+              119,
+              130
             ],
             "loc": {
               "start": {
@@ -25,8 +25,8 @@
             }
           },
           "range": [
-            109,
-            125
+            114,
+            130
           ],
           "loc": {
             "start": {
@@ -45,8 +45,8 @@
         "value": "../constants/ActionTypes",
         "raw": "'../constants/ActionTypes'",
         "range": [
-          131,
-          157
+          136,
+          162
         ],
         "loc": {
           "start": {
@@ -60,8 +60,8 @@
         }
       },
       "range": [
-        102,
-        158
+        107,
+        163
       ],
       "loc": {
         "start": {
@@ -76,10 +76,10 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * @file Contains the state reducer for the ATM withdraw attempts\n * @author Edward Gonzalez\n ",
+          "value": "*\n * @file Contains the state reducer for the ATM withdraw failed reason\n * @author Edward Gonzalez\n ",
           "range": [
             0,
-            100
+            105
           ],
           "loc": {
             "start": {
@@ -96,10 +96,10 @@
       "trailingComments": [
         {
           "type": "Block",
-          "value": "*\n * This is the reducer represents the amount of times the user\n * has attempted to withdraw some money\n * The number will reset once the ATM finishes or aborts\n *\n * @param {Number} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
+          "value": "*\n * This reducer represents the reason why the ATM failed to withdraw some money\n *\n * @param {String} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
           "range": [
-            160,
-            453
+            165,
+            378
           ],
           "loc": {
             "start": {
@@ -107,7 +107,7 @@
               "column": 0
             },
             "end": {
-              "line": 15,
+              "line": 13,
               "column": 3
             }
           }
@@ -120,19 +120,19 @@
         "type": "FunctionDeclaration",
         "id": {
           "type": "Identifier",
-          "name": "withdrawAttempts",
+          "name": "withdrawFailReason",
           "range": [
-            478,
-            494
+            403,
+            421
           ],
           "loc": {
             "start": {
-              "line": 16,
+              "line": 14,
               "column": 24
             },
             "end": {
-              "line": 16,
-              "column": 40
+              "line": 14,
+              "column": 42
             }
           }
         },
@@ -143,51 +143,51 @@
               "type": "Identifier",
               "name": "state",
               "range": [
-                495,
-                500
+                422,
+                427
               ],
               "loc": {
                 "start": {
-                  "line": 16,
-                  "column": 41
+                  "line": 14,
+                  "column": 43
                 },
                 "end": {
-                  "line": 16,
-                  "column": 46
+                  "line": 14,
+                  "column": 48
                 }
               }
             },
             "right": {
               "type": "Literal",
-              "value": 0,
-              "raw": "0",
+              "value": null,
+              "raw": "null",
               "range": [
-                503,
-                504
+                430,
+                434
               ],
               "loc": {
                 "start": {
-                  "line": 16,
-                  "column": 49
+                  "line": 14,
+                  "column": 51
                 },
                 "end": {
-                  "line": 16,
-                  "column": 50
+                  "line": 14,
+                  "column": 55
                 }
               }
             },
             "range": [
-              495,
-              504
+              422,
+              434
             ],
             "loc": {
               "start": {
-                "line": 16,
-                "column": 41
+                "line": 14,
+                "column": 43
               },
               "end": {
-                "line": 16,
-                "column": 50
+                "line": 14,
+                "column": 55
               }
             }
           },
@@ -195,17 +195,17 @@
             "type": "Identifier",
             "name": "action",
             "range": [
-              506,
-              512
+              436,
+              442
             ],
             "loc": {
               "start": {
-                "line": 16,
-                "column": 52
+                "line": 14,
+                "column": 57
               },
               "end": {
-                "line": 16,
-                "column": 58
+                "line": 14,
+                "column": 63
               }
             }
           }
@@ -222,16 +222,16 @@
                   "type": "Identifier",
                   "name": "action",
                   "range": [
-                    524,
-                    530
+                    454,
+                    460
                   ],
                   "loc": {
                     "start": {
-                      "line": 17,
+                      "line": 15,
                       "column": 9
                     },
                     "end": {
-                      "line": 17,
+                      "line": 15,
                       "column": 15
                     }
                   }
@@ -240,31 +240,31 @@
                   "type": "Identifier",
                   "name": "type",
                   "range": [
-                    531,
-                    535
+                    461,
+                    465
                   ],
                   "loc": {
                     "start": {
-                      "line": 17,
+                      "line": 15,
                       "column": 16
                     },
                     "end": {
-                      "line": 17,
+                      "line": 15,
                       "column": 20
                     }
                   }
                 },
                 "range": [
-                  524,
-                  535
+                  454,
+                  465
                 ],
                 "loc": {
                   "start": {
-                    "line": 17,
+                    "line": 15,
                     "column": 9
                   },
                   "end": {
-                    "line": 17,
+                    "line": 15,
                     "column": 20
                   }
                 }
@@ -279,88 +279,16 @@
                       "type": "Identifier",
                       "name": "ActionTypes",
                       "range": [
-                        545,
-                        556
+                        475,
+                        486
                       ],
                       "loc": {
                         "start": {
-                          "line": 18,
+                          "line": 16,
                           "column": 7
                         },
                         "end": {
-                          "line": 18,
-                          "column": 18
-                        }
-                      }
-                    },
-                    "property": {
-                      "type": "Identifier",
-                      "name": "WITHDRAW_SUSCESFUL",
-                      "range": [
-                        557,
-                        575
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 18,
-                          "column": 19
-                        },
-                        "end": {
-                          "line": 18,
-                          "column": 37
-                        }
-                      }
-                    },
-                    "range": [
-                      545,
-                      575
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 18,
-                        "column": 7
-                      },
-                      "end": {
-                        "line": 18,
-                        "column": 37
-                      }
-                    }
-                  },
-                  "consequent": [],
-                  "range": [
-                    540,
-                    576
-                  ],
-                  "loc": {
-                    "start": {
-                      "line": 18,
-                      "column": 2
-                    },
-                    "end": {
-                      "line": 18,
-                      "column": 38
-                    }
-                  }
-                },
-                {
-                  "type": "SwitchCase",
-                  "test": {
-                    "type": "MemberExpression",
-                    "computed": false,
-                    "object": {
-                      "type": "Identifier",
-                      "name": "ActionTypes",
-                      "range": [
-                        584,
-                        595
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 19,
-                          "column": 7
-                        },
-                        "end": {
-                          "line": 19,
+                          "line": 16,
                           "column": 18
                         }
                       }
@@ -369,31 +297,31 @@
                       "type": "Identifier",
                       "name": "WITHDRAW_FAILED",
                       "range": [
-                        596,
-                        611
+                        487,
+                        502
                       ],
                       "loc": {
                         "start": {
-                          "line": 19,
+                          "line": 16,
                           "column": 19
                         },
                         "end": {
-                          "line": 19,
+                          "line": 16,
                           "column": 34
                         }
                       }
                     },
                     "range": [
-                      584,
-                      611
+                      475,
+                      502
                     ],
                     "loc": {
                       "start": {
-                        "line": 19,
+                        "line": 16,
                         "column": 7
                       },
                       "end": {
-                        "line": 19,
+                        "line": 16,
                         "column": 34
                       }
                     }
@@ -402,88 +330,87 @@
                     {
                       "type": "ReturnStatement",
                       "argument": {
-                        "type": "BinaryExpression",
-                        "operator": "+",
-                        "left": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
                           "type": "Identifier",
-                          "name": "state",
+                          "name": "action",
                           "range": [
-                            623,
-                            628
+                            514,
+                            520
                           ],
                           "loc": {
                             "start": {
-                              "line": 20,
+                              "line": 17,
                               "column": 10
                             },
                             "end": {
-                              "line": 20,
-                              "column": 15
+                              "line": 17,
+                              "column": 16
                             }
                           }
                         },
-                        "right": {
-                          "type": "Literal",
-                          "value": 1,
-                          "raw": "1",
+                        "property": {
+                          "type": "Identifier",
+                          "name": "payload",
                           "range": [
-                            631,
-                            632
+                            521,
+                            528
                           ],
                           "loc": {
                             "start": {
-                              "line": 20,
-                              "column": 18
+                              "line": 17,
+                              "column": 17
                             },
                             "end": {
-                              "line": 20,
-                              "column": 19
+                              "line": 17,
+                              "column": 24
                             }
                           }
                         },
                         "range": [
-                          623,
-                          632
+                          514,
+                          528
                         ],
                         "loc": {
                           "start": {
-                            "line": 20,
+                            "line": 17,
                             "column": 10
                           },
                           "end": {
-                            "line": 20,
-                            "column": 19
+                            "line": 17,
+                            "column": 24
                           }
                         }
                       },
                       "range": [
-                        616,
-                        633
+                        507,
+                        529
                       ],
                       "loc": {
                         "start": {
-                          "line": 20,
+                          "line": 17,
                           "column": 3
                         },
                         "end": {
-                          "line": 20,
-                          "column": 20
+                          "line": 17,
+                          "column": 25
                         }
                       }
                     }
                   ],
                   "range": [
-                    579,
-                    633
+                    470,
+                    529
                   ],
                   "loc": {
                     "start": {
-                      "line": 19,
+                      "line": 16,
                       "column": 2
                     },
                     "end": {
-                      "line": 20,
-                      "column": 20
+                      "line": 17,
+                      "column": 25
                     }
                   }
                 },
@@ -496,65 +423,65 @@
                       "type": "Identifier",
                       "name": "ActionTypes",
                       "range": [
-                        641,
-                        652
+                        537,
+                        548
                       ],
                       "loc": {
                         "start": {
-                          "line": 21,
+                          "line": 18,
                           "column": 7
                         },
                         "end": {
-                          "line": 21,
+                          "line": 18,
                           "column": 18
                         }
                       }
                     },
                     "property": {
                       "type": "Identifier",
-                      "name": "FINISHED",
+                      "name": "WITHDRAW",
                       "range": [
-                        653,
-                        661
+                        549,
+                        557
                       ],
                       "loc": {
                         "start": {
-                          "line": 21,
+                          "line": 18,
                           "column": 19
                         },
                         "end": {
-                          "line": 21,
+                          "line": 18,
                           "column": 27
                         }
                       }
                     },
                     "range": [
-                      641,
-                      661
+                      537,
+                      557
                     ],
                     "loc": {
                       "start": {
-                        "line": 21,
+                        "line": 18,
                         "column": 7
                       },
                       "end": {
-                        "line": 21,
+                        "line": 18,
                         "column": 27
                       }
                     }
                   },
                   "consequent": [],
                   "range": [
-                    636,
-                    662
+                    532,
+                    558
                   ],
                   "loc": {
                     "start": {
-                      "line": 21,
+                      "line": 18,
                       "column": 2
                     },
                     "end": {
-                      "line": 21,
+                      "line": 18,
                       "column": 28
                     }
                   }
@@ -568,16 +495,88 @@
                       "type": "Identifier",
                       "name": "ActionTypes",
                       "range": [
-                        670,
-                        681
+                        566,
+                        577
                       ],
                       "loc": {
                         "start": {
-                          "line": 22,
+                          "line": 19,
                           "column": 7
                         },
                         "end": {
-                          "line": 22,
+                          "line": 19,
+                          "column": 18
+                        }
+                      }
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "FINISHED",
+                      "range": [
+                        578,
+                        586
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 19,
+                          "column": 19
+                        },
+                        "end": {
+                          "line": 19,
+                          "column": 27
+                        }
+                      }
+                    },
+                    "range": [
+                      566,
+                      586
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 19,
+                        "column": 7
+                      },
+                      "end": {
+                        "line": 19,
+                        "column": 27
+                      }
+                    }
+                  },
+                  "consequent": [],
+                  "range": [
+                    561,
+                    587
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 19,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 19,
+                      "column": 28
+                    }
+                  }
+                },
+                {
+                  "type": "SwitchCase",
+                  "test": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "ActionTypes",
+                      "range": [
+                        595,
+                        606
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 20,
+                          "column": 7
+                        },
+                        "end": {
+                          "line": 20,
                           "column": 18
                         }
                       }
@@ -586,31 +585,31 @@
                       "type": "Identifier",
                       "name": "COMPLETE_ABORT",
                       "range": [
-                        682,
-                        696
+                        607,
+                        621
                       ],
                       "loc": {
                         "start": {
-                          "line": 22,
+                          "line": 20,
                           "column": 19
                         },
                         "end": {
-                          "line": 22,
+                          "line": 20,
                           "column": 33
                         }
                       }
                     },
                     "range": [
-                      670,
-                      696
+                      595,
+                      621
                     ],
                     "loc": {
                       "start": {
-                        "line": 22,
+                        "line": 20,
                         "column": 7
                       },
                       "end": {
-                        "line": 22,
+                        "line": 20,
                         "column": 33
                       }
                     }
@@ -620,51 +619,51 @@
                       "type": "ReturnStatement",
                       "argument": {
                         "type": "Literal",
-                        "value": 0,
-                        "raw": "0",
+                        "value": null,
+                        "raw": "null",
                         "range": [
-                          708,
-                          709
+                          633,
+                          637
                         ],
                         "loc": {
                           "start": {
-                            "line": 23,
+                            "line": 21,
                             "column": 10
                           },
                           "end": {
-                            "line": 23,
-                            "column": 11
+                            "line": 21,
+                            "column": 14
                           }
                         }
                       },
                       "range": [
-                        701,
-                        710
+                        626,
+                        638
                       ],
                       "loc": {
                         "start": {
-                          "line": 23,
+                          "line": 21,
                           "column": 3
                         },
                         "end": {
-                          "line": 23,
-                          "column": 12
+                          "line": 21,
+                          "column": 15
                         }
                       }
                     }
                   ],
                   "range": [
-                    665,
-                    710
+                    590,
+                    638
                   ],
                   "loc": {
                     "start": {
-                      "line": 22,
+                      "line": 20,
                       "column": 2
                     },
                     "end": {
-                      "line": 23,
-                      "column": 12
+                      "line": 21,
+                      "column": 15
                     }
                   }
                 },
@@ -678,79 +677,79 @@
                         "type": "Identifier",
                         "name": "state",
                         "range": [
-                          732,
-                          737
+                          660,
+                          665
                         ],
                         "loc": {
                           "start": {
-                            "line": 25,
+                            "line": 23,
                             "column": 10
                           },
                           "end": {
-                            "line": 25,
+                            "line": 23,
                             "column": 15
                           }
                         }
                       },
                       "range": [
-                        725,
-                        738
+                        653,
+                        666
                       ],
                       "loc": {
                         "start": {
-                          "line": 25,
+                          "line": 23,
                           "column": 3
                         },
                         "end": {
-                          "line": 25,
+                          "line": 23,
                           "column": 16
                         }
                       }
                     }
                   ],
                   "range": [
-                    713,
-                    738
+                    641,
+                    666
                   ],
                   "loc": {
                     "start": {
-                      "line": 24,
+                      "line": 22,
                       "column": 2
                     },
                     "end": {
-                      "line": 25,
+                      "line": 23,
                       "column": 16
                     }
                   }
                 }
               ],
               "range": [
-                516,
-                741
+                446,
+                669
               ],
               "loc": {
                 "start": {
-                  "line": 17,
+                  "line": 15,
                   "column": 1
                 },
                 "end": {
-                  "line": 26,
+                  "line": 24,
                   "column": 2
                 }
               }
             }
           ],
           "range": [
-            513,
-            743
+            443,
+            671
           ],
           "loc": {
             "start": {
-              "line": 16,
-              "column": 59
+              "line": 14,
+              "column": 64
             },
             "end": {
-              "line": 27,
+              "line": 25,
               "column": 1
             }
           }
@@ -758,26 +757,26 @@
         "generator": false,
         "expression": false,
         "range": [
-          469,
-          743
+          394,
+          671
         ],
         "loc": {
           "start": {
-            "line": 16,
+            "line": 14,
             "column": 15
           },
           "end": {
-            "line": 27,
+            "line": 25,
             "column": 1
           }
         },
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * This is the reducer represents the amount of times the user\n * has attempted to withdraw some money\n * The number will reset once the ATM finishes or aborts\n *\n * @param {Number} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
+            "value": "*\n * This reducer represents the reason why the ATM failed to withdraw some money\n *\n * @param {String} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
             "range": [
-              160,
-              453
+              165,
+              378
             ],
             "loc": {
               "start": {
@@ -785,7 +784,7 @@
                 "column": 0
               },
               "end": {
-                "line": 15,
+                "line": 13,
                 "column": 3
               }
             }
@@ -794,26 +793,26 @@
         "trailingComments": []
       },
       "range": [
-        454,
-        743
+        379,
+        671
       ],
       "loc": {
         "start": {
-          "line": 16,
+          "line": 14,
           "column": 0
         },
         "end": {
-          "line": 27,
+          "line": 25,
           "column": 1
         }
       },
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * This is the reducer represents the amount of times the user\n * has attempted to withdraw some money\n * The number will reset once the ATM finishes or aborts\n *\n * @param {Number} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
+          "value": "*\n * This reducer represents the reason why the ATM failed to withdraw some money\n *\n * @param {String} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
           "range": [
-            160,
-            453
+            165,
+            378
           ],
           "loc": {
             "start": {
@@ -821,7 +820,7 @@
               "column": 0
             },
             "end": {
-              "line": 15,
+              "line": 13,
               "column": 3
             }
           }
@@ -831,8 +830,8 @@
   ],
   "sourceType": "module",
   "range": [
-    102,
-    743
+    107,
+    671
   ],
   "loc": {
     "start": {
@@ -840,17 +839,17 @@
       "column": 0
     },
     "end": {
-      "line": 27,
+      "line": 25,
       "column": 1
     }
   },
   "comments": [
     {
       "type": "Block",
-      "value": "*\n * @file Contains the state reducer for the ATM withdraw attempts\n * @author Edward Gonzalez\n ",
+      "value": "*\n * @file Contains the state reducer for the ATM withdraw failed reason\n * @author Edward Gonzalez\n ",
       "range": [
         0,
-        100
+        105
       ],
       "loc": {
         "start": {
@@ -865,10 +864,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n * This is the reducer represents the amount of times the user\n * has attempted to withdraw some money\n * The number will reset once the ATM finishes or aborts\n *\n * @param {Number} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
+      "value": "*\n * This reducer represents the reason why the ATM failed to withdraw some money\n *\n * @param {String} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
       "range": [
-        160,
-        453
+        165,
+        378
       ],
       "loc": {
         "start": {
@@ -876,7 +875,7 @@
           "column": 0
         },
         "end": {
-          "line": 15,
+          "line": 13,
           "column": 3
         }
       }

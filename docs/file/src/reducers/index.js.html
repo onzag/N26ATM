@@ -73,10 +73,14 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-WAITING_FOR_CARD">WAITING_FOR_CARD</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-WAITING_FOR_PIN">WAITING_FOR_PIN</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LIMIT_REACHED">LIMIT_REACHED</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MAX_PIN_TRIES">MAX_PIN_TRIES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RIGHT_PIN">RIGHT_PIN</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">reducers</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-abortReason">abortReason</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pin">pin</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pinAttempts">pinAttempts</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-state">state</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-withdrawAttempts">withdrawAttempts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-withdrawFailReason">withdrawFailReason</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-rootReducer">rootReducer</a></span></span></li>
 </ul>
 </div>
@@ -90,14 +94,16 @@
 
 import { combineReducers } from &apos;redux&apos;;
 import state from &apos;./state&apos;;
+import pin from &apos;./pin&apos;;
 import pinAttempts from &apos;./pinAttempts&apos;;
 import withdrawAttempts from &apos;./withdrawAttempts&apos;;
 import abortReason from &apos;./abortReason&apos;;
+import withdrawFailReason from &apos;./withdrawFailReason&apos;;
 
 /**
  * This is the root reducer that will populate the store
  */
-const rootReducer = combineReducers({state,pinAttempts,abortReason});
+const rootReducer = combineReducers({state,pinAttempts,withdrawAttempts,abortReason,withdrawFailReason,pin});
 
 export default rootReducer;
 </code></pre>

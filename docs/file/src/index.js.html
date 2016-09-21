@@ -73,10 +73,14 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-WAITING_FOR_CARD">WAITING_FOR_CARD</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-WAITING_FOR_PIN">WAITING_FOR_PIN</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LIMIT_REACHED">LIMIT_REACHED</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MAX_PIN_TRIES">MAX_PIN_TRIES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RIGHT_PIN">RIGHT_PIN</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">reducers</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-abortReason">abortReason</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pin">pin</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pinAttempts">pinAttempts</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-state">state</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-withdrawAttempts">withdrawAttempts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-withdrawFailReason">withdrawFailReason</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-rootReducer">rootReducer</a></span></span></li>
 </ul>
 </div>
@@ -92,11 +96,26 @@ import React from &apos;react&apos;;
 import { render } from &apos;react-dom&apos;;
 import { applyMiddleware, createStore } from &apos;redux&apos;;
 import { Provider } from &apos;react-redux&apos;;
-import thunk from &apos;redux-thunk&apos;;
 import App from &apos;./containers/App&apos;;
 import reducer from &apos;./reducers&apos;;
 
-const store = createStore(reducer,applyMiddleware(thunk));
+let store;
+if (process.env.NODE_ENV === &apos;production&apos;){
+	store = createStore(reducer);
+} else {
+	let createLogger = require(&apos;redux-logger&apos;);
+	const logger = createLogger();
+	store = createStore(
+		reducer,
+		applyMiddleware(logger)
+	);
+}
+
+import &apos;./css/index.css&apos;;
+import &apos;./css/colors.css&apos;;
+import &apos;./css/text.css&apos;;
+import &apos;./css/screen.css&apos;;
+import &apos;./css/animations.css&apos;;
 
 render(
 	&lt;Provider store={store}&gt;

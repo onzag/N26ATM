@@ -96,7 +96,7 @@
       "trailingComments": [
         {
           "type": "Block",
-          "value": "*\n * This is the main state reducer and represents the amount of times the user\n * has attempted to put a pin in the ATM\n * The number will reset once the ATM finishes or aborts\n *\n * @param {String} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
+          "value": "*\n * This is the main state reducer and represents the amount of times the user\n * has attempted to put a pin in the ATM\n * The number will reset once the ATM finishes or aborts\n *\n * @param {Number} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
           "range": [
             155,
             464
@@ -774,7 +774,7 @@
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * This is the main state reducer and represents the amount of times the user\n * has attempted to put a pin in the ATM\n * The number will reset once the ATM finishes or aborts\n *\n * @param {String} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
+            "value": "*\n * This is the main state reducer and represents the amount of times the user\n * has attempted to put a pin in the ATM\n * The number will reset once the ATM finishes or aborts\n *\n * @param {Number} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
             "range": [
               155,
               464
@@ -810,7 +810,7 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * This is the main state reducer and represents the amount of times the user\n * has attempted to put a pin in the ATM\n * The number will reset once the ATM finishes or aborts\n *\n * @param {String} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
+          "value": "*\n * This is the main state reducer and represents the amount of times the user\n * has attempted to put a pin in the ATM\n * The number will reset once the ATM finishes or aborts\n *\n * @param {Number} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
           "range": [
             155,
             464
@@ -865,7 +865,7 @@
     },
     {
       "type": "Block",
-      "value": "*\n * This is the main state reducer and represents the amount of times the user\n * has attempted to put a pin in the ATM\n * The number will reset once the ATM finishes or aborts\n *\n * @param {String} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
+      "value": "*\n * This is the main state reducer and represents the amount of times the user\n * has attempted to put a pin in the ATM\n * The number will reset once the ATM finishes or aborts\n *\n * @param {Number} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
       "range": [
         155,
         464

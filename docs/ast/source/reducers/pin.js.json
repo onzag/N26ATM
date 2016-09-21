@@ -10,8 +10,8 @@
             "type": "Identifier",
             "name": "ActionTypes",
             "range": [
-              114,
-              125
+              122,
+              133
             ],
             "loc": {
               "start": {
@@ -25,8 +25,8 @@
             }
           },
           "range": [
-            109,
-            125
+            117,
+            133
           ],
           "loc": {
             "start": {
@@ -45,8 +45,8 @@
         "value": "../constants/ActionTypes",
         "raw": "'../constants/ActionTypes'",
         "range": [
-          131,
-          157
+          139,
+          165
         ],
         "loc": {
           "start": {
@@ -60,8 +60,8 @@
         }
       },
       "range": [
-        102,
-        158
+        110,
+        166
       ],
       "loc": {
         "start": {
@@ -76,10 +76,10 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * @file Contains the state reducer for the ATM withdraw attempts\n * @author Edward Gonzalez\n ",
+          "value": "*\n * @file Contains information about the current pin to use for processing\n * @author Edward Gonzalez\n ",
           "range": [
             0,
-            100
+            108
           ],
           "loc": {
             "start": {
@@ -96,9 +96,9 @@
       "trailingComments": [
         {
           "type": "Block",
-          "value": "*\n * This is the reducer represents the amount of times the user\n * has attempted to withdraw some money\n * The number will reset once the ATM finishes or aborts\n *\n * @param {Number} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
+          "value": "*\n * This is the state reducer that represents the current pin that was\n * set into the ATM and it holded only for a brief time until is valid or invalid\n *\n * @param {String} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
           "range": [
-            160,
+            168,
             453
           ],
           "loc": {
@@ -107,7 +107,7 @@
               "column": 0
             },
             "end": {
-              "line": 15,
+              "line": 14,
               "column": 3
             }
           }
@@ -120,19 +120,19 @@
         "type": "FunctionDeclaration",
         "id": {
           "type": "Identifier",
-          "name": "withdrawAttempts",
+          "name": "pin",
           "range": [
             478,
-            494
+            481
           ],
           "loc": {
             "start": {
-              "line": 16,
+              "line": 15,
               "column": 24
             },
             "end": {
-              "line": 16,
-              "column": 40
+              "line": 15,
+              "column": 27
             }
           }
         },
@@ -143,51 +143,51 @@
               "type": "Identifier",
               "name": "state",
               "range": [
-                495,
-                500
+                482,
+                487
               ],
               "loc": {
                 "start": {
-                  "line": 16,
-                  "column": 41
+                  "line": 15,
+                  "column": 28
                 },
                 "end": {
-                  "line": 16,
-                  "column": 46
+                  "line": 15,
+                  "column": 33
                 }
               }
             },
             "right": {
               "type": "Literal",
-              "value": 0,
-              "raw": "0",
+              "value": null,
+              "raw": "null",
               "range": [
-                503,
-                504
+                490,
+                494
               ],
               "loc": {
                 "start": {
-                  "line": 16,
-                  "column": 49
+                  "line": 15,
+                  "column": 36
                 },
                 "end": {
-                  "line": 16,
-                  "column": 50
+                  "line": 15,
+                  "column": 40
                 }
               }
             },
             "range": [
-              495,
-              504
+              482,
+              494
             ],
             "loc": {
               "start": {
-                "line": 16,
-                "column": 41
+                "line": 15,
+                "column": 28
               },
               "end": {
-                "line": 16,
-                "column": 50
+                "line": 15,
+                "column": 40
               }
             }
           },
@@ -195,17 +195,17 @@
             "type": "Identifier",
             "name": "action",
             "range": [
-              506,
-              512
+              496,
+              502
             ],
             "loc": {
               "start": {
-                "line": 16,
-                "column": 52
+                "line": 15,
+                "column": 42
               },
               "end": {
-                "line": 16,
-                "column": 58
+                "line": 15,
+                "column": 48
               }
             }
           }
@@ -222,16 +222,16 @@
                   "type": "Identifier",
                   "name": "action",
                   "range": [
-                    524,
-                    530
+                    514,
+                    520
                   ],
                   "loc": {
                     "start": {
-                      "line": 17,
+                      "line": 16,
                       "column": 9
                     },
                     "end": {
-                      "line": 17,
+                      "line": 16,
                       "column": 15
                     }
                   }
@@ -240,31 +240,31 @@
                   "type": "Identifier",
                   "name": "type",
                   "range": [
-                    531,
-                    535
+                    521,
+                    525
                   ],
                   "loc": {
                     "start": {
-                      "line": 17,
+                      "line": 16,
                       "column": 16
                     },
                     "end": {
-                      "line": 17,
+                      "line": 16,
                       "column": 20
                     }
                   }
                 },
                 "range": [
-                  524,
-                  535
+                  514,
+                  525
                 ],
                 "loc": {
                   "start": {
-                    "line": 17,
+                    "line": 16,
                     "column": 9
                   },
                   "end": {
-                    "line": 17,
+                    "line": 16,
                     "column": 20
                   }
                 }
@@ -279,122 +279,50 @@
                       "type": "Identifier",
                       "name": "ActionTypes",
                       "range": [
-                        545,
-                        556
+                        535,
+                        546
                       ],
                       "loc": {
                         "start": {
-                          "line": 18,
+                          "line": 17,
                           "column": 7
                         },
                         "end": {
-                          "line": 18,
+                          "line": 17,
                           "column": 18
                         }
                       }
                     },
                     "property": {
                       "type": "Identifier",
-                      "name": "WITHDRAW_SUSCESFUL",
+                      "name": "PIN_INSERTED",
                       "range": [
-                        557,
-                        575
+                        547,
+                        559
                       ],
                       "loc": {
                         "start": {
-                          "line": 18,
+                          "line": 17,
                           "column": 19
                         },
                         "end": {
-                          "line": 18,
-                          "column": 37
+                          "line": 17,
+                          "column": 31
                         }
                       }
                     },
                     "range": [
-                      545,
-                      575
+                      535,
+                      559
                     ],
                     "loc": {
                       "start": {
-                        "line": 18,
+                        "line": 17,
                         "column": 7
                       },
                       "end": {
-                        "line": 18,
-                        "column": 37
-                      }
-                    }
-                  },
-                  "consequent": [],
-                  "range": [
-                    540,
-                    576
-                  ],
-                  "loc": {
-                    "start": {
-                      "line": 18,
-                      "column": 2
-                    },
-                    "end": {
-                      "line": 18,
-                      "column": 38
-                    }
-                  }
-                },
-                {
-                  "type": "SwitchCase",
-                  "test": {
-                    "type": "MemberExpression",
-                    "computed": false,
-                    "object": {
-                      "type": "Identifier",
-                      "name": "ActionTypes",
-                      "range": [
-                        584,
-                        595
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 19,
-                          "column": 7
-                        },
-                        "end": {
-                          "line": 19,
-                          "column": 18
-                        }
-                      }
-                    },
-                    "property": {
-                      "type": "Identifier",
-                      "name": "WITHDRAW_FAILED",
-                      "range": [
-                        596,
-                        611
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 19,
-                          "column": 19
-                        },
-                        "end": {
-                          "line": 19,
-                          "column": 34
-                        }
-                      }
-                    },
-                    "range": [
-                      584,
-                      611
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 19,
-                        "column": 7
-                      },
-                      "end": {
-                        "line": 19,
-                        "column": 34
+                        "line": 17,
+                        "column": 31
                       }
                     }
                   },
@@ -402,79 +330,150 @@
                     {
                       "type": "ReturnStatement",
                       "argument": {
-                        "type": "BinaryExpression",
-                        "operator": "+",
-                        "left": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
                           "type": "Identifier",
-                          "name": "state",
+                          "name": "action",
                           "range": [
-                            623,
-                            628
+                            571,
+                            577
                           ],
                           "loc": {
                             "start": {
-                              "line": 20,
+                              "line": 18,
                               "column": 10
                             },
                             "end": {
-                              "line": 20,
-                              "column": 15
+                              "line": 18,
+                              "column": 16
                             }
                           }
                         },
-                        "right": {
-                          "type": "Literal",
-                          "value": 1,
-                          "raw": "1",
+                        "property": {
+                          "type": "Identifier",
+                          "name": "payload",
                           "range": [
-                            631,
-                            632
+                            578,
+                            585
                           ],
                           "loc": {
                             "start": {
-                              "line": 20,
-                              "column": 18
+                              "line": 18,
+                              "column": 17
                             },
                             "end": {
-                              "line": 20,
-                              "column": 19
+                              "line": 18,
+                              "column": 24
                             }
                           }
                         },
                         "range": [
-                          623,
-                          632
+                          571,
+                          585
                         ],
                         "loc": {
                           "start": {
-                            "line": 20,
+                            "line": 18,
                             "column": 10
                           },
                           "end": {
-                            "line": 20,
-                            "column": 19
+                            "line": 18,
+                            "column": 24
                           }
                         }
                       },
                       "range": [
-                        616,
-                        633
+                        564,
+                        586
                       ],
                       "loc": {
                         "start": {
-                          "line": 20,
+                          "line": 18,
                           "column": 3
                         },
                         "end": {
-                          "line": 20,
-                          "column": 20
+                          "line": 18,
+                          "column": 25
                         }
                       }
                     }
                   ],
                   "range": [
-                    579,
-                    633
+                    530,
+                    586
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 17,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 18,
+                      "column": 25
+                    }
+                  }
+                },
+                {
+                  "type": "SwitchCase",
+                  "test": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "ActionTypes",
+                      "range": [
+                        594,
+                        605
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 19,
+                          "column": 7
+                        },
+                        "end": {
+                          "line": 19,
+                          "column": 18
+                        }
+                      }
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "PIN_PROCESSED_VALID",
+                      "range": [
+                        606,
+                        625
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 19,
+                          "column": 19
+                        },
+                        "end": {
+                          "line": 19,
+                          "column": 38
+                        }
+                      }
+                    },
+                    "range": [
+                      594,
+                      625
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 19,
+                        "column": 7
+                      },
+                      "end": {
+                        "line": 19,
+                        "column": 38
+                      }
+                    }
+                  },
+                  "consequent": [],
+                  "range": [
+                    589,
+                    626
                   ],
                   "loc": {
                     "start": {
@@ -482,8 +481,8 @@
                       "column": 2
                     },
                     "end": {
-                      "line": 20,
-                      "column": 20
+                      "line": 19,
+                      "column": 39
                     }
                   }
                 },
@@ -496,66 +495,66 @@
                       "type": "Identifier",
                       "name": "ActionTypes",
                       "range": [
-                        641,
-                        652
+                        634,
+                        645
                       ],
                       "loc": {
                         "start": {
-                          "line": 21,
+                          "line": 20,
                           "column": 7
                         },
                         "end": {
-                          "line": 21,
+                          "line": 20,
                           "column": 18
                         }
                       }
                     },
                     "property": {
                       "type": "Identifier",
-                      "name": "FINISHED",
+                      "name": "PIN_PROCESSED_INVALID",
                       "range": [
-                        653,
-                        661
+                        646,
+                        667
                       ],
                       "loc": {
                         "start": {
-                          "line": 21,
+                          "line": 20,
                           "column": 19
                         },
                         "end": {
-                          "line": 21,
-                          "column": 27
+                          "line": 20,
+                          "column": 40
                         }
                       }
                     },
                     "range": [
-                      641,
-                      661
+                      634,
+                      667
                     ],
                     "loc": {
                       "start": {
-                        "line": 21,
+                        "line": 20,
                         "column": 7
                       },
                       "end": {
-                        "line": 21,
-                        "column": 27
+                        "line": 20,
+                        "column": 40
                       }
                     }
                   },
                   "consequent": [],
                   "range": [
-                    636,
-                    662
+                    629,
+                    668
                   ],
                   "loc": {
                     "start": {
-                      "line": 21,
+                      "line": 20,
                       "column": 2
                     },
                     "end": {
-                      "line": 21,
-                      "column": 28
+                      "line": 20,
+                      "column": 41
                     }
                   }
                 },
@@ -568,16 +567,16 @@
                       "type": "Identifier",
                       "name": "ActionTypes",
                       "range": [
-                        670,
-                        681
+                        676,
+                        687
                       ],
                       "loc": {
                         "start": {
-                          "line": 22,
+                          "line": 21,
                           "column": 7
                         },
                         "end": {
-                          "line": 22,
+                          "line": 21,
                           "column": 18
                         }
                       }
@@ -586,8 +585,80 @@
                       "type": "Identifier",
                       "name": "COMPLETE_ABORT",
                       "range": [
-                        682,
-                        696
+                        688,
+                        702
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 21,
+                          "column": 19
+                        },
+                        "end": {
+                          "line": 21,
+                          "column": 33
+                        }
+                      }
+                    },
+                    "range": [
+                      676,
+                      702
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 21,
+                        "column": 7
+                      },
+                      "end": {
+                        "line": 21,
+                        "column": 33
+                      }
+                    }
+                  },
+                  "consequent": [],
+                  "range": [
+                    671,
+                    703
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 21,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 21,
+                      "column": 34
+                    }
+                  }
+                },
+                {
+                  "type": "SwitchCase",
+                  "test": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "ActionTypes",
+                      "range": [
+                        711,
+                        722
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 22,
+                          "column": 7
+                        },
+                        "end": {
+                          "line": 22,
+                          "column": 18
+                        }
+                      }
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "PERFORM_ABORT",
+                      "range": [
+                        723,
+                        736
                       ],
                       "loc": {
                         "start": {
@@ -596,13 +667,13 @@
                         },
                         "end": {
                           "line": 22,
-                          "column": 33
+                          "column": 32
                         }
                       }
                     },
                     "range": [
-                      670,
-                      696
+                      711,
+                      736
                     ],
                     "loc": {
                       "start": {
@@ -611,7 +682,7 @@
                       },
                       "end": {
                         "line": 22,
-                        "column": 33
+                        "column": 32
                       }
                     }
                   },
@@ -620,11 +691,11 @@
                       "type": "ReturnStatement",
                       "argument": {
                         "type": "Literal",
-                        "value": 0,
-                        "raw": "0",
+                        "value": null,
+                        "raw": "null",
                         "range": [
-                          708,
-                          709
+                          748,
+                          752
                         ],
                         "loc": {
                           "start": {
@@ -633,13 +704,13 @@
                           },
                           "end": {
                             "line": 23,
-                            "column": 11
+                            "column": 14
                           }
                         }
                       },
                       "range": [
-                        701,
-                        710
+                        741,
+                        753
                       ],
                       "loc": {
                         "start": {
@@ -648,14 +719,14 @@
                         },
                         "end": {
                           "line": 23,
-                          "column": 12
+                          "column": 15
                         }
                       }
                     }
                   ],
                   "range": [
-                    665,
-                    710
+                    706,
+                    753
                   ],
                   "loc": {
                     "start": {
@@ -664,7 +735,7 @@
                     },
                     "end": {
                       "line": 23,
-                      "column": 12
+                      "column": 15
                     }
                   }
                 },
@@ -678,8 +749,8 @@
                         "type": "Identifier",
                         "name": "state",
                         "range": [
-                          732,
-                          737
+                          775,
+                          780
                         ],
                         "loc": {
                           "start": {
@@ -693,8 +764,8 @@
                         }
                       },
                       "range": [
-                        725,
-                        738
+                        768,
+                        781
                       ],
                       "loc": {
                         "start": {
@@ -709,8 +780,8 @@
                     }
                   ],
                   "range": [
-                    713,
-                    738
+                    756,
+                    781
                   ],
                   "loc": {
                     "start": {
@@ -725,12 +796,12 @@
                 }
               ],
               "range": [
-                516,
-                741
+                506,
+                784
               ],
               "loc": {
                 "start": {
-                  "line": 17,
+                  "line": 16,
                   "column": 1
                 },
                 "end": {
@@ -741,13 +812,13 @@
             }
           ],
           "range": [
-            513,
-            743
+            503,
+            786
           ],
           "loc": {
             "start": {
-              "line": 16,
-              "column": 59
+              "line": 15,
+              "column": 49
             },
             "end": {
               "line": 27,
@@ -759,11 +830,11 @@
         "expression": false,
         "range": [
           469,
-          743
+          786
         ],
         "loc": {
           "start": {
-            "line": 16,
+            "line": 15,
             "column": 15
           },
           "end": {
@@ -774,9 +845,9 @@
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * This is the reducer represents the amount of times the user\n * has attempted to withdraw some money\n * The number will reset once the ATM finishes or aborts\n *\n * @param {Number} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
+            "value": "*\n * This is the state reducer that represents the current pin that was\n * set into the ATM and it holded only for a brief time until is valid or invalid\n *\n * @param {String} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
             "range": [
-              160,
+              168,
               453
             ],
             "loc": {
@@ -785,7 +856,7 @@
                 "column": 0
               },
               "end": {
-                "line": 15,
+                "line": 14,
                 "column": 3
               }
             }
@@ -795,11 +866,11 @@
       },
       "range": [
         454,
-        743
+        786
       ],
       "loc": {
         "start": {
-          "line": 16,
+          "line": 15,
           "column": 0
         },
         "end": {
@@ -810,9 +881,9 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * This is the reducer represents the amount of times the user\n * has attempted to withdraw some money\n * The number will reset once the ATM finishes or aborts\n *\n * @param {Number} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
+          "value": "*\n * This is the state reducer that represents the current pin that was\n * set into the ATM and it holded only for a brief time until is valid or invalid\n *\n * @param {String} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
           "range": [
-            160,
+            168,
             453
           ],
           "loc": {
@@ -821,7 +892,7 @@
               "column": 0
             },
             "end": {
-              "line": 15,
+              "line": 14,
               "column": 3
             }
           }
@@ -831,8 +902,8 @@
   ],
   "sourceType": "module",
   "range": [
-    102,
-    743
+    110,
+    786
   ],
   "loc": {
     "start": {
@@ -847,10 +918,10 @@
   "comments": [
     {
       "type": "Block",
-      "value": "*\n * @file Contains the state reducer for the ATM withdraw attempts\n * @author Edward Gonzalez\n ",
+      "value": "*\n * @file Contains information about the current pin to use for processing\n * @author Edward Gonzalez\n ",
       "range": [
         0,
-        100
+        108
       ],
       "loc": {
         "start": {
@@ -865,9 +936,9 @@
     },
     {
       "type": "Block",
-      "value": "*\n * This is the reducer represents the amount of times the user\n * has attempted to withdraw some money\n * The number will reset once the ATM finishes or aborts\n *\n * @param {Number} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
+      "value": "*\n * This is the state reducer that represents the current pin that was\n * set into the ATM and it holded only for a brief time until is valid or invalid\n *\n * @param {String} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
       "range": [
-        160,
+        168,
         453
       ],
       "loc": {
@@ -876,7 +947,7 @@
           "column": 0
         },
         "end": {
-          "line": 15,
+          "line": 14,
           "column": 3
         }
       }

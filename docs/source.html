@@ -73,16 +73,20 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-WAITING_FOR_CARD">WAITING_FOR_CARD</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-WAITING_FOR_PIN">WAITING_FOR_PIN</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LIMIT_REACHED">LIMIT_REACHED</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MAX_PIN_TRIES">MAX_PIN_TRIES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RIGHT_PIN">RIGHT_PIN</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">reducers</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-abortReason">abortReason</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pin">pin</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pinAttempts">pinAttempts</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-state">state</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-withdrawAttempts">withdrawAttempts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-withdrawFailReason">withdrawFailReason</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-rootReducer">rootReducer</a></span></span></li>
 </ul>
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1>Source <img data-ice="coverageBadge" src="./badge.svg"><span data-ice="totalCoverageCount" class="total-coverage-count">46/46</span></h1>
+<div class="content" data-ice="content"><h1>Source <img data-ice="coverageBadge" src="./badge.svg"><span data-ice="totalCoverageCount" class="total-coverage-count">50/50</span></h1>
 
 <table class="files-summary" data-ice="files" data-use-coverage="true">
   <thead>
@@ -174,12 +178,13 @@
       <td style="display: none;" data-ice="updated">2016-09-04 10:39:12 (UTC)</td>
     </tr>
 <tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/controllers/Aborting.js.html">src/controllers/Aborting.js</a></span></td>
-      <td data-ice="identifier" class="identifiers">-</td>
-      <td class="coverage"><span data-ice="coverage">-</span></td>
-      <td style="display: none;" data-ice="size">0 byte</td>
-      
-      <td style="display: none;" data-ice="updated">2016-09-04 10:56:37 (UTC)</td>
+      <td data-ice="filePath"><span><a href="file/src/constants/config.js.html">src/constants/config.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-MAX_PIN_TRIES">MAX_PIN_TRIES</a></span>
+<span><a href="variable/index.html#static-variable-RIGHT_PIN">RIGHT_PIN</a></span></td>
+      <td class="coverage"><span data-ice="coverage">100 %</span><span data-ice="coverageCount" class="coverage-count">2/2</span></td>
+      <td style="display: none;" data-ice="size">237 byte</td>
+      <td style="display: none;" data-ice="lines">14</td>
+      <td style="display: none;" data-ice="updated">2016-09-04 18:06:28 (UTC)</td>
     </tr>
 <tr data-ice="file">
       <td data-ice="filePath"><span><a href="file/src/controllers/Delivered.js.html">src/controllers/Delivered.js</a></span></td>
@@ -214,22 +219,6 @@
       <td style="display: none;" data-ice="updated">2016-09-04 10:56:15 (UTC)</td>
     </tr>
 <tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/controllers/ProcessingCard.js.html">src/controllers/ProcessingCard.js</a></span></td>
-      <td data-ice="identifier" class="identifiers">-</td>
-      <td class="coverage"><span data-ice="coverage">-</span></td>
-      <td style="display: none;" data-ice="size">0 byte</td>
-      
-      <td style="display: none;" data-ice="updated">2016-09-04 10:55:12 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/controllers/ProcessingPin.js.html">src/controllers/ProcessingPin.js</a></span></td>
-      <td data-ice="identifier" class="identifiers">-</td>
-      <td class="coverage"><span data-ice="coverage">-</span></td>
-      <td style="display: none;" data-ice="size">0 byte</td>
-      
-      <td style="display: none;" data-ice="updated">2016-09-04 10:55:52 (UTC)</td>
-    </tr>
-<tr data-ice="file">
       <td data-ice="filePath"><span><a href="file/src/controllers/WaitingForAmount.js.html">src/controllers/WaitingForAmount.js</a></span></td>
       <td data-ice="identifier" class="identifiers">-</td>
       <td class="coverage"><span data-ice="coverage">-</span></td>
@@ -238,36 +227,20 @@
       <td style="display: none;" data-ice="updated">2016-09-04 10:56:04 (UTC)</td>
     </tr>
 <tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/controllers/WaitingForCard.js.html">src/controllers/WaitingForCard.js</a></span></td>
-      <td data-ice="identifier" class="identifiers">-</td>
-      <td class="coverage"><span data-ice="coverage">-</span></td>
-      <td style="display: none;" data-ice="size">0 byte</td>
-      
-      <td style="display: none;" data-ice="updated">2016-09-04 10:54:42 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/controllers/WaitingForPin.js.html">src/controllers/WaitingForPin.js</a></span></td>
-      <td data-ice="identifier" class="identifiers">-</td>
-      <td class="coverage"><span data-ice="coverage">-</span></td>
-      <td style="display: none;" data-ice="size">0 byte</td>
-      
-      <td style="display: none;" data-ice="updated">2016-09-04 10:55:40 (UTC)</td>
-    </tr>
-<tr data-ice="file">
       <td data-ice="filePath"><span><a href="file/src/controllers/index.js.html">src/controllers/index.js</a></span></td>
       <td data-ice="identifier" class="identifiers">-</td>
       <td class="coverage"><span data-ice="coverage">-</span></td>
-      <td style="display: none;" data-ice="size">0 byte</td>
-      
-      <td style="display: none;" data-ice="updated">2016-09-04 10:12:27 (UTC)</td>
+      <td style="display: none;" data-ice="size">297 byte</td>
+      <td style="display: none;" data-ice="lines">7</td>
+      <td style="display: none;" data-ice="updated">2016-09-04 17:34:32 (UTC)</td>
     </tr>
 <tr data-ice="file">
       <td data-ice="filePath"><span><a href="file/src/index.js.html">src/index.js</a></span></td>
       <td data-ice="identifier" class="identifiers">-</td>
       <td class="coverage"><span data-ice="coverage">-</span></td>
-      <td style="display: none;" data-ice="size">556 byte</td>
-      <td style="display: none;" data-ice="lines">21</td>
-      <td style="display: none;" data-ice="updated">2016-09-04 09:09:54 (UTC)</td>
+      <td style="display: none;" data-ice="size">838 byte</td>
+      <td style="display: none;" data-ice="lines">36</td>
+      <td style="display: none;" data-ice="updated">2016-09-04 17:38:14 (UTC)</td>
     </tr>
 <tr data-ice="file">
       <td data-ice="filePath"><span><a href="file/src/reducers/abortReason.js.html">src/reducers/abortReason.js</a></span></td>
@@ -281,9 +254,17 @@
       <td data-ice="filePath"><span><a href="file/src/reducers/index.js.html">src/reducers/index.js</a></span></td>
       <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-rootReducer">rootReducer</a></span></td>
       <td class="coverage"><span data-ice="coverage">100 %</span><span data-ice="coverageCount" class="coverage-count">1/1</span></td>
-      <td style="display: none;" data-ice="size">486 byte</td>
-      <td style="display: none;" data-ice="lines">17</td>
-      <td style="display: none;" data-ice="updated">2016-09-04 11:14:22 (UTC)</td>
+      <td style="display: none;" data-ice="size">606 byte</td>
+      <td style="display: none;" data-ice="lines">19</td>
+      <td style="display: none;" data-ice="updated">2016-09-04 17:28:08 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/reducers/pin.js.html">src/reducers/pin.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-pin">pin</a></span></td>
+      <td class="coverage"><span data-ice="coverage">100 %</span><span data-ice="coverageCount" class="coverage-count">1/1</span></td>
+      <td style="display: none;" data-ice="size">787 byte</td>
+      <td style="display: none;" data-ice="lines">27</td>
+      <td style="display: none;" data-ice="updated">2016-09-04 17:42:07 (UTC)</td>
     </tr>
 <tr data-ice="file">
       <td data-ice="filePath"><span><a href="file/src/reducers/pinAttempts.js.html">src/reducers/pinAttempts.js</a></span></td>
@@ -291,7 +272,7 @@
       <td class="coverage"><span data-ice="coverage">100 %</span><span data-ice="coverageCount" class="coverage-count">1/1</span></td>
       <td style="display: none;" data-ice="size">757 byte</td>
       <td style="display: none;" data-ice="lines">27</td>
-      <td style="display: none;" data-ice="updated">2016-09-04 11:04:53 (UTC)</td>
+      <td style="display: none;" data-ice="updated">2016-09-04 17:27:26 (UTC)</td>
     </tr>
 <tr data-ice="file">
       <td data-ice="filePath"><span><a href="file/src/reducers/state.js.html">src/reducers/state.js</a></span></td>
@@ -299,15 +280,23 @@
       <td class="coverage"><span data-ice="coverage">100 %</span><span data-ice="coverageCount" class="coverage-count">1/1</span></td>
       <td style="display: none;" data-ice="size">1498 byte</td>
       <td style="display: none;" data-ice="lines">47</td>
-      <td style="display: none;" data-ice="updated">2016-09-04 11:01:33 (UTC)</td>
+      <td style="display: none;" data-ice="updated">2016-09-04 17:45:13 (UTC)</td>
     </tr>
 <tr data-ice="file">
       <td data-ice="filePath"><span><a href="file/src/reducers/withdrawAttempts.js.html">src/reducers/withdrawAttempts.js</a></span></td>
       <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-withdrawAttempts">withdrawAttempts</a></span></td>
       <td class="coverage"><span data-ice="coverage">100 %</span><span data-ice="coverageCount" class="coverage-count">1/1</span></td>
-      <td style="display: none;" data-ice="size">759 byte</td>
+      <td style="display: none;" data-ice="size">744 byte</td>
       <td style="display: none;" data-ice="lines">27</td>
-      <td style="display: none;" data-ice="updated">2016-09-04 11:05:21 (UTC)</td>
+      <td style="display: none;" data-ice="updated">2016-09-04 17:27:34 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/reducers/withdrawFailReason.js.html">src/reducers/withdrawFailReason.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-withdrawFailReason">withdrawFailReason</a></span></td>
+      <td class="coverage"><span data-ice="coverage">100 %</span><span data-ice="coverageCount" class="coverage-count">1/1</span></td>
+      <td style="display: none;" data-ice="size">672 byte</td>
+      <td style="display: none;" data-ice="lines">25</td>
+      <td style="display: none;" data-ice="updated">2016-09-04 12:02:52 (UTC)</td>
     </tr>
 </tbody>
 </table>
