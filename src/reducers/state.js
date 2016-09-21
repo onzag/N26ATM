@@ -44,5 +44,4 @@ export default function state(state = States.WAITING_FOR_CARD, action){
 		default:
 			return States.WAITING_FOR_CARD;
 	}
-	return state;
 }
