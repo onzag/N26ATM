@@ -1,0 +1,9 @@
+.WaitingForPin > .attempts-left {
+	padding-top:24px;
+}
+.WaitingForPin input {
+	-webkit-text-security: disc;
+}
+.WaitingForPin > .please-insert {
+	padding-bottom:12px;
+}
