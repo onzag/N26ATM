@@ -60,19 +60,19 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _reducers = __webpack_require__(234);
+	var _reducers = __webpack_require__(238);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
-	__webpack_require__(241);
+	__webpack_require__(246);
 
-	__webpack_require__(243);
+	__webpack_require__(248);
 
-	__webpack_require__(245);
+	__webpack_require__(250);
 
-	__webpack_require__(247);
+	__webpack_require__(252);
 
-	__webpack_require__(249);
+	__webpack_require__(254);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -85,7 +85,7 @@
 	if (process.env.NODE_ENV === 'production') {
 		store = (0, _redux.createStore)(_reducers2.default);
 	} else {
-		var createLogger = __webpack_require__(251);
+		var createLogger = __webpack_require__(256);
 		var logger = createLogger();
 		store = (0, _redux.createStore)(_reducers2.default, (0, _redux.applyMiddleware)(logger));
 	}
@@ -23071,7 +23071,7 @@
 
 	var controllers = _interopRequireWildcard(_controllers);
 
-	var _States = __webpack_require__(233);
+	var _States = __webpack_require__(237);
 
 	var States = _interopRequireWildcard(_States);
 
@@ -23125,6 +23125,8 @@
 						return _react2.default.createElement(controllers.ProcessingPin, { ATMState: this.props.ATMState, actions: this.props.actions });
 					case States.ABORTING:
 						return _react2.default.createElement(controllers.Aborting, { ATMState: this.props.ATMState, actions: this.props.actions });
+					case States.WAITING_FOR_AMOUNT:
+						return _react2.default.createElement(controllers.WaitingForAmount, { ATMState: this.props.ATMState, actions: this.props.actions });
 					default:
 						return _react2.default.createElement(
 							'div',
@@ -23287,7 +23289,7 @@
 	  if (WithdrawFailReasonsList.indexOf(reason) === -1) {
 	    throw new Error('cannot execute action withdrawFailed without a valid reason', reason, 'from', WithdrawFailReasonsList);
 	  }
-	  return { 'type': ActionTypes.WITHDRAW_SUSCESFUL, 'payload': reason };
+	  return { 'type': ActionTypes.WITHDRAW_FAILED, 'payload': reason };
 	};
 
 	/**
@@ -23480,7 +23482,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.ProcessingPin = exports.Aborting = exports.WaitingForPin = exports.ProcessingCard = exports.WaitingForCard = undefined;
+	exports.WaitingForAmount = exports.ProcessingPin = exports.Aborting = exports.WaitingForPin = exports.ProcessingCard = exports.WaitingForCard = undefined;
 
 	var _WaitingForCard = __webpack_require__(201);
 
@@ -23494,11 +23496,15 @@
 
 	var _WaitingForPin2 = _interopRequireDefault(_WaitingForPin);
 
-	var _Aborting = __webpack_require__(225);
+	var _WaitingForAmount = __webpack_require__(225);
+
+	var _WaitingForAmount2 = _interopRequireDefault(_WaitingForAmount);
+
+	var _Aborting = __webpack_require__(229);
 
 	var _Aborting2 = _interopRequireDefault(_Aborting);
 
-	var _ProcessingPin = __webpack_require__(229);
+	var _ProcessingPin = __webpack_require__(233);
 
 	var _ProcessingPin2 = _interopRequireDefault(_ProcessingPin);
 
@@ -23509,6 +23515,7 @@
 	exports.WaitingForPin = _WaitingForPin2.default;
 	exports.Aborting = _Aborting2.default;
 	exports.ProcessingPin = _ProcessingPin2.default;
+	exports.WaitingForAmount = _WaitingForAmount2.default;
 
 /***/ },
 /* 201 */
@@ -24245,7 +24252,7 @@
 
 
 	// module
-	exports.push([module.id, ".button {\n\theight:45px;\n\ttransition:opacity 0.3s, background-color 0.3s, box-shadow 0.3s;\n\t-moz-transition:opacity 0.3s, background-color 0.3s, box-shadow 0.3s;\n\t-webkit-transition:opacity 0.3s, background-color 0.3s, box-shadow 0.3s;\n\tpadding-left:24px;\n\tpadding-right:24px;\n\tbackground-position:center;\n\tbackground-repeat:no-repeat;\n\tbackground-size:cover;\n}\n.button:not(:disabled), .button:not(:disabled) > span {\n\tcursor:pointer;\n}\n.button.large {\n\theight:84px;\n}\n.button.right {\n\tfloat:right;\n}\n.button:not(.inverse):not(:disabled):active {\n\topacity:0.8;\n}\n.button.inverse:active {\n\tbackground-color:rgba(0,0,0,0.1);\n}\n.button.full {\n\tmargin:0;\n\twidth:100%;\n\theight:45px;\n}\n.button:not(.inverse):disabled {\n\tcursor:default;\n\tbackground-color:#9b9b9b !important;\n\topacity:0.6;\n}\n.button.inverse:disabled {\n\tcursor:default;\n\tbackground-color: #e6e6e6;\n\tcolor: white;\n}\n", ""]);
+	exports.push([module.id, ".button {\n\theight:45px;\n\ttransition:opacity 0.3s, background-color 0.3s, box-shadow 0.3s;\n\t-moz-transition:opacity 0.3s, background-color 0.3s, box-shadow 0.3s;\n\t-webkit-transition:opacity 0.3s, background-color 0.3s, box-shadow 0.3s;\n\tpadding-left:24px;\n\tpadding-right:24px;\n\tbackground-position:center;\n\tbackground-repeat:no-repeat;\n\tbackground-size:cover;\n}\n.button:not(:disabled), .button:not(:disabled) > span {\n\tcursor:pointer;\n}\n.button.large {\n\theight:84px;\n}\n.button.right {\n\tfloat:right;\n}\n.button:not(.inverse):not(:disabled):active {\n\topacity:0.8;\n}\n.button.inverse {\n\tborder:solid 1px #ccc;\n}\n.button.inverse:active {\n\tbackground-color:rgba(0,0,0,0.1);\n}\n.button.full {\n\tmargin:0;\n\twidth:100%;\n\theight:45px;\n}\n.button:not(.inverse):disabled {\n\tcursor:default;\n\tbackground-color:#9b9b9b !important;\n\topacity:0.6;\n}\n.button.inverse:disabled {\n\tcursor:default;\n\tbackground-color: #e6e6e6;\n\tcolor: white;\n}\n", ""]);
 
 	// exports
 
@@ -24794,6 +24801,15 @@
 					className += " errored";
 				}
 
+				var symbol = null;
+				if (this.props.currency) {
+					symbol = _react2.default.createElement(
+						'span',
+						{ className: 'symbol text md medium-black color' },
+						'€'
+					);
+				}
+
 				return _react2.default.createElement(
 					'div',
 					{ className: className, style: { width: width } },
@@ -24802,7 +24818,8 @@
 						'span',
 						{ className: 'error text light sm color red' },
 						this.state.error
-					)
+					),
+					symbol
 				);
 			}
 		}]);
@@ -24812,7 +24829,8 @@
 		value: _react2.default.PropTypes.string.isRequired,
 		validate: _react2.default.PropTypes.func,
 		onChange: _react2.default.PropTypes.func.isRequired,
-		width: _react2.default.PropTypes.number
+		width: _react2.default.PropTypes.number,
+		currency: _react2.default.PropTypes.bool
 	}, _temp);
 	exports.default = TextField;
 
@@ -24851,7 +24869,7 @@
 
 
 	// module
-	exports.push([module.id, ".textField > input, .textField > span {\n\tdisplay:block;\n\twidth:100%;\n}\n.textField > span {\n\theight:24px;\n\tline-height:24px;\n\tvertical-align:middle;\n\ttext-align:center;\n}\n.textField > input {\n\tpadding: 10px;\n\tborder: solid 1px #dcdcdc;\n\ttransition: box-shadow 0.3s, border 0.3s;\n}\n.textField > input:focus,\n.textField > input.focus {\n\tborder: solid 1px #707070;\n\tbox-shadow: 0 0 5px 1px #969696;\n}\n.textField.errored > input {\n\tborder: solid 1px #E30336;\n}\n.textField.errored > input.focus,\n.textField.errored > input:focus {\n\tborder: solid 1px #fc3664;\n\tbox-shadow: 0 0 5px 1px #fecdd8;\n}\n", ""]);
+	exports.push([module.id, ".textField > input, .textField > .error {\n\tdisplay:block;\n\twidth:100%;\n}\n.textField > .error {\n\theight:24px;\n\tline-height:24px;\n\tvertical-align:middle;\n\ttext-align:center;\n}\n.textField {\n\tposition:relative;\n}\n.textField > input {\n\tpadding: 10px;\n\tborder: solid 1px #dcdcdc;\n\ttransition: box-shadow 0.3s, border 0.3s;\n}\n.textField > input:focus,\n.textField > input.focus {\n\tborder: solid 1px #707070;\n\tbox-shadow: 0 0 5px 1px #969696;\n}\n.textField.errored > input {\n\tborder: solid 1px #E30336;\n}\n.textField.errored > input.focus,\n.textField.errored > input:focus {\n\tborder: solid 1px #fc3664;\n\tbox-shadow: 0 0 5px 1px #fecdd8;\n}\n.textField > .symbol {\n\tposition:absolute;\n\tright:32px;\n\ttop:19px;\n}\n", ""]);
 
 	// exports
 
@@ -24879,6 +24897,11 @@
 	 * Right pin number
 	 */
 	var RIGHT_PIN = exports.RIGHT_PIN = "1234";
+
+	/**
+	 * The funds of the user
+	 */
+	var FUNDS = exports.FUNDS = 1200;
 
 /***/ },
 /* 223 */
@@ -24934,6 +24957,294 @@
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _class, _temp; /**
+	                    * @file Contains the waiting for amount controlle
+	                    * @author Edward Gonzalez
+	                    */
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _WaitingForAmount = __webpack_require__(226);
+
+	var _WaitingForAmount2 = _interopRequireDefault(_WaitingForAmount);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/** 
+	 * Waits for the amount to be input in order to trigger the action
+	 * to get a specific amount of money
+	 */
+	var WaitingForAmountController = (_temp = _class = function (_React$Component) {
+		_inherits(WaitingForAmountController, _React$Component);
+
+		function WaitingForAmountController() {
+			_classCallCheck(this, WaitingForAmountController);
+
+			return _possibleConstructorReturn(this, (WaitingForAmountController.__proto__ || Object.getPrototypeOf(WaitingForAmountController)).apply(this, arguments));
+		}
+
+		_createClass(WaitingForAmountController, [{
+			key: 'render',
+
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
+			value: function render() {
+				return _react2.default.createElement(_WaitingForAmount2.default, { onWithdraw: this.props.actions.withdraw,
+					onAbort: this.props.actions.performAbort });
+			}
+		}]);
+
+		return WaitingForAmountController;
+	}(_react2.default.Component), _class.propTypes = {
+		actions: _react2.default.PropTypes.shape({
+			'withdraw': _react2.default.PropTypes.func.isRequired,
+			'performAbort': _react2.default.PropTypes.func.isRequired
+		}).isRequired
+	}, _temp);
+	exports.default = WaitingForAmountController;
+
+/***/ },
+/* 226 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
+	                    * @file Contains the waiting for pin screen view
+	                    * @author Edward Gonzalez
+	                    */
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _NavBar = __webpack_require__(203);
+
+	var _NavBar2 = _interopRequireDefault(_NavBar);
+
+	var _Button = __webpack_require__(208);
+
+	var _Button2 = _interopRequireDefault(_Button);
+
+	var _TextField = __webpack_require__(219);
+
+	var _TextField2 = _interopRequireDefault(_TextField);
+
+	var _AbortReasons = __webpack_require__(198);
+
+	var AbortReasons = _interopRequireWildcard(_AbortReasons);
+
+	__webpack_require__(227);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/** 
+	 * This is the view that represents the waiting for pin screen
+	 */
+	var WaitingForAmount = (_temp = _class = function (_React$Component) {
+		_inherits(WaitingForAmount, _React$Component);
+
+		/**
+	  * Constructor of the screen, initializes the custom value and binds the functions
+	  * @param {Object} props the react properties
+	  */
+		function WaitingForAmount(props) {
+			_classCallCheck(this, WaitingForAmount);
+
+			var _this = _possibleConstructorReturn(this, (WaitingForAmount.__proto__ || Object.getPrototypeOf(WaitingForAmount)).call(this, props));
+
+			_this.state = {
+				'customValue': ''
+			};
+			_this.updateCustomValue = _this.updateCustomValue.bind(_this);
+			return _this;
+		}
+
+		/**
+	  * Updates the custom value in the screen
+	  * @param {String} pin the new pin
+	  * @return {undefined}
+	  */
+
+
+		_createClass(WaitingForAmount, [{
+			key: 'updateCustomValue',
+			value: function updateCustomValue(customValue) {
+				this.setState({ customValue: customValue });
+			}
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
+
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					{ className: 'WaitingForAmount screen' },
+					_react2.default.createElement(_NavBar2.default, { canAbort: true, onAbort: this.props.onAbort.bind(null, AbortReasons.USER_CANCELS) }),
+					_react2.default.createElement(
+						'div',
+						{ className: 'main-option text lg medium-black color light' },
+						'Please select an amount'
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'options' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'column' },
+							_react2.default.createElement(
+								_Button2.default,
+								{ inverse: true, full: true, onClick: this.props.onWithdraw.bind(null, 20),
+									textType: 'dark-gray md light' },
+								'20 €'
+							),
+							_react2.default.createElement(
+								_Button2.default,
+								{ inverse: true, full: true, onClick: this.props.onWithdraw.bind(null, 50),
+									textType: 'dark-gray md light' },
+								'50 €'
+							),
+							_react2.default.createElement(
+								_Button2.default,
+								{ inverse: true, full: true, onClick: this.props.onWithdraw.bind(null, 100),
+									textType: 'dark-gray md light' },
+								'100 €'
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'column' },
+							_react2.default.createElement(
+								_Button2.default,
+								{ inverse: true, full: true, onClick: this.props.onWithdraw.bind(null, 500),
+									textType: 'dark-gray md light' },
+								'500 €'
+							),
+							_react2.default.createElement(
+								_Button2.default,
+								{ inverse: true, full: true, onClick: this.props.onWithdraw.bind(null, 1000),
+									textType: 'dark-gray md light' },
+								'1000 €'
+							),
+							_react2.default.createElement(
+								_Button2.default,
+								{ inverse: true, full: true, onClick: this.props.onWithdraw.bind(null, 2000),
+									textType: 'dark-gray md light' },
+								'2000 €'
+							)
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'or-option text lg medium-black color light' },
+						'Or type a custom one'
+					),
+					_react2.default.createElement(_TextField2.default, { width: 350, type: 'number', onChange: this.updateCustomValue, currency: true,
+						value: this.state.customValue, validate: function validate(value) {
+							if (isNaN(parseInt(value)) && value !== '') {
+								return "Invalid numeric value";
+							}
+						} }),
+					_react2.default.createElement(
+						_Button2.default,
+						{ width: 350, color: 'skyblue', className: 'accept-value', onClick: this.props.onWithdraw.bind(null, parseInt(this.state.customValue)),
+							textType: 'white md', disabled: isNaN(parseInt(this.state.customValue)) },
+						'OK'
+					)
+				);
+			}
+		}]);
+
+		return WaitingForAmount;
+	}(_react2.default.Component), _class.propTypes = {
+		onWithdraw: _react2.default.PropTypes.func.isRequired,
+		onAbort: _react2.default.PropTypes.func.isRequired
+	}, _temp);
+	exports.default = WaitingForAmount;
+
+/***/ },
+/* 227 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(228);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(207)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./WaitingForAmount.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./WaitingForAmount.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 228 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(206)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".WaitingForAmount > .options {\n\twidth:100%;\n\tmax-width:450px;\n\tpadding: 0 48px;\n\tmargin-bottom:48px;\n}\n\n.WaitingForAmount > .options > .column {\n\twidth: 50%;\n\tdisplay:inline-block;\n}\n\n.WaitingForAmount > .main-option,\n.WaitingForAmount > .or-option {\n\tmargin-bottom:24px;\n}\n\n.WaitingForAmount > .button {\n\tmargin-top:12px;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 229 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
 	                    * @file Contains the aborting controller that shows a message as well as tells to retrieve the card
 	                    * @author Edward Gonzalez
 	                    */
@@ -24946,7 +25257,7 @@
 
 	var AbortReasons = _interopRequireWildcard(_AbortReasons);
 
-	var _Aborting = __webpack_require__(226);
+	var _Aborting = __webpack_require__(230);
 
 	var _Aborting2 = _interopRequireDefault(_Aborting);
 
@@ -24996,7 +25307,7 @@
 	exports.default = AbortingController;
 
 /***/ },
-/* 226 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25029,7 +25340,7 @@
 
 	var AbortReasons = _interopRequireWildcard(_AbortReasons);
 
-	__webpack_require__(227);
+	__webpack_require__(231);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -25117,13 +25428,13 @@
 	exports.default = Aborting;
 
 /***/ },
-/* 227 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(228);
+	var content = __webpack_require__(232);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(207)(content, {});
@@ -25143,7 +25454,7 @@
 	}
 
 /***/ },
-/* 228 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(206)();
@@ -25157,7 +25468,7 @@
 
 
 /***/ },
-/* 229 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25178,7 +25489,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ProcessingPin = __webpack_require__(230);
+	var _ProcessingPin = __webpack_require__(234);
 
 	var _ProcessingPin2 = _interopRequireDefault(_ProcessingPin);
 
@@ -25261,7 +25572,7 @@
 	exports.default = ProcessingPinController;
 
 /***/ },
-/* 230 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25290,7 +25601,7 @@
 
 	var AbortReasons = _interopRequireWildcard(_AbortReasons);
 
-	__webpack_require__(231);
+	__webpack_require__(235);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -25343,13 +25654,13 @@
 	exports.default = ProcessingPin;
 
 /***/ },
-/* 231 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(232);
+	var content = __webpack_require__(236);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(207)(content, {});
@@ -25369,7 +25680,7 @@
 	}
 
 /***/ },
-/* 232 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(206)();
@@ -25383,7 +25694,7 @@
 
 
 /***/ },
-/* 233 */
+/* 237 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -25447,7 +25758,7 @@
 	var ABORTING = exports.ABORTING = 'ABORTING';
 
 /***/ },
-/* 234 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25458,44 +25769,50 @@
 
 	var _redux = __webpack_require__(172);
 
-	var _state = __webpack_require__(235);
+	var _state = __webpack_require__(239);
 
 	var _state2 = _interopRequireDefault(_state);
 
-	var _pin = __webpack_require__(236);
+	var _pin = __webpack_require__(240);
 
 	var _pin2 = _interopRequireDefault(_pin);
 
-	var _pinAttempts = __webpack_require__(237);
+	var _pinAttempts = __webpack_require__(241);
 
 	var _pinAttempts2 = _interopRequireDefault(_pinAttempts);
 
-	var _withdrawAttempts = __webpack_require__(238);
+	var _withdrawAttempts = __webpack_require__(242);
 
 	var _withdrawAttempts2 = _interopRequireDefault(_withdrawAttempts);
 
-	var _abortReason = __webpack_require__(239);
+	var _abortReason = __webpack_require__(243);
 
 	var _abortReason2 = _interopRequireDefault(_abortReason);
 
-	var _withdrawFailReason = __webpack_require__(240);
+	var _withdrawFailReason = __webpack_require__(244);
 
 	var _withdrawFailReason2 = _interopRequireDefault(_withdrawFailReason);
+
+	var _amount = __webpack_require__(245);
+
+	var _amount2 = _interopRequireDefault(_amount);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
 	 * This is the root reducer that will populate the store
 	 */
-	var rootReducer = (0, _redux.combineReducers)({ state: _state2.default, pinAttempts: _pinAttempts2.default, withdrawAttempts: _withdrawAttempts2.default, abortReason: _abortReason2.default, withdrawFailReason: _withdrawFailReason2.default, pin: _pin2.default }); /**
-	                                                                                                                                                                                                                                                                        * @file Includes all the reducers that the application needs in order to execute
-	                                                                                                                                                                                                                                                                        * @author Edward Gonzalez
-	                                                                                                                                                                                                                                                                        */
+	/**
+	 * @file Includes all the reducers that the application needs in order to execute
+	 * @author Edward Gonzalez
+	 */
+
+	var rootReducer = (0, _redux.combineReducers)({ state: _state2.default, pinAttempts: _pinAttempts2.default, withdrawAttempts: _withdrawAttempts2.default, abortReason: _abortReason2.default, withdrawFailReason: _withdrawFailReason2.default, pin: _pin2.default, amount: _amount2.default });
 
 	exports.default = rootReducer;
 
 /***/ },
-/* 235 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25505,7 +25822,7 @@
 	});
 	exports.default = state;
 
-	var _States = __webpack_require__(233);
+	var _States = __webpack_require__(237);
 
 	var States = _interopRequireWildcard(_States);
 
@@ -25564,7 +25881,7 @@
 	}
 
 /***/ },
-/* 236 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25608,7 +25925,7 @@
 	   */
 
 /***/ },
-/* 237 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25652,7 +25969,7 @@
 	   */
 
 /***/ },
-/* 238 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25696,7 +26013,7 @@
 	   */
 
 /***/ },
-/* 239 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25736,7 +26053,7 @@
 	   */
 
 /***/ },
-/* 240 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25778,13 +26095,56 @@
 	   */
 
 /***/ },
-/* 241 */
+/* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = amount;
+
+	var _ActionTypes = __webpack_require__(197);
+
+	var ActionTypes = _interopRequireWildcard(_ActionTypes);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	/**
+	 * This is the state reducer that represents the current amount that was used in the ATM
+	 * the value is held until the operation is over or rolled back
+	 *
+	 * @param {String} state The current state, as provided by the store
+	 * @param {Object} action The action that is executed
+	 */
+	function amount() {
+		var state = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+		var action = arguments[1];
+
+		switch (action.type) {
+			case ActionTypes.WITHDRAW:
+				return action.payload;
+			case ActionTypes.WITHDRAW_FAILED:
+			case ActionTypes.COMPLETE_ABORT:
+			case ActionTypes.PERFORM_ABORT:
+				return null;
+			default:
+				return state;
+		}
+	} /**
+	   * @file Contains information about the current amount to use in the transaction
+	   * @author Edward Gonzalez
+	   */
+
+/***/ },
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(242);
+	var content = __webpack_require__(247);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(207)(content, {});
@@ -25804,7 +26164,7 @@
 	}
 
 /***/ },
-/* 242 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(206)();
@@ -25818,13 +26178,13 @@
 
 
 /***/ },
-/* 243 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(244);
+	var content = __webpack_require__(249);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(207)(content, {});
@@ -25844,7 +26204,7 @@
 	}
 
 /***/ },
-/* 244 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(206)();
@@ -25858,13 +26218,13 @@
 
 
 /***/ },
-/* 245 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(246);
+	var content = __webpack_require__(251);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(207)(content, {});
@@ -25884,7 +26244,7 @@
 	}
 
 /***/ },
-/* 246 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(206)();
@@ -25898,13 +26258,13 @@
 
 
 /***/ },
-/* 247 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(248);
+	var content = __webpack_require__(253);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(207)(content, {});
@@ -25924,7 +26284,7 @@
 	}
 
 /***/ },
-/* 248 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(206)();
@@ -25938,13 +26298,13 @@
 
 
 /***/ },
-/* 249 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(250);
+	var content = __webpack_require__(255);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(207)(content, {});
@@ -25964,7 +26324,7 @@
 	}
 
 /***/ },
-/* 250 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(206)();
@@ -25978,7 +26338,7 @@
 
 
 /***/ },
-/* 251 */
+/* 256 */
 /***/ function(module, exports) {
 
 	"use strict";
