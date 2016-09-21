@@ -1,146 +1,23 @@
 {
   "type": "Program",
+  "start": 0,
+  "end": 1208,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 70,
+      "column": 0
+    }
+  },
+  "sourceType": "module",
   "body": [
     {
       "type": "ExportNamedDeclaration",
-      "declaration": {
-        "type": "VariableDeclaration",
-        "declarations": [
-          {
-            "type": "VariableDeclarator",
-            "id": {
-              "type": "Identifier",
-              "name": "CARD_INSERTED",
-              "range": [
-                144,
-                157
-              ],
-              "loc": {
-                "start": {
-                  "line": 9,
-                  "column": 13
-                },
-                "end": {
-                  "line": 9,
-                  "column": 26
-                }
-              }
-            },
-            "init": {
-              "type": "Literal",
-              "value": "CARD_INSERTED",
-              "raw": "'CARD_INSERTED'",
-              "range": [
-                160,
-                175
-              ],
-              "loc": {
-                "start": {
-                  "line": 9,
-                  "column": 29
-                },
-                "end": {
-                  "line": 9,
-                  "column": 44
-                }
-              }
-            },
-            "range": [
-              144,
-              175
-            ],
-            "loc": {
-              "start": {
-                "line": 9,
-                "column": 13
-              },
-              "end": {
-                "line": 9,
-                "column": 44
-              }
-            }
-          }
-        ],
-        "kind": "const",
-        "range": [
-          138,
-          176
-        ],
-        "loc": {
-          "start": {
-            "line": 9,
-            "column": 7
-          },
-          "end": {
-            "line": 9,
-            "column": 45
-          }
-        },
-        "leadingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * @file Contains the action types constants\n * @author Edward Gonzalez\n ",
-            "range": [
-              0,
-              79
-            ],
-            "loc": {
-              "start": {
-                "line": 1,
-                "column": 0
-              },
-              "end": {
-                "line": 4,
-                "column": 3
-              }
-            }
-          },
-          {
-            "type": "Block",
-            "value": "*\n * The card has been inserted by the user\n ",
-            "range": [
-              81,
-              130
-            ],
-            "loc": {
-              "start": {
-                "line": 6,
-                "column": 0
-              },
-              "end": {
-                "line": 8,
-                "column": 3
-              }
-            }
-          }
-        ],
-        "trailingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * The card has been processed by the ATM\n ",
-            "range": [
-              178,
-              227
-            ],
-            "loc": {
-              "start": {
-                "line": 11,
-                "column": 0
-              },
-              "end": {
-                "line": 13,
-                "column": 3
-              }
-            }
-          }
-        ]
-      },
-      "specifiers": [],
-      "source": null,
-      "range": [
-        131,
-        176
-      ],
+      "start": 131,
+      "end": 176,
       "loc": {
         "start": {
           "line": 9,
@@ -151,148 +28,122 @@
           "column": 45
         }
       },
-      "leadingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * @file Contains the action types constants\n * @author Edward Gonzalez\n ",
-          "range": [
-            0,
-            79
-          ],
-          "loc": {
-            "start": {
-              "line": 1,
-              "column": 0
-            },
-            "end": {
-              "line": 4,
-              "column": 3
-            }
-          }
-        },
-        {
-          "type": "Block",
-          "value": "*\n * The card has been inserted by the user\n ",
-          "range": [
-            81,
-            130
-          ],
-          "loc": {
-            "start": {
-              "line": 6,
-              "column": 0
-            },
-            "end": {
-              "line": 8,
-              "column": 3
-            }
-          }
-        }
-      ],
-      "trailingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * The card has been processed by the ATM\n ",
-          "range": [
-            178,
-            227
-          ],
-          "loc": {
-            "start": {
-              "line": 11,
-              "column": 0
-            },
-            "end": {
-              "line": 13,
-              "column": 3
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "ExportNamedDeclaration",
       "declaration": {
         "type": "VariableDeclaration",
-        "declarations": [
-          {
-            "type": "VariableDeclarator",
-            "id": {
-              "type": "Identifier",
-              "name": "CARD_PROCESSED",
-              "range": [
-                241,
-                255
-              ],
-              "loc": {
-                "start": {
-                  "line": 14,
-                  "column": 13
-                },
-                "end": {
-                  "line": 14,
-                  "column": 27
-                }
-              }
-            },
-            "init": {
-              "type": "Literal",
-              "value": "CARD_PROCESSED",
-              "raw": "'CARD_PROCESSED'",
-              "range": [
-                258,
-                274
-              ],
-              "loc": {
-                "start": {
-                  "line": 14,
-                  "column": 30
-                },
-                "end": {
-                  "line": 14,
-                  "column": 46
-                }
-              }
-            },
-            "range": [
-              241,
-              274
-            ],
-            "loc": {
-              "start": {
-                "line": 14,
-                "column": 13
-              },
-              "end": {
-                "line": 14,
-                "column": 46
-              }
-            }
-          }
-        ],
-        "kind": "const",
-        "range": [
-          235,
-          275
-        ],
+        "start": 138,
+        "end": 176,
         "loc": {
           "start": {
-            "line": 14,
+            "line": 9,
             "column": 7
           },
           "end": {
-            "line": 14,
-            "column": 47
+            "line": 9,
+            "column": 45
           }
         },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 144,
+            "end": 175,
+            "loc": {
+              "start": {
+                "line": 9,
+                "column": 13
+              },
+              "end": {
+                "line": 9,
+                "column": 44
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 144,
+              "end": 157,
+              "loc": {
+                "start": {
+                  "line": 9,
+                  "column": 13
+                },
+                "end": {
+                  "line": 9,
+                  "column": 26
+                }
+              },
+              "name": "CARD_INSERTED",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "Literal",
+              "start": 160,
+              "end": 175,
+              "loc": {
+                "start": {
+                  "line": 9,
+                  "column": 29
+                },
+                "end": {
+                  "line": 9,
+                  "column": 44
+                }
+              },
+              "value": "CARD_INSERTED",
+              "rawValue": "CARD_INSERTED",
+              "raw": "'CARD_INSERTED'"
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * The card has been processed by the ATM\n ",
+            "value": "*\n * @file Contains the action types constants\n * @author Edward Gonzalez\n ",
+            "start": 0,
+            "end": 79,
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 0
+              },
+              "end": {
+                "line": 4,
+                "column": 3
+              }
+            },
             "range": [
-              178,
-              227
-            ],
+              0,
+              79
+            ]
+          },
+          {
+            "type": "Block",
+            "value": "*\n * The card has been inserted by the user\n ",
+            "start": 81,
+            "end": 130,
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 0
+              },
+              "end": {
+                "line": 8,
+                "column": 3
+              }
+            },
+            "range": [
+              81,
+              130
+            ]
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * The card has been processed by the ATM\n ",
+            "start": 178,
+            "end": 227,
             "loc": {
               "start": {
                 "line": 11,
@@ -302,36 +153,85 @@
                 "line": 13,
                 "column": 3
               }
-            }
-          }
-        ],
-        "trailingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * The pin has been inserted by the user\n ",
+            },
             "range": [
-              277,
-              325
-            ],
-            "loc": {
-              "start": {
-                "line": 16,
-                "column": 0
-              },
-              "end": {
-                "line": 18,
-                "column": 3
-              }
-            }
+              178,
+              227
+            ]
           }
         ]
       },
       "specifiers": [],
       "source": null,
-      "range": [
-        228,
-        275
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * @file Contains the action types constants\n * @author Edward Gonzalez\n ",
+          "start": 0,
+          "end": 79,
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 0
+            },
+            "end": {
+              "line": 4,
+              "column": 3
+            }
+          },
+          "range": [
+            0,
+            79
+          ]
+        },
+        {
+          "type": "Block",
+          "value": "*\n * The card has been inserted by the user\n ",
+          "start": 81,
+          "end": 130,
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 0
+            },
+            "end": {
+              "line": 8,
+              "column": 3
+            }
+          },
+          "range": [
+            81,
+            130
+          ]
+        }
       ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * The card has been processed by the ATM\n ",
+          "start": 178,
+          "end": 227,
+          "loc": {
+            "start": {
+              "line": 11,
+              "column": 0
+            },
+            "end": {
+              "line": 13,
+              "column": 3
+            }
+          },
+          "range": [
+            178,
+            227
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "start": 228,
+      "end": 275,
       "loc": {
         "start": {
           "line": 14,
@@ -342,130 +242,102 @@
           "column": 47
         }
       },
-      "leadingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * The card has been processed by the ATM\n ",
-          "range": [
-            178,
-            227
-          ],
-          "loc": {
-            "start": {
-              "line": 11,
-              "column": 0
-            },
-            "end": {
-              "line": 13,
-              "column": 3
-            }
-          }
-        }
-      ],
-      "trailingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * The pin has been inserted by the user\n ",
-          "range": [
-            277,
-            325
-          ],
-          "loc": {
-            "start": {
-              "line": 16,
-              "column": 0
-            },
-            "end": {
-              "line": 18,
-              "column": 3
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "ExportNamedDeclaration",
       "declaration": {
         "type": "VariableDeclaration",
-        "declarations": [
-          {
-            "type": "VariableDeclarator",
-            "id": {
-              "type": "Identifier",
-              "name": "PIN_INSERTED",
-              "range": [
-                339,
-                351
-              ],
-              "loc": {
-                "start": {
-                  "line": 19,
-                  "column": 13
-                },
-                "end": {
-                  "line": 19,
-                  "column": 25
-                }
-              }
-            },
-            "init": {
-              "type": "Literal",
-              "value": "PIN_INSERTED",
-              "raw": "'PIN_INSERTED'",
-              "range": [
-                354,
-                368
-              ],
-              "loc": {
-                "start": {
-                  "line": 19,
-                  "column": 28
-                },
-                "end": {
-                  "line": 19,
-                  "column": 42
-                }
-              }
-            },
-            "range": [
-              339,
-              368
-            ],
-            "loc": {
-              "start": {
-                "line": 19,
-                "column": 13
-              },
-              "end": {
-                "line": 19,
-                "column": 42
-              }
-            }
-          }
-        ],
-        "kind": "const",
-        "range": [
-          333,
-          369
-        ],
+        "start": 235,
+        "end": 275,
         "loc": {
           "start": {
-            "line": 19,
+            "line": 14,
             "column": 7
           },
           "end": {
-            "line": 19,
-            "column": 43
+            "line": 14,
+            "column": 47
           }
         },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 241,
+            "end": 274,
+            "loc": {
+              "start": {
+                "line": 14,
+                "column": 13
+              },
+              "end": {
+                "line": 14,
+                "column": 46
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 241,
+              "end": 255,
+              "loc": {
+                "start": {
+                  "line": 14,
+                  "column": 13
+                },
+                "end": {
+                  "line": 14,
+                  "column": 27
+                }
+              },
+              "name": "CARD_PROCESSED",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "Literal",
+              "start": 258,
+              "end": 274,
+              "loc": {
+                "start": {
+                  "line": 14,
+                  "column": 30
+                },
+                "end": {
+                  "line": 14,
+                  "column": 46
+                }
+              },
+              "value": "CARD_PROCESSED",
+              "rawValue": "CARD_PROCESSED",
+              "raw": "'CARD_PROCESSED'"
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * The pin has been inserted by the user\n ",
+            "value": "*\n * The card has been processed by the ATM\n ",
+            "start": 178,
+            "end": 227,
+            "loc": {
+              "start": {
+                "line": 11,
+                "column": 0
+              },
+              "end": {
+                "line": 13,
+                "column": 3
+              }
+            },
             "range": [
-              277,
-              325
-            ],
+              178,
+              227
+            ]
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * The pin has been inserted by the user\n ",
+            "start": 277,
+            "end": 325,
             "loc": {
               "start": {
                 "line": 16,
@@ -475,36 +347,65 @@
                 "line": 18,
                 "column": 3
               }
-            }
-          }
-        ],
-        "trailingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * The pin is valid\n ",
+            },
             "range": [
-              371,
-              398
-            ],
-            "loc": {
-              "start": {
-                "line": 21,
-                "column": 0
-              },
-              "end": {
-                "line": 23,
-                "column": 3
-              }
-            }
+              277,
+              325
+            ]
           }
         ]
       },
       "specifiers": [],
       "source": null,
-      "range": [
-        326,
-        369
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * The card has been processed by the ATM\n ",
+          "start": 178,
+          "end": 227,
+          "loc": {
+            "start": {
+              "line": 11,
+              "column": 0
+            },
+            "end": {
+              "line": 13,
+              "column": 3
+            }
+          },
+          "range": [
+            178,
+            227
+          ]
+        }
       ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * The pin has been inserted by the user\n ",
+          "start": 277,
+          "end": 325,
+          "loc": {
+            "start": {
+              "line": 16,
+              "column": 0
+            },
+            "end": {
+              "line": 18,
+              "column": 3
+            }
+          },
+          "range": [
+            277,
+            325
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "start": 326,
+      "end": 369,
       "loc": {
         "start": {
           "line": 19,
@@ -515,130 +416,102 @@
           "column": 43
         }
       },
-      "leadingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * The pin has been inserted by the user\n ",
-          "range": [
-            277,
-            325
-          ],
-          "loc": {
-            "start": {
-              "line": 16,
-              "column": 0
-            },
-            "end": {
-              "line": 18,
-              "column": 3
-            }
-          }
-        }
-      ],
-      "trailingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * The pin is valid\n ",
-          "range": [
-            371,
-            398
-          ],
-          "loc": {
-            "start": {
-              "line": 21,
-              "column": 0
-            },
-            "end": {
-              "line": 23,
-              "column": 3
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "ExportNamedDeclaration",
       "declaration": {
         "type": "VariableDeclaration",
-        "declarations": [
-          {
-            "type": "VariableDeclarator",
-            "id": {
-              "type": "Identifier",
-              "name": "PIN_PROCESSED_VALID",
-              "range": [
-                412,
-                431
-              ],
-              "loc": {
-                "start": {
-                  "line": 24,
-                  "column": 13
-                },
-                "end": {
-                  "line": 24,
-                  "column": 32
-                }
-              }
-            },
-            "init": {
-              "type": "Literal",
-              "value": "PIN_PROCESSED_VALID",
-              "raw": "'PIN_PROCESSED_VALID'",
-              "range": [
-                434,
-                455
-              ],
-              "loc": {
-                "start": {
-                  "line": 24,
-                  "column": 35
-                },
-                "end": {
-                  "line": 24,
-                  "column": 56
-                }
-              }
-            },
-            "range": [
-              412,
-              455
-            ],
-            "loc": {
-              "start": {
-                "line": 24,
-                "column": 13
-              },
-              "end": {
-                "line": 24,
-                "column": 56
-              }
-            }
-          }
-        ],
-        "kind": "const",
-        "range": [
-          406,
-          456
-        ],
+        "start": 333,
+        "end": 369,
         "loc": {
           "start": {
-            "line": 24,
+            "line": 19,
             "column": 7
           },
           "end": {
-            "line": 24,
-            "column": 57
+            "line": 19,
+            "column": 43
           }
         },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 339,
+            "end": 368,
+            "loc": {
+              "start": {
+                "line": 19,
+                "column": 13
+              },
+              "end": {
+                "line": 19,
+                "column": 42
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 339,
+              "end": 351,
+              "loc": {
+                "start": {
+                  "line": 19,
+                  "column": 13
+                },
+                "end": {
+                  "line": 19,
+                  "column": 25
+                }
+              },
+              "name": "PIN_INSERTED",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "Literal",
+              "start": 354,
+              "end": 368,
+              "loc": {
+                "start": {
+                  "line": 19,
+                  "column": 28
+                },
+                "end": {
+                  "line": 19,
+                  "column": 42
+                }
+              },
+              "value": "PIN_INSERTED",
+              "rawValue": "PIN_INSERTED",
+              "raw": "'PIN_INSERTED'"
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * The pin is valid\n ",
+            "value": "*\n * The pin has been inserted by the user\n ",
+            "start": 277,
+            "end": 325,
+            "loc": {
+              "start": {
+                "line": 16,
+                "column": 0
+              },
+              "end": {
+                "line": 18,
+                "column": 3
+              }
+            },
             "range": [
-              371,
-              398
-            ],
+              277,
+              325
+            ]
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * The pin is valid\n ",
+            "start": 371,
+            "end": 398,
             "loc": {
               "start": {
                 "line": 21,
@@ -648,36 +521,65 @@
                 "line": 23,
                 "column": 3
               }
-            }
-          }
-        ],
-        "trailingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * The pin is invalid\n ",
+            },
             "range": [
-              458,
-              487
-            ],
-            "loc": {
-              "start": {
-                "line": 26,
-                "column": 0
-              },
-              "end": {
-                "line": 28,
-                "column": 3
-              }
-            }
+              371,
+              398
+            ]
           }
         ]
       },
       "specifiers": [],
       "source": null,
-      "range": [
-        399,
-        456
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * The pin has been inserted by the user\n ",
+          "start": 277,
+          "end": 325,
+          "loc": {
+            "start": {
+              "line": 16,
+              "column": 0
+            },
+            "end": {
+              "line": 18,
+              "column": 3
+            }
+          },
+          "range": [
+            277,
+            325
+          ]
+        }
       ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * The pin is valid\n ",
+          "start": 371,
+          "end": 398,
+          "loc": {
+            "start": {
+              "line": 21,
+              "column": 0
+            },
+            "end": {
+              "line": 23,
+              "column": 3
+            }
+          },
+          "range": [
+            371,
+            398
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "start": 399,
+      "end": 456,
       "loc": {
         "start": {
           "line": 24,
@@ -688,130 +590,102 @@
           "column": 57
         }
       },
-      "leadingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * The pin is valid\n ",
-          "range": [
-            371,
-            398
-          ],
-          "loc": {
-            "start": {
-              "line": 21,
-              "column": 0
-            },
-            "end": {
-              "line": 23,
-              "column": 3
-            }
-          }
-        }
-      ],
-      "trailingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * The pin is invalid\n ",
-          "range": [
-            458,
-            487
-          ],
-          "loc": {
-            "start": {
-              "line": 26,
-              "column": 0
-            },
-            "end": {
-              "line": 28,
-              "column": 3
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "ExportNamedDeclaration",
       "declaration": {
         "type": "VariableDeclaration",
-        "declarations": [
-          {
-            "type": "VariableDeclarator",
-            "id": {
-              "type": "Identifier",
-              "name": "PIN_PROCESSED_INVALID",
-              "range": [
-                501,
-                522
-              ],
-              "loc": {
-                "start": {
-                  "line": 29,
-                  "column": 13
-                },
-                "end": {
-                  "line": 29,
-                  "column": 34
-                }
-              }
-            },
-            "init": {
-              "type": "Literal",
-              "value": "PIN_PROCESSED_INVALID",
-              "raw": "'PIN_PROCESSED_INVALID'",
-              "range": [
-                525,
-                548
-              ],
-              "loc": {
-                "start": {
-                  "line": 29,
-                  "column": 37
-                },
-                "end": {
-                  "line": 29,
-                  "column": 60
-                }
-              }
-            },
-            "range": [
-              501,
-              548
-            ],
-            "loc": {
-              "start": {
-                "line": 29,
-                "column": 13
-              },
-              "end": {
-                "line": 29,
-                "column": 60
-              }
-            }
-          }
-        ],
-        "kind": "const",
-        "range": [
-          495,
-          549
-        ],
+        "start": 406,
+        "end": 456,
         "loc": {
           "start": {
-            "line": 29,
+            "line": 24,
             "column": 7
           },
           "end": {
-            "line": 29,
-            "column": 61
+            "line": 24,
+            "column": 57
           }
         },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 412,
+            "end": 455,
+            "loc": {
+              "start": {
+                "line": 24,
+                "column": 13
+              },
+              "end": {
+                "line": 24,
+                "column": 56
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 412,
+              "end": 431,
+              "loc": {
+                "start": {
+                  "line": 24,
+                  "column": 13
+                },
+                "end": {
+                  "line": 24,
+                  "column": 32
+                }
+              },
+              "name": "PIN_PROCESSED_VALID",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "Literal",
+              "start": 434,
+              "end": 455,
+              "loc": {
+                "start": {
+                  "line": 24,
+                  "column": 35
+                },
+                "end": {
+                  "line": 24,
+                  "column": 56
+                }
+              },
+              "value": "PIN_PROCESSED_VALID",
+              "rawValue": "PIN_PROCESSED_VALID",
+              "raw": "'PIN_PROCESSED_VALID'"
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * The pin is invalid\n ",
+            "value": "*\n * The pin is valid\n ",
+            "start": 371,
+            "end": 398,
+            "loc": {
+              "start": {
+                "line": 21,
+                "column": 0
+              },
+              "end": {
+                "line": 23,
+                "column": 3
+              }
+            },
             "range": [
-              458,
-              487
-            ],
+              371,
+              398
+            ]
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * The pin is invalid\n ",
+            "start": 458,
+            "end": 487,
             "loc": {
               "start": {
                 "line": 26,
@@ -821,36 +695,65 @@
                 "line": 28,
                 "column": 3
               }
-            }
-          }
-        ],
-        "trailingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * withdraw some money\n ",
+            },
             "range": [
-              551,
-              581
-            ],
-            "loc": {
-              "start": {
-                "line": 31,
-                "column": 0
-              },
-              "end": {
-                "line": 33,
-                "column": 3
-              }
-            }
+              458,
+              487
+            ]
           }
         ]
       },
       "specifiers": [],
       "source": null,
-      "range": [
-        488,
-        549
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * The pin is valid\n ",
+          "start": 371,
+          "end": 398,
+          "loc": {
+            "start": {
+              "line": 21,
+              "column": 0
+            },
+            "end": {
+              "line": 23,
+              "column": 3
+            }
+          },
+          "range": [
+            371,
+            398
+          ]
+        }
       ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * The pin is invalid\n ",
+          "start": 458,
+          "end": 487,
+          "loc": {
+            "start": {
+              "line": 26,
+              "column": 0
+            },
+            "end": {
+              "line": 28,
+              "column": 3
+            }
+          },
+          "range": [
+            458,
+            487
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "start": 488,
+      "end": 549,
       "loc": {
         "start": {
           "line": 29,
@@ -861,130 +764,102 @@
           "column": 61
         }
       },
-      "leadingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * The pin is invalid\n ",
-          "range": [
-            458,
-            487
-          ],
-          "loc": {
-            "start": {
-              "line": 26,
-              "column": 0
-            },
-            "end": {
-              "line": 28,
-              "column": 3
-            }
-          }
-        }
-      ],
-      "trailingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * withdraw some money\n ",
-          "range": [
-            551,
-            581
-          ],
-          "loc": {
-            "start": {
-              "line": 31,
-              "column": 0
-            },
-            "end": {
-              "line": 33,
-              "column": 3
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "ExportNamedDeclaration",
       "declaration": {
         "type": "VariableDeclaration",
-        "declarations": [
-          {
-            "type": "VariableDeclarator",
-            "id": {
-              "type": "Identifier",
-              "name": "WITHDRAW",
-              "range": [
-                595,
-                603
-              ],
-              "loc": {
-                "start": {
-                  "line": 34,
-                  "column": 13
-                },
-                "end": {
-                  "line": 34,
-                  "column": 21
-                }
-              }
-            },
-            "init": {
-              "type": "Literal",
-              "value": "WITHDRAW",
-              "raw": "'WITHDRAW'",
-              "range": [
-                606,
-                616
-              ],
-              "loc": {
-                "start": {
-                  "line": 34,
-                  "column": 24
-                },
-                "end": {
-                  "line": 34,
-                  "column": 34
-                }
-              }
-            },
-            "range": [
-              595,
-              616
-            ],
-            "loc": {
-              "start": {
-                "line": 34,
-                "column": 13
-              },
-              "end": {
-                "line": 34,
-                "column": 34
-              }
-            }
-          }
-        ],
-        "kind": "const",
-        "range": [
-          589,
-          617
-        ],
+        "start": 495,
+        "end": 549,
         "loc": {
           "start": {
-            "line": 34,
+            "line": 29,
             "column": 7
           },
           "end": {
-            "line": 34,
-            "column": 35
+            "line": 29,
+            "column": 61
           }
         },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 501,
+            "end": 548,
+            "loc": {
+              "start": {
+                "line": 29,
+                "column": 13
+              },
+              "end": {
+                "line": 29,
+                "column": 60
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 501,
+              "end": 522,
+              "loc": {
+                "start": {
+                  "line": 29,
+                  "column": 13
+                },
+                "end": {
+                  "line": 29,
+                  "column": 34
+                }
+              },
+              "name": "PIN_PROCESSED_INVALID",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "Literal",
+              "start": 525,
+              "end": 548,
+              "loc": {
+                "start": {
+                  "line": 29,
+                  "column": 37
+                },
+                "end": {
+                  "line": 29,
+                  "column": 60
+                }
+              },
+              "value": "PIN_PROCESSED_INVALID",
+              "rawValue": "PIN_PROCESSED_INVALID",
+              "raw": "'PIN_PROCESSED_INVALID'"
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * withdraw some money\n ",
+            "value": "*\n * The pin is invalid\n ",
+            "start": 458,
+            "end": 487,
+            "loc": {
+              "start": {
+                "line": 26,
+                "column": 0
+              },
+              "end": {
+                "line": 28,
+                "column": 3
+              }
+            },
             "range": [
-              551,
-              581
-            ],
+              458,
+              487
+            ]
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * withdraw some money\n ",
+            "start": 551,
+            "end": 581,
             "loc": {
               "start": {
                 "line": 31,
@@ -994,36 +869,65 @@
                 "line": 33,
                 "column": 3
               }
-            }
-          }
-        ],
-        "trailingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * withdraw was suscesful\n ",
+            },
             "range": [
-              619,
-              652
-            ],
-            "loc": {
-              "start": {
-                "line": 36,
-                "column": 0
-              },
-              "end": {
-                "line": 38,
-                "column": 3
-              }
-            }
+              551,
+              581
+            ]
           }
         ]
       },
       "specifiers": [],
       "source": null,
-      "range": [
-        582,
-        617
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * The pin is invalid\n ",
+          "start": 458,
+          "end": 487,
+          "loc": {
+            "start": {
+              "line": 26,
+              "column": 0
+            },
+            "end": {
+              "line": 28,
+              "column": 3
+            }
+          },
+          "range": [
+            458,
+            487
+          ]
+        }
       ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * withdraw some money\n ",
+          "start": 551,
+          "end": 581,
+          "loc": {
+            "start": {
+              "line": 31,
+              "column": 0
+            },
+            "end": {
+              "line": 33,
+              "column": 3
+            }
+          },
+          "range": [
+            551,
+            581
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "start": 582,
+      "end": 617,
       "loc": {
         "start": {
           "line": 34,
@@ -1034,130 +938,102 @@
           "column": 35
         }
       },
-      "leadingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * withdraw some money\n ",
-          "range": [
-            551,
-            581
-          ],
-          "loc": {
-            "start": {
-              "line": 31,
-              "column": 0
-            },
-            "end": {
-              "line": 33,
-              "column": 3
-            }
-          }
-        }
-      ],
-      "trailingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * withdraw was suscesful\n ",
-          "range": [
-            619,
-            652
-          ],
-          "loc": {
-            "start": {
-              "line": 36,
-              "column": 0
-            },
-            "end": {
-              "line": 38,
-              "column": 3
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "ExportNamedDeclaration",
       "declaration": {
         "type": "VariableDeclaration",
-        "declarations": [
-          {
-            "type": "VariableDeclarator",
-            "id": {
-              "type": "Identifier",
-              "name": "WITHDRAW_SUSCESFUL",
-              "range": [
-                666,
-                684
-              ],
-              "loc": {
-                "start": {
-                  "line": 39,
-                  "column": 13
-                },
-                "end": {
-                  "line": 39,
-                  "column": 31
-                }
-              }
-            },
-            "init": {
-              "type": "Literal",
-              "value": "WITHDRAW_SUSCESFUL",
-              "raw": "'WITHDRAW_SUSCESFUL'",
-              "range": [
-                687,
-                707
-              ],
-              "loc": {
-                "start": {
-                  "line": 39,
-                  "column": 34
-                },
-                "end": {
-                  "line": 39,
-                  "column": 54
-                }
-              }
-            },
-            "range": [
-              666,
-              707
-            ],
-            "loc": {
-              "start": {
-                "line": 39,
-                "column": 13
-              },
-              "end": {
-                "line": 39,
-                "column": 54
-              }
-            }
-          }
-        ],
-        "kind": "const",
-        "range": [
-          660,
-          708
-        ],
+        "start": 589,
+        "end": 617,
         "loc": {
           "start": {
-            "line": 39,
+            "line": 34,
             "column": 7
           },
           "end": {
-            "line": 39,
-            "column": 55
+            "line": 34,
+            "column": 35
           }
         },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 595,
+            "end": 616,
+            "loc": {
+              "start": {
+                "line": 34,
+                "column": 13
+              },
+              "end": {
+                "line": 34,
+                "column": 34
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 595,
+              "end": 603,
+              "loc": {
+                "start": {
+                  "line": 34,
+                  "column": 13
+                },
+                "end": {
+                  "line": 34,
+                  "column": 21
+                }
+              },
+              "name": "WITHDRAW",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "Literal",
+              "start": 606,
+              "end": 616,
+              "loc": {
+                "start": {
+                  "line": 34,
+                  "column": 24
+                },
+                "end": {
+                  "line": 34,
+                  "column": 34
+                }
+              },
+              "value": "WITHDRAW",
+              "rawValue": "WITHDRAW",
+              "raw": "'WITHDRAW'"
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * withdraw was suscesful\n ",
+            "value": "*\n * withdraw some money\n ",
+            "start": 551,
+            "end": 581,
+            "loc": {
+              "start": {
+                "line": 31,
+                "column": 0
+              },
+              "end": {
+                "line": 33,
+                "column": 3
+              }
+            },
             "range": [
-              619,
-              652
-            ],
+              551,
+              581
+            ]
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * withdraw was suscesful\n ",
+            "start": 619,
+            "end": 652,
             "loc": {
               "start": {
                 "line": 36,
@@ -1167,36 +1043,65 @@
                 "line": 38,
                 "column": 3
               }
-            }
-          }
-        ],
-        "trailingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * withdraw has failed\n ",
+            },
             "range": [
-              710,
-              740
-            ],
-            "loc": {
-              "start": {
-                "line": 41,
-                "column": 0
-              },
-              "end": {
-                "line": 43,
-                "column": 3
-              }
-            }
+              619,
+              652
+            ]
           }
         ]
       },
       "specifiers": [],
       "source": null,
-      "range": [
-        653,
-        708
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * withdraw some money\n ",
+          "start": 551,
+          "end": 581,
+          "loc": {
+            "start": {
+              "line": 31,
+              "column": 0
+            },
+            "end": {
+              "line": 33,
+              "column": 3
+            }
+          },
+          "range": [
+            551,
+            581
+          ]
+        }
       ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * withdraw was suscesful\n ",
+          "start": 619,
+          "end": 652,
+          "loc": {
+            "start": {
+              "line": 36,
+              "column": 0
+            },
+            "end": {
+              "line": 38,
+              "column": 3
+            }
+          },
+          "range": [
+            619,
+            652
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "start": 653,
+      "end": 708,
       "loc": {
         "start": {
           "line": 39,
@@ -1207,130 +1112,102 @@
           "column": 55
         }
       },
-      "leadingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * withdraw was suscesful\n ",
-          "range": [
-            619,
-            652
-          ],
-          "loc": {
-            "start": {
-              "line": 36,
-              "column": 0
-            },
-            "end": {
-              "line": 38,
-              "column": 3
-            }
-          }
-        }
-      ],
-      "trailingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * withdraw has failed\n ",
-          "range": [
-            710,
-            740
-          ],
-          "loc": {
-            "start": {
-              "line": 41,
-              "column": 0
-            },
-            "end": {
-              "line": 43,
-              "column": 3
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "ExportNamedDeclaration",
       "declaration": {
         "type": "VariableDeclaration",
-        "declarations": [
-          {
-            "type": "VariableDeclarator",
-            "id": {
-              "type": "Identifier",
-              "name": "WITHDRAW_FAILED",
-              "range": [
-                754,
-                769
-              ],
-              "loc": {
-                "start": {
-                  "line": 44,
-                  "column": 13
-                },
-                "end": {
-                  "line": 44,
-                  "column": 28
-                }
-              }
-            },
-            "init": {
-              "type": "Literal",
-              "value": "WITHDRAW_FAILED",
-              "raw": "'WITHDRAW_FAILED'",
-              "range": [
-                772,
-                789
-              ],
-              "loc": {
-                "start": {
-                  "line": 44,
-                  "column": 31
-                },
-                "end": {
-                  "line": 44,
-                  "column": 48
-                }
-              }
-            },
-            "range": [
-              754,
-              789
-            ],
-            "loc": {
-              "start": {
-                "line": 44,
-                "column": 13
-              },
-              "end": {
-                "line": 44,
-                "column": 48
-              }
-            }
-          }
-        ],
-        "kind": "const",
-        "range": [
-          748,
-          790
-        ],
+        "start": 660,
+        "end": 708,
         "loc": {
           "start": {
-            "line": 44,
+            "line": 39,
             "column": 7
           },
           "end": {
-            "line": 44,
-            "column": 49
+            "line": 39,
+            "column": 55
           }
         },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 666,
+            "end": 707,
+            "loc": {
+              "start": {
+                "line": 39,
+                "column": 13
+              },
+              "end": {
+                "line": 39,
+                "column": 54
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 666,
+              "end": 684,
+              "loc": {
+                "start": {
+                  "line": 39,
+                  "column": 13
+                },
+                "end": {
+                  "line": 39,
+                  "column": 31
+                }
+              },
+              "name": "WITHDRAW_SUSCESFUL",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "Literal",
+              "start": 687,
+              "end": 707,
+              "loc": {
+                "start": {
+                  "line": 39,
+                  "column": 34
+                },
+                "end": {
+                  "line": 39,
+                  "column": 54
+                }
+              },
+              "value": "WITHDRAW_SUSCESFUL",
+              "rawValue": "WITHDRAW_SUSCESFUL",
+              "raw": "'WITHDRAW_SUSCESFUL'"
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * withdraw has failed\n ",
+            "value": "*\n * withdraw was suscesful\n ",
+            "start": 619,
+            "end": 652,
+            "loc": {
+              "start": {
+                "line": 36,
+                "column": 0
+              },
+              "end": {
+                "line": 38,
+                "column": 3
+              }
+            },
             "range": [
-              710,
-              740
-            ],
+              619,
+              652
+            ]
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * withdraw has failed\n ",
+            "start": 710,
+            "end": 740,
             "loc": {
               "start": {
                 "line": 41,
@@ -1340,36 +1217,65 @@
                 "line": 43,
                 "column": 3
               }
-            }
-          }
-        ],
-        "trailingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * money has been delivered\n ",
+            },
             "range": [
-              792,
-              827
-            ],
-            "loc": {
-              "start": {
-                "line": 46,
-                "column": 0
-              },
-              "end": {
-                "line": 48,
-                "column": 3
-              }
-            }
+              710,
+              740
+            ]
           }
         ]
       },
       "specifiers": [],
       "source": null,
-      "range": [
-        741,
-        790
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * withdraw was suscesful\n ",
+          "start": 619,
+          "end": 652,
+          "loc": {
+            "start": {
+              "line": 36,
+              "column": 0
+            },
+            "end": {
+              "line": 38,
+              "column": 3
+            }
+          },
+          "range": [
+            619,
+            652
+          ]
+        }
       ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * withdraw has failed\n ",
+          "start": 710,
+          "end": 740,
+          "loc": {
+            "start": {
+              "line": 41,
+              "column": 0
+            },
+            "end": {
+              "line": 43,
+              "column": 3
+            }
+          },
+          "range": [
+            710,
+            740
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "start": 741,
+      "end": 790,
       "loc": {
         "start": {
           "line": 44,
@@ -1380,14 +1286,127 @@
           "column": 49
         }
       },
+      "declaration": {
+        "type": "VariableDeclaration",
+        "start": 748,
+        "end": 790,
+        "loc": {
+          "start": {
+            "line": 44,
+            "column": 7
+          },
+          "end": {
+            "line": 44,
+            "column": 49
+          }
+        },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 754,
+            "end": 789,
+            "loc": {
+              "start": {
+                "line": 44,
+                "column": 13
+              },
+              "end": {
+                "line": 44,
+                "column": 48
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 754,
+              "end": 769,
+              "loc": {
+                "start": {
+                  "line": 44,
+                  "column": 13
+                },
+                "end": {
+                  "line": 44,
+                  "column": 28
+                }
+              },
+              "name": "WITHDRAW_FAILED",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "Literal",
+              "start": 772,
+              "end": 789,
+              "loc": {
+                "start": {
+                  "line": 44,
+                  "column": 31
+                },
+                "end": {
+                  "line": 44,
+                  "column": 48
+                }
+              },
+              "value": "WITHDRAW_FAILED",
+              "rawValue": "WITHDRAW_FAILED",
+              "raw": "'WITHDRAW_FAILED'"
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * withdraw has failed\n ",
+            "start": 710,
+            "end": 740,
+            "loc": {
+              "start": {
+                "line": 41,
+                "column": 0
+              },
+              "end": {
+                "line": 43,
+                "column": 3
+              }
+            },
+            "range": [
+              710,
+              740
+            ]
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * money has been delivered\n ",
+            "start": 792,
+            "end": 827,
+            "loc": {
+              "start": {
+                "line": 46,
+                "column": 0
+              },
+              "end": {
+                "line": 48,
+                "column": 3
+              }
+            },
+            "range": [
+              792,
+              827
+            ]
+          }
+        ]
+      },
+      "specifiers": [],
+      "source": null,
       "leadingComments": [
         {
           "type": "Block",
           "value": "*\n * withdraw has failed\n ",
-          "range": [
-            710,
-            740
-          ],
+          "start": 710,
+          "end": 740,
           "loc": {
             "start": {
               "line": 41,
@@ -1397,17 +1416,19 @@
               "line": 43,
               "column": 3
             }
-          }
+          },
+          "range": [
+            710,
+            740
+          ]
         }
       ],
       "trailingComments": [
         {
           "type": "Block",
           "value": "*\n * money has been delivered\n ",
-          "range": [
-            792,
-            827
-          ],
+          "start": 792,
+          "end": 827,
           "loc": {
             "start": {
               "line": 46,
@@ -1417,75 +1438,32 @@
               "line": 48,
               "column": 3
             }
-          }
+          },
+          "range": [
+            792,
+            827
+          ]
         }
       ]
     },
     {
       "type": "ExportNamedDeclaration",
+      "start": 828,
+      "end": 877,
+      "loc": {
+        "start": {
+          "line": 49,
+          "column": 0
+        },
+        "end": {
+          "line": 49,
+          "column": 49
+        }
+      },
       "declaration": {
         "type": "VariableDeclaration",
-        "declarations": [
-          {
-            "type": "VariableDeclarator",
-            "id": {
-              "type": "Identifier",
-              "name": "MONEY_DELIVERED",
-              "range": [
-                841,
-                856
-              ],
-              "loc": {
-                "start": {
-                  "line": 49,
-                  "column": 13
-                },
-                "end": {
-                  "line": 49,
-                  "column": 28
-                }
-              }
-            },
-            "init": {
-              "type": "Literal",
-              "value": "MONEY_DELIVERED",
-              "raw": "'MONEY_DELIVERED'",
-              "range": [
-                859,
-                876
-              ],
-              "loc": {
-                "start": {
-                  "line": 49,
-                  "column": 31
-                },
-                "end": {
-                  "line": 49,
-                  "column": 48
-                }
-              }
-            },
-            "range": [
-              841,
-              876
-            ],
-            "loc": {
-              "start": {
-                "line": 49,
-                "column": 13
-              },
-              "end": {
-                "line": 49,
-                "column": 48
-              }
-            }
-          }
-        ],
-        "kind": "const",
-        "range": [
-          835,
-          877
-        ],
+        "start": 835,
+        "end": 877,
         "loc": {
           "start": {
             "line": 49,
@@ -1496,14 +1474,66 @@
             "column": 49
           }
         },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 841,
+            "end": 876,
+            "loc": {
+              "start": {
+                "line": 49,
+                "column": 13
+              },
+              "end": {
+                "line": 49,
+                "column": 48
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 841,
+              "end": 856,
+              "loc": {
+                "start": {
+                  "line": 49,
+                  "column": 13
+                },
+                "end": {
+                  "line": 49,
+                  "column": 28
+                }
+              },
+              "name": "MONEY_DELIVERED",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "Literal",
+              "start": 859,
+              "end": 876,
+              "loc": {
+                "start": {
+                  "line": 49,
+                  "column": 31
+                },
+                "end": {
+                  "line": 49,
+                  "column": 48
+                }
+              },
+              "value": "MONEY_DELIVERED",
+              "rawValue": "MONEY_DELIVERED",
+              "raw": "'MONEY_DELIVERED'"
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
         "leadingComments": [
           {
             "type": "Block",
             "value": "*\n * money has been delivered\n ",
-            "range": [
-              792,
-              827
-            ],
+            "start": 792,
+            "end": 827,
             "loc": {
               "start": {
                 "line": 46,
@@ -1513,17 +1543,19 @@
                 "line": 48,
                 "column": 3
               }
-            }
+            },
+            "range": [
+              792,
+              827
+            ]
           }
         ],
         "trailingComments": [
           {
             "type": "Block",
             "value": "*\n * The user took his card and money\n ",
-            "range": [
-              879,
-              922
-            ],
+            "start": 879,
+            "end": 922,
             "loc": {
               "start": {
                 "line": 51,
@@ -1533,34 +1565,22 @@
                 "line": 53,
                 "column": 3
               }
-            }
+            },
+            "range": [
+              879,
+              922
+            ]
           }
         ]
       },
       "specifiers": [],
       "source": null,
-      "range": [
-        828,
-        877
-      ],
-      "loc": {
-        "start": {
-          "line": 49,
-          "column": 0
-        },
-        "end": {
-          "line": 49,
-          "column": 49
-        }
-      },
       "leadingComments": [
         {
           "type": "Block",
           "value": "*\n * money has been delivered\n ",
-          "range": [
-            792,
-            827
-          ],
+          "start": 792,
+          "end": 827,
           "loc": {
             "start": {
               "line": 46,
@@ -1570,17 +1590,19 @@
               "line": 48,
               "column": 3
             }
-          }
+          },
+          "range": [
+            792,
+            827
+          ]
         }
       ],
       "trailingComments": [
         {
           "type": "Block",
           "value": "*\n * The user took his card and money\n ",
-          "range": [
-            879,
-            922
-          ],
+          "start": 879,
+          "end": 922,
           "loc": {
             "start": {
               "line": 51,
@@ -1590,132 +1612,18 @@
               "line": 53,
               "column": 3
             }
-          }
+          },
+          "range": [
+            879,
+            922
+          ]
         }
       ]
     },
     {
       "type": "ExportNamedDeclaration",
-      "declaration": {
-        "type": "VariableDeclaration",
-        "declarations": [
-          {
-            "type": "VariableDeclarator",
-            "id": {
-              "type": "Identifier",
-              "name": "CARD_AND_MONEY_TAKEN",
-              "range": [
-                936,
-                956
-              ],
-              "loc": {
-                "start": {
-                  "line": 54,
-                  "column": 13
-                },
-                "end": {
-                  "line": 54,
-                  "column": 33
-                }
-              }
-            },
-            "init": {
-              "type": "Literal",
-              "value": "CARD_AND_MONEY_TAKEN",
-              "raw": "'CARD_AND_MONEY_TAKEN'",
-              "range": [
-                959,
-                981
-              ],
-              "loc": {
-                "start": {
-                  "line": 54,
-                  "column": 36
-                },
-                "end": {
-                  "line": 54,
-                  "column": 58
-                }
-              }
-            },
-            "range": [
-              936,
-              981
-            ],
-            "loc": {
-              "start": {
-                "line": 54,
-                "column": 13
-              },
-              "end": {
-                "line": 54,
-                "column": 58
-              }
-            }
-          }
-        ],
-        "kind": "const",
-        "range": [
-          930,
-          982
-        ],
-        "loc": {
-          "start": {
-            "line": 54,
-            "column": 7
-          },
-          "end": {
-            "line": 54,
-            "column": 59
-          }
-        },
-        "leadingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * The user took his card and money\n ",
-            "range": [
-              879,
-              922
-            ],
-            "loc": {
-              "start": {
-                "line": 51,
-                "column": 0
-              },
-              "end": {
-                "line": 53,
-                "column": 3
-              }
-            }
-          }
-        ],
-        "trailingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * Process finished\n ",
-            "range": [
-              984,
-              1011
-            ],
-            "loc": {
-              "start": {
-                "line": 56,
-                "column": 0
-              },
-              "end": {
-                "line": 58,
-                "column": 3
-              }
-            }
-          }
-        ]
-      },
-      "specifiers": [],
-      "source": null,
-      "range": [
-        923,
-        982
-      ],
+      "start": 923,
+      "end": 982,
       "loc": {
         "start": {
           "line": 54,
@@ -1726,130 +1634,102 @@
           "column": 59
         }
       },
-      "leadingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * The user took his card and money\n ",
-          "range": [
-            879,
-            922
-          ],
-          "loc": {
-            "start": {
-              "line": 51,
-              "column": 0
-            },
-            "end": {
-              "line": 53,
-              "column": 3
-            }
-          }
-        }
-      ],
-      "trailingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * Process finished\n ",
-          "range": [
-            984,
-            1011
-          ],
-          "loc": {
-            "start": {
-              "line": 56,
-              "column": 0
-            },
-            "end": {
-              "line": 58,
-              "column": 3
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "ExportNamedDeclaration",
       "declaration": {
         "type": "VariableDeclaration",
-        "declarations": [
-          {
-            "type": "VariableDeclarator",
-            "id": {
-              "type": "Identifier",
-              "name": "FINISHED",
-              "range": [
-                1025,
-                1033
-              ],
-              "loc": {
-                "start": {
-                  "line": 59,
-                  "column": 13
-                },
-                "end": {
-                  "line": 59,
-                  "column": 21
-                }
-              }
-            },
-            "init": {
-              "type": "Literal",
-              "value": "FINISHED",
-              "raw": "'FINISHED'",
-              "range": [
-                1036,
-                1046
-              ],
-              "loc": {
-                "start": {
-                  "line": 59,
-                  "column": 24
-                },
-                "end": {
-                  "line": 59,
-                  "column": 34
-                }
-              }
-            },
-            "range": [
-              1025,
-              1046
-            ],
-            "loc": {
-              "start": {
-                "line": 59,
-                "column": 13
-              },
-              "end": {
-                "line": 59,
-                "column": 34
-              }
-            }
-          }
-        ],
-        "kind": "const",
-        "range": [
-          1019,
-          1047
-        ],
+        "start": 930,
+        "end": 982,
         "loc": {
           "start": {
-            "line": 59,
+            "line": 54,
             "column": 7
           },
           "end": {
-            "line": 59,
-            "column": 35
+            "line": 54,
+            "column": 59
           }
         },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 936,
+            "end": 981,
+            "loc": {
+              "start": {
+                "line": 54,
+                "column": 13
+              },
+              "end": {
+                "line": 54,
+                "column": 58
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 936,
+              "end": 956,
+              "loc": {
+                "start": {
+                  "line": 54,
+                  "column": 13
+                },
+                "end": {
+                  "line": 54,
+                  "column": 33
+                }
+              },
+              "name": "CARD_AND_MONEY_TAKEN",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "Literal",
+              "start": 959,
+              "end": 981,
+              "loc": {
+                "start": {
+                  "line": 54,
+                  "column": 36
+                },
+                "end": {
+                  "line": 54,
+                  "column": 58
+                }
+              },
+              "value": "CARD_AND_MONEY_TAKEN",
+              "rawValue": "CARD_AND_MONEY_TAKEN",
+              "raw": "'CARD_AND_MONEY_TAKEN'"
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Process finished\n ",
+            "value": "*\n * The user took his card and money\n ",
+            "start": 879,
+            "end": 922,
+            "loc": {
+              "start": {
+                "line": 51,
+                "column": 0
+              },
+              "end": {
+                "line": 53,
+                "column": 3
+              }
+            },
             "range": [
-              984,
-              1011
-            ],
+              879,
+              922
+            ]
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Process finished\n ",
+            "start": 984,
+            "end": 1011,
             "loc": {
               "start": {
                 "line": 56,
@@ -1859,36 +1739,65 @@
                 "line": 58,
                 "column": 3
               }
-            }
-          }
-        ],
-        "trailingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * Trigger an abort\n ",
+            },
             "range": [
-              1049,
-              1076
-            ],
-            "loc": {
-              "start": {
-                "line": 61,
-                "column": 0
-              },
-              "end": {
-                "line": 63,
-                "column": 3
-              }
-            }
+              984,
+              1011
+            ]
           }
         ]
       },
       "specifiers": [],
       "source": null,
-      "range": [
-        1012,
-        1047
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * The user took his card and money\n ",
+          "start": 879,
+          "end": 922,
+          "loc": {
+            "start": {
+              "line": 51,
+              "column": 0
+            },
+            "end": {
+              "line": 53,
+              "column": 3
+            }
+          },
+          "range": [
+            879,
+            922
+          ]
+        }
       ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Process finished\n ",
+          "start": 984,
+          "end": 1011,
+          "loc": {
+            "start": {
+              "line": 56,
+              "column": 0
+            },
+            "end": {
+              "line": 58,
+              "column": 3
+            }
+          },
+          "range": [
+            984,
+            1011
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "start": 1012,
+      "end": 1047,
       "loc": {
         "start": {
           "line": 59,
@@ -1899,130 +1808,102 @@
           "column": 35
         }
       },
-      "leadingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * Process finished\n ",
-          "range": [
-            984,
-            1011
-          ],
-          "loc": {
-            "start": {
-              "line": 56,
-              "column": 0
-            },
-            "end": {
-              "line": 58,
-              "column": 3
-            }
-          }
-        }
-      ],
-      "trailingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * Trigger an abort\n ",
-          "range": [
-            1049,
-            1076
-          ],
-          "loc": {
-            "start": {
-              "line": 61,
-              "column": 0
-            },
-            "end": {
-              "line": 63,
-              "column": 3
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "ExportNamedDeclaration",
       "declaration": {
         "type": "VariableDeclaration",
-        "declarations": [
-          {
-            "type": "VariableDeclarator",
-            "id": {
-              "type": "Identifier",
-              "name": "PERFORM_ABORT",
-              "range": [
-                1090,
-                1103
-              ],
-              "loc": {
-                "start": {
-                  "line": 64,
-                  "column": 13
-                },
-                "end": {
-                  "line": 64,
-                  "column": 26
-                }
-              }
-            },
-            "init": {
-              "type": "Literal",
-              "value": "PERFORM_ABORT",
-              "raw": "'PERFORM_ABORT'",
-              "range": [
-                1106,
-                1121
-              ],
-              "loc": {
-                "start": {
-                  "line": 64,
-                  "column": 29
-                },
-                "end": {
-                  "line": 64,
-                  "column": 44
-                }
-              }
-            },
-            "range": [
-              1090,
-              1121
-            ],
-            "loc": {
-              "start": {
-                "line": 64,
-                "column": 13
-              },
-              "end": {
-                "line": 64,
-                "column": 44
-              }
-            }
-          }
-        ],
-        "kind": "const",
-        "range": [
-          1084,
-          1122
-        ],
+        "start": 1019,
+        "end": 1047,
         "loc": {
           "start": {
-            "line": 64,
+            "line": 59,
             "column": 7
           },
           "end": {
-            "line": 64,
-            "column": 45
+            "line": 59,
+            "column": 35
           }
         },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 1025,
+            "end": 1046,
+            "loc": {
+              "start": {
+                "line": 59,
+                "column": 13
+              },
+              "end": {
+                "line": 59,
+                "column": 34
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 1025,
+              "end": 1033,
+              "loc": {
+                "start": {
+                  "line": 59,
+                  "column": 13
+                },
+                "end": {
+                  "line": 59,
+                  "column": 21
+                }
+              },
+              "name": "FINISHED",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "Literal",
+              "start": 1036,
+              "end": 1046,
+              "loc": {
+                "start": {
+                  "line": 59,
+                  "column": 24
+                },
+                "end": {
+                  "line": 59,
+                  "column": 34
+                }
+              },
+              "value": "FINISHED",
+              "rawValue": "FINISHED",
+              "raw": "'FINISHED'"
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Trigger an abort\n ",
+            "value": "*\n * Process finished\n ",
+            "start": 984,
+            "end": 1011,
+            "loc": {
+              "start": {
+                "line": 56,
+                "column": 0
+              },
+              "end": {
+                "line": 58,
+                "column": 3
+              }
+            },
             "range": [
-              1049,
-              1076
-            ],
+              984,
+              1011
+            ]
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Trigger an abort\n ",
+            "start": 1049,
+            "end": 1076,
             "loc": {
               "start": {
                 "line": 61,
@@ -2032,36 +1913,65 @@
                 "line": 63,
                 "column": 3
               }
-            }
-          }
-        ],
-        "trailingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * Abort has been completed\n ",
+            },
             "range": [
-              1124,
-              1159
-            ],
-            "loc": {
-              "start": {
-                "line": 66,
-                "column": 0
-              },
-              "end": {
-                "line": 68,
-                "column": 3
-              }
-            }
+              1049,
+              1076
+            ]
           }
         ]
       },
       "specifiers": [],
       "source": null,
-      "range": [
-        1077,
-        1122
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Process finished\n ",
+          "start": 984,
+          "end": 1011,
+          "loc": {
+            "start": {
+              "line": 56,
+              "column": 0
+            },
+            "end": {
+              "line": 58,
+              "column": 3
+            }
+          },
+          "range": [
+            984,
+            1011
+          ]
+        }
       ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Trigger an abort\n ",
+          "start": 1049,
+          "end": 1076,
+          "loc": {
+            "start": {
+              "line": 61,
+              "column": 0
+            },
+            "end": {
+              "line": 63,
+              "column": 3
+            }
+          },
+          "range": [
+            1049,
+            1076
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "start": 1077,
+      "end": 1122,
       "loc": {
         "start": {
           "line": 64,
@@ -2072,130 +1982,102 @@
           "column": 45
         }
       },
-      "leadingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * Trigger an abort\n ",
-          "range": [
-            1049,
-            1076
-          ],
-          "loc": {
-            "start": {
-              "line": 61,
-              "column": 0
-            },
-            "end": {
-              "line": 63,
-              "column": 3
-            }
-          }
-        }
-      ],
-      "trailingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * Abort has been completed\n ",
-          "range": [
-            1124,
-            1159
-          ],
-          "loc": {
-            "start": {
-              "line": 66,
-              "column": 0
-            },
-            "end": {
-              "line": 68,
-              "column": 3
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "ExportNamedDeclaration",
       "declaration": {
         "type": "VariableDeclaration",
-        "declarations": [
-          {
-            "type": "VariableDeclarator",
-            "id": {
-              "type": "Identifier",
-              "name": "COMPLETE_ABORT",
-              "range": [
-                1173,
-                1187
-              ],
-              "loc": {
-                "start": {
-                  "line": 69,
-                  "column": 13
-                },
-                "end": {
-                  "line": 69,
-                  "column": 27
-                }
-              }
-            },
-            "init": {
-              "type": "Literal",
-              "value": "COMPLETE_ABORT",
-              "raw": "'COMPLETE_ABORT'",
-              "range": [
-                1190,
-                1206
-              ],
-              "loc": {
-                "start": {
-                  "line": 69,
-                  "column": 30
-                },
-                "end": {
-                  "line": 69,
-                  "column": 46
-                }
-              }
-            },
-            "range": [
-              1173,
-              1206
-            ],
-            "loc": {
-              "start": {
-                "line": 69,
-                "column": 13
-              },
-              "end": {
-                "line": 69,
-                "column": 46
-              }
-            }
-          }
-        ],
-        "kind": "const",
-        "range": [
-          1167,
-          1207
-        ],
+        "start": 1084,
+        "end": 1122,
         "loc": {
           "start": {
-            "line": 69,
+            "line": 64,
             "column": 7
           },
           "end": {
-            "line": 69,
-            "column": 47
+            "line": 64,
+            "column": 45
           }
         },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 1090,
+            "end": 1121,
+            "loc": {
+              "start": {
+                "line": 64,
+                "column": 13
+              },
+              "end": {
+                "line": 64,
+                "column": 44
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 1090,
+              "end": 1103,
+              "loc": {
+                "start": {
+                  "line": 64,
+                  "column": 13
+                },
+                "end": {
+                  "line": 64,
+                  "column": 26
+                }
+              },
+              "name": "PERFORM_ABORT",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "Literal",
+              "start": 1106,
+              "end": 1121,
+              "loc": {
+                "start": {
+                  "line": 64,
+                  "column": 29
+                },
+                "end": {
+                  "line": 64,
+                  "column": 44
+                }
+              },
+              "value": "PERFORM_ABORT",
+              "rawValue": "PERFORM_ABORT",
+              "raw": "'PERFORM_ABORT'"
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Abort has been completed\n ",
+            "value": "*\n * Trigger an abort\n ",
+            "start": 1049,
+            "end": 1076,
+            "loc": {
+              "start": {
+                "line": 61,
+                "column": 0
+              },
+              "end": {
+                "line": 63,
+                "column": 3
+              }
+            },
             "range": [
-              1124,
-              1159
-            ],
+              1049,
+              1076
+            ]
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Abort has been completed\n ",
+            "start": 1124,
+            "end": 1159,
             "loc": {
               "start": {
                 "line": 66,
@@ -2205,17 +2087,65 @@
                 "line": 68,
                 "column": 3
               }
-            }
+            },
+            "range": [
+              1124,
+              1159
+            ]
           }
-        ],
-        "trailingComments": []
+        ]
       },
       "specifiers": [],
       "source": null,
-      "range": [
-        1160,
-        1207
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Trigger an abort\n ",
+          "start": 1049,
+          "end": 1076,
+          "loc": {
+            "start": {
+              "line": 61,
+              "column": 0
+            },
+            "end": {
+              "line": 63,
+              "column": 3
+            }
+          },
+          "range": [
+            1049,
+            1076
+          ]
+        }
       ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Abort has been completed\n ",
+          "start": 1124,
+          "end": 1159,
+          "loc": {
+            "start": {
+              "line": 66,
+              "column": 0
+            },
+            "end": {
+              "line": 68,
+              "column": 3
+            }
+          },
+          "range": [
+            1124,
+            1159
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "start": 1160,
+      "end": 1207,
       "loc": {
         "start": {
           "line": 69,
@@ -2226,14 +2156,106 @@
           "column": 47
         }
       },
+      "declaration": {
+        "type": "VariableDeclaration",
+        "start": 1167,
+        "end": 1207,
+        "loc": {
+          "start": {
+            "line": 69,
+            "column": 7
+          },
+          "end": {
+            "line": 69,
+            "column": 47
+          }
+        },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 1173,
+            "end": 1206,
+            "loc": {
+              "start": {
+                "line": 69,
+                "column": 13
+              },
+              "end": {
+                "line": 69,
+                "column": 46
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 1173,
+              "end": 1187,
+              "loc": {
+                "start": {
+                  "line": 69,
+                  "column": 13
+                },
+                "end": {
+                  "line": 69,
+                  "column": 27
+                }
+              },
+              "name": "COMPLETE_ABORT",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "Literal",
+              "start": 1190,
+              "end": 1206,
+              "loc": {
+                "start": {
+                  "line": 69,
+                  "column": 30
+                },
+                "end": {
+                  "line": 69,
+                  "column": 46
+                }
+              },
+              "value": "COMPLETE_ABORT",
+              "rawValue": "COMPLETE_ABORT",
+              "raw": "'COMPLETE_ABORT'"
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Abort has been completed\n ",
+            "start": 1124,
+            "end": 1159,
+            "loc": {
+              "start": {
+                "line": 66,
+                "column": 0
+              },
+              "end": {
+                "line": 68,
+                "column": 3
+              }
+            },
+            "range": [
+              1124,
+              1159
+            ]
+          }
+        ],
+        "trailingComments": []
+      },
+      "specifiers": [],
+      "source": null,
       "leadingComments": [
         {
           "type": "Block",
           "value": "*\n * Abort has been completed\n ",
-          "range": [
-            1124,
-            1159
-          ],
+          "start": 1124,
+          "end": 1159,
           "loc": {
             "start": {
               "line": 66,
@@ -2243,278 +2265,13 @@
               "line": 68,
               "column": 3
             }
-          }
+          },
+          "range": [
+            1124,
+            1159
+          ]
         }
       ]
-    }
-  ],
-  "sourceType": "module",
-  "range": [
-    131,
-    1207
-  ],
-  "loc": {
-    "start": {
-      "line": 9,
-      "column": 0
-    },
-    "end": {
-      "line": 69,
-      "column": 47
-    }
-  },
-  "comments": [
-    {
-      "type": "Block",
-      "value": "*\n * @file Contains the action types constants\n * @author Edward Gonzalez\n ",
-      "range": [
-        0,
-        79
-      ],
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 0
-        },
-        "end": {
-          "line": 4,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": "Block",
-      "value": "*\n * The card has been inserted by the user\n ",
-      "range": [
-        81,
-        130
-      ],
-      "loc": {
-        "start": {
-          "line": 6,
-          "column": 0
-        },
-        "end": {
-          "line": 8,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": "Block",
-      "value": "*\n * The card has been processed by the ATM\n ",
-      "range": [
-        178,
-        227
-      ],
-      "loc": {
-        "start": {
-          "line": 11,
-          "column": 0
-        },
-        "end": {
-          "line": 13,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": "Block",
-      "value": "*\n * The pin has been inserted by the user\n ",
-      "range": [
-        277,
-        325
-      ],
-      "loc": {
-        "start": {
-          "line": 16,
-          "column": 0
-        },
-        "end": {
-          "line": 18,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": "Block",
-      "value": "*\n * The pin is valid\n ",
-      "range": [
-        371,
-        398
-      ],
-      "loc": {
-        "start": {
-          "line": 21,
-          "column": 0
-        },
-        "end": {
-          "line": 23,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": "Block",
-      "value": "*\n * The pin is invalid\n ",
-      "range": [
-        458,
-        487
-      ],
-      "loc": {
-        "start": {
-          "line": 26,
-          "column": 0
-        },
-        "end": {
-          "line": 28,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": "Block",
-      "value": "*\n * withdraw some money\n ",
-      "range": [
-        551,
-        581
-      ],
-      "loc": {
-        "start": {
-          "line": 31,
-          "column": 0
-        },
-        "end": {
-          "line": 33,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": "Block",
-      "value": "*\n * withdraw was suscesful\n ",
-      "range": [
-        619,
-        652
-      ],
-      "loc": {
-        "start": {
-          "line": 36,
-          "column": 0
-        },
-        "end": {
-          "line": 38,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": "Block",
-      "value": "*\n * withdraw has failed\n ",
-      "range": [
-        710,
-        740
-      ],
-      "loc": {
-        "start": {
-          "line": 41,
-          "column": 0
-        },
-        "end": {
-          "line": 43,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": "Block",
-      "value": "*\n * money has been delivered\n ",
-      "range": [
-        792,
-        827
-      ],
-      "loc": {
-        "start": {
-          "line": 46,
-          "column": 0
-        },
-        "end": {
-          "line": 48,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": "Block",
-      "value": "*\n * The user took his card and money\n ",
-      "range": [
-        879,
-        922
-      ],
-      "loc": {
-        "start": {
-          "line": 51,
-          "column": 0
-        },
-        "end": {
-          "line": 53,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": "Block",
-      "value": "*\n * Process finished\n ",
-      "range": [
-        984,
-        1011
-      ],
-      "loc": {
-        "start": {
-          "line": 56,
-          "column": 0
-        },
-        "end": {
-          "line": 58,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": "Block",
-      "value": "*\n * Trigger an abort\n ",
-      "range": [
-        1049,
-        1076
-      ],
-      "loc": {
-        "start": {
-          "line": 61,
-          "column": 0
-        },
-        "end": {
-          "line": 63,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": "Block",
-      "value": "*\n * Abort has been completed\n ",
-      "range": [
-        1124,
-        1159
-      ],
-      "loc": {
-        "start": {
-          "line": 66,
-          "column": 0
-        },
-        "end": {
-          "line": 68,
-          "column": 3
-        }
-      }
     }
   ]
 }

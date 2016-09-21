@@ -1,51 +1,38 @@
 {
   "type": "Program",
+  "start": 0,
+  "end": 644,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 21,
+      "column": 0
+    }
+  },
+  "sourceType": "module",
   "body": [
     {
       "type": "ImportDeclaration",
+      "start": 118,
+      "end": 158,
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 40
+        }
+      },
       "specifiers": [
         {
           "type": "ImportSpecifier",
-          "local": {
-            "type": "Identifier",
-            "name": "combineReducers",
-            "range": [
-              127,
-              142
-            ],
-            "loc": {
-              "start": {
-                "line": 6,
-                "column": 9
-              },
-              "end": {
-                "line": 6,
-                "column": 24
-              }
-            }
-          },
-          "imported": {
-            "type": "Identifier",
-            "name": "combineReducers",
-            "range": [
-              127,
-              142
-            ],
-            "loc": {
-              "start": {
-                "line": 6,
-                "column": 9
-              },
-              "end": {
-                "line": 6,
-                "column": 24
-              }
-            }
-          },
-          "range": [
-            127,
-            142
-          ],
+          "start": 127,
+          "end": 142,
           "loc": {
             "start": {
               "line": 6,
@@ -55,17 +42,70 @@
               "line": 6,
               "column": 24
             }
-          }
+          },
+          "imported": {
+            "type": "Identifier",
+            "start": 127,
+            "end": 142,
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 9
+              },
+              "end": {
+                "line": 6,
+                "column": 24
+              }
+            },
+            "name": "combineReducers",
+            "leadingComments": null
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 127,
+            "end": 142,
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 9
+              },
+              "end": {
+                "line": 6,
+                "column": 24
+              }
+            },
+            "name": "combineReducers",
+            "leadingComments": [
+              {
+                "type": "Block",
+                "value": "*\n * @file Includes all the reducers that the application needs in order to execute\n * @author Edward Gonzalez\n ",
+                "start": 0,
+                "end": 116,
+                "loc": {
+                  "start": {
+                    "line": 1,
+                    "column": 0
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 3
+                  }
+                },
+                "range": [
+                  0,
+                  116
+                ]
+              }
+            ]
+          },
+          "leadingComments": null
         }
       ],
+      "importKind": "value",
       "source": {
         "type": "Literal",
-        "value": "redux",
-        "raw": "'redux'",
-        "range": [
-          150,
-          157
-        ],
+        "start": 150,
+        "end": 157,
         "loc": {
           "start": {
             "line": 6,
@@ -75,30 +115,17 @@
             "line": 6,
             "column": 39
           }
-        }
-      },
-      "range": [
-        118,
-        158
-      ],
-      "loc": {
-        "start": {
-          "line": 6,
-          "column": 0
         },
-        "end": {
-          "line": 6,
-          "column": 40
-        }
+        "value": "redux",
+        "rawValue": "redux",
+        "raw": "'redux'"
       },
       "leadingComments": [
         {
           "type": "Block",
           "value": "*\n * @file Includes all the reducers that the application needs in order to execute\n * @author Edward Gonzalez\n ",
-          "range": [
-            0,
-            116
-          ],
+          "start": 0,
+          "end": 116,
           "loc": {
             "start": {
               "line": 1,
@@ -108,72 +135,18 @@
               "line": 4,
               "column": 3
             }
-          }
+          },
+          "range": [
+            0,
+            116
+          ]
         }
       ]
     },
     {
       "type": "ImportDeclaration",
-      "specifiers": [
-        {
-          "type": "ImportDefaultSpecifier",
-          "local": {
-            "type": "Identifier",
-            "name": "state",
-            "range": [
-              166,
-              171
-            ],
-            "loc": {
-              "start": {
-                "line": 7,
-                "column": 7
-              },
-              "end": {
-                "line": 7,
-                "column": 12
-              }
-            }
-          },
-          "range": [
-            166,
-            171
-          ],
-          "loc": {
-            "start": {
-              "line": 7,
-              "column": 7
-            },
-            "end": {
-              "line": 7,
-              "column": 12
-            }
-          }
-        }
-      ],
-      "source": {
-        "type": "Literal",
-        "value": "./state",
-        "raw": "'./state'",
-        "range": [
-          177,
-          186
-        ],
-        "loc": {
-          "start": {
-            "line": 7,
-            "column": 18
-          },
-          "end": {
-            "line": 7,
-            "column": 27
-          }
-        }
-      },
-      "range": [
-        159,
-        187
-      ],
+      "start": 159,
+      "end": 187,
       "loc": {
         "start": {
           "line": 7,
@@ -183,70 +156,64 @@
           "line": 7,
           "column": 28
         }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 166,
+          "end": 171,
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 7
+            },
+            "end": {
+              "line": 7,
+              "column": 12
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 166,
+            "end": 171,
+            "loc": {
+              "start": {
+                "line": 7,
+                "column": 7
+              },
+              "end": {
+                "line": 7,
+                "column": 12
+              }
+            },
+            "name": "state"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 177,
+        "end": 186,
+        "loc": {
+          "start": {
+            "line": 7,
+            "column": 18
+          },
+          "end": {
+            "line": 7,
+            "column": 27
+          }
+        },
+        "value": "./state",
+        "rawValue": "./state",
+        "raw": "'./state'"
       }
     },
     {
       "type": "ImportDeclaration",
-      "specifiers": [
-        {
-          "type": "ImportDefaultSpecifier",
-          "local": {
-            "type": "Identifier",
-            "name": "pin",
-            "range": [
-              195,
-              198
-            ],
-            "loc": {
-              "start": {
-                "line": 8,
-                "column": 7
-              },
-              "end": {
-                "line": 8,
-                "column": 10
-              }
-            }
-          },
-          "range": [
-            195,
-            198
-          ],
-          "loc": {
-            "start": {
-              "line": 8,
-              "column": 7
-            },
-            "end": {
-              "line": 8,
-              "column": 10
-            }
-          }
-        }
-      ],
-      "source": {
-        "type": "Literal",
-        "value": "./pin",
-        "raw": "'./pin'",
-        "range": [
-          204,
-          211
-        ],
-        "loc": {
-          "start": {
-            "line": 8,
-            "column": 16
-          },
-          "end": {
-            "line": 8,
-            "column": 23
-          }
-        }
-      },
-      "range": [
-        188,
-        212
-      ],
+      "start": 188,
+      "end": 212,
       "loc": {
         "start": {
           "line": 8,
@@ -256,70 +223,64 @@
           "line": 8,
           "column": 24
         }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 195,
+          "end": 198,
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 7
+            },
+            "end": {
+              "line": 8,
+              "column": 10
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 195,
+            "end": 198,
+            "loc": {
+              "start": {
+                "line": 8,
+                "column": 7
+              },
+              "end": {
+                "line": 8,
+                "column": 10
+              }
+            },
+            "name": "pin"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 204,
+        "end": 211,
+        "loc": {
+          "start": {
+            "line": 8,
+            "column": 16
+          },
+          "end": {
+            "line": 8,
+            "column": 23
+          }
+        },
+        "value": "./pin",
+        "rawValue": "./pin",
+        "raw": "'./pin'"
       }
     },
     {
       "type": "ImportDeclaration",
-      "specifiers": [
-        {
-          "type": "ImportDefaultSpecifier",
-          "local": {
-            "type": "Identifier",
-            "name": "pinAttempts",
-            "range": [
-              220,
-              231
-            ],
-            "loc": {
-              "start": {
-                "line": 9,
-                "column": 7
-              },
-              "end": {
-                "line": 9,
-                "column": 18
-              }
-            }
-          },
-          "range": [
-            220,
-            231
-          ],
-          "loc": {
-            "start": {
-              "line": 9,
-              "column": 7
-            },
-            "end": {
-              "line": 9,
-              "column": 18
-            }
-          }
-        }
-      ],
-      "source": {
-        "type": "Literal",
-        "value": "./pinAttempts",
-        "raw": "'./pinAttempts'",
-        "range": [
-          237,
-          252
-        ],
-        "loc": {
-          "start": {
-            "line": 9,
-            "column": 24
-          },
-          "end": {
-            "line": 9,
-            "column": 39
-          }
-        }
-      },
-      "range": [
-        213,
-        253
-      ],
+      "start": 213,
+      "end": 253,
       "loc": {
         "start": {
           "line": 9,
@@ -329,70 +290,64 @@
           "line": 9,
           "column": 40
         }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 220,
+          "end": 231,
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 7
+            },
+            "end": {
+              "line": 9,
+              "column": 18
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 220,
+            "end": 231,
+            "loc": {
+              "start": {
+                "line": 9,
+                "column": 7
+              },
+              "end": {
+                "line": 9,
+                "column": 18
+              }
+            },
+            "name": "pinAttempts"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 237,
+        "end": 252,
+        "loc": {
+          "start": {
+            "line": 9,
+            "column": 24
+          },
+          "end": {
+            "line": 9,
+            "column": 39
+          }
+        },
+        "value": "./pinAttempts",
+        "rawValue": "./pinAttempts",
+        "raw": "'./pinAttempts'"
       }
     },
     {
       "type": "ImportDeclaration",
-      "specifiers": [
-        {
-          "type": "ImportDefaultSpecifier",
-          "local": {
-            "type": "Identifier",
-            "name": "withdrawAttempts",
-            "range": [
-              261,
-              277
-            ],
-            "loc": {
-              "start": {
-                "line": 10,
-                "column": 7
-              },
-              "end": {
-                "line": 10,
-                "column": 23
-              }
-            }
-          },
-          "range": [
-            261,
-            277
-          ],
-          "loc": {
-            "start": {
-              "line": 10,
-              "column": 7
-            },
-            "end": {
-              "line": 10,
-              "column": 23
-            }
-          }
-        }
-      ],
-      "source": {
-        "type": "Literal",
-        "value": "./withdrawAttempts",
-        "raw": "'./withdrawAttempts'",
-        "range": [
-          283,
-          303
-        ],
-        "loc": {
-          "start": {
-            "line": 10,
-            "column": 29
-          },
-          "end": {
-            "line": 10,
-            "column": 49
-          }
-        }
-      },
-      "range": [
-        254,
-        304
-      ],
+      "start": 254,
+      "end": 304,
       "loc": {
         "start": {
           "line": 10,
@@ -402,70 +357,64 @@
           "line": 10,
           "column": 50
         }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 261,
+          "end": 277,
+          "loc": {
+            "start": {
+              "line": 10,
+              "column": 7
+            },
+            "end": {
+              "line": 10,
+              "column": 23
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 261,
+            "end": 277,
+            "loc": {
+              "start": {
+                "line": 10,
+                "column": 7
+              },
+              "end": {
+                "line": 10,
+                "column": 23
+              }
+            },
+            "name": "withdrawAttempts"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 283,
+        "end": 303,
+        "loc": {
+          "start": {
+            "line": 10,
+            "column": 29
+          },
+          "end": {
+            "line": 10,
+            "column": 49
+          }
+        },
+        "value": "./withdrawAttempts",
+        "rawValue": "./withdrawAttempts",
+        "raw": "'./withdrawAttempts'"
       }
     },
     {
       "type": "ImportDeclaration",
-      "specifiers": [
-        {
-          "type": "ImportDefaultSpecifier",
-          "local": {
-            "type": "Identifier",
-            "name": "abortReason",
-            "range": [
-              312,
-              323
-            ],
-            "loc": {
-              "start": {
-                "line": 11,
-                "column": 7
-              },
-              "end": {
-                "line": 11,
-                "column": 18
-              }
-            }
-          },
-          "range": [
-            312,
-            323
-          ],
-          "loc": {
-            "start": {
-              "line": 11,
-              "column": 7
-            },
-            "end": {
-              "line": 11,
-              "column": 18
-            }
-          }
-        }
-      ],
-      "source": {
-        "type": "Literal",
-        "value": "./abortReason",
-        "raw": "'./abortReason'",
-        "range": [
-          329,
-          344
-        ],
-        "loc": {
-          "start": {
-            "line": 11,
-            "column": 24
-          },
-          "end": {
-            "line": 11,
-            "column": 39
-          }
-        }
-      },
-      "range": [
-        305,
-        345
-      ],
+      "start": 305,
+      "end": 345,
       "loc": {
         "start": {
           "line": 11,
@@ -475,70 +424,64 @@
           "line": 11,
           "column": 40
         }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 312,
+          "end": 323,
+          "loc": {
+            "start": {
+              "line": 11,
+              "column": 7
+            },
+            "end": {
+              "line": 11,
+              "column": 18
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 312,
+            "end": 323,
+            "loc": {
+              "start": {
+                "line": 11,
+                "column": 7
+              },
+              "end": {
+                "line": 11,
+                "column": 18
+              }
+            },
+            "name": "abortReason"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 329,
+        "end": 344,
+        "loc": {
+          "start": {
+            "line": 11,
+            "column": 24
+          },
+          "end": {
+            "line": 11,
+            "column": 39
+          }
+        },
+        "value": "./abortReason",
+        "rawValue": "./abortReason",
+        "raw": "'./abortReason'"
       }
     },
     {
       "type": "ImportDeclaration",
-      "specifiers": [
-        {
-          "type": "ImportDefaultSpecifier",
-          "local": {
-            "type": "Identifier",
-            "name": "withdrawFailReason",
-            "range": [
-              353,
-              371
-            ],
-            "loc": {
-              "start": {
-                "line": 12,
-                "column": 7
-              },
-              "end": {
-                "line": 12,
-                "column": 25
-              }
-            }
-          },
-          "range": [
-            353,
-            371
-          ],
-          "loc": {
-            "start": {
-              "line": 12,
-              "column": 7
-            },
-            "end": {
-              "line": 12,
-              "column": 25
-            }
-          }
-        }
-      ],
-      "source": {
-        "type": "Literal",
-        "value": "./withdrawFailReason",
-        "raw": "'./withdrawFailReason'",
-        "range": [
-          377,
-          399
-        ],
-        "loc": {
-          "start": {
-            "line": 12,
-            "column": 31
-          },
-          "end": {
-            "line": 12,
-            "column": 53
-          }
-        }
-      },
-      "range": [
-        346,
-        400
-      ],
+      "start": 346,
+      "end": 400,
       "loc": {
         "start": {
           "line": 12,
@@ -549,516 +492,638 @@
           "column": 54
         }
       },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 353,
+          "end": 371,
+          "loc": {
+            "start": {
+              "line": 12,
+              "column": 7
+            },
+            "end": {
+              "line": 12,
+              "column": 25
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 353,
+            "end": 371,
+            "loc": {
+              "start": {
+                "line": 12,
+                "column": 7
+              },
+              "end": {
+                "line": 12,
+                "column": 25
+              }
+            },
+            "name": "withdrawFailReason"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 377,
+        "end": 399,
+        "loc": {
+          "start": {
+            "line": 12,
+            "column": 31
+          },
+          "end": {
+            "line": 12,
+            "column": 53
+          }
+        },
+        "value": "./withdrawFailReason",
+        "rawValue": "./withdrawFailReason",
+        "raw": "'./withdrawFailReason'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 401,
+      "end": 431,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 0
+        },
+        "end": {
+          "line": 13,
+          "column": 30
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 408,
+          "end": 414,
+          "loc": {
+            "start": {
+              "line": 13,
+              "column": 7
+            },
+            "end": {
+              "line": 13,
+              "column": 13
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 408,
+            "end": 414,
+            "loc": {
+              "start": {
+                "line": 13,
+                "column": 7
+              },
+              "end": {
+                "line": 13,
+                "column": 13
+              }
+            },
+            "name": "amount"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 420,
+        "end": 430,
+        "loc": {
+          "start": {
+            "line": 13,
+            "column": 19
+          },
+          "end": {
+            "line": 13,
+            "column": 29
+          }
+        },
+        "value": "./amount",
+        "rawValue": "./amount",
+        "raw": "'./amount'"
+      },
       "trailingComments": [
         {
           "type": "Block",
           "value": "*\n * This is the root reducer that will populate the store\n ",
-          "range": [
-            402,
-            466
-          ],
+          "start": 433,
+          "end": 497,
           "loc": {
             "start": {
-              "line": 14,
+              "line": 15,
               "column": 0
             },
             "end": {
-              "line": 16,
+              "line": 17,
               "column": 3
             }
-          }
+          },
+          "range": [
+            433,
+            497
+          ]
         }
       ]
     },
     {
       "type": "Identifier",
+      "start": 498,
+      "end": 614,
+      "loc": {
+        "start": {
+          "line": 18,
+          "column": 0
+        },
+        "end": {
+          "line": 18,
+          "column": 116
+        }
+      },
       "declarations": [
         {
           "type": "VariableDeclarator",
+          "start": 504,
+          "end": 613,
+          "loc": {
+            "start": {
+              "line": 18,
+              "column": 6
+            },
+            "end": {
+              "line": 18,
+              "column": 115
+            }
+          },
           "id": {
             "type": "Identifier",
-            "name": "rootReducer",
-            "range": [
-              473,
-              484
-            ],
+            "start": 504,
+            "end": 515,
             "loc": {
               "start": {
-                "line": 17,
+                "line": 18,
                 "column": 6
               },
               "end": {
-                "line": 17,
+                "line": 18,
                 "column": 17
               }
-            }
+            },
+            "name": "rootReducer",
+            "leadingComments": null
           },
           "init": {
             "type": "CallExpression",
+            "start": 518,
+            "end": 613,
+            "loc": {
+              "start": {
+                "line": 18,
+                "column": 20
+              },
+              "end": {
+                "line": 18,
+                "column": 115
+              }
+            },
             "callee": {
               "type": "Identifier",
-              "name": "combineReducers",
-              "range": [
-                487,
-                502
-              ],
+              "start": 518,
+              "end": 533,
               "loc": {
                 "start": {
-                  "line": 17,
+                  "line": 18,
                   "column": 20
                 },
                 "end": {
-                  "line": 17,
+                  "line": 18,
                   "column": 35
                 }
-              }
+              },
+              "name": "combineReducers"
             },
             "arguments": [
               {
                 "type": "ObjectExpression",
-                "properties": [
-                  {
-                    "type": "Property",
-                    "key": {
-                      "type": "Identifier",
-                      "name": "state",
-                      "range": [
-                        504,
-                        509
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 17,
-                          "column": 37
-                        },
-                        "end": {
-                          "line": 17,
-                          "column": 42
-                        }
-                      }
-                    },
-                    "value": {
-                      "type": "Identifier",
-                      "name": "state",
-                      "range": [
-                        504,
-                        509
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 17,
-                          "column": 37
-                        },
-                        "end": {
-                          "line": 17,
-                          "column": 42
-                        }
-                      }
-                    },
-                    "kind": "init",
-                    "method": false,
-                    "shorthand": true,
-                    "computed": false,
-                    "range": [
-                      504,
-                      509
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 17,
-                        "column": 37
-                      },
-                      "end": {
-                        "line": 17,
-                        "column": 42
-                      }
-                    }
-                  },
-                  {
-                    "type": "Property",
-                    "key": {
-                      "type": "Identifier",
-                      "name": "pinAttempts",
-                      "range": [
-                        510,
-                        521
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 17,
-                          "column": 43
-                        },
-                        "end": {
-                          "line": 17,
-                          "column": 54
-                        }
-                      }
-                    },
-                    "value": {
-                      "type": "Identifier",
-                      "name": "pinAttempts",
-                      "range": [
-                        510,
-                        521
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 17,
-                          "column": 43
-                        },
-                        "end": {
-                          "line": 17,
-                          "column": 54
-                        }
-                      }
-                    },
-                    "kind": "init",
-                    "method": false,
-                    "shorthand": true,
-                    "computed": false,
-                    "range": [
-                      510,
-                      521
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 17,
-                        "column": 43
-                      },
-                      "end": {
-                        "line": 17,
-                        "column": 54
-                      }
-                    }
-                  },
-                  {
-                    "type": "Property",
-                    "key": {
-                      "type": "Identifier",
-                      "name": "withdrawAttempts",
-                      "range": [
-                        522,
-                        538
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 17,
-                          "column": 55
-                        },
-                        "end": {
-                          "line": 17,
-                          "column": 71
-                        }
-                      }
-                    },
-                    "value": {
-                      "type": "Identifier",
-                      "name": "withdrawAttempts",
-                      "range": [
-                        522,
-                        538
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 17,
-                          "column": 55
-                        },
-                        "end": {
-                          "line": 17,
-                          "column": 71
-                        }
-                      }
-                    },
-                    "kind": "init",
-                    "method": false,
-                    "shorthand": true,
-                    "computed": false,
-                    "range": [
-                      522,
-                      538
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 17,
-                        "column": 55
-                      },
-                      "end": {
-                        "line": 17,
-                        "column": 71
-                      }
-                    }
-                  },
-                  {
-                    "type": "Property",
-                    "key": {
-                      "type": "Identifier",
-                      "name": "abortReason",
-                      "range": [
-                        539,
-                        550
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 17,
-                          "column": 72
-                        },
-                        "end": {
-                          "line": 17,
-                          "column": 83
-                        }
-                      }
-                    },
-                    "value": {
-                      "type": "Identifier",
-                      "name": "abortReason",
-                      "range": [
-                        539,
-                        550
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 17,
-                          "column": 72
-                        },
-                        "end": {
-                          "line": 17,
-                          "column": 83
-                        }
-                      }
-                    },
-                    "kind": "init",
-                    "method": false,
-                    "shorthand": true,
-                    "computed": false,
-                    "range": [
-                      539,
-                      550
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 17,
-                        "column": 72
-                      },
-                      "end": {
-                        "line": 17,
-                        "column": 83
-                      }
-                    }
-                  },
-                  {
-                    "type": "Property",
-                    "key": {
-                      "type": "Identifier",
-                      "name": "withdrawFailReason",
-                      "range": [
-                        551,
-                        569
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 17,
-                          "column": 84
-                        },
-                        "end": {
-                          "line": 17,
-                          "column": 102
-                        }
-                      }
-                    },
-                    "value": {
-                      "type": "Identifier",
-                      "name": "withdrawFailReason",
-                      "range": [
-                        551,
-                        569
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 17,
-                          "column": 84
-                        },
-                        "end": {
-                          "line": 17,
-                          "column": 102
-                        }
-                      }
-                    },
-                    "kind": "init",
-                    "method": false,
-                    "shorthand": true,
-                    "computed": false,
-                    "range": [
-                      551,
-                      569
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 17,
-                        "column": 84
-                      },
-                      "end": {
-                        "line": 17,
-                        "column": 102
-                      }
-                    }
-                  },
-                  {
-                    "type": "Property",
-                    "key": {
-                      "type": "Identifier",
-                      "name": "pin",
-                      "range": [
-                        570,
-                        573
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 17,
-                          "column": 103
-                        },
-                        "end": {
-                          "line": 17,
-                          "column": 106
-                        }
-                      }
-                    },
-                    "value": {
-                      "type": "Identifier",
-                      "name": "pin",
-                      "range": [
-                        570,
-                        573
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 17,
-                          "column": 103
-                        },
-                        "end": {
-                          "line": 17,
-                          "column": 106
-                        }
-                      }
-                    },
-                    "kind": "init",
-                    "method": false,
-                    "shorthand": true,
-                    "computed": false,
-                    "range": [
-                      570,
-                      573
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 17,
-                        "column": 103
-                      },
-                      "end": {
-                        "line": 17,
-                        "column": 106
-                      }
-                    }
-                  }
-                ],
-                "range": [
-                  503,
-                  574
-                ],
+                "start": 534,
+                "end": 612,
                 "loc": {
                   "start": {
-                    "line": 17,
+                    "line": 18,
                     "column": 36
                   },
                   "end": {
-                    "line": 17,
-                    "column": 107
+                    "line": 18,
+                    "column": 114
                   }
-                }
+                },
+                "properties": [
+                  {
+                    "type": "Property",
+                    "start": 535,
+                    "end": 540,
+                    "loc": {
+                      "start": {
+                        "line": 18,
+                        "column": 37
+                      },
+                      "end": {
+                        "line": 18,
+                        "column": 42
+                      }
+                    },
+                    "method": false,
+                    "shorthand": true,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 535,
+                      "end": 540,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 37
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 42
+                        }
+                      },
+                      "name": "state"
+                    },
+                    "kind": "init",
+                    "value": {
+                      "type": "Identifier",
+                      "start": 535,
+                      "end": 540,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 37
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 42
+                        }
+                      },
+                      "name": "state"
+                    }
+                  },
+                  {
+                    "type": "Property",
+                    "start": 541,
+                    "end": 552,
+                    "loc": {
+                      "start": {
+                        "line": 18,
+                        "column": 43
+                      },
+                      "end": {
+                        "line": 18,
+                        "column": 54
+                      }
+                    },
+                    "method": false,
+                    "shorthand": true,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 541,
+                      "end": 552,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 43
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 54
+                        }
+                      },
+                      "name": "pinAttempts"
+                    },
+                    "kind": "init",
+                    "value": {
+                      "type": "Identifier",
+                      "start": 541,
+                      "end": 552,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 43
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 54
+                        }
+                      },
+                      "name": "pinAttempts"
+                    }
+                  },
+                  {
+                    "type": "Property",
+                    "start": 553,
+                    "end": 569,
+                    "loc": {
+                      "start": {
+                        "line": 18,
+                        "column": 55
+                      },
+                      "end": {
+                        "line": 18,
+                        "column": 71
+                      }
+                    },
+                    "method": false,
+                    "shorthand": true,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 553,
+                      "end": 569,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 55
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 71
+                        }
+                      },
+                      "name": "withdrawAttempts"
+                    },
+                    "kind": "init",
+                    "value": {
+                      "type": "Identifier",
+                      "start": 553,
+                      "end": 569,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 55
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 71
+                        }
+                      },
+                      "name": "withdrawAttempts"
+                    }
+                  },
+                  {
+                    "type": "Property",
+                    "start": 570,
+                    "end": 581,
+                    "loc": {
+                      "start": {
+                        "line": 18,
+                        "column": 72
+                      },
+                      "end": {
+                        "line": 18,
+                        "column": 83
+                      }
+                    },
+                    "method": false,
+                    "shorthand": true,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 570,
+                      "end": 581,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 72
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 83
+                        }
+                      },
+                      "name": "abortReason"
+                    },
+                    "kind": "init",
+                    "value": {
+                      "type": "Identifier",
+                      "start": 570,
+                      "end": 581,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 72
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 83
+                        }
+                      },
+                      "name": "abortReason"
+                    }
+                  },
+                  {
+                    "type": "Property",
+                    "start": 582,
+                    "end": 600,
+                    "loc": {
+                      "start": {
+                        "line": 18,
+                        "column": 84
+                      },
+                      "end": {
+                        "line": 18,
+                        "column": 102
+                      }
+                    },
+                    "method": false,
+                    "shorthand": true,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 582,
+                      "end": 600,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 84
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 102
+                        }
+                      },
+                      "name": "withdrawFailReason"
+                    },
+                    "kind": "init",
+                    "value": {
+                      "type": "Identifier",
+                      "start": 582,
+                      "end": 600,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 84
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 102
+                        }
+                      },
+                      "name": "withdrawFailReason"
+                    }
+                  },
+                  {
+                    "type": "Property",
+                    "start": 601,
+                    "end": 604,
+                    "loc": {
+                      "start": {
+                        "line": 18,
+                        "column": 103
+                      },
+                      "end": {
+                        "line": 18,
+                        "column": 106
+                      }
+                    },
+                    "method": false,
+                    "shorthand": true,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 601,
+                      "end": 604,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 103
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 106
+                        }
+                      },
+                      "name": "pin"
+                    },
+                    "kind": "init",
+                    "value": {
+                      "type": "Identifier",
+                      "start": 601,
+                      "end": 604,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 103
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 106
+                        }
+                      },
+                      "name": "pin"
+                    }
+                  },
+                  {
+                    "type": "Property",
+                    "start": 605,
+                    "end": 611,
+                    "loc": {
+                      "start": {
+                        "line": 18,
+                        "column": 107
+                      },
+                      "end": {
+                        "line": 18,
+                        "column": 113
+                      }
+                    },
+                    "method": false,
+                    "shorthand": true,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 605,
+                      "end": 611,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 107
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 113
+                        }
+                      },
+                      "name": "amount"
+                    },
+                    "kind": "init",
+                    "value": {
+                      "type": "Identifier",
+                      "start": 605,
+                      "end": 611,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 107
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 113
+                        }
+                      },
+                      "name": "amount"
+                    }
+                  }
+                ]
               }
-            ],
-            "range": [
-              487,
-              575
-            ],
-            "loc": {
-              "start": {
-                "line": 17,
-                "column": 20
-              },
-              "end": {
-                "line": 17,
-                "column": 108
-              }
-            }
+            ]
           },
-          "range": [
-            473,
-            575
-          ],
-          "loc": {
-            "start": {
-              "line": 17,
-              "column": 6
-            },
-            "end": {
-              "line": 17,
-              "column": 108
-            }
-          }
+          "leadingComments": null
         }
       ],
       "kind": "const",
-      "range": [
-        467,
-        576
-      ],
-      "loc": {
-        "start": {
-          "line": 17,
-          "column": 0
-        },
-        "end": {
-          "line": 17,
-          "column": 109
-        }
-      },
       "leadingComments": [],
       "name": "_",
       "trailingComments": []
     },
     {
       "type": "Identifier",
-      "declaration": {
-        "type": "Identifier",
-        "name": "rootReducer",
-        "range": [
-          593,
-          604
-        ],
-        "loc": {
-          "start": {
-            "line": 19,
-            "column": 15
-          },
-          "end": {
-            "line": 19,
-            "column": 26
-          }
-        }
-      },
-      "range": [
-        578,
-        605
-      ],
+      "start": 616,
+      "end": 643,
       "loc": {
         "start": {
-          "line": 19,
+          "line": 20,
           "column": 0
         },
         "end": {
-          "line": 19,
+          "line": 20,
           "column": 27
         }
+      },
+      "declaration": {
+        "type": "Identifier",
+        "start": 631,
+        "end": 642,
+        "loc": {
+          "start": {
+            "line": 20,
+            "column": 15
+          },
+          "end": {
+            "line": 20,
+            "column": 26
+          }
+        },
+        "name": "rootReducer"
       },
       "name": "_",
       "leadingComments": [],
@@ -1066,546 +1131,498 @@
     },
     {
       "type": "ExportDefaultDeclaration",
+      "start": 616,
+      "end": 643,
+      "loc": {
+        "start": {
+          "line": 20,
+          "column": 0
+        },
+        "end": {
+          "line": 20,
+          "column": 27
+        }
+      },
       "declaration": {
         "type": "VariableDeclaration",
+        "start": 498,
+        "end": 614,
+        "loc": {
+          "start": {
+            "line": 18,
+            "column": 0
+          },
+          "end": {
+            "line": 18,
+            "column": 116
+          }
+        },
         "declarations": [
           {
             "type": "VariableDeclarator",
+            "start": 504,
+            "end": 613,
+            "loc": {
+              "start": {
+                "line": 18,
+                "column": 6
+              },
+              "end": {
+                "line": 18,
+                "column": 115
+              }
+            },
             "id": {
               "type": "Identifier",
-              "name": "rootReducer",
-              "range": [
-                473,
-                484
-              ],
+              "start": 504,
+              "end": 515,
               "loc": {
                 "start": {
-                  "line": 17,
+                  "line": 18,
                   "column": 6
                 },
                 "end": {
-                  "line": 17,
+                  "line": 18,
                   "column": 17
                 }
-              }
+              },
+              "name": "rootReducer",
+              "leadingComments": null
             },
             "init": {
               "type": "CallExpression",
+              "start": 518,
+              "end": 613,
+              "loc": {
+                "start": {
+                  "line": 18,
+                  "column": 20
+                },
+                "end": {
+                  "line": 18,
+                  "column": 115
+                }
+              },
               "callee": {
                 "type": "Identifier",
-                "name": "combineReducers",
-                "range": [
-                  487,
-                  502
-                ],
+                "start": 518,
+                "end": 533,
                 "loc": {
                   "start": {
-                    "line": 17,
+                    "line": 18,
                     "column": 20
                   },
                   "end": {
-                    "line": 17,
+                    "line": 18,
                     "column": 35
                   }
-                }
+                },
+                "name": "combineReducers"
               },
               "arguments": [
                 {
                   "type": "ObjectExpression",
-                  "properties": [
-                    {
-                      "type": "Property",
-                      "key": {
-                        "type": "Identifier",
-                        "name": "state",
-                        "range": [
-                          504,
-                          509
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 17,
-                            "column": 37
-                          },
-                          "end": {
-                            "line": 17,
-                            "column": 42
-                          }
-                        }
-                      },
-                      "value": {
-                        "type": "Identifier",
-                        "name": "state",
-                        "range": [
-                          504,
-                          509
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 17,
-                            "column": 37
-                          },
-                          "end": {
-                            "line": 17,
-                            "column": 42
-                          }
-                        }
-                      },
-                      "kind": "init",
-                      "method": false,
-                      "shorthand": true,
-                      "computed": false,
-                      "range": [
-                        504,
-                        509
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 17,
-                          "column": 37
-                        },
-                        "end": {
-                          "line": 17,
-                          "column": 42
-                        }
-                      }
-                    },
-                    {
-                      "type": "Property",
-                      "key": {
-                        "type": "Identifier",
-                        "name": "pinAttempts",
-                        "range": [
-                          510,
-                          521
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 17,
-                            "column": 43
-                          },
-                          "end": {
-                            "line": 17,
-                            "column": 54
-                          }
-                        }
-                      },
-                      "value": {
-                        "type": "Identifier",
-                        "name": "pinAttempts",
-                        "range": [
-                          510,
-                          521
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 17,
-                            "column": 43
-                          },
-                          "end": {
-                            "line": 17,
-                            "column": 54
-                          }
-                        }
-                      },
-                      "kind": "init",
-                      "method": false,
-                      "shorthand": true,
-                      "computed": false,
-                      "range": [
-                        510,
-                        521
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 17,
-                          "column": 43
-                        },
-                        "end": {
-                          "line": 17,
-                          "column": 54
-                        }
-                      }
-                    },
-                    {
-                      "type": "Property",
-                      "key": {
-                        "type": "Identifier",
-                        "name": "withdrawAttempts",
-                        "range": [
-                          522,
-                          538
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 17,
-                            "column": 55
-                          },
-                          "end": {
-                            "line": 17,
-                            "column": 71
-                          }
-                        }
-                      },
-                      "value": {
-                        "type": "Identifier",
-                        "name": "withdrawAttempts",
-                        "range": [
-                          522,
-                          538
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 17,
-                            "column": 55
-                          },
-                          "end": {
-                            "line": 17,
-                            "column": 71
-                          }
-                        }
-                      },
-                      "kind": "init",
-                      "method": false,
-                      "shorthand": true,
-                      "computed": false,
-                      "range": [
-                        522,
-                        538
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 17,
-                          "column": 55
-                        },
-                        "end": {
-                          "line": 17,
-                          "column": 71
-                        }
-                      }
-                    },
-                    {
-                      "type": "Property",
-                      "key": {
-                        "type": "Identifier",
-                        "name": "abortReason",
-                        "range": [
-                          539,
-                          550
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 17,
-                            "column": 72
-                          },
-                          "end": {
-                            "line": 17,
-                            "column": 83
-                          }
-                        }
-                      },
-                      "value": {
-                        "type": "Identifier",
-                        "name": "abortReason",
-                        "range": [
-                          539,
-                          550
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 17,
-                            "column": 72
-                          },
-                          "end": {
-                            "line": 17,
-                            "column": 83
-                          }
-                        }
-                      },
-                      "kind": "init",
-                      "method": false,
-                      "shorthand": true,
-                      "computed": false,
-                      "range": [
-                        539,
-                        550
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 17,
-                          "column": 72
-                        },
-                        "end": {
-                          "line": 17,
-                          "column": 83
-                        }
-                      }
-                    },
-                    {
-                      "type": "Property",
-                      "key": {
-                        "type": "Identifier",
-                        "name": "withdrawFailReason",
-                        "range": [
-                          551,
-                          569
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 17,
-                            "column": 84
-                          },
-                          "end": {
-                            "line": 17,
-                            "column": 102
-                          }
-                        }
-                      },
-                      "value": {
-                        "type": "Identifier",
-                        "name": "withdrawFailReason",
-                        "range": [
-                          551,
-                          569
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 17,
-                            "column": 84
-                          },
-                          "end": {
-                            "line": 17,
-                            "column": 102
-                          }
-                        }
-                      },
-                      "kind": "init",
-                      "method": false,
-                      "shorthand": true,
-                      "computed": false,
-                      "range": [
-                        551,
-                        569
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 17,
-                          "column": 84
-                        },
-                        "end": {
-                          "line": 17,
-                          "column": 102
-                        }
-                      }
-                    },
-                    {
-                      "type": "Property",
-                      "key": {
-                        "type": "Identifier",
-                        "name": "pin",
-                        "range": [
-                          570,
-                          573
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 17,
-                            "column": 103
-                          },
-                          "end": {
-                            "line": 17,
-                            "column": 106
-                          }
-                        }
-                      },
-                      "value": {
-                        "type": "Identifier",
-                        "name": "pin",
-                        "range": [
-                          570,
-                          573
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 17,
-                            "column": 103
-                          },
-                          "end": {
-                            "line": 17,
-                            "column": 106
-                          }
-                        }
-                      },
-                      "kind": "init",
-                      "method": false,
-                      "shorthand": true,
-                      "computed": false,
-                      "range": [
-                        570,
-                        573
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 17,
-                          "column": 103
-                        },
-                        "end": {
-                          "line": 17,
-                          "column": 106
-                        }
-                      }
-                    }
-                  ],
-                  "range": [
-                    503,
-                    574
-                  ],
+                  "start": 534,
+                  "end": 612,
                   "loc": {
                     "start": {
-                      "line": 17,
+                      "line": 18,
                       "column": 36
                     },
                     "end": {
-                      "line": 17,
-                      "column": 107
+                      "line": 18,
+                      "column": 114
                     }
-                  }
+                  },
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "start": 535,
+                      "end": 540,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 37
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 42
+                        }
+                      },
+                      "method": false,
+                      "shorthand": true,
+                      "computed": false,
+                      "key": {
+                        "type": "Identifier",
+                        "start": 535,
+                        "end": 540,
+                        "loc": {
+                          "start": {
+                            "line": 18,
+                            "column": 37
+                          },
+                          "end": {
+                            "line": 18,
+                            "column": 42
+                          }
+                        },
+                        "name": "state"
+                      },
+                      "kind": "init",
+                      "value": {
+                        "type": "Identifier",
+                        "start": 535,
+                        "end": 540,
+                        "loc": {
+                          "start": {
+                            "line": 18,
+                            "column": 37
+                          },
+                          "end": {
+                            "line": 18,
+                            "column": 42
+                          }
+                        },
+                        "name": "state"
+                      }
+                    },
+                    {
+                      "type": "Property",
+                      "start": 541,
+                      "end": 552,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 43
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 54
+                        }
+                      },
+                      "method": false,
+                      "shorthand": true,
+                      "computed": false,
+                      "key": {
+                        "type": "Identifier",
+                        "start": 541,
+                        "end": 552,
+                        "loc": {
+                          "start": {
+                            "line": 18,
+                            "column": 43
+                          },
+                          "end": {
+                            "line": 18,
+                            "column": 54
+                          }
+                        },
+                        "name": "pinAttempts"
+                      },
+                      "kind": "init",
+                      "value": {
+                        "type": "Identifier",
+                        "start": 541,
+                        "end": 552,
+                        "loc": {
+                          "start": {
+                            "line": 18,
+                            "column": 43
+                          },
+                          "end": {
+                            "line": 18,
+                            "column": 54
+                          }
+                        },
+                        "name": "pinAttempts"
+                      }
+                    },
+                    {
+                      "type": "Property",
+                      "start": 553,
+                      "end": 569,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 55
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 71
+                        }
+                      },
+                      "method": false,
+                      "shorthand": true,
+                      "computed": false,
+                      "key": {
+                        "type": "Identifier",
+                        "start": 553,
+                        "end": 569,
+                        "loc": {
+                          "start": {
+                            "line": 18,
+                            "column": 55
+                          },
+                          "end": {
+                            "line": 18,
+                            "column": 71
+                          }
+                        },
+                        "name": "withdrawAttempts"
+                      },
+                      "kind": "init",
+                      "value": {
+                        "type": "Identifier",
+                        "start": 553,
+                        "end": 569,
+                        "loc": {
+                          "start": {
+                            "line": 18,
+                            "column": 55
+                          },
+                          "end": {
+                            "line": 18,
+                            "column": 71
+                          }
+                        },
+                        "name": "withdrawAttempts"
+                      }
+                    },
+                    {
+                      "type": "Property",
+                      "start": 570,
+                      "end": 581,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 72
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 83
+                        }
+                      },
+                      "method": false,
+                      "shorthand": true,
+                      "computed": false,
+                      "key": {
+                        "type": "Identifier",
+                        "start": 570,
+                        "end": 581,
+                        "loc": {
+                          "start": {
+                            "line": 18,
+                            "column": 72
+                          },
+                          "end": {
+                            "line": 18,
+                            "column": 83
+                          }
+                        },
+                        "name": "abortReason"
+                      },
+                      "kind": "init",
+                      "value": {
+                        "type": "Identifier",
+                        "start": 570,
+                        "end": 581,
+                        "loc": {
+                          "start": {
+                            "line": 18,
+                            "column": 72
+                          },
+                          "end": {
+                            "line": 18,
+                            "column": 83
+                          }
+                        },
+                        "name": "abortReason"
+                      }
+                    },
+                    {
+                      "type": "Property",
+                      "start": 582,
+                      "end": 600,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 84
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 102
+                        }
+                      },
+                      "method": false,
+                      "shorthand": true,
+                      "computed": false,
+                      "key": {
+                        "type": "Identifier",
+                        "start": 582,
+                        "end": 600,
+                        "loc": {
+                          "start": {
+                            "line": 18,
+                            "column": 84
+                          },
+                          "end": {
+                            "line": 18,
+                            "column": 102
+                          }
+                        },
+                        "name": "withdrawFailReason"
+                      },
+                      "kind": "init",
+                      "value": {
+                        "type": "Identifier",
+                        "start": 582,
+                        "end": 600,
+                        "loc": {
+                          "start": {
+                            "line": 18,
+                            "column": 84
+                          },
+                          "end": {
+                            "line": 18,
+                            "column": 102
+                          }
+                        },
+                        "name": "withdrawFailReason"
+                      }
+                    },
+                    {
+                      "type": "Property",
+                      "start": 601,
+                      "end": 604,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 103
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 106
+                        }
+                      },
+                      "method": false,
+                      "shorthand": true,
+                      "computed": false,
+                      "key": {
+                        "type": "Identifier",
+                        "start": 601,
+                        "end": 604,
+                        "loc": {
+                          "start": {
+                            "line": 18,
+                            "column": 103
+                          },
+                          "end": {
+                            "line": 18,
+                            "column": 106
+                          }
+                        },
+                        "name": "pin"
+                      },
+                      "kind": "init",
+                      "value": {
+                        "type": "Identifier",
+                        "start": 601,
+                        "end": 604,
+                        "loc": {
+                          "start": {
+                            "line": 18,
+                            "column": 103
+                          },
+                          "end": {
+                            "line": 18,
+                            "column": 106
+                          }
+                        },
+                        "name": "pin"
+                      }
+                    },
+                    {
+                      "type": "Property",
+                      "start": 605,
+                      "end": 611,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 107
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 113
+                        }
+                      },
+                      "method": false,
+                      "shorthand": true,
+                      "computed": false,
+                      "key": {
+                        "type": "Identifier",
+                        "start": 605,
+                        "end": 611,
+                        "loc": {
+                          "start": {
+                            "line": 18,
+                            "column": 107
+                          },
+                          "end": {
+                            "line": 18,
+                            "column": 113
+                          }
+                        },
+                        "name": "amount"
+                      },
+                      "kind": "init",
+                      "value": {
+                        "type": "Identifier",
+                        "start": 605,
+                        "end": 611,
+                        "loc": {
+                          "start": {
+                            "line": 18,
+                            "column": 107
+                          },
+                          "end": {
+                            "line": 18,
+                            "column": 113
+                          }
+                        },
+                        "name": "amount"
+                      }
+                    }
+                  ]
                 }
-              ],
-              "range": [
-                487,
-                575
-              ],
-              "loc": {
-                "start": {
-                  "line": 17,
-                  "column": 20
-                },
-                "end": {
-                  "line": 17,
-                  "column": 108
-                }
-              }
+              ]
             },
-            "range": [
-              473,
-              575
-            ],
-            "loc": {
-              "start": {
-                "line": 17,
-                "column": 6
-              },
-              "end": {
-                "line": 17,
-                "column": 108
-              }
-            }
+            "leadingComments": null
           }
         ],
         "kind": "const",
-        "range": [
-          467,
-          576
-        ],
-        "loc": {
-          "start": {
-            "line": 17,
-            "column": 0
-          },
-          "end": {
-            "line": 17,
-            "column": 109
-          }
-        },
         "leadingComments": [
           {
             "type": "Block",
             "value": "*\n * This is the root reducer that will populate the store\n ",
-            "range": [
-              402,
-              466
-            ],
+            "start": 433,
+            "end": 497,
             "loc": {
               "start": {
-                "line": 14,
+                "line": 15,
                 "column": 0
               },
               "end": {
-                "line": 16,
+                "line": 17,
                 "column": 3
               }
-            }
+            },
+            "range": [
+              433,
+              497
+            ]
           }
         ],
         "trailingComments": []
-      },
-      "range": [
-        578,
-        605
-      ],
-      "loc": {
-        "start": {
-          "line": 19,
-          "column": 0
-        },
-        "end": {
-          "line": 19,
-          "column": 27
-        }
-      }
-    }
-  ],
-  "sourceType": "module",
-  "range": [
-    118,
-    605
-  ],
-  "loc": {
-    "start": {
-      "line": 6,
-      "column": 0
-    },
-    "end": {
-      "line": 19,
-      "column": 27
-    }
-  },
-  "comments": [
-    {
-      "type": "Block",
-      "value": "*\n * @file Includes all the reducers that the application needs in order to execute\n * @author Edward Gonzalez\n ",
-      "range": [
-        0,
-        116
-      ],
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 0
-        },
-        "end": {
-          "line": 4,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": "Block",
-      "value": "*\n * This is the root reducer that will populate the store\n ",
-      "range": [
-        402,
-        466
-      ],
-      "loc": {
-        "start": {
-          "line": 14,
-          "column": 0
-        },
-        "end": {
-          "line": 16,
-          "column": 3
-        }
       }
     }
   ]

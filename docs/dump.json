@@ -9,8 +9,8 @@
     "longname": "src/actions/index.js",
     "access": null,
     "description": null,
-    "lineNumber": 6,
-    "content": "/**\n * @file Contains the action generators\n * @author Edward Gonzalez\n */\n\nimport * as ActionTypes from '../constants/ActionTypes';\nimport * as AbortReasons from '../constants/AbortReasons';\nimport * as WithdrawFailReasons from '../constants/WithdrawFailReasons';\n\n/*\n * @ignore\n */\nconst AbortReasonsList = Object.keys(AbortReasons);\n\n/*\n * @ignore\n */\nconst WithdrawFailReasonsList = Object.keys(WithdrawFailReasons);\n\n/**\n * Executes when the card has been inserted by the user\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n */\nexport const cardInserted = ()=>{\n\treturn {'type':ActionTypes.CARD_INSERTED}\n}\n\n/**\n * Executes when the card has been processed by the ATM\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n */\nexport const cardProcessed = ()=>{\n\treturn {'type':ActionTypes.CARD_PROCESSED}\n}\n\n/**\n * Executes when the pin has been inserted by the user\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n * @property {String} payload The inserted pin\n */\nexport const pinInserted = (pin)=>{\n\tif (!pin || typeof(pin) !== \"string\"){\n\t\tthrow new Error('cannot execute action pinInserted without a valid pin',pin);\n\t}\n\treturn {'type':ActionTypes.PIN_INSERTED,'payload':pin};\n}\n\n/**\n * Executes when the pin processed is valid\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n */\nexport const pinProcessedValid = ()=>{\n\treturn {'type':ActionTypes.PIN_PROCESSED_VALID};\n}\n\n/**\n * Executes when the pin processed is not valid\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n */\nexport const pinProcessedInvalid = ()=>{\n\treturn {'type':ActionTypes.PIN_PROCESSED_INVALID};\n}\n\n/**\n * Executes when the user specifies that he wants to withdraw some money\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n */\nexport const withdraw = (amount)=>{\n\tif (!amount || typeof(amount) !== \"number\" || amount < 0){\n\t\tthrow new Error('cannot execute action withdraw without a valid amount',amount);\n\t}\n\treturn {'type':ActionTypes.WITHDRAW,'payload':amount};\n}\n\n/**\n * Executes when the withdraw was suscesful\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n */\nexport const withdrawSuscesful = ()=>{\n\treturn {'type':ActionTypes.WITHDRAW_SUSCESFUL};\n}\n\n/**\n * Executes when the withdraw has failed\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n * @property {String} payload The inserted pin as defined in WithdrawFailReasons\n */\nexport const withdrawFailed = (reason)=>{\n\tif (WithdrawFailReasonsList.indexOf(reason) === -1){\n\t\tthrow new Error('cannot execute action withdrawFailed without a valid reason',reason,'from',WithdrawFailReasonsList);\n\t}\n\treturn {'type':ActionTypes.WITHDRAW_SUSCESFUL,'payload':reason};\n}\n\n/**\n * Executes when the money is delivered\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n */\nexport const moneyDelivered = ()=>{\n\treturn {'type':ActionTypes.MONEY_DELIVERED};\n}\n\n/**\n * Executes when the user takes the card and the money\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n */\nexport const cardAndMoneyTaken = ()=>{\n\treturn {'type':ActionTypes.CARD_AND_MONEY_TAKEN};\n}\n\n/**\n * Executes when the ATM is done\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n */\nexport const finished = ()=>{\n\treturn {'type':ActionTypes.FINISHED};\n}\n\n/**\n * Executes when the ATM aborts for some reason\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n * @property {String} payload The reason why it aborts as defined in AbortReasons\n */\nexport const performAbort = (reason)=>{\n\tif (AbortReasonsList.indexOf(reason) === -1){\n\t\tthrow new Error('cannot execute action performAbort without a valid reason',reason,'from',AbortReasonsList);\n\t}\n\treturn {'type':ActionTypes.PERFORM_ABORT,'payload':reason};\n}\n\n/**\n * Executes when the ATM completes the abort process\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n */\nexport const completeAbort = ()=>{\n\treturn {'type':ActionTypes.COMPLETE_ABORT};\n}\n"
+    "lineNumber": 1,
+    "content": "/**\n * @file Contains the action generators\n * @author Edward Gonzalez\n */\n\nimport * as ActionTypes from '../constants/ActionTypes';\nimport * as AbortReasons from '../constants/AbortReasons';\nimport * as WithdrawFailReasons from '../constants/WithdrawFailReasons';\n\n/*\n * @ignore\n */\nconst AbortReasonsList = Object.keys(AbortReasons);\n\n/*\n * @ignore\n */\nconst WithdrawFailReasonsList = Object.keys(WithdrawFailReasons);\n\n/**\n * Executes when the card has been inserted by the user\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n */\nexport const cardInserted = ()=>{\n\treturn {'type':ActionTypes.CARD_INSERTED}\n}\n\n/**\n * Executes when the card has been processed by the ATM\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n */\nexport const cardProcessed = ()=>{\n\treturn {'type':ActionTypes.CARD_PROCESSED}\n}\n\n/**\n * Executes when the pin has been inserted by the user\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n * @property {String} payload The inserted pin\n */\nexport const pinInserted = (pin)=>{\n\tif (!pin || typeof(pin) !== \"string\"){\n\t\tthrow new Error('cannot execute action pinInserted without a valid pin',pin);\n\t}\n\treturn {'type':ActionTypes.PIN_INSERTED,'payload':pin};\n}\n\n/**\n * Executes when the pin processed is valid\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n */\nexport const pinProcessedValid = ()=>{\n\treturn {'type':ActionTypes.PIN_PROCESSED_VALID};\n}\n\n/**\n * Executes when the pin processed is not valid\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n */\nexport const pinProcessedInvalid = ()=>{\n\treturn {'type':ActionTypes.PIN_PROCESSED_INVALID};\n}\n\n/**\n * Executes when the user specifies that he wants to withdraw some money\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n */\nexport const withdraw = (amount)=>{\n\tif (!amount || typeof(amount) !== \"number\" || amount < 0){\n\t\tthrow new Error('cannot execute action withdraw without a valid amount',amount);\n\t}\n\treturn {'type':ActionTypes.WITHDRAW,'payload':amount};\n}\n\n/**\n * Executes when the withdraw was suscesful\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n */\nexport const withdrawSuscesful = ()=>{\n\treturn {'type':ActionTypes.WITHDRAW_SUSCESFUL};\n}\n\n/**\n * Executes when the withdraw has failed\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n * @property {String} payload The inserted pin as defined in WithdrawFailReasons\n */\nexport const withdrawFailed = (reason)=>{\n\tif (WithdrawFailReasonsList.indexOf(reason) === -1){\n\t\tthrow new Error('cannot execute action withdrawFailed without a valid reason',reason,'from',WithdrawFailReasonsList);\n\t}\n\treturn {'type':ActionTypes.WITHDRAW_FAILED,'payload':reason};\n}\n\n/**\n * Executes when the money is delivered\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n */\nexport const moneyDelivered = ()=>{\n\treturn {'type':ActionTypes.MONEY_DELIVERED};\n}\n\n/**\n * Executes when the user takes the card and the money\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n */\nexport const cardAndMoneyTaken = ()=>{\n\treturn {'type':ActionTypes.CARD_AND_MONEY_TAKEN};\n}\n\n/**\n * Executes when the ATM is done\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n */\nexport const finished = ()=>{\n\treturn {'type':ActionTypes.FINISHED};\n}\n\n/**\n * Executes when the ATM aborts for some reason\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n * @property {String} payload The reason why it aborts as defined in AbortReasons\n */\nexport const performAbort = (reason)=>{\n\tif (AbortReasonsList.indexOf(reason) === -1){\n\t\tthrow new Error('cannot execute action performAbort without a valid reason',reason,'from',AbortReasonsList);\n\t}\n\treturn {'type':ActionTypes.PERFORM_ABORT,'payload':reason};\n}\n\n/**\n * Executes when the ATM completes the abort process\n * @return {Object} The generated action\n * @property {String} type The type constant as defined in ActionTypes\n */\nexport const completeAbort = ()=>{\n\treturn {'type':ActionTypes.COMPLETE_ABORT};\n}\n"
   },
   {
     "__docId__": 1,
@@ -614,7 +614,7 @@
     "longname": "src/constants/AbortReasons.js",
     "access": null,
     "description": null,
-    "lineNumber": 9,
+    "lineNumber": 1,
     "content": "/**\n * @file Contains the action generators\n * @author Edward Gonzalez\n */\n\n/**\n * When the user tried too much on an invalid pin\n */\nexport const TOO_MANY_FAILED_PIN_ATTEMPTS = 'TOO_MANY_FAILED_PIN_ATTEMPTS';\n\n/**\n * When the user tried too much to withdraw on the excessive amount\n */\nexport const TOO_MANY_FAILED_WITHDRAW_ATTEMPTS = 'TOO_MANY_FAILED_WITHDRAW_ATTEMPTS';\n\n/**\n * When the user asked more than it had\n */\nexport const NOT_ENOUGH_FUNDS = 'NOT_ENOUGH_FUNDS';\n\n/**\n * When the user cancels on its own\n */\nexport const USER_CANCELS = 'USER_CANCELS';\n"
   },
   {
@@ -707,7 +707,7 @@
     "longname": "src/constants/ActionTypes.js",
     "access": null,
     "description": null,
-    "lineNumber": 9,
+    "lineNumber": 1,
     "content": "/**\n * @file Contains the action types constants\n * @author Edward Gonzalez\n */\n\n/**\n * The card has been inserted by the user\n */\nexport const CARD_INSERTED = 'CARD_INSERTED';\n\n/**\n * The card has been processed by the ATM\n */\nexport const CARD_PROCESSED = 'CARD_PROCESSED';\n\n/**\n * The pin has been inserted by the user\n */\nexport const PIN_INSERTED = 'PIN_INSERTED';\n\n/**\n * The pin is valid\n */\nexport const PIN_PROCESSED_VALID = 'PIN_PROCESSED_VALID';\n\n/**\n * The pin is invalid\n */\nexport const PIN_PROCESSED_INVALID = 'PIN_PROCESSED_INVALID';\n\n/**\n * withdraw some money\n */\nexport const WITHDRAW = 'WITHDRAW';\n\n/**\n * withdraw was suscesful\n */\nexport const WITHDRAW_SUSCESFUL = 'WITHDRAW_SUSCESFUL';\n\n/**\n * withdraw has failed\n */\nexport const WITHDRAW_FAILED = 'WITHDRAW_FAILED';\n\n/**\n * money has been delivered\n */\nexport const MONEY_DELIVERED = 'MONEY_DELIVERED';\n\n/**\n * The user took his card and money\n */\nexport const CARD_AND_MONEY_TAKEN = 'CARD_AND_MONEY_TAKEN';\n\n/**\n * Process finished\n */\nexport const FINISHED = 'FINISHED';\n\n/**\n * Trigger an abort\n */\nexport const PERFORM_ABORT = 'PERFORM_ABORT';\n\n/**\n * Abort has been completed\n */\nexport const COMPLETE_ABORT = 'COMPLETE_ABORT';\n"
   },
   {
@@ -980,7 +980,7 @@
     "longname": "src/constants/States.js",
     "access": null,
     "description": null,
-    "lineNumber": 9,
+    "lineNumber": 1,
     "content": "/**\n * @file Contains the ATM states\n * @author Edward Gonzalez\n */\n\n/**\n * The ATM is waiting for the card\n */\nexport const WAITING_FOR_CARD = 'WAITING_FOR_CARD';\n\n/**\n * The ATM is processing the card\n */\nexport const PROCESSING_CARD = 'PROCESSING_CARD';\n\n/**\n * The ATM is waiting for the pin to be inserted\n */\nexport const WAITING_FOR_PIN = 'WAITING_FOR_PIN';\n\n/**\n * The ATM is processing the pin\n */\nexport const PROCESSING_PIN = 'PROCESSING_PIN';\n\n/**\n * The ATM is waiting for the amount to be set\n */\nexport const WAITING_FOR_AMOUNT = 'WAITING_FOR_AMOUNT';\n\n/**\n * The ATM is processing the amount\n */\nexport const PROCESSING_AMOUNT = 'PROCESSING_AMOUNT';\n\n/**\n * The ATM is delivering the money\n */\nexport const DELIVERING = 'DELIVERING';\n\n/**\n * The ATM has delivered the money\n */\nexport const DELIVERED = 'DELIVERED';\n\n/**\n * The ATM is done with the process and will restart\n */\nexport const DONE = 'DONE';\n\n/**\n * The ATM is aborting\n */\nexport const ABORTING = 'ABORTING';\n"
   },
   {
@@ -1193,7 +1193,7 @@
     "longname": "src/constants/WithdrawFailReasons.js",
     "access": null,
     "description": null,
-    "lineNumber": 9,
+    "lineNumber": 1,
     "content": "/**\n * @file Contains the reasons why a withdraw action may fail (note that this should allow to try again)\n * @author Edward Gonzalez\n */\n\n/**\n * Specifies that the limit of the transaction size is reached\n */\nexport const LIMIT_REACHED = 'LIMIT_REACHED';\n"
   },
   {
@@ -1226,8 +1226,8 @@
     "longname": "src/constants/config.js",
     "access": null,
     "description": null,
-    "lineNumber": 9,
-    "content": "/**\n * @file Contains the configuration of the ATM\n * @author Edward Gonzalez\n */\n\n/**\n * The maximum times you can retry to input the pin\n */\nexport const MAX_PIN_TRIES = 3;\n\n/**\n * Right pin number\n */\nexport const RIGHT_PIN = \"1234\";\n"
+    "lineNumber": 1,
+    "content": "/**\n * @file Contains the configuration of the ATM\n * @author Edward Gonzalez\n */\n\n/**\n * The maximum times you can retry to input the pin\n */\nexport const MAX_PIN_TRIES = 3;\n\n/**\n * Right pin number\n */\nexport const RIGHT_PIN = \"1234\";\n\n/**\n * The funds of the user\n */\nexport const FUNDS = 1200;\n"
   },
   {
     "__docId__": 49,
@@ -1271,6 +1271,182 @@
   },
   {
     "__docId__": 51,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "FUNDS",
+    "memberof": "src/constants/config.js",
+    "longname": "src/constants/config.js~FUNDS",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/config.js",
+    "importStyle": "{FUNDS}",
+    "description": "The funds of the user",
+    "lineNumber": 19,
+    "type": {
+      "types": [
+        "number"
+      ]
+    }
+  },
+  {
+    "__docId__": 52,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/containers/App.js",
+    "memberof": null,
+    "longname": "src/containers/App.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "/**\n * @file Contains the main app class that controls all the application behaviour\n * @author Edward Gonzalez\n */\n\nimport React from 'react';\nimport { bindActionCreators } from 'redux';\nimport { connect } from 'react-redux';\n\nimport * as actions from '../actions';\nimport * as controllers from '../controllers';\nimport * as States from '../constants/States';\nimport * as AbortReasons from '../constants/AbortReasons';\nimport * as WithdrawFailReasons from '../constants/WithdrawFailReasons';\n\n/** \n * This is the main application class that controls all the components that render a specific view\n * It uses the state out of the store in order to render the view\n */\nclass App extends React.Component {\n\tstatic propTypes = {\n\t\tATMState: React.PropTypes.shape({\n\t\t\t'state':React.PropTypes.oneOf(Object.keys(States)).isRequired,\n\t\t\t'pinAttempts':React.PropTypes.number.isRequired,\n\t\t\t'withdrawAttempts':React.PropTypes.number.isRequired,\n\t\t\t'abortReason':React.PropTypes.oneOf(Object.keys(AbortReasons)),\n\t\t\t'withdrawFailReason':React.PropTypes.oneOf(Object.keys(WithdrawFailReasons))\n\t\t})\n\t}\n\t/**\n\t * Render function\n\t * @returns {React.Component}\n\t */\n\trender(){\n\t\tswitch (this.props.ATMState.state){\n\t\t\tcase States.WAITING_FOR_CARD:\n\t\t\t\treturn (<controllers.WaitingForCard ATMState={this.props.ATMState} actions={this.props.actions}/>);\n\t\t\tcase States.PROCESSING_CARD:\n\t\t\t\treturn (<controllers.ProcessingCard ATMState={this.props.ATMState} actions={this.props.actions}/>);\n\t\t\tcase States.WAITING_FOR_PIN:\n\t\t\t\treturn (<controllers.WaitingForPin ATMState={this.props.ATMState} actions={this.props.actions}/>);\n\t\t\tcase States.PROCESSING_PIN:\n\t\t\t\treturn (<controllers.ProcessingPin ATMState={this.props.ATMState} actions={this.props.actions}/>);\n\t\t\tcase States.ABORTING:\n\t\t\t\treturn (<controllers.Aborting ATMState={this.props.ATMState} actions={this.props.actions}/>);\n\t\t\tcase States.WAITING_FOR_AMOUNT:\n\t\t\t\treturn (<controllers.WaitingForAmount ATMState={this.props.ATMState} actions={this.props.actions}/>);\n\t\t\tdefault:\n\t\t\t\treturn (<div>NOT IMPLEMENTED</div>);\n\t\t}\n\t}\n}\n\n/**\n * @ignore\n */\nconst mapStateToProps = (state)=>{\n\treturn {\n\t\tATMState: state\n\t}\n};\n\n/**\n * @ignore\n */\nconst mapDispatchToProps = (dispatch)=>{\n\treturn {\n\t\tactions: bindActionCreators(actions, dispatch)\n\t}\n};\n\nexport default connect(\n\tmapStateToProps,\n\tmapDispatchToProps\n)(App);\n"
+  },
+  {
+    "__docId__": 53,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "App",
+    "memberof": "src/containers/App.js",
+    "longname": "src/containers/App.js~App",
+    "access": null,
+    "export": false,
+    "importPath": "N26ATM/src/containers/App.js",
+    "importStyle": null,
+    "description": "This is the main application class that controls all the components that render a specific view\nIt uses the state out of the store in order to render the view",
+    "lineNumber": 20,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 54,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/containers/App.js~App",
+    "longname": "src/containers/App.js~App#render",
+    "access": null,
+    "description": "Render function",
+    "lineNumber": 34,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{React.Component}"
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "React.Component"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 55,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "mapStateToProps",
+    "memberof": "src/containers/App.js",
+    "longname": "src/containers/App.js~mapStateToProps",
+    "access": null,
+    "export": false,
+    "importPath": "N26ATM/src/containers/App.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 57,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "mapDispatchToProps",
+    "memberof": "src/containers/App.js",
+    "longname": "src/containers/App.js~mapDispatchToProps",
+    "access": null,
+    "export": false,
+    "importPath": "N26ATM/src/containers/App.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 66,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/controllers/Aborting.js",
+    "memberof": null,
+    "longname": "src/controllers/Aborting.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "/**\n * @file Contains the aborting controller that shows a message as well as tells to retrieve the card\n * @author Edward Gonzalez\n */\n\nimport React from 'react';\n\nimport * as AbortReasons from '../constants/AbortReasons';\nimport Aborting from '../views/Aborting';\n\n/** \n * This is the controller class that will handle the aborting operation\n */\nexport default class AbortingController extends React.Component {\n\tstatic propTypes = {\n\t\tactions:  React.PropTypes.shape({\n\t\t\t'completeAbort':React.PropTypes.func.isRequired\n\t\t}).isRequired,\n\t\tATMState: React.PropTypes.shape({\n\t\t\t'abortReason':React.PropTypes.oneOf(Object.keys(AbortReasons)).isRequired\n\t\t}).isRequired\n\t}\n\t/**\n\t * Render function\n\t * @return {React.Component}\n\t */\n\trender(){\n\t\treturn (<Aborting reason={this.props.ATMState.abortReason} onAbortCompleted={this.props.actions.completeAbort}/>);\n\t}\n}\n"
+  },
+  {
+    "__docId__": 58,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "AbortingController",
+    "memberof": "src/controllers/Aborting.js",
+    "longname": "src/controllers/Aborting.js~AbortingController",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/controllers/Aborting.js",
+    "importStyle": "AbortingController",
+    "description": "This is the controller class that will handle the aborting operation",
+    "lineNumber": 14,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 59,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/controllers/Aborting.js~AbortingController",
+    "longname": "src/controllers/Aborting.js~AbortingController#render",
+    "access": null,
+    "description": "Render function",
+    "lineNumber": 27,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "React.Component"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 60,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1279,11 +1455,11 @@
     "longname": "src/controllers/Delivered.js",
     "access": null,
     "description": null,
-    "lineNumber": 0,
+    "lineNumber": 1,
     "content": ""
   },
   {
-    "__docId__": 52,
+    "__docId__": 61,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1292,11 +1468,11 @@
     "longname": "src/controllers/Delivering.js",
     "access": null,
     "description": null,
-    "lineNumber": 0,
+    "lineNumber": 1,
     "content": ""
   },
   {
-    "__docId__": 53,
+    "__docId__": 62,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1305,11 +1481,11 @@
     "longname": "src/controllers/Done.js",
     "access": null,
     "description": null,
-    "lineNumber": 0,
+    "lineNumber": 1,
     "content": ""
   },
   {
-    "__docId__": 54,
+    "__docId__": 63,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1318,11 +1494,163 @@
     "longname": "src/controllers/ProcessingAmount.js",
     "access": null,
     "description": null,
-    "lineNumber": 0,
+    "lineNumber": 1,
     "content": ""
   },
   {
-    "__docId__": 55,
+    "__docId__": 64,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/controllers/ProcessingCard.js",
+    "memberof": null,
+    "longname": "src/controllers/ProcessingCard.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "/**\n * @file Contains the processing card controller\n * @author Edward Gonzalez\n */\n\nimport React from 'react';\n\nimport ProcessingCard from '../views/ProcessingCard';\n\n/** \n * This is the controller that processes the card operation\n * Because it's a dummy controller it only waits after a specific timeout\n */\nexport default class ProcessingCardController extends React.Component {\n\tstatic propTypes = {\n\t\tactions: React.PropTypes.shape({\n\t\t\t'cardProcessed':React.PropTypes.func.isRequired\n\t\t}).isRequired\n\t}\n\n\t/**\n\t * Waits 2 seconds before setting into card processed state\n\t * @return {undefined}\n\t */\n\tcomponentDidMount(){\n\t\tsetTimeout(()=>{\n\t\t\tthis.props.actions.cardProcessed();\n\t\t},2000);\n\t}\n\n\t/**\n\t * Render function\n\t * @return {React.Component}\n\t */\n\trender(){\n\t\treturn (<ProcessingCard/>);\n\t}\n}\n"
+  },
+  {
+    "__docId__": 65,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "ProcessingCardController",
+    "memberof": "src/controllers/ProcessingCard.js",
+    "longname": "src/controllers/ProcessingCard.js~ProcessingCardController",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/controllers/ProcessingCard.js",
+    "importStyle": "ProcessingCardController",
+    "description": "This is the controller that processes the card operation\nBecause it's a dummy controller it only waits after a specific timeout",
+    "lineNumber": 14,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 66,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "componentDidMount",
+    "memberof": "src/controllers/ProcessingCard.js~ProcessingCardController",
+    "longname": "src/controllers/ProcessingCard.js~ProcessingCardController#componentDidMount",
+    "access": null,
+    "description": "Waits 2 seconds before setting into card processed state",
+    "lineNumber": 25,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "undefined"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 67,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/controllers/ProcessingCard.js~ProcessingCardController",
+    "longname": "src/controllers/ProcessingCard.js~ProcessingCardController#render",
+    "access": null,
+    "description": "Render function",
+    "lineNumber": 35,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "React.Component"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 68,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/controllers/ProcessingPin.js",
+    "memberof": null,
+    "longname": "src/controllers/ProcessingPin.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "/**\n * @file Contains the processing card controller\n * @author Edward Gonzalez\n */\n\nimport React from 'react';\n\nimport ProcessingPin from '../views/ProcessingPin';\nimport * as AbortReasons from '../constants/AbortReasons';\n\nimport {MAX_PIN_TRIES, RIGHT_PIN} from '../constants/config';\n\n/** \n * This is the controller that processes the pin operation\n * Because it's a dummy controller it only waits after a specific timeout\n * The only valid pin is 1234\n */\nexport default class ProcessingPinController extends React.Component {\n\tstatic propTypes = {\n\t\tATMState:React.PropTypes.shape({\n\t\t\t'pin':React.PropTypes.string.isRequired\n\t\t}).isRequired,\n\t\tactions: React.PropTypes.shape({\n\t\t\t'pinProcessedValid':React.PropTypes.func.isRequired,\n\t\t\t'pinProcessedInvalid':React.PropTypes.func.isRequired,\n\t\t\t'performAbort':React.PropTypes.func.isRequired\n\t\t}).isRequired\n\t}\n\n\t/**\n\t * Waits 2 seconds before setting into valid or invalid state\n\t * It can also abort if done too many times\n\t * @return {undefined}\n\t */\n\tcomponentDidMount(){\n\t\tsetTimeout(()=>{\n\t\t\tif (this.props.ATMState.pin === RIGHT_PIN){\n\t\t\t\tthis.props.actions.pinProcessedValid();\n\t\t\t} else if (this.props.ATMState.pinAttempts >= (MAX_PIN_TRIES - 1)){\n\t\t\t\tthis.props.actions.performAbort(AbortReasons.TOO_MANY_FAILED_PIN_ATTEMPTS);\n\t\t\t} else {\n\t\t\t\tthis.props.actions.pinProcessedInvalid();\n\t\t\t}\n\t\t},2000);\n\t}\n\n\t/**\n\t * Render function\n\t * @return {React.Component}\n\t */\n\trender(){\n\t\treturn (<ProcessingPin onAbort={this.props.actions.performAbort}/>);\n\t}\n}\n"
+  },
+  {
+    "__docId__": 69,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "ProcessingPinController",
+    "memberof": "src/controllers/ProcessingPin.js",
+    "longname": "src/controllers/ProcessingPin.js~ProcessingPinController",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/controllers/ProcessingPin.js",
+    "importStyle": "ProcessingPinController",
+    "description": "This is the controller that processes the pin operation\nBecause it's a dummy controller it only waits after a specific timeout\nThe only valid pin is 1234",
+    "lineNumber": 18,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 70,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "componentDidMount",
+    "memberof": "src/controllers/ProcessingPin.js~ProcessingPinController",
+    "longname": "src/controllers/ProcessingPin.js~ProcessingPinController#componentDidMount",
+    "access": null,
+    "description": "Waits 2 seconds before setting into valid or invalid state\nIt can also abort if done too many times",
+    "lineNumber": 35,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "undefined"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 71,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/controllers/ProcessingPin.js~ProcessingPinController",
+    "longname": "src/controllers/ProcessingPin.js~ProcessingPinController#render",
+    "access": null,
+    "description": "Render function",
+    "lineNumber": 51,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "React.Component"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 72,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1331,11 +1659,160 @@
     "longname": "src/controllers/WaitingForAmount.js",
     "access": null,
     "description": null,
-    "lineNumber": 0,
-    "content": ""
+    "lineNumber": 1,
+    "content": "/**\n * @file Contains the waiting for amount controlle\n * @author Edward Gonzalez\n */\n\nimport React from 'react';\n\nimport WaitingForAmount from '../views/WaitingForAmount';\n\n/** \n * Waits for the amount to be input in order to trigger the action\n * to get a specific amount of money\n */\nexport default class WaitingForAmountController extends React.Component {\n\tstatic propTypes = {\n\t\tactions:  React.PropTypes.shape({\n\t\t\t'withdraw':React.PropTypes.func.isRequired,\n\t\t\t'performAbort':React.PropTypes.func.isRequired\n\t\t}).isRequired\n\t}\n\n\t/**\n\t * Render function\n\t * @return {React.Component}\n\t */\n\trender(){\n\t\treturn (<WaitingForAmount onWithdraw={this.props.actions.withdraw}\n\t\t\tonAbort={this.props.actions.performAbort}/>);\n\t}\n}\n"
   },
   {
-    "__docId__": 56,
+    "__docId__": 73,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "WaitingForAmountController",
+    "memberof": "src/controllers/WaitingForAmount.js",
+    "longname": "src/controllers/WaitingForAmount.js~WaitingForAmountController",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/controllers/WaitingForAmount.js",
+    "importStyle": "WaitingForAmountController",
+    "description": "Waits for the amount to be input in order to trigger the action\nto get a specific amount of money",
+    "lineNumber": 14,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 74,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/controllers/WaitingForAmount.js~WaitingForAmountController",
+    "longname": "src/controllers/WaitingForAmount.js~WaitingForAmountController#render",
+    "access": null,
+    "description": "Render function",
+    "lineNumber": 26,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "React.Component"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 75,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/controllers/WaitingForCard.js",
+    "memberof": null,
+    "longname": "src/controllers/WaitingForCard.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "/**\n * @file Contains the waiting for card controller that tells what to do when it's waiting for a card\n * @author Edward Gonzalez\n */\n\nimport React from 'react';\n\nimport WaitingForCard from '../views/WaitingForCard';\n\n/** \n * This is the controller class that handles such\n */\nexport default class WaitingForCardController extends React.Component {\n\tstatic propTypes = {\n\t\tactions:  React.PropTypes.shape({\n\t\t\t'cardInserted':React.PropTypes.func.isRequired\n\t\t}).isRequired\n\t}\n\t/**\n\t * Render function\n\t * @return {React.Component}\n\t */\n\trender(){\n\t\treturn (<WaitingForCard onCardInserted={this.props.actions.cardInserted}/>);\n\t}\n}\n"
+  },
+  {
+    "__docId__": 76,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "WaitingForCardController",
+    "memberof": "src/controllers/WaitingForCard.js",
+    "longname": "src/controllers/WaitingForCard.js~WaitingForCardController",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/controllers/WaitingForCard.js",
+    "importStyle": "WaitingForCardController",
+    "description": "This is the controller class that handles such",
+    "lineNumber": 13,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 77,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/controllers/WaitingForCard.js~WaitingForCardController",
+    "longname": "src/controllers/WaitingForCard.js~WaitingForCardController#render",
+    "access": null,
+    "description": "Render function",
+    "lineNumber": 23,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "React.Component"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 78,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/controllers/WaitingForPin.js",
+    "memberof": null,
+    "longname": "src/controllers/WaitingForPin.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "/**\n * @file Contains the waiting for card controller that tells what to do when it's waiting for a pin input\n * @author Edward Gonzalez\n */\n\nimport React from 'react';\n\nimport WaitingForPin from '../views/WaitingForPin';\nimport {MAX_PIN_TRIES} from '../constants/config';\n\n/** \n * This is the controller class that will handle the input data\n */\nexport default class WaitingForPinController extends React.Component {\n\tstatic propTypes = {\n\t\tATMState: React.PropTypes.shape({\n\t\t\t'pinAttempts': React.PropTypes.number.isRequired\n\t\t}),\n\t\tactions:  React.PropTypes.shape({\n\t\t\t'pinInserted':React.PropTypes.func.isRequired,\n\t\t\t'performAbort':React.PropTypes.func.isRequired\n\t\t}).isRequired\n\t}\n\t/**\n\t * Render function\n\t * @return {React.Component}\n\t */\n\trender(){\n\t\treturn (<WaitingForPin onPinInserted={this.props.actions.pinInserted} onAbort={this.props.actions.performAbort}\n\t\t\tattemptsLeft={MAX_PIN_TRIES - this.props.ATMState.pinAttempts}/>);\n\t}\n}\n"
+  },
+  {
+    "__docId__": 79,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "WaitingForPinController",
+    "memberof": "src/controllers/WaitingForPin.js",
+    "longname": "src/controllers/WaitingForPin.js~WaitingForPinController",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/controllers/WaitingForPin.js",
+    "importStyle": "WaitingForPinController",
+    "description": "This is the controller class that will handle the input data",
+    "lineNumber": 14,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 80,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/controllers/WaitingForPin.js~WaitingForPinController",
+    "longname": "src/controllers/WaitingForPin.js~WaitingForPinController#render",
+    "access": null,
+    "description": "Render function",
+    "lineNumber": 28,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "React.Component"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 81,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1345,10 +1822,10 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import WaitingForCard from './WaitingForCard';\nimport ProcessingCard from './ProcessingCard';\nimport WaitingForPin from './WaitingForPin';\nimport Aborting from './Aborting';\nimport ProcessingPin from './ProcessingPin';\n\nexport {WaitingForCard,ProcessingCard,WaitingForPin,Aborting,ProcessingPin};\n"
+    "content": "import WaitingForCard from './WaitingForCard';\nimport ProcessingCard from './ProcessingCard';\nimport WaitingForPin from './WaitingForPin';\nimport WaitingForAmount from './WaitingForAmount';\nimport Aborting from './Aborting';\nimport ProcessingPin from './ProcessingPin';\n\nexport {WaitingForCard,ProcessingCard,WaitingForPin,Aborting,ProcessingPin,WaitingForAmount};\n"
   },
   {
-    "__docId__": 57,
+    "__docId__": 82,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1357,11 +1834,11 @@
     "longname": "src/index.js",
     "access": null,
     "description": null,
-    "lineNumber": 6,
+    "lineNumber": 1,
     "content": "/**\n * @file The entry point for the application, where middlewares are applied and the store is created\n * @author Edward Gonzalez\n */\n\nimport React from 'react';\nimport { render } from 'react-dom';\nimport { applyMiddleware, createStore } from 'redux';\nimport { Provider } from 'react-redux';\nimport App from './containers/App';\nimport reducer from './reducers';\n\nlet store;\nif (process.env.NODE_ENV === 'production'){\n\tstore = createStore(reducer);\n} else {\n\tlet createLogger = require('redux-logger');\n\tconst logger = createLogger();\n\tstore = createStore(\n\t\treducer,\n\t\tapplyMiddleware(logger)\n\t);\n}\n\nimport './css/index.css';\nimport './css/colors.css';\nimport './css/text.css';\nimport './css/screen.css';\nimport './css/animations.css';\n\nrender(\n\t<Provider store={store}>\n\t\t<App/>\n\t</Provider>,\n\tdocument.getElementById('container')\n);\n"
   },
   {
-    "__docId__": 58,
+    "__docId__": 83,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1370,11 +1847,11 @@
     "longname": "src/reducers/abortReason.js",
     "access": null,
     "description": null,
-    "lineNumber": 6,
+    "lineNumber": 1,
     "content": "/**\n * @file Contains the abortion reason from the ATM\n * @author Edward Gonzalez\n */\n\nimport * as ActionTypes from '../constants/ActionTypes';\n\n/**\n * This is the reducer for the abortion reason of the application\n *\n * @param {String} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n */\nexport default function abortReason(state = null, action){\n\tswitch (action.type){\n\t\tcase ActionTypes.PERFORM_ABORT:\n\t\t\treturn action.payload;\n\t\tcase ActionTypes.COMPLETE_ABORT:\n\t\t\treturn null;\n\t\tdefault:\n\t\t\treturn state;\n\t}\n}\n"
   },
   {
-    "__docId__": 59,
+    "__docId__": 84,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1417,7 +1894,63 @@
     "generator": false
   },
   {
-    "__docId__": 60,
+    "__docId__": 85,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/reducers/amount.js",
+    "memberof": null,
+    "longname": "src/reducers/amount.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "/**\n * @file Contains information about the current amount to use in the transaction\n * @author Edward Gonzalez\n */\n\nimport * as ActionTypes from '../constants/ActionTypes';\n\n/**\n * This is the state reducer that represents the current amount that was used in the ATM\n * the value is held until the operation is over or rolled back\n *\n * @param {String} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n */\nexport default function amount(state = null, action){\n\tswitch (action.type){\n\t\tcase ActionTypes.WITHDRAW:\n\t\t\treturn action.payload;\n\t\tcase ActionTypes.WITHDRAW_FAILED:\n\t\tcase ActionTypes.COMPLETE_ABORT:\n\t\tcase ActionTypes.PERFORM_ABORT:\n\t\t\treturn null;\n\t\tdefault:\n\t\t\treturn state;\n\t}\n}\n"
+  },
+  {
+    "__docId__": 86,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "amount",
+    "memberof": "src/reducers/amount.js",
+    "longname": "src/reducers/amount.js~amount",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/reducers/amount.js",
+    "importStyle": "amount",
+    "description": "This is the state reducer that represents the current amount that was used in the ATM\nthe value is held until the operation is over or rolled back",
+    "lineNumber": 15,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "state",
+        "description": "The current state, as provided by the store"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "action",
+        "description": "The action that is executed"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 87,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1426,11 +1959,11 @@
     "longname": "src/reducers/index.js",
     "access": null,
     "description": null,
-    "lineNumber": 6,
-    "content": "/**\n * @file Includes all the reducers that the application needs in order to execute\n * @author Edward Gonzalez\n */\n\nimport { combineReducers } from 'redux';\nimport state from './state';\nimport pin from './pin';\nimport pinAttempts from './pinAttempts';\nimport withdrawAttempts from './withdrawAttempts';\nimport abortReason from './abortReason';\nimport withdrawFailReason from './withdrawFailReason';\n\n/**\n * This is the root reducer that will populate the store\n */\nconst rootReducer = combineReducers({state,pinAttempts,withdrawAttempts,abortReason,withdrawFailReason,pin});\n\nexport default rootReducer;\n"
+    "lineNumber": 1,
+    "content": "/**\n * @file Includes all the reducers that the application needs in order to execute\n * @author Edward Gonzalez\n */\n\nimport { combineReducers } from 'redux';\nimport state from './state';\nimport pin from './pin';\nimport pinAttempts from './pinAttempts';\nimport withdrawAttempts from './withdrawAttempts';\nimport abortReason from './abortReason';\nimport withdrawFailReason from './withdrawFailReason';\nimport amount from './amount';\n\n/**\n * This is the root reducer that will populate the store\n */\nconst rootReducer = combineReducers({state,pinAttempts,withdrawAttempts,abortReason,withdrawFailReason,pin,amount});\n\nexport default rootReducer;\n"
   },
   {
-    "__docId__": 61,
+    "__docId__": 88,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1442,7 +1975,7 @@
     "importPath": "N26ATM/src/reducers/index.js",
     "importStyle": "rootReducer",
     "description": "This is the root reducer that will populate the store",
-    "lineNumber": 17,
+    "lineNumber": 18,
     "type": {
       "types": [
         "*"
@@ -1450,7 +1983,7 @@
     }
   },
   {
-    "__docId__": 62,
+    "__docId__": 89,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1459,11 +1992,11 @@
     "longname": "src/reducers/pin.js",
     "access": null,
     "description": null,
-    "lineNumber": 6,
+    "lineNumber": 1,
     "content": "/**\n * @file Contains information about the current pin to use for processing\n * @author Edward Gonzalez\n */\n\nimport * as ActionTypes from '../constants/ActionTypes';\n\n/**\n * This is the state reducer that represents the current pin that was\n * set into the ATM and it holded only for a brief time until is valid or invalid\n *\n * @param {String} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n */\nexport default function pin(state = null, action){\n\tswitch (action.type){\n\t\tcase ActionTypes.PIN_INSERTED:\n\t\t\treturn action.payload;\n\t\tcase ActionTypes.PIN_PROCESSED_VALID:\n\t\tcase ActionTypes.PIN_PROCESSED_INVALID:\n\t\tcase ActionTypes.COMPLETE_ABORT:\n\t\tcase ActionTypes.PERFORM_ABORT:\n\t\t\treturn null;\n\t\tdefault:\n\t\t\treturn state;\n\t}\n}\n"
   },
   {
-    "__docId__": 63,
+    "__docId__": 90,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1506,7 +2039,7 @@
     "generator": false
   },
   {
-    "__docId__": 64,
+    "__docId__": 91,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1515,11 +2048,11 @@
     "longname": "src/reducers/pinAttempts.js",
     "access": null,
     "description": null,
-    "lineNumber": 6,
+    "lineNumber": 1,
     "content": "/**\n * @file Contains the state reducer for the ATM pin attempts\n * @author Edward Gonzalez\n */\n\nimport * as ActionTypes from '../constants/ActionTypes';\n\n/**\n * This is the main state reducer and represents the amount of times the user\n * has attempted to put a pin in the ATM\n * The number will reset once the ATM finishes or aborts\n *\n * @param {Number} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n */\nexport default function pinAttempts(state = 0, action){\n\tswitch (action.type){\n\t\tcase ActionTypes.PIN_PROCESSED_VALID:\n\t\tcase ActionTypes.PIN_PROCESSED_INVALID:\n\t\t\treturn state + 1;\n\t\tcase ActionTypes.FINISHED:\n\t\tcase ActionTypes.COMPLETE_ABORT:\n\t\t\treturn 0;\n\t\tdefault:\n\t\t\treturn state;\n\t}\n}\n"
   },
   {
-    "__docId__": 65,
+    "__docId__": 92,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1562,7 +2095,7 @@
     "generator": false
   },
   {
-    "__docId__": 66,
+    "__docId__": 93,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1571,11 +2104,11 @@
     "longname": "src/reducers/state.js",
     "access": null,
     "description": null,
-    "lineNumber": 6,
+    "lineNumber": 1,
     "content": "/**\n * @file Contains the state reducer for the ATM current state\n * @author Edward Gonzalez\n */\n\nimport * as States from '../constants/States';\nimport * as ActionTypes from '../constants/ActionTypes';\n\n/**\n * This is the main state reducer and represents the main state of the application\n * it represents in which situation the ATM is\n *\n * @param {String} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n */\nexport default function state(state = States.WAITING_FOR_CARD, action){\n\tswitch (action.type){\n\t\tcase ActionTypes.CARD_INSERTED:\n\t\t\treturn States.PROCESSING_CARD;\n\t\tcase ActionTypes.CARD_PROCESSED:\n\t\t\treturn States.WAITING_FOR_PIN;\n\t\tcase ActionTypes.PIN_INSERTED:\n\t\t\treturn States.PROCESSING_PIN;\n\t\tcase ActionTypes.PIN_PROCESSED_VALID:\n\t\t\treturn States.WAITING_FOR_AMOUNT;\n\t\tcase ActionTypes.PIN_PROCESSED_INVALID:\n\t\t\treturn States.WAITING_FOR_PIN;\n\t\tcase ActionTypes.WITHDRAW:\n\t\t\treturn States.PROCESSING_AMOUNT;\n\t\tcase ActionTypes.WITHDRAW_SUSCESFUL:\n\t\t\treturn States.DELIVERING;\n\t\tcase ActionTypes.WITHDRAW_FAILED:\n\t\t\treturn States.WAITING_FOR_AMOUNT;\n\t\tcase ActionTypes.MONEY_DELIVERED:\n\t\t\treturn States.DELIVERED;\n\t\tcase ActionTypes.CARD_AND_MONEY_TAKEN:\n\t\t\treturn States.DONE;\n\t\tcase ActionTypes.FINISHED:\n\t\t\treturn States.WAITING_FOR_CARD;\n\t\tcase ActionTypes.PERFORM_ABORT:\n\t\t\treturn States.ABORTING;\n\t\tcase ActionTypes.COMPLETE_ABORT:\n\t\t\treturn States.WAITING_FOR_CARD;\n\t\tdefault:\n\t\t\treturn States.WAITING_FOR_CARD;\n\t}\n}\n"
   },
   {
-    "__docId__": 67,
+    "__docId__": 94,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1618,7 +2151,7 @@
     "generator": false
   },
   {
-    "__docId__": 68,
+    "__docId__": 95,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1627,11 +2160,11 @@
     "longname": "src/reducers/withdrawAttempts.js",
     "access": null,
     "description": null,
-    "lineNumber": 6,
+    "lineNumber": 1,
     "content": "/**\n * @file Contains the state reducer for the ATM withdraw attempts\n * @author Edward Gonzalez\n */\n\nimport * as ActionTypes from '../constants/ActionTypes';\n\n/**\n * This is the reducer represents the amount of times the user\n * has attempted to withdraw some money\n * The number will reset once the ATM finishes or aborts\n *\n * @param {Number} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n */\nexport default function withdrawAttempts(state = 0, action){\n\tswitch (action.type){\n\t\tcase ActionTypes.WITHDRAW_SUSCESFUL:\n\t\tcase ActionTypes.WITHDRAW_FAILED:\n\t\t\treturn state + 1;\n\t\tcase ActionTypes.FINISHED:\n\t\tcase ActionTypes.COMPLETE_ABORT:\n\t\t\treturn 0;\n\t\tdefault:\n\t\t\treturn state;\n\t}\n}\n"
   },
   {
-    "__docId__": 69,
+    "__docId__": 96,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1674,7 +2207,7 @@
     "generator": false
   },
   {
-    "__docId__": 70,
+    "__docId__": 97,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1683,11 +2216,11 @@
     "longname": "src/reducers/withdrawFailReason.js",
     "access": null,
     "description": null,
-    "lineNumber": 6,
+    "lineNumber": 1,
     "content": "/**\n * @file Contains the state reducer for the ATM withdraw failed reason\n * @author Edward Gonzalez\n */\n\nimport * as ActionTypes from '../constants/ActionTypes';\n\n/**\n * This reducer represents the reason why the ATM failed to withdraw some money\n *\n * @param {String} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n */\nexport default function withdrawFailReason(state = null, action){\n\tswitch (action.type){\n\t\tcase ActionTypes.WITHDRAW_FAILED:\n\t\t\treturn action.payload;\n\t\tcase ActionTypes.WITHDRAW:\n\t\tcase ActionTypes.FINISHED:\n\t\tcase ActionTypes.COMPLETE_ABORT:\n\t\t\treturn null;\n\t\tdefault:\n\t\t\treturn state;\n\t}\n}\n"
   },
   {
-    "__docId__": 71,
+    "__docId__": 98,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1730,7 +2263,821 @@
     "generator": false
   },
   {
-    "__docId__": 73,
+    "__docId__": 99,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/views/Aborting.js",
+    "memberof": null,
+    "longname": "src/views/Aborting.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "/**\n * @file Contains the aborting screen view\n * @author Edward Gonzalez\n */\n\nimport React from 'react';\nimport NavBar from './components/NavBar';\nimport Button from './components/Button';\n\nimport * as AbortReasons from '../constants/AbortReasons';\n\nimport './css/Aborting.css';\n\n/** \n * This is the view that represents the aborting screen\n */\nexport default class Aborting extends React.Component {\n\tstatic propTypes = {\n\t\treason: React.PropTypes.oneOf(Object.keys(AbortReasons)).isRequired,\n\t\tonAbortCompleted:React.PropTypes.func.isRequired\n\t}\n\n\t/**\n\t * Render function\n\t * @return {React.Component}\n\t */\n\trender(){\n\t\tlet reason;\n\t\tswitch (this.props.reason){\n\t\t\tcase AbortReasons.TOO_MANY_FAILED_PIN_ATTEMPTS:\n\t\t\t\treason = 'Too many failed pin attempts';\n\t\t\t\tbreak;\n\t\t\tcase AbortReasons.TOO_MANY_FAILED_WITHDRAW_ATTEMPTS:\n\t\t\t\treason = 'Too many failed withdraw attempts';\n\t\t\t\tbreak;\n\t\t\tcase AbortReasons.NOT_ENOUGH_FUNDS:\n\t\t\t\treason = 'You do not have enough funds';\n\t\t\t\tbreak;\n\t\t\tcase AbortReasons.USER_CANCELS:\n\t\t\t\treason = 'You cancelled the operation';\n\t\t\t\tbreak;\n\t\t\tdefault:\n\t\t\t\treason = 'Unknown aborting process';\n\t\t\t\tbreak;\n\t\t}\n\t\treturn (<div className=\"Aborting screen\">\n\t\t\t<NavBar canAbort={false}/>\n\t\t\t<div className=\"full-width text lg color medium-black centered light\">{reason}</div>\n\t\t\t<div className=\"ion ion-close-round color red text full-width centered\"/>\n\t\t\t<div className=\"full-width text lg color medium-black centered light\">Please retrieve your card</div>\n\t\t\t<div className=\"ion ion-chevron-down color light-gray text full-width centered\"/>\n\t\t\t<Button full large color=\"blue\" className=\"retrieve-card-button\" textType=\"light white lg\" onClick={this.props.onAbortCompleted}>Retrieve Card</Button>\n\t\t</div>);\n\t}\n}\n"
+  },
+  {
+    "__docId__": 100,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "Aborting",
+    "memberof": "src/views/Aborting.js",
+    "longname": "src/views/Aborting.js~Aborting",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/views/Aborting.js",
+    "importStyle": "Aborting",
+    "description": "This is the view that represents the aborting screen",
+    "lineNumber": 17,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 101,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/views/Aborting.js~Aborting",
+    "longname": "src/views/Aborting.js~Aborting#render",
+    "access": null,
+    "description": "Render function",
+    "lineNumber": 27,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "React.Component"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 102,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/views/ProcessingCard.js",
+    "memberof": null,
+    "longname": "src/views/ProcessingCard.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "/**\n * @file Contains the processing card screen\n * @author Edward Gonzalez\n */\n\nimport React from 'react';\nimport NavBar from './components/NavBar';\n\nimport './css/ProcessingCard.css';\n\n/** \n * This is the view that represents the processing card screen\n */\nexport default class ProcessingCard extends React.Component {\n\tstatic propTypes = {\n\t}\n\t/**\n\t * Render function\n\t * @return {React.Component}\n\t */\n\trender(){\n\t\treturn (<div className=\"ProcessingCard screen\">\n\t\t\t<NavBar canAbort={false}/>\n\t\t\t<div className=\"ion ion-card color dark-gray text full-width centered\"/>\n\t\t\t<p className=\"text full-width centered light lg color dark-gray\">Please wait while your card is being processed</p>\n\t\t\t<div className=\"ion ion-load-c color light-gray text full-width centered\"/>\n\t\t</div>);\n\t}\n}\n"
+  },
+  {
+    "__docId__": 103,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "ProcessingCard",
+    "memberof": "src/views/ProcessingCard.js",
+    "longname": "src/views/ProcessingCard.js~ProcessingCard",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/views/ProcessingCard.js",
+    "importStyle": "ProcessingCard",
+    "description": "This is the view that represents the processing card screen",
+    "lineNumber": 14,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 104,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/views/ProcessingCard.js~ProcessingCard",
+    "longname": "src/views/ProcessingCard.js~ProcessingCard#render",
+    "access": null,
+    "description": "Render function",
+    "lineNumber": 21,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "React.Component"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 105,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/views/ProcessingPin.js",
+    "memberof": null,
+    "longname": "src/views/ProcessingPin.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "/**\n * @file Contains the processing card screen\n * @author Edward Gonzalez\n */\n\nimport React from 'react';\nimport NavBar from './components/NavBar';\n\nimport * as AbortReasons from '../constants/AbortReasons';\n\nimport './css/ProcessingPin.css';\n\n/** \n * This is the view that represents the processing card screen\n */\nexport default class ProcessingPin extends React.Component {\n\tstatic propTypes = {\n\t\tonAbort:React.PropTypes.func.isRequired\n\t}\n\t/**\n\t * Render function\n\t * @return {React.Component}\n\t */\n\trender(){\n\t\treturn (<div className=\"ProcessingPin screen\">\n\t\t\t<NavBar canAbort onAbort={this.props.onAbort.bind(null,AbortReasons.USER_CANCELS)}/>\n\t\t\t<p className=\"text full-width centered light lg color dark-gray\">Please wait while we get the required information</p>\n\t\t\t<div className=\"ion ion-load-c color light-gray text full-width centered\"/>\n\t\t</div>);\n\t}\n}\n"
+  },
+  {
+    "__docId__": 106,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "ProcessingPin",
+    "memberof": "src/views/ProcessingPin.js",
+    "longname": "src/views/ProcessingPin.js~ProcessingPin",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/views/ProcessingPin.js",
+    "importStyle": "ProcessingPin",
+    "description": "This is the view that represents the processing card screen",
+    "lineNumber": 16,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 107,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/views/ProcessingPin.js~ProcessingPin",
+    "longname": "src/views/ProcessingPin.js~ProcessingPin#render",
+    "access": null,
+    "description": "Render function",
+    "lineNumber": 24,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "React.Component"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 108,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/views/WaitingForAmount.js",
+    "memberof": null,
+    "longname": "src/views/WaitingForAmount.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "/**\n * @file Contains the waiting for pin screen view\n * @author Edward Gonzalez\n */\n\nimport React from 'react';\nimport NavBar from './components/NavBar';\nimport Button from './components/Button';\nimport TextField from './components/TextField';\n\nimport * as AbortReasons from '../constants/AbortReasons';\n\nimport './css/WaitingForAmount.css';\n\n/** \n * This is the view that represents the waiting for pin screen\n */\nexport default class WaitingForAmount extends React.Component {\n\tstatic propTypes = {\n\t\tonWithdraw: React.PropTypes.func.isRequired,\n\t\tonAbort:React.PropTypes.func.isRequired,\n\t}\n\n\t/**\n\t * Constructor of the screen, initializes the custom value and binds the functions\n\t * @param {Object} props the react properties\n\t */\n\tconstructor(props){\n\t\tsuper(props);\n\n\t\t/**\n\t\t * The main state of the component\n\t\t * @type {Object}\n\t\t * @property {String} customValue the current value of the custom field\n\t\t */\n\t\tthis.state = {\n\t\t\t'customValue':''\n\t\t};\n\t\tthis.updateCustomValue = this.updateCustomValue.bind(this);\n\t}\n\n\t/**\n\t * Updates the custom value in the screen\n\t * @param {String} customValue the new custom value\n\t * @return {undefined}\n\t */\n\tupdateCustomValue(customValue){\n\t\tthis.setState({customValue});\n\t}\n\n\t/**\n\t * Render function\n\t * @return {React.Component}\n\t */\n\trender(){\n\t\treturn (<div className=\"WaitingForAmount screen\">\n\t\t\t<NavBar canAbort onAbort={this.props.onAbort.bind(null,AbortReasons.USER_CANCELS)}/>\n\n\t\t\t<div className=\"main-option text lg medium-black color light\">Please select an amount</div>\n\t\t\t<div className=\"options\">\n\t\t\t\t<div className=\"column\">\n\t\t\t\t\t<Button inverse full onClick={this.props.onWithdraw.bind(null,20)}\n\t\t\t\t\t\ttextType=\"dark-gray md light\">20 &euro;</Button>\n\t\t\t\t\t<Button inverse full onClick={this.props.onWithdraw.bind(null,50)}\n\t\t\t\t\t\ttextType=\"dark-gray md light\">50 &euro;</Button>\n\t\t\t\t\t<Button inverse full onClick={this.props.onWithdraw.bind(null,100)}\n\t\t\t\t\t\ttextType=\"dark-gray md light\">100 &euro;</Button>\n\t\t\t\t</div>\n\t\t\t\t<div className=\"column\">\n\t\t\t\t\t<Button inverse full onClick={this.props.onWithdraw.bind(null,500)}\n\t\t\t\t\t\ttextType=\"dark-gray md light\">500 &euro;</Button>\n\t\t\t\t\t<Button inverse full onClick={this.props.onWithdraw.bind(null,1000)}\n\t\t\t\t\t\ttextType=\"dark-gray md light\">1000 &euro;</Button>\n\t\t\t\t\t<Button inverse full onClick={this.props.onWithdraw.bind(null,2000)}\n\t\t\t\t\t\ttextType=\"dark-gray md light\">2000 &euro;</Button>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div className=\"or-option text lg medium-black color light\">Or type a custom one</div>\n\t\t\t<TextField width={350} type=\"number\" onChange={this.updateCustomValue} currency\n\t\t\t\tvalue={this.state.customValue} validate={(value)=>{\n\t\t\t\tif (isNaN(parseInt(value)) && value !== ''){\n\t\t\t\t\treturn \"Invalid numeric value\"\n\t\t\t\t}\n\t\t\t}}/>\n\t\t\t<Button width={350} color=\"skyblue\" className=\"accept-value\" onClick={this.props.onWithdraw.bind(null,parseInt(this.state.customValue))}\n\t\t\t\ttextType=\"white md\" disabled={isNaN(parseInt(this.state.customValue))}>OK</Button>\n\t\t</div>);\n\t}\n}\n"
+  },
+  {
+    "__docId__": 109,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "WaitingForAmount",
+    "memberof": "src/views/WaitingForAmount.js",
+    "longname": "src/views/WaitingForAmount.js~WaitingForAmount",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/views/WaitingForAmount.js",
+    "importStyle": "WaitingForAmount",
+    "description": "This is the view that represents the waiting for pin screen",
+    "lineNumber": 18,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 110,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "src/views/WaitingForAmount.js~WaitingForAmount",
+    "longname": "src/views/WaitingForAmount.js~WaitingForAmount#constructor",
+    "access": null,
+    "description": "Constructor of the screen, initializes the custom value and binds the functions",
+    "lineNumber": 28,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": "the react properties"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 111,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "state",
+    "memberof": "src/views/WaitingForAmount.js~WaitingForAmount",
+    "longname": "src/views/WaitingForAmount.js~WaitingForAmount#state",
+    "access": null,
+    "description": "The main state of the component",
+    "lineNumber": 36,
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "customValue",
+        "description": "the current value of the custom field"
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 112,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "updateCustomValue",
+    "memberof": "src/views/WaitingForAmount.js~WaitingForAmount",
+    "longname": "src/views/WaitingForAmount.js~WaitingForAmount#updateCustomValue",
+    "access": null,
+    "description": null,
+    "lineNumber": 39,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 113,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "updateCustomValue",
+    "memberof": "src/views/WaitingForAmount.js~WaitingForAmount",
+    "longname": "src/views/WaitingForAmount.js~WaitingForAmount#updateCustomValue",
+    "access": null,
+    "description": "Updates the custom value in the screen",
+    "lineNumber": 47,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "customValue",
+        "description": "the new custom value"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "undefined"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 114,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/views/WaitingForAmount.js~WaitingForAmount",
+    "longname": "src/views/WaitingForAmount.js~WaitingForAmount#render",
+    "access": null,
+    "description": "Render function",
+    "lineNumber": 55,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "React.Component"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 115,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/views/WaitingForCard.js",
+    "memberof": null,
+    "longname": "src/views/WaitingForCard.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "/**\n * @file Contains the waiting for card screen view\n * @author Edward Gonzalez\n */\n\nimport React from 'react';\nimport NavBar from './components/NavBar';\nimport Button from './components/Button';\n\nimport './css/WaitingForCard.css';\n\n/** \n * This is the view that represents the waiting for card screen\n */\nexport default class WaitingForCard extends React.Component {\n\tstatic propTypes = {\n\t\tonCardInserted: React.PropTypes.func.isRequired\n\t}\n\t/**\n\t * Render function\n\t * @return {React.Component}\n\t */\n\trender(){\n\t\treturn (<div className=\"WaitingForCard screen\">\n\t\t\t<NavBar canAbort={false}/>\n\t\t\t<div className=\"ion ion-card color dark-gray text full-width centered\"/>\n\t\t\t<p className=\"text full-width centered light lg color dark-gray\">Insert your card to begin</p>\n\t\t\t<div className=\"ion ion-chevron-down color light-gray text full-width centered\"/>\n\t\t\t<Button full large color=\"blue\" className=\"insert-card-button\" textType=\"light white lg\" onClick={this.props.onCardInserted}>Insert Card</Button>\n\t\t</div>);\n\t}\n}\n"
+  },
+  {
+    "__docId__": 116,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "WaitingForCard",
+    "memberof": "src/views/WaitingForCard.js",
+    "longname": "src/views/WaitingForCard.js~WaitingForCard",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/views/WaitingForCard.js",
+    "importStyle": "WaitingForCard",
+    "description": "This is the view that represents the waiting for card screen",
+    "lineNumber": 15,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 117,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/views/WaitingForCard.js~WaitingForCard",
+    "longname": "src/views/WaitingForCard.js~WaitingForCard#render",
+    "access": null,
+    "description": "Render function",
+    "lineNumber": 23,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "React.Component"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 118,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/views/WaitingForPin.js",
+    "memberof": null,
+    "longname": "src/views/WaitingForPin.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "/**\n * @file Contains the waiting for pin screen view\n * @author Edward Gonzalez\n */\n\nimport React from 'react';\nimport NavBar from './components/NavBar';\nimport Button from './components/Button';\nimport TextField from './components/TextField';\n\nimport {MAX_PIN_TRIES} from '../constants/config';\n\nimport * as AbortReasons from '../constants/AbortReasons';\n\nimport './css/WaitingForPin.css';\n\n/** \n * This is the view that represents the waiting for pin screen\n */\nexport default class WaitingForPin extends React.Component {\n\tstatic propTypes = {\n\t\tonPinInserted: React.PropTypes.func.isRequired,\n\t\tonAbort:React.PropTypes.func.isRequired,\n\t\tattemptsLeft: React.PropTypes.number.isRequired\n\t}\n\n\t/**\n\t * Constructor of the screen, initializes the pin and binds the functions\n\t * @param {Object} props the react properties\n\t */\n\tconstructor(props){\n\t\tsuper(props);\n\n\t\t/**\n\t\t * The main state of the component\n\t\t * @type {Object}\n\t\t * @property {String} pin the current pin\n\t\t */\n\t\tthis.state = {\n\t\t\t'pin':''\n\t\t};\n\t\tthis.updatePin = this.updatePin.bind(this);\n\t}\n\n\t/**\n\t * Updates the pin value in the screen\n\t * @param {String} pin the new pin\n\t * @return {undefined}\n\t */\n\tupdatePin(pin){\n\t\tthis.setState({pin});\n\t}\n\n\t/**\n\t * Render function\n\t * @return {React.Component}\n\t */\n\trender(){\n\t\tlet label = <div className=\"text full-width color medium-black light lg centered please-insert\">Please Insert your pin</div>;\n\t\tif (this.props.attemptsLeft < MAX_PIN_TRIES){\n\t\t\tlabel = <div className=\"text full-width color red light lg centered invalid please-insert\">Invalid pin please try again</div>\n\t\t}\n\t\treturn (<div className=\"WaitingForPin screen\">\n\t\t\t<NavBar canAbort onAbort={this.props.onAbort.bind(null,AbortReasons.USER_CANCELS)}/>\n\n\t\t\t{label}\n\t\t\t<TextField width={350} type=\"number\" onChange={this.updatePin} value={this.state.pin} validate={(pin)=>{\n\t\t\t\tif (pin.length > 4){\n\t\t\t\t\treturn \"Pin too long\"\n\t\t\t\t}\n\t\t\t}}/>\n\t\t\t<Button width={350} color=\"skyblue\" className=\"accept-pin\" onClick={this.props.onPinInserted.bind(null,this.state.pin)}\n\t\t\t\ttextType=\"white md\" disabled={this.state.pin.length !== 4}>OK</Button>\n\n\t\t\t<div className=\"text full-width color medium-gray md centered attempts-left\">You have <span>{this.props.attemptsLeft}</span> attempts left</div>\n\t\t</div>);\n\t}\n}\n"
+  },
+  {
+    "__docId__": 119,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "WaitingForPin",
+    "memberof": "src/views/WaitingForPin.js",
+    "longname": "src/views/WaitingForPin.js~WaitingForPin",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/views/WaitingForPin.js",
+    "importStyle": "WaitingForPin",
+    "description": "This is the view that represents the waiting for pin screen",
+    "lineNumber": 20,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 120,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "src/views/WaitingForPin.js~WaitingForPin",
+    "longname": "src/views/WaitingForPin.js~WaitingForPin#constructor",
+    "access": null,
+    "description": "Constructor of the screen, initializes the pin and binds the functions",
+    "lineNumber": 31,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": "the react properties"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 121,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "state",
+    "memberof": "src/views/WaitingForPin.js~WaitingForPin",
+    "longname": "src/views/WaitingForPin.js~WaitingForPin#state",
+    "access": null,
+    "description": "The main state of the component",
+    "lineNumber": 39,
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "pin",
+        "description": "the current pin"
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 122,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "updatePin",
+    "memberof": "src/views/WaitingForPin.js~WaitingForPin",
+    "longname": "src/views/WaitingForPin.js~WaitingForPin#updatePin",
+    "access": null,
+    "description": null,
+    "lineNumber": 42,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 123,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "updatePin",
+    "memberof": "src/views/WaitingForPin.js~WaitingForPin",
+    "longname": "src/views/WaitingForPin.js~WaitingForPin#updatePin",
+    "access": null,
+    "description": "Updates the pin value in the screen",
+    "lineNumber": 50,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "pin",
+        "description": "the new pin"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "undefined"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 124,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/views/WaitingForPin.js~WaitingForPin",
+    "longname": "src/views/WaitingForPin.js~WaitingForPin#render",
+    "access": null,
+    "description": "Render function",
+    "lineNumber": 58,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "React.Component"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 125,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/views/components/Button.js",
+    "memberof": null,
+    "longname": "src/views/components/Button.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "/**\n * @file Contains the button component\n * @author Edward Gonzalez\n */\n\nimport React from 'react';\nimport './css/Button.css';\n\n/**\n * The button components represents a reusable component that is designed to be clicked\n */\nexport default class Button extends React.Component {\n\tstatic propTypes = {\n\t\tchildren:React.PropTypes.string,\n\t\tinverse:React.PropTypes.bool,\n\t\tlarge: React.PropTypes.bool,\n\t\tcolor:React.PropTypes.string,\n\t\ttextColor: React.PropTypes.string,\n\t\ttextType: React.PropTypes.string,\n\t\tdisabled:React.PropTypes.bool,\n\t\ttype:React.PropTypes.string,\n\t\tfull:React.PropTypes.bool,\n\t\tclassName:React.PropTypes.string,\n\t\tright: React.PropTypes.bool,\n\t\tonClick: React.PropTypes.func,\n\t\twidth: React.PropTypes.number\n\t}\n\t/**\n\t * Render function\n\t * @return {React.Component}\n\t */\n\trender(){\n\t\tlet className = \"button color\";\n\t\tif (!this.props.color){\n\t\t\tclassName += \" green\";\n\t\t} else {\n\t\t\tclassName += \" \" + this.props.color;\n\t\t}\n\t\tif (this.props.inverse){\n\t\t\tclassName += \" text inverse\";\n\t\t} else {\n\t\t\tclassName += \" background\";\n\t\t}\n\t\tif (this.props.full){\n\t\t\tclassName += \" full\";\n\t\t}\n\t\tif (this.props.disabled){\n\t\t\tclassName += \" disabled\";\n\t\t}\n\t\tif (this.props.large){\n\t\t\tclassName += \" large\";\n\t\t}\n\t\tif (this.props.right){\n\t\t\tclassName += \" right\";\n\t\t}\n\n\t\tif (this.props.className){\n\t\t\tclassName += \" \" + this.props.className;\n\t\t}\n\n\t\tlet spanClassName = \"color text \"\n\t\tif (this.props.textType){\n\t\t\tspanClassName += \" \" + this.props.textType;\n\t\t} else {\n\t\t\tspanClassName += \"black\"\n\t\t}\n\n\t\tlet style = {};\n\t\tif (this.props.width){\n\t\t\tstyle.width = this.props.width;\n\t\t}\n\n\t\treturn (<button disabled={this.props.disabled} type={this.props.type}\n\t\t\tclassName={className} onClick={this.props.onClick} style={style}>\n\t\t\t\t<span className={spanClassName}>{this.props.children}</span>\n\t\t\t</button>);\n\t}\n}\n"
+  },
+  {
+    "__docId__": 126,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "Button",
+    "memberof": "src/views/components/Button.js",
+    "longname": "src/views/components/Button.js~Button",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/views/components/Button.js",
+    "importStyle": "Button",
+    "description": "The button components represents a reusable component that is designed to be clicked",
+    "lineNumber": 12,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 127,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/views/components/Button.js~Button",
+    "longname": "src/views/components/Button.js~Button#render",
+    "access": null,
+    "description": "Render function",
+    "lineNumber": 32,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "React.Component"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 128,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/views/components/NavBar.js",
+    "memberof": null,
+    "longname": "src/views/components/NavBar.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "/**\n * @file Contains the NavBar that is used across the ATM screens\n * @author Edward Gonzalez\n */\n\nimport React from 'react';\nimport './css/NavBar.css';\n\n/** \n * This is the component that represents the navbar element\n */\nexport default class NavBar extends React.Component {\n\tstatic propTypes = {\n\t\tonAbort: React.PropTypes.func,\n\t\tcanAbort: React.PropTypes.bool.isRequired\n\t}\n\t/**\n\t * Render function\n\t * @returns {React.Component}\n\t */\n\trender(){\n\n\t\tlet abortButton = null;\n\t\tif (this.props.canAbort){\n\t\t\tabortButton = (<div className=\"ion ion-ios-close-outline\" onClick={this.props.onAbort}></div>);\n\t\t}\n\n\t\treturn (<div className=\"navBar\">\n\t\t\t<div className=\"ion ion-social-euro color dark-gray text\"/>\n\t\t\t<div className=\"text color medium-black md brand\"><span className=\"text bold\">k</span><span className=\"text color skyblue bold\">ATM</span></div>\n\t\t\t{abortButton}\n\t\t</div>);\n\t}\n}\n"
+  },
+  {
+    "__docId__": 129,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "NavBar",
+    "memberof": "src/views/components/NavBar.js",
+    "longname": "src/views/components/NavBar.js~NavBar",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/views/components/NavBar.js",
+    "importStyle": "NavBar",
+    "description": "This is the component that represents the navbar element",
+    "lineNumber": 12,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 130,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/views/components/NavBar.js~NavBar",
+    "longname": "src/views/components/NavBar.js~NavBar#render",
+    "access": null,
+    "description": "Render function",
+    "lineNumber": 21,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{React.Component}"
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "React.Component"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 131,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/views/components/TextField.js",
+    "memberof": null,
+    "longname": "src/views/components/TextField.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "/**\n * @file Contains the TextField that is used across the ATM screens\n * @author Edward Gonzalez\n */\n\nimport React from 'react';\nimport './css/TextField.css';\n\n/** \n * This is the component that represents the textfield element\n */\nexport default class TextField extends React.Component {\n\tstatic propTypes = {\n\t\tvalue: React.PropTypes.string.isRequired,\n\t\tvalidate: React.PropTypes.func,\n\t\tonChange: React.PropTypes.func.isRequired,\n\t\twidth: React.PropTypes.number,\n\t\tcurrency: React.PropTypes.bool\n\t}\n\n\t/**\n\t * Constructor of the screen, initializes the pin and binds the functions\n\t * @param {Object} props the react properties\n\t */\n\tconstructor(props){\n\t\tsuper(props);\n\n\t\t/**\n\t\t * The main state of the component\n\t\t * @type {Object}\n\t\t * @property {String} error the current error as given by the validate property function\n\t\t */\n\t\tthis.state = {\n\t\t\t'error':''\n\t\t};\n\t\tthis.onInputChanged = this.onInputChanged.bind(this);\n\t}\n\n\t/**\n\t * Triggers when the input has changed\n\t * @param {Event} e The triggering event\n\t */\n\tonInputChanged(e){\n\t\tif (this.props.validate){\n\t\t\tthis.setState({'error':(this.props.validate(e.target.value) || '')});\n\t\t}\n\t\tthis.props.onChange(e.target.value);\n\t}\n\n\t/**\n\t * Render function\n\t * @returns {React.Component}\n\t */\n\trender(){\n\t\tlet width = \"100%\";\n\t\tif (this.props.width){\n\t\t\twidth = this.props.width;\n\t\t}\n\n\t\tlet className = \"textField\";\n\t\tif (this.state.error){\n\t\t\tclassName += \" errored\";\n\t\t}\n\n\t\tlet symbol = null;\n\t\tif (this.props.currency){\n\t\t\tsymbol = (<span className=\"symbol text md medium-black color\">&euro;</span>);\n\t\t}\n\n\t\treturn (<div className={className} style={{width}}>\n\t\t\t<input type={this.props.type || \"text\"} onChange={this.onInputChanged} value={this.props.value}/>\n\t\t\t<span className=\"error text light sm color red\">{this.state.error}</span>\n\t\t\t{symbol}\n\t\t</div>);\n\t}\n}\n"
+  },
+  {
+    "__docId__": 132,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "TextField",
+    "memberof": "src/views/components/TextField.js",
+    "longname": "src/views/components/TextField.js~TextField",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/views/components/TextField.js",
+    "importStyle": "TextField",
+    "description": "This is the component that represents the textfield element",
+    "lineNumber": 12,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 133,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "src/views/components/TextField.js~TextField",
+    "longname": "src/views/components/TextField.js~TextField#constructor",
+    "access": null,
+    "description": "Constructor of the screen, initializes the pin and binds the functions",
+    "lineNumber": 25,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": "the react properties"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 134,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "state",
+    "memberof": "src/views/components/TextField.js~TextField",
+    "longname": "src/views/components/TextField.js~TextField#state",
+    "access": null,
+    "description": "The main state of the component",
+    "lineNumber": 33,
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error",
+        "description": "the current error as given by the validate property function"
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 135,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "onInputChanged",
+    "memberof": "src/views/components/TextField.js~TextField",
+    "longname": "src/views/components/TextField.js~TextField#onInputChanged",
+    "access": null,
+    "description": null,
+    "lineNumber": 36,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 136,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "onInputChanged",
+    "memberof": "src/views/components/TextField.js~TextField",
+    "longname": "src/views/components/TextField.js~TextField#onInputChanged",
+    "access": null,
+    "description": "Triggers when the input has changed",
+    "lineNumber": 43,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Event"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "e",
+        "description": "The triggering event"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 137,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/views/components/TextField.js~TextField",
+    "longname": "src/views/components/TextField.js~TextField#render",
+    "access": null,
+    "description": "Render function",
+    "lineNumber": 54,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{React.Component}"
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "React.Component"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 139,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1743,7 +3090,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 74,
+    "__docId__": 140,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1756,7 +3103,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 75,
+    "__docId__": 141,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1769,7 +3116,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 76,
+    "__docId__": 142,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1782,7 +3129,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 77,
+    "__docId__": 143,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1795,7 +3142,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 78,
+    "__docId__": 144,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1808,7 +3155,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 79,
+    "__docId__": 145,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1821,7 +3168,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 80,
+    "__docId__": 146,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1834,7 +3181,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 81,
+    "__docId__": 147,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1847,7 +3194,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 82,
+    "__docId__": 148,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1860,7 +3207,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 83,
+    "__docId__": 149,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1873,7 +3220,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 84,
+    "__docId__": 150,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1886,7 +3233,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 85,
+    "__docId__": 151,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1899,7 +3246,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 86,
+    "__docId__": 152,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1912,7 +3259,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 87,
+    "__docId__": 153,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1925,7 +3272,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 88,
+    "__docId__": 154,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1938,7 +3285,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 89,
+    "__docId__": 155,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1951,7 +3298,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 90,
+    "__docId__": 156,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1964,7 +3311,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 91,
+    "__docId__": 157,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1977,7 +3324,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 92,
+    "__docId__": 158,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1990,7 +3337,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 93,
+    "__docId__": 159,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2003,7 +3350,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 94,
+    "__docId__": 160,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2016,7 +3363,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 95,
+    "__docId__": 161,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2029,7 +3376,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 96,
+    "__docId__": 162,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2042,7 +3389,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 97,
+    "__docId__": 163,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2055,7 +3402,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 98,
+    "__docId__": 164,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2068,7 +3415,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 99,
+    "__docId__": 165,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2081,7 +3428,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 100,
+    "__docId__": 166,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2094,7 +3441,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 101,
+    "__docId__": 167,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2107,7 +3454,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 102,
+    "__docId__": 168,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2120,7 +3467,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 103,
+    "__docId__": 169,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2133,7 +3480,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 104,
+    "__docId__": 170,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2146,7 +3493,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 105,
+    "__docId__": 171,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2159,7 +3506,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 106,
+    "__docId__": 172,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2172,7 +3519,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 107,
+    "__docId__": 173,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2185,7 +3532,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 108,
+    "__docId__": 174,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2198,7 +3545,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 109,
+    "__docId__": 175,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2211,7 +3558,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 110,
+    "__docId__": 176,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2224,7 +3571,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 111,
+    "__docId__": 177,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2237,7 +3584,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 112,
+    "__docId__": 178,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2250,7 +3597,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 113,
+    "__docId__": 179,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2263,7 +3610,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 114,
+    "__docId__": 180,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2276,7 +3623,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 115,
+    "__docId__": 181,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2289,7 +3636,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 116,
+    "__docId__": 182,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2302,7 +3649,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 117,
+    "__docId__": 183,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2315,7 +3662,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 118,
+    "__docId__": 184,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2328,7 +3675,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 119,
+    "__docId__": 185,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2341,7 +3688,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 121,
+    "__docId__": 187,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2354,7 +3701,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 122,
+    "__docId__": 188,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2367,7 +3714,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 123,
+    "__docId__": 189,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2380,7 +3727,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 124,
+    "__docId__": 190,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2393,7 +3740,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 125,
+    "__docId__": 191,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2406,7 +3753,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 126,
+    "__docId__": 192,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2419,7 +3766,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 127,
+    "__docId__": 193,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2432,7 +3779,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 128,
+    "__docId__": 194,
     "kind": "external",
     "static": true,
     "variation": null,

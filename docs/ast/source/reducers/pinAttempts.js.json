@@ -1,68 +1,23 @@
 {
   "type": "Program",
+  "start": 0,
+  "end": 757,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 28,
+      "column": 0
+    }
+  },
+  "sourceType": "module",
   "body": [
     {
       "type": "ImportDeclaration",
-      "specifiers": [
-        {
-          "type": "ImportNamespaceSpecifier",
-          "local": {
-            "type": "Identifier",
-            "name": "ActionTypes",
-            "range": [
-              109,
-              120
-            ],
-            "loc": {
-              "start": {
-                "line": 6,
-                "column": 12
-              },
-              "end": {
-                "line": 6,
-                "column": 23
-              }
-            }
-          },
-          "range": [
-            104,
-            120
-          ],
-          "loc": {
-            "start": {
-              "line": 6,
-              "column": 7
-            },
-            "end": {
-              "line": 6,
-              "column": 23
-            }
-          }
-        }
-      ],
-      "source": {
-        "type": "Literal",
-        "value": "../constants/ActionTypes",
-        "raw": "'../constants/ActionTypes'",
-        "range": [
-          126,
-          152
-        ],
-        "loc": {
-          "start": {
-            "line": 6,
-            "column": 29
-          },
-          "end": {
-            "line": 6,
-            "column": 55
-          }
-        }
-      },
-      "range": [
-        97,
-        153
-      ],
+      "start": 97,
+      "end": 153,
       "loc": {
         "start": {
           "line": 6,
@@ -73,14 +28,66 @@
           "column": 56
         }
       },
+      "specifiers": [
+        {
+          "type": "ImportNamespaceSpecifier",
+          "start": 104,
+          "end": 120,
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 7
+            },
+            "end": {
+              "line": 6,
+              "column": 23
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 109,
+            "end": 120,
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 12
+              },
+              "end": {
+                "line": 6,
+                "column": 23
+              }
+            },
+            "name": "ActionTypes",
+            "leadingComments": null
+          },
+          "leadingComments": null
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 126,
+        "end": 152,
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 29
+          },
+          "end": {
+            "line": 6,
+            "column": 55
+          }
+        },
+        "value": "../constants/ActionTypes",
+        "rawValue": "../constants/ActionTypes",
+        "raw": "'../constants/ActionTypes'"
+      },
       "leadingComments": [
         {
           "type": "Block",
           "value": "*\n * @file Contains the state reducer for the ATM pin attempts\n * @author Edward Gonzalez\n ",
-          "range": [
-            0,
-            95
-          ],
+          "start": 0,
+          "end": 95,
           "loc": {
             "start": {
               "line": 1,
@@ -90,17 +97,19 @@
               "line": 4,
               "column": 3
             }
-          }
+          },
+          "range": [
+            0,
+            95
+          ]
         }
       ],
       "trailingComments": [
         {
           "type": "Block",
           "value": "*\n * This is the main state reducer and represents the amount of times the user\n * has attempted to put a pin in the ATM\n * The number will reset once the ATM finishes or aborts\n *\n * @param {Number} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
-          "range": [
-            155,
-            464
-          ],
+          "start": 155,
+          "end": 464,
           "loc": {
             "start": {
               "line": 8,
@@ -110,693 +119,18 @@
               "line": 15,
               "column": 3
             }
-          }
+          },
+          "range": [
+            155,
+            464
+          ]
         }
       ]
     },
     {
       "type": "ExportDefaultDeclaration",
-      "declaration": {
-        "type": "FunctionDeclaration",
-        "id": {
-          "type": "Identifier",
-          "name": "pinAttempts",
-          "range": [
-            489,
-            500
-          ],
-          "loc": {
-            "start": {
-              "line": 16,
-              "column": 24
-            },
-            "end": {
-              "line": 16,
-              "column": 35
-            }
-          }
-        },
-        "params": [
-          {
-            "type": "AssignmentPattern",
-            "left": {
-              "type": "Identifier",
-              "name": "state",
-              "range": [
-                501,
-                506
-              ],
-              "loc": {
-                "start": {
-                  "line": 16,
-                  "column": 36
-                },
-                "end": {
-                  "line": 16,
-                  "column": 41
-                }
-              }
-            },
-            "right": {
-              "type": "Literal",
-              "value": 0,
-              "raw": "0",
-              "range": [
-                509,
-                510
-              ],
-              "loc": {
-                "start": {
-                  "line": 16,
-                  "column": 44
-                },
-                "end": {
-                  "line": 16,
-                  "column": 45
-                }
-              }
-            },
-            "range": [
-              501,
-              510
-            ],
-            "loc": {
-              "start": {
-                "line": 16,
-                "column": 36
-              },
-              "end": {
-                "line": 16,
-                "column": 45
-              }
-            }
-          },
-          {
-            "type": "Identifier",
-            "name": "action",
-            "range": [
-              512,
-              518
-            ],
-            "loc": {
-              "start": {
-                "line": 16,
-                "column": 47
-              },
-              "end": {
-                "line": 16,
-                "column": 53
-              }
-            }
-          }
-        ],
-        "body": {
-          "type": "BlockStatement",
-          "body": [
-            {
-              "type": "SwitchStatement",
-              "discriminant": {
-                "type": "MemberExpression",
-                "computed": false,
-                "object": {
-                  "type": "Identifier",
-                  "name": "action",
-                  "range": [
-                    530,
-                    536
-                  ],
-                  "loc": {
-                    "start": {
-                      "line": 17,
-                      "column": 9
-                    },
-                    "end": {
-                      "line": 17,
-                      "column": 15
-                    }
-                  }
-                },
-                "property": {
-                  "type": "Identifier",
-                  "name": "type",
-                  "range": [
-                    537,
-                    541
-                  ],
-                  "loc": {
-                    "start": {
-                      "line": 17,
-                      "column": 16
-                    },
-                    "end": {
-                      "line": 17,
-                      "column": 20
-                    }
-                  }
-                },
-                "range": [
-                  530,
-                  541
-                ],
-                "loc": {
-                  "start": {
-                    "line": 17,
-                    "column": 9
-                  },
-                  "end": {
-                    "line": 17,
-                    "column": 20
-                  }
-                }
-              },
-              "cases": [
-                {
-                  "type": "SwitchCase",
-                  "test": {
-                    "type": "MemberExpression",
-                    "computed": false,
-                    "object": {
-                      "type": "Identifier",
-                      "name": "ActionTypes",
-                      "range": [
-                        551,
-                        562
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 18,
-                          "column": 7
-                        },
-                        "end": {
-                          "line": 18,
-                          "column": 18
-                        }
-                      }
-                    },
-                    "property": {
-                      "type": "Identifier",
-                      "name": "PIN_PROCESSED_VALID",
-                      "range": [
-                        563,
-                        582
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 18,
-                          "column": 19
-                        },
-                        "end": {
-                          "line": 18,
-                          "column": 38
-                        }
-                      }
-                    },
-                    "range": [
-                      551,
-                      582
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 18,
-                        "column": 7
-                      },
-                      "end": {
-                        "line": 18,
-                        "column": 38
-                      }
-                    }
-                  },
-                  "consequent": [],
-                  "range": [
-                    546,
-                    583
-                  ],
-                  "loc": {
-                    "start": {
-                      "line": 18,
-                      "column": 2
-                    },
-                    "end": {
-                      "line": 18,
-                      "column": 39
-                    }
-                  }
-                },
-                {
-                  "type": "SwitchCase",
-                  "test": {
-                    "type": "MemberExpression",
-                    "computed": false,
-                    "object": {
-                      "type": "Identifier",
-                      "name": "ActionTypes",
-                      "range": [
-                        591,
-                        602
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 19,
-                          "column": 7
-                        },
-                        "end": {
-                          "line": 19,
-                          "column": 18
-                        }
-                      }
-                    },
-                    "property": {
-                      "type": "Identifier",
-                      "name": "PIN_PROCESSED_INVALID",
-                      "range": [
-                        603,
-                        624
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 19,
-                          "column": 19
-                        },
-                        "end": {
-                          "line": 19,
-                          "column": 40
-                        }
-                      }
-                    },
-                    "range": [
-                      591,
-                      624
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 19,
-                        "column": 7
-                      },
-                      "end": {
-                        "line": 19,
-                        "column": 40
-                      }
-                    }
-                  },
-                  "consequent": [
-                    {
-                      "type": "ReturnStatement",
-                      "argument": {
-                        "type": "BinaryExpression",
-                        "operator": "+",
-                        "left": {
-                          "type": "Identifier",
-                          "name": "state",
-                          "range": [
-                            636,
-                            641
-                          ],
-                          "loc": {
-                            "start": {
-                              "line": 20,
-                              "column": 10
-                            },
-                            "end": {
-                              "line": 20,
-                              "column": 15
-                            }
-                          }
-                        },
-                        "right": {
-                          "type": "Literal",
-                          "value": 1,
-                          "raw": "1",
-                          "range": [
-                            644,
-                            645
-                          ],
-                          "loc": {
-                            "start": {
-                              "line": 20,
-                              "column": 18
-                            },
-                            "end": {
-                              "line": 20,
-                              "column": 19
-                            }
-                          }
-                        },
-                        "range": [
-                          636,
-                          645
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 20,
-                            "column": 10
-                          },
-                          "end": {
-                            "line": 20,
-                            "column": 19
-                          }
-                        }
-                      },
-                      "range": [
-                        629,
-                        646
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 20,
-                          "column": 3
-                        },
-                        "end": {
-                          "line": 20,
-                          "column": 20
-                        }
-                      }
-                    }
-                  ],
-                  "range": [
-                    586,
-                    646
-                  ],
-                  "loc": {
-                    "start": {
-                      "line": 19,
-                      "column": 2
-                    },
-                    "end": {
-                      "line": 20,
-                      "column": 20
-                    }
-                  }
-                },
-                {
-                  "type": "SwitchCase",
-                  "test": {
-                    "type": "MemberExpression",
-                    "computed": false,
-                    "object": {
-                      "type": "Identifier",
-                      "name": "ActionTypes",
-                      "range": [
-                        654,
-                        665
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 21,
-                          "column": 7
-                        },
-                        "end": {
-                          "line": 21,
-                          "column": 18
-                        }
-                      }
-                    },
-                    "property": {
-                      "type": "Identifier",
-                      "name": "FINISHED",
-                      "range": [
-                        666,
-                        674
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 21,
-                          "column": 19
-                        },
-                        "end": {
-                          "line": 21,
-                          "column": 27
-                        }
-                      }
-                    },
-                    "range": [
-                      654,
-                      674
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 21,
-                        "column": 7
-                      },
-                      "end": {
-                        "line": 21,
-                        "column": 27
-                      }
-                    }
-                  },
-                  "consequent": [],
-                  "range": [
-                    649,
-                    675
-                  ],
-                  "loc": {
-                    "start": {
-                      "line": 21,
-                      "column": 2
-                    },
-                    "end": {
-                      "line": 21,
-                      "column": 28
-                    }
-                  }
-                },
-                {
-                  "type": "SwitchCase",
-                  "test": {
-                    "type": "MemberExpression",
-                    "computed": false,
-                    "object": {
-                      "type": "Identifier",
-                      "name": "ActionTypes",
-                      "range": [
-                        683,
-                        694
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 22,
-                          "column": 7
-                        },
-                        "end": {
-                          "line": 22,
-                          "column": 18
-                        }
-                      }
-                    },
-                    "property": {
-                      "type": "Identifier",
-                      "name": "COMPLETE_ABORT",
-                      "range": [
-                        695,
-                        709
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 22,
-                          "column": 19
-                        },
-                        "end": {
-                          "line": 22,
-                          "column": 33
-                        }
-                      }
-                    },
-                    "range": [
-                      683,
-                      709
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 22,
-                        "column": 7
-                      },
-                      "end": {
-                        "line": 22,
-                        "column": 33
-                      }
-                    }
-                  },
-                  "consequent": [
-                    {
-                      "type": "ReturnStatement",
-                      "argument": {
-                        "type": "Literal",
-                        "value": 0,
-                        "raw": "0",
-                        "range": [
-                          721,
-                          722
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 23,
-                            "column": 10
-                          },
-                          "end": {
-                            "line": 23,
-                            "column": 11
-                          }
-                        }
-                      },
-                      "range": [
-                        714,
-                        723
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 23,
-                          "column": 3
-                        },
-                        "end": {
-                          "line": 23,
-                          "column": 12
-                        }
-                      }
-                    }
-                  ],
-                  "range": [
-                    678,
-                    723
-                  ],
-                  "loc": {
-                    "start": {
-                      "line": 22,
-                      "column": 2
-                    },
-                    "end": {
-                      "line": 23,
-                      "column": 12
-                    }
-                  }
-                },
-                {
-                  "type": "SwitchCase",
-                  "test": null,
-                  "consequent": [
-                    {
-                      "type": "ReturnStatement",
-                      "argument": {
-                        "type": "Identifier",
-                        "name": "state",
-                        "range": [
-                          745,
-                          750
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 25,
-                            "column": 10
-                          },
-                          "end": {
-                            "line": 25,
-                            "column": 15
-                          }
-                        }
-                      },
-                      "range": [
-                        738,
-                        751
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 25,
-                          "column": 3
-                        },
-                        "end": {
-                          "line": 25,
-                          "column": 16
-                        }
-                      }
-                    }
-                  ],
-                  "range": [
-                    726,
-                    751
-                  ],
-                  "loc": {
-                    "start": {
-                      "line": 24,
-                      "column": 2
-                    },
-                    "end": {
-                      "line": 25,
-                      "column": 16
-                    }
-                  }
-                }
-              ],
-              "range": [
-                522,
-                754
-              ],
-              "loc": {
-                "start": {
-                  "line": 17,
-                  "column": 1
-                },
-                "end": {
-                  "line": 26,
-                  "column": 2
-                }
-              }
-            }
-          ],
-          "range": [
-            519,
-            756
-          ],
-          "loc": {
-            "start": {
-              "line": 16,
-              "column": 54
-            },
-            "end": {
-              "line": 27,
-              "column": 1
-            }
-          }
-        },
-        "generator": false,
-        "expression": false,
-        "range": [
-          480,
-          756
-        ],
-        "loc": {
-          "start": {
-            "line": 16,
-            "column": 15
-          },
-          "end": {
-            "line": 27,
-            "column": 1
-          }
-        },
-        "leadingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * This is the main state reducer and represents the amount of times the user\n * has attempted to put a pin in the ATM\n * The number will reset once the ATM finishes or aborts\n *\n * @param {Number} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
-            "range": [
-              155,
-              464
-            ],
-            "loc": {
-              "start": {
-                "line": 8,
-                "column": 0
-              },
-              "end": {
-                "line": 15,
-                "column": 3
-              }
-            }
-          }
-        ],
-        "trailingComments": []
-      },
-      "range": [
-        465,
-        756
-      ],
+      "start": 465,
+      "end": 756,
       "loc": {
         "start": {
           "line": 16,
@@ -807,14 +141,625 @@
           "column": 1
         }
       },
+      "declaration": {
+        "type": "FunctionDeclaration",
+        "start": 480,
+        "end": 756,
+        "loc": {
+          "start": {
+            "line": 16,
+            "column": 15
+          },
+          "end": {
+            "line": 27,
+            "column": 1
+          }
+        },
+        "id": {
+          "type": "Identifier",
+          "start": 489,
+          "end": 500,
+          "loc": {
+            "start": {
+              "line": 16,
+              "column": 24
+            },
+            "end": {
+              "line": 16,
+              "column": 35
+            }
+          },
+          "name": "pinAttempts",
+          "leadingComments": null
+        },
+        "generator": false,
+        "expression": false,
+        "async": false,
+        "params": [
+          {
+            "type": "AssignmentPattern",
+            "start": 501,
+            "end": 510,
+            "loc": {
+              "start": {
+                "line": 16,
+                "column": 36
+              },
+              "end": {
+                "line": 16,
+                "column": 45
+              }
+            },
+            "operator": "=",
+            "left": {
+              "type": "Identifier",
+              "start": 501,
+              "end": 506,
+              "loc": {
+                "start": {
+                  "line": 16,
+                  "column": 36
+                },
+                "end": {
+                  "line": 16,
+                  "column": 41
+                }
+              },
+              "name": "state"
+            },
+            "right": {
+              "type": "Literal",
+              "start": 509,
+              "end": 510,
+              "loc": {
+                "start": {
+                  "line": 16,
+                  "column": 44
+                },
+                "end": {
+                  "line": 16,
+                  "column": 45
+                }
+              },
+              "value": 0,
+              "rawValue": 0,
+              "raw": "0"
+            }
+          },
+          {
+            "type": "Identifier",
+            "start": 512,
+            "end": 518,
+            "loc": {
+              "start": {
+                "line": 16,
+                "column": 47
+              },
+              "end": {
+                "line": 16,
+                "column": 53
+              }
+            },
+            "name": "action"
+          }
+        ],
+        "body": {
+          "type": "BlockStatement",
+          "start": 519,
+          "end": 756,
+          "loc": {
+            "start": {
+              "line": 16,
+              "column": 54
+            },
+            "end": {
+              "line": 27,
+              "column": 1
+            }
+          },
+          "body": [
+            {
+              "type": "SwitchStatement",
+              "start": 522,
+              "end": 754,
+              "loc": {
+                "start": {
+                  "line": 17,
+                  "column": 1
+                },
+                "end": {
+                  "line": 26,
+                  "column": 2
+                }
+              },
+              "discriminant": {
+                "type": "MemberExpression",
+                "start": 530,
+                "end": 541,
+                "loc": {
+                  "start": {
+                    "line": 17,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 17,
+                    "column": 20
+                  }
+                },
+                "object": {
+                  "type": "Identifier",
+                  "start": 530,
+                  "end": 536,
+                  "loc": {
+                    "start": {
+                      "line": 17,
+                      "column": 9
+                    },
+                    "end": {
+                      "line": 17,
+                      "column": 15
+                    }
+                  },
+                  "name": "action"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "start": 537,
+                  "end": 541,
+                  "loc": {
+                    "start": {
+                      "line": 17,
+                      "column": 16
+                    },
+                    "end": {
+                      "line": 17,
+                      "column": 20
+                    }
+                  },
+                  "name": "type"
+                },
+                "computed": false
+              },
+              "cases": [
+                {
+                  "type": "SwitchCase",
+                  "start": 546,
+                  "end": 583,
+                  "loc": {
+                    "start": {
+                      "line": 18,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 18,
+                      "column": 39
+                    }
+                  },
+                  "consequent": [],
+                  "test": {
+                    "type": "MemberExpression",
+                    "start": 551,
+                    "end": 582,
+                    "loc": {
+                      "start": {
+                        "line": 18,
+                        "column": 7
+                      },
+                      "end": {
+                        "line": 18,
+                        "column": 38
+                      }
+                    },
+                    "object": {
+                      "type": "Identifier",
+                      "start": 551,
+                      "end": 562,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 7
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 18
+                        }
+                      },
+                      "name": "ActionTypes"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "start": 563,
+                      "end": 582,
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 19
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 38
+                        }
+                      },
+                      "name": "PIN_PROCESSED_VALID"
+                    },
+                    "computed": false
+                  }
+                },
+                {
+                  "type": "SwitchCase",
+                  "start": 586,
+                  "end": 646,
+                  "loc": {
+                    "start": {
+                      "line": 19,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 20,
+                      "column": 20
+                    }
+                  },
+                  "consequent": [
+                    {
+                      "type": "ReturnStatement",
+                      "start": 629,
+                      "end": 646,
+                      "loc": {
+                        "start": {
+                          "line": 20,
+                          "column": 3
+                        },
+                        "end": {
+                          "line": 20,
+                          "column": 20
+                        }
+                      },
+                      "argument": {
+                        "type": "BinaryExpression",
+                        "start": 636,
+                        "end": 645,
+                        "loc": {
+                          "start": {
+                            "line": 20,
+                            "column": 10
+                          },
+                          "end": {
+                            "line": 20,
+                            "column": 19
+                          }
+                        },
+                        "left": {
+                          "type": "Identifier",
+                          "start": 636,
+                          "end": 641,
+                          "loc": {
+                            "start": {
+                              "line": 20,
+                              "column": 10
+                            },
+                            "end": {
+                              "line": 20,
+                              "column": 15
+                            }
+                          },
+                          "name": "state"
+                        },
+                        "operator": "+",
+                        "right": {
+                          "type": "Literal",
+                          "start": 644,
+                          "end": 645,
+                          "loc": {
+                            "start": {
+                              "line": 20,
+                              "column": 18
+                            },
+                            "end": {
+                              "line": 20,
+                              "column": 19
+                            }
+                          },
+                          "value": 1,
+                          "rawValue": 1,
+                          "raw": "1"
+                        }
+                      }
+                    }
+                  ],
+                  "test": {
+                    "type": "MemberExpression",
+                    "start": 591,
+                    "end": 624,
+                    "loc": {
+                      "start": {
+                        "line": 19,
+                        "column": 7
+                      },
+                      "end": {
+                        "line": 19,
+                        "column": 40
+                      }
+                    },
+                    "object": {
+                      "type": "Identifier",
+                      "start": 591,
+                      "end": 602,
+                      "loc": {
+                        "start": {
+                          "line": 19,
+                          "column": 7
+                        },
+                        "end": {
+                          "line": 19,
+                          "column": 18
+                        }
+                      },
+                      "name": "ActionTypes"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "start": 603,
+                      "end": 624,
+                      "loc": {
+                        "start": {
+                          "line": 19,
+                          "column": 19
+                        },
+                        "end": {
+                          "line": 19,
+                          "column": 40
+                        }
+                      },
+                      "name": "PIN_PROCESSED_INVALID"
+                    },
+                    "computed": false
+                  }
+                },
+                {
+                  "type": "SwitchCase",
+                  "start": 649,
+                  "end": 675,
+                  "loc": {
+                    "start": {
+                      "line": 21,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 21,
+                      "column": 28
+                    }
+                  },
+                  "consequent": [],
+                  "test": {
+                    "type": "MemberExpression",
+                    "start": 654,
+                    "end": 674,
+                    "loc": {
+                      "start": {
+                        "line": 21,
+                        "column": 7
+                      },
+                      "end": {
+                        "line": 21,
+                        "column": 27
+                      }
+                    },
+                    "object": {
+                      "type": "Identifier",
+                      "start": 654,
+                      "end": 665,
+                      "loc": {
+                        "start": {
+                          "line": 21,
+                          "column": 7
+                        },
+                        "end": {
+                          "line": 21,
+                          "column": 18
+                        }
+                      },
+                      "name": "ActionTypes"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "start": 666,
+                      "end": 674,
+                      "loc": {
+                        "start": {
+                          "line": 21,
+                          "column": 19
+                        },
+                        "end": {
+                          "line": 21,
+                          "column": 27
+                        }
+                      },
+                      "name": "FINISHED"
+                    },
+                    "computed": false
+                  }
+                },
+                {
+                  "type": "SwitchCase",
+                  "start": 678,
+                  "end": 723,
+                  "loc": {
+                    "start": {
+                      "line": 22,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 23,
+                      "column": 12
+                    }
+                  },
+                  "consequent": [
+                    {
+                      "type": "ReturnStatement",
+                      "start": 714,
+                      "end": 723,
+                      "loc": {
+                        "start": {
+                          "line": 23,
+                          "column": 3
+                        },
+                        "end": {
+                          "line": 23,
+                          "column": 12
+                        }
+                      },
+                      "argument": {
+                        "type": "Literal",
+                        "start": 721,
+                        "end": 722,
+                        "loc": {
+                          "start": {
+                            "line": 23,
+                            "column": 10
+                          },
+                          "end": {
+                            "line": 23,
+                            "column": 11
+                          }
+                        },
+                        "value": 0,
+                        "rawValue": 0,
+                        "raw": "0"
+                      }
+                    }
+                  ],
+                  "test": {
+                    "type": "MemberExpression",
+                    "start": 683,
+                    "end": 709,
+                    "loc": {
+                      "start": {
+                        "line": 22,
+                        "column": 7
+                      },
+                      "end": {
+                        "line": 22,
+                        "column": 33
+                      }
+                    },
+                    "object": {
+                      "type": "Identifier",
+                      "start": 683,
+                      "end": 694,
+                      "loc": {
+                        "start": {
+                          "line": 22,
+                          "column": 7
+                        },
+                        "end": {
+                          "line": 22,
+                          "column": 18
+                        }
+                      },
+                      "name": "ActionTypes"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "start": 695,
+                      "end": 709,
+                      "loc": {
+                        "start": {
+                          "line": 22,
+                          "column": 19
+                        },
+                        "end": {
+                          "line": 22,
+                          "column": 33
+                        }
+                      },
+                      "name": "COMPLETE_ABORT"
+                    },
+                    "computed": false
+                  }
+                },
+                {
+                  "type": "SwitchCase",
+                  "start": 726,
+                  "end": 751,
+                  "loc": {
+                    "start": {
+                      "line": 24,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 25,
+                      "column": 16
+                    }
+                  },
+                  "consequent": [
+                    {
+                      "type": "ReturnStatement",
+                      "start": 738,
+                      "end": 751,
+                      "loc": {
+                        "start": {
+                          "line": 25,
+                          "column": 3
+                        },
+                        "end": {
+                          "line": 25,
+                          "column": 16
+                        }
+                      },
+                      "argument": {
+                        "type": "Identifier",
+                        "start": 745,
+                        "end": 750,
+                        "loc": {
+                          "start": {
+                            "line": 25,
+                            "column": 10
+                          },
+                          "end": {
+                            "line": 25,
+                            "column": 15
+                          }
+                        },
+                        "name": "state"
+                      }
+                    }
+                  ],
+                  "test": null
+                }
+              ]
+            }
+          ]
+        },
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * This is the main state reducer and represents the amount of times the user\n * has attempted to put a pin in the ATM\n * The number will reset once the ATM finishes or aborts\n *\n * @param {Number} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
+            "start": 155,
+            "end": 464,
+            "loc": {
+              "start": {
+                "line": 8,
+                "column": 0
+              },
+              "end": {
+                "line": 15,
+                "column": 3
+              }
+            },
+            "range": [
+              155,
+              464
+            ]
+          }
+        ],
+        "trailingComments": []
+      },
       "leadingComments": [
         {
           "type": "Block",
           "value": "*\n * This is the main state reducer and represents the amount of times the user\n * has attempted to put a pin in the ATM\n * The number will reset once the ATM finishes or aborts\n *\n * @param {Number} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
-          "range": [
-            155,
-            464
-          ],
+          "start": 155,
+          "end": 464,
           "loc": {
             "start": {
               "line": 8,
@@ -824,62 +769,13 @@
               "line": 15,
               "column": 3
             }
-          }
+          },
+          "range": [
+            155,
+            464
+          ]
         }
       ]
-    }
-  ],
-  "sourceType": "module",
-  "range": [
-    97,
-    756
-  ],
-  "loc": {
-    "start": {
-      "line": 6,
-      "column": 0
-    },
-    "end": {
-      "line": 27,
-      "column": 1
-    }
-  },
-  "comments": [
-    {
-      "type": "Block",
-      "value": "*\n * @file Contains the state reducer for the ATM pin attempts\n * @author Edward Gonzalez\n ",
-      "range": [
-        0,
-        95
-      ],
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 0
-        },
-        "end": {
-          "line": 4,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": "Block",
-      "value": "*\n * This is the main state reducer and represents the amount of times the user\n * has attempted to put a pin in the ATM\n * The number will reset once the ATM finishes or aborts\n *\n * @param {Number} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n ",
-      "range": [
-        155,
-        464
-      ],
-      "loc": {
-        "start": {
-          "line": 8,
-          "column": 0
-        },
-        "end": {
-          "line": 15,
-          "column": 3
-        }
-      }
     }
   ]
 }

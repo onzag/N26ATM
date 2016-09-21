@@ -1,11 +1,26 @@
 {
   "coverage": "100%",
-  "expectCount": 50,
-  "actualCount": 50,
+  "expectCount": 93,
+  "actualCount": 93,
   "files": {
     "src/constants/States.js": {
       "expectCount": 10,
       "actualCount": 10,
+      "undocumentLines": []
+    },
+    "src/views/Aborting.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/controllers/Aborting.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/views/components/Button.js": {
+      "expectCount": 2,
+      "actualCount": 2,
       "undocumentLines": []
     },
     "src/constants/ActionTypes.js": {
@@ -13,14 +28,14 @@
       "actualCount": 13,
       "undocumentLines": []
     },
+    "src/constants/config.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
     "src/constants/WithdrawFailReasons.js": {
       "expectCount": 1,
       "actualCount": 1,
-      "undocumentLines": []
-    },
-    "src/constants/config.js": {
-      "expectCount": 2,
-      "actualCount": 2,
       "undocumentLines": []
     },
     "src/constants/AbortReasons.js": {
@@ -28,7 +43,72 @@
       "actualCount": 4,
       "undocumentLines": []
     },
+    "src/views/components/NavBar.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/views/ProcessingCard.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/controllers/ProcessingCard.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/views/ProcessingPin.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/controllers/ProcessingPin.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/views/components/TextField.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "src/views/WaitingForAmount.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "src/controllers/WaitingForAmount.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/views/WaitingForCard.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/controllers/WaitingForCard.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/views/WaitingForPin.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "src/controllers/WaitingForPin.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
     "src/reducers/abortReason.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/reducers/amount.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []

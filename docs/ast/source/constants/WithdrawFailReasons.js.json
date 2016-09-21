@@ -1,127 +1,23 @@
 {
   "type": "Program",
+  "start": 0,
+  "end": 257,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 10,
+      "column": 0
+    }
+  },
+  "sourceType": "module",
   "body": [
     {
       "type": "ExportNamedDeclaration",
-      "declaration": {
-        "type": "VariableDeclaration",
-        "declarations": [
-          {
-            "type": "VariableDeclarator",
-            "id": {
-              "type": "Identifier",
-              "name": "LIMIT_REACHED",
-              "range": [
-                224,
-                237
-              ],
-              "loc": {
-                "start": {
-                  "line": 9,
-                  "column": 13
-                },
-                "end": {
-                  "line": 9,
-                  "column": 26
-                }
-              }
-            },
-            "init": {
-              "type": "Literal",
-              "value": "LIMIT_REACHED",
-              "raw": "'LIMIT_REACHED'",
-              "range": [
-                240,
-                255
-              ],
-              "loc": {
-                "start": {
-                  "line": 9,
-                  "column": 29
-                },
-                "end": {
-                  "line": 9,
-                  "column": 44
-                }
-              }
-            },
-            "range": [
-              224,
-              255
-            ],
-            "loc": {
-              "start": {
-                "line": 9,
-                "column": 13
-              },
-              "end": {
-                "line": 9,
-                "column": 44
-              }
-            }
-          }
-        ],
-        "kind": "const",
-        "range": [
-          218,
-          256
-        ],
-        "loc": {
-          "start": {
-            "line": 9,
-            "column": 7
-          },
-          "end": {
-            "line": 9,
-            "column": 45
-          }
-        },
-        "leadingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * @file Contains the reasons why a withdraw action may fail (note that this should allow to try again)\n * @author Edward Gonzalez\n ",
-            "range": [
-              0,
-              138
-            ],
-            "loc": {
-              "start": {
-                "line": 1,
-                "column": 0
-              },
-              "end": {
-                "line": 4,
-                "column": 3
-              }
-            }
-          },
-          {
-            "type": "Block",
-            "value": "*\n * Specifies that the limit of the transaction size is reached\n ",
-            "range": [
-              140,
-              210
-            ],
-            "loc": {
-              "start": {
-                "line": 6,
-                "column": 0
-              },
-              "end": {
-                "line": 8,
-                "column": 3
-              }
-            }
-          }
-        ],
-        "trailingComments": []
-      },
-      "specifiers": [],
-      "source": null,
-      "range": [
-        211,
-        256
-      ],
+      "start": 211,
+      "end": 256,
       "loc": {
         "start": {
           "line": 9,
@@ -132,14 +28,126 @@
           "column": 45
         }
       },
+      "declaration": {
+        "type": "VariableDeclaration",
+        "start": 218,
+        "end": 256,
+        "loc": {
+          "start": {
+            "line": 9,
+            "column": 7
+          },
+          "end": {
+            "line": 9,
+            "column": 45
+          }
+        },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 224,
+            "end": 255,
+            "loc": {
+              "start": {
+                "line": 9,
+                "column": 13
+              },
+              "end": {
+                "line": 9,
+                "column": 44
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 224,
+              "end": 237,
+              "loc": {
+                "start": {
+                  "line": 9,
+                  "column": 13
+                },
+                "end": {
+                  "line": 9,
+                  "column": 26
+                }
+              },
+              "name": "LIMIT_REACHED",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "Literal",
+              "start": 240,
+              "end": 255,
+              "loc": {
+                "start": {
+                  "line": 9,
+                  "column": 29
+                },
+                "end": {
+                  "line": 9,
+                  "column": 44
+                }
+              },
+              "value": "LIMIT_REACHED",
+              "rawValue": "LIMIT_REACHED",
+              "raw": "'LIMIT_REACHED'"
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * @file Contains the reasons why a withdraw action may fail (note that this should allow to try again)\n * @author Edward Gonzalez\n ",
+            "start": 0,
+            "end": 138,
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 0
+              },
+              "end": {
+                "line": 4,
+                "column": 3
+              }
+            },
+            "range": [
+              0,
+              138
+            ]
+          },
+          {
+            "type": "Block",
+            "value": "*\n * Specifies that the limit of the transaction size is reached\n ",
+            "start": 140,
+            "end": 210,
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 0
+              },
+              "end": {
+                "line": 8,
+                "column": 3
+              }
+            },
+            "range": [
+              140,
+              210
+            ]
+          }
+        ],
+        "trailingComments": []
+      },
+      "specifiers": [],
+      "source": null,
       "leadingComments": [
         {
           "type": "Block",
           "value": "*\n * @file Contains the reasons why a withdraw action may fail (note that this should allow to try again)\n * @author Edward Gonzalez\n ",
-          "range": [
-            0,
-            138
-          ],
+          "start": 0,
+          "end": 138,
           "loc": {
             "start": {
               "line": 1,
@@ -149,15 +157,17 @@
               "line": 4,
               "column": 3
             }
-          }
+          },
+          "range": [
+            0,
+            138
+          ]
         },
         {
           "type": "Block",
           "value": "*\n * Specifies that the limit of the transaction size is reached\n ",
-          "range": [
-            140,
-            210
-          ],
+          "start": 140,
+          "end": 210,
           "loc": {
             "start": {
               "line": 6,
@@ -167,62 +177,13 @@
               "line": 8,
               "column": 3
             }
-          }
+          },
+          "range": [
+            140,
+            210
+          ]
         }
       ]
-    }
-  ],
-  "sourceType": "module",
-  "range": [
-    211,
-    256
-  ],
-  "loc": {
-    "start": {
-      "line": 9,
-      "column": 0
-    },
-    "end": {
-      "line": 9,
-      "column": 45
-    }
-  },
-  "comments": [
-    {
-      "type": "Block",
-      "value": "*\n * @file Contains the reasons why a withdraw action may fail (note that this should allow to try again)\n * @author Edward Gonzalez\n ",
-      "range": [
-        0,
-        138
-      ],
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 0
-        },
-        "end": {
-          "line": 4,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": "Block",
-      "value": "*\n * Specifies that the limit of the transaction size is reached\n ",
-      "range": [
-        140,
-        210
-      ],
-      "loc": {
-        "start": {
-          "line": 6,
-          "column": 0
-        },
-        "end": {
-          "line": 8,
-          "column": 3
-        }
-      }
     }
   ]
 }

@@ -1,146 +1,23 @@
 {
   "type": "Program",
+  "start": 0,
+  "end": 563,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 25,
+      "column": 0
+    }
+  },
+  "sourceType": "module",
   "body": [
     {
       "type": "ExportNamedDeclaration",
-      "declaration": {
-        "type": "VariableDeclaration",
-        "declarations": [
-          {
-            "type": "VariableDeclarator",
-            "id": {
-              "type": "Identifier",
-              "name": "TOO_MANY_FAILED_PIN_ATTEMPTS",
-              "range": [
-                147,
-                175
-              ],
-              "loc": {
-                "start": {
-                  "line": 9,
-                  "column": 13
-                },
-                "end": {
-                  "line": 9,
-                  "column": 41
-                }
-              }
-            },
-            "init": {
-              "type": "Literal",
-              "value": "TOO_MANY_FAILED_PIN_ATTEMPTS",
-              "raw": "'TOO_MANY_FAILED_PIN_ATTEMPTS'",
-              "range": [
-                178,
-                208
-              ],
-              "loc": {
-                "start": {
-                  "line": 9,
-                  "column": 44
-                },
-                "end": {
-                  "line": 9,
-                  "column": 74
-                }
-              }
-            },
-            "range": [
-              147,
-              208
-            ],
-            "loc": {
-              "start": {
-                "line": 9,
-                "column": 13
-              },
-              "end": {
-                "line": 9,
-                "column": 74
-              }
-            }
-          }
-        ],
-        "kind": "const",
-        "range": [
-          141,
-          209
-        ],
-        "loc": {
-          "start": {
-            "line": 9,
-            "column": 7
-          },
-          "end": {
-            "line": 9,
-            "column": 75
-          }
-        },
-        "leadingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * @file Contains the action generators\n * @author Edward Gonzalez\n ",
-            "range": [
-              0,
-              74
-            ],
-            "loc": {
-              "start": {
-                "line": 1,
-                "column": 0
-              },
-              "end": {
-                "line": 4,
-                "column": 3
-              }
-            }
-          },
-          {
-            "type": "Block",
-            "value": "*\n * When the user tried too much on an invalid pin\n ",
-            "range": [
-              76,
-              133
-            ],
-            "loc": {
-              "start": {
-                "line": 6,
-                "column": 0
-              },
-              "end": {
-                "line": 8,
-                "column": 3
-              }
-            }
-          }
-        ],
-        "trailingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * When the user tried too much to withdraw on the excessive amount\n ",
-            "range": [
-              211,
-              286
-            ],
-            "loc": {
-              "start": {
-                "line": 11,
-                "column": 0
-              },
-              "end": {
-                "line": 13,
-                "column": 3
-              }
-            }
-          }
-        ]
-      },
-      "specifiers": [],
-      "source": null,
-      "range": [
-        134,
-        209
-      ],
+      "start": 134,
+      "end": 209,
       "loc": {
         "start": {
           "line": 9,
@@ -151,148 +28,122 @@
           "column": 75
         }
       },
-      "leadingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * @file Contains the action generators\n * @author Edward Gonzalez\n ",
-          "range": [
-            0,
-            74
-          ],
-          "loc": {
-            "start": {
-              "line": 1,
-              "column": 0
-            },
-            "end": {
-              "line": 4,
-              "column": 3
-            }
-          }
-        },
-        {
-          "type": "Block",
-          "value": "*\n * When the user tried too much on an invalid pin\n ",
-          "range": [
-            76,
-            133
-          ],
-          "loc": {
-            "start": {
-              "line": 6,
-              "column": 0
-            },
-            "end": {
-              "line": 8,
-              "column": 3
-            }
-          }
-        }
-      ],
-      "trailingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * When the user tried too much to withdraw on the excessive amount\n ",
-          "range": [
-            211,
-            286
-          ],
-          "loc": {
-            "start": {
-              "line": 11,
-              "column": 0
-            },
-            "end": {
-              "line": 13,
-              "column": 3
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "ExportNamedDeclaration",
       "declaration": {
         "type": "VariableDeclaration",
-        "declarations": [
-          {
-            "type": "VariableDeclarator",
-            "id": {
-              "type": "Identifier",
-              "name": "TOO_MANY_FAILED_WITHDRAW_ATTEMPTS",
-              "range": [
-                300,
-                333
-              ],
-              "loc": {
-                "start": {
-                  "line": 14,
-                  "column": 13
-                },
-                "end": {
-                  "line": 14,
-                  "column": 46
-                }
-              }
-            },
-            "init": {
-              "type": "Literal",
-              "value": "TOO_MANY_FAILED_WITHDRAW_ATTEMPTS",
-              "raw": "'TOO_MANY_FAILED_WITHDRAW_ATTEMPTS'",
-              "range": [
-                336,
-                371
-              ],
-              "loc": {
-                "start": {
-                  "line": 14,
-                  "column": 49
-                },
-                "end": {
-                  "line": 14,
-                  "column": 84
-                }
-              }
-            },
-            "range": [
-              300,
-              371
-            ],
-            "loc": {
-              "start": {
-                "line": 14,
-                "column": 13
-              },
-              "end": {
-                "line": 14,
-                "column": 84
-              }
-            }
-          }
-        ],
-        "kind": "const",
-        "range": [
-          294,
-          372
-        ],
+        "start": 141,
+        "end": 209,
         "loc": {
           "start": {
-            "line": 14,
+            "line": 9,
             "column": 7
           },
           "end": {
-            "line": 14,
-            "column": 85
+            "line": 9,
+            "column": 75
           }
         },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 147,
+            "end": 208,
+            "loc": {
+              "start": {
+                "line": 9,
+                "column": 13
+              },
+              "end": {
+                "line": 9,
+                "column": 74
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 147,
+              "end": 175,
+              "loc": {
+                "start": {
+                  "line": 9,
+                  "column": 13
+                },
+                "end": {
+                  "line": 9,
+                  "column": 41
+                }
+              },
+              "name": "TOO_MANY_FAILED_PIN_ATTEMPTS",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "Literal",
+              "start": 178,
+              "end": 208,
+              "loc": {
+                "start": {
+                  "line": 9,
+                  "column": 44
+                },
+                "end": {
+                  "line": 9,
+                  "column": 74
+                }
+              },
+              "value": "TOO_MANY_FAILED_PIN_ATTEMPTS",
+              "rawValue": "TOO_MANY_FAILED_PIN_ATTEMPTS",
+              "raw": "'TOO_MANY_FAILED_PIN_ATTEMPTS'"
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * When the user tried too much to withdraw on the excessive amount\n ",
+            "value": "*\n * @file Contains the action generators\n * @author Edward Gonzalez\n ",
+            "start": 0,
+            "end": 74,
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 0
+              },
+              "end": {
+                "line": 4,
+                "column": 3
+              }
+            },
             "range": [
-              211,
-              286
-            ],
+              0,
+              74
+            ]
+          },
+          {
+            "type": "Block",
+            "value": "*\n * When the user tried too much on an invalid pin\n ",
+            "start": 76,
+            "end": 133,
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 0
+              },
+              "end": {
+                "line": 8,
+                "column": 3
+              }
+            },
+            "range": [
+              76,
+              133
+            ]
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * When the user tried too much to withdraw on the excessive amount\n ",
+            "start": 211,
+            "end": 286,
             "loc": {
               "start": {
                 "line": 11,
@@ -302,36 +153,85 @@
                 "line": 13,
                 "column": 3
               }
-            }
-          }
-        ],
-        "trailingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * When the user asked more than it had\n ",
+            },
             "range": [
-              374,
-              421
-            ],
-            "loc": {
-              "start": {
-                "line": 16,
-                "column": 0
-              },
-              "end": {
-                "line": 18,
-                "column": 3
-              }
-            }
+              211,
+              286
+            ]
           }
         ]
       },
       "specifiers": [],
       "source": null,
-      "range": [
-        287,
-        372
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * @file Contains the action generators\n * @author Edward Gonzalez\n ",
+          "start": 0,
+          "end": 74,
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 0
+            },
+            "end": {
+              "line": 4,
+              "column": 3
+            }
+          },
+          "range": [
+            0,
+            74
+          ]
+        },
+        {
+          "type": "Block",
+          "value": "*\n * When the user tried too much on an invalid pin\n ",
+          "start": 76,
+          "end": 133,
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 0
+            },
+            "end": {
+              "line": 8,
+              "column": 3
+            }
+          },
+          "range": [
+            76,
+            133
+          ]
+        }
       ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * When the user tried too much to withdraw on the excessive amount\n ",
+          "start": 211,
+          "end": 286,
+          "loc": {
+            "start": {
+              "line": 11,
+              "column": 0
+            },
+            "end": {
+              "line": 13,
+              "column": 3
+            }
+          },
+          "range": [
+            211,
+            286
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "start": 287,
+      "end": 372,
       "loc": {
         "start": {
           "line": 14,
@@ -342,130 +242,102 @@
           "column": 85
         }
       },
-      "leadingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * When the user tried too much to withdraw on the excessive amount\n ",
-          "range": [
-            211,
-            286
-          ],
-          "loc": {
-            "start": {
-              "line": 11,
-              "column": 0
-            },
-            "end": {
-              "line": 13,
-              "column": 3
-            }
-          }
-        }
-      ],
-      "trailingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * When the user asked more than it had\n ",
-          "range": [
-            374,
-            421
-          ],
-          "loc": {
-            "start": {
-              "line": 16,
-              "column": 0
-            },
-            "end": {
-              "line": 18,
-              "column": 3
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "ExportNamedDeclaration",
       "declaration": {
         "type": "VariableDeclaration",
-        "declarations": [
-          {
-            "type": "VariableDeclarator",
-            "id": {
-              "type": "Identifier",
-              "name": "NOT_ENOUGH_FUNDS",
-              "range": [
-                435,
-                451
-              ],
-              "loc": {
-                "start": {
-                  "line": 19,
-                  "column": 13
-                },
-                "end": {
-                  "line": 19,
-                  "column": 29
-                }
-              }
-            },
-            "init": {
-              "type": "Literal",
-              "value": "NOT_ENOUGH_FUNDS",
-              "raw": "'NOT_ENOUGH_FUNDS'",
-              "range": [
-                454,
-                472
-              ],
-              "loc": {
-                "start": {
-                  "line": 19,
-                  "column": 32
-                },
-                "end": {
-                  "line": 19,
-                  "column": 50
-                }
-              }
-            },
-            "range": [
-              435,
-              472
-            ],
-            "loc": {
-              "start": {
-                "line": 19,
-                "column": 13
-              },
-              "end": {
-                "line": 19,
-                "column": 50
-              }
-            }
-          }
-        ],
-        "kind": "const",
-        "range": [
-          429,
-          473
-        ],
+        "start": 294,
+        "end": 372,
         "loc": {
           "start": {
-            "line": 19,
+            "line": 14,
             "column": 7
           },
           "end": {
-            "line": 19,
-            "column": 51
+            "line": 14,
+            "column": 85
           }
         },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 300,
+            "end": 371,
+            "loc": {
+              "start": {
+                "line": 14,
+                "column": 13
+              },
+              "end": {
+                "line": 14,
+                "column": 84
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 300,
+              "end": 333,
+              "loc": {
+                "start": {
+                  "line": 14,
+                  "column": 13
+                },
+                "end": {
+                  "line": 14,
+                  "column": 46
+                }
+              },
+              "name": "TOO_MANY_FAILED_WITHDRAW_ATTEMPTS",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "Literal",
+              "start": 336,
+              "end": 371,
+              "loc": {
+                "start": {
+                  "line": 14,
+                  "column": 49
+                },
+                "end": {
+                  "line": 14,
+                  "column": 84
+                }
+              },
+              "value": "TOO_MANY_FAILED_WITHDRAW_ATTEMPTS",
+              "rawValue": "TOO_MANY_FAILED_WITHDRAW_ATTEMPTS",
+              "raw": "'TOO_MANY_FAILED_WITHDRAW_ATTEMPTS'"
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * When the user asked more than it had\n ",
+            "value": "*\n * When the user tried too much to withdraw on the excessive amount\n ",
+            "start": 211,
+            "end": 286,
+            "loc": {
+              "start": {
+                "line": 11,
+                "column": 0
+              },
+              "end": {
+                "line": 13,
+                "column": 3
+              }
+            },
             "range": [
-              374,
-              421
-            ],
+              211,
+              286
+            ]
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * When the user asked more than it had\n ",
+            "start": 374,
+            "end": 421,
             "loc": {
               "start": {
                 "line": 16,
@@ -475,36 +347,65 @@
                 "line": 18,
                 "column": 3
               }
-            }
-          }
-        ],
-        "trailingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * When the user cancels on its own\n ",
+            },
             "range": [
-              475,
-              518
-            ],
-            "loc": {
-              "start": {
-                "line": 21,
-                "column": 0
-              },
-              "end": {
-                "line": 23,
-                "column": 3
-              }
-            }
+              374,
+              421
+            ]
           }
         ]
       },
       "specifiers": [],
       "source": null,
-      "range": [
-        422,
-        473
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * When the user tried too much to withdraw on the excessive amount\n ",
+          "start": 211,
+          "end": 286,
+          "loc": {
+            "start": {
+              "line": 11,
+              "column": 0
+            },
+            "end": {
+              "line": 13,
+              "column": 3
+            }
+          },
+          "range": [
+            211,
+            286
+          ]
+        }
       ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * When the user asked more than it had\n ",
+          "start": 374,
+          "end": 421,
+          "loc": {
+            "start": {
+              "line": 16,
+              "column": 0
+            },
+            "end": {
+              "line": 18,
+              "column": 3
+            }
+          },
+          "range": [
+            374,
+            421
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "start": 422,
+      "end": 473,
       "loc": {
         "start": {
           "line": 19,
@@ -515,130 +416,102 @@
           "column": 51
         }
       },
-      "leadingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * When the user asked more than it had\n ",
-          "range": [
-            374,
-            421
-          ],
-          "loc": {
-            "start": {
-              "line": 16,
-              "column": 0
-            },
-            "end": {
-              "line": 18,
-              "column": 3
-            }
-          }
-        }
-      ],
-      "trailingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * When the user cancels on its own\n ",
-          "range": [
-            475,
-            518
-          ],
-          "loc": {
-            "start": {
-              "line": 21,
-              "column": 0
-            },
-            "end": {
-              "line": 23,
-              "column": 3
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "ExportNamedDeclaration",
       "declaration": {
         "type": "VariableDeclaration",
-        "declarations": [
-          {
-            "type": "VariableDeclarator",
-            "id": {
-              "type": "Identifier",
-              "name": "USER_CANCELS",
-              "range": [
-                532,
-                544
-              ],
-              "loc": {
-                "start": {
-                  "line": 24,
-                  "column": 13
-                },
-                "end": {
-                  "line": 24,
-                  "column": 25
-                }
-              }
-            },
-            "init": {
-              "type": "Literal",
-              "value": "USER_CANCELS",
-              "raw": "'USER_CANCELS'",
-              "range": [
-                547,
-                561
-              ],
-              "loc": {
-                "start": {
-                  "line": 24,
-                  "column": 28
-                },
-                "end": {
-                  "line": 24,
-                  "column": 42
-                }
-              }
-            },
-            "range": [
-              532,
-              561
-            ],
-            "loc": {
-              "start": {
-                "line": 24,
-                "column": 13
-              },
-              "end": {
-                "line": 24,
-                "column": 42
-              }
-            }
-          }
-        ],
-        "kind": "const",
-        "range": [
-          526,
-          562
-        ],
+        "start": 429,
+        "end": 473,
         "loc": {
           "start": {
-            "line": 24,
+            "line": 19,
             "column": 7
           },
           "end": {
-            "line": 24,
-            "column": 43
+            "line": 19,
+            "column": 51
           }
         },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 435,
+            "end": 472,
+            "loc": {
+              "start": {
+                "line": 19,
+                "column": 13
+              },
+              "end": {
+                "line": 19,
+                "column": 50
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 435,
+              "end": 451,
+              "loc": {
+                "start": {
+                  "line": 19,
+                  "column": 13
+                },
+                "end": {
+                  "line": 19,
+                  "column": 29
+                }
+              },
+              "name": "NOT_ENOUGH_FUNDS",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "Literal",
+              "start": 454,
+              "end": 472,
+              "loc": {
+                "start": {
+                  "line": 19,
+                  "column": 32
+                },
+                "end": {
+                  "line": 19,
+                  "column": 50
+                }
+              },
+              "value": "NOT_ENOUGH_FUNDS",
+              "rawValue": "NOT_ENOUGH_FUNDS",
+              "raw": "'NOT_ENOUGH_FUNDS'"
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * When the user cancels on its own\n ",
+            "value": "*\n * When the user asked more than it had\n ",
+            "start": 374,
+            "end": 421,
+            "loc": {
+              "start": {
+                "line": 16,
+                "column": 0
+              },
+              "end": {
+                "line": 18,
+                "column": 3
+              }
+            },
             "range": [
-              475,
-              518
-            ],
+              374,
+              421
+            ]
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * When the user cancels on its own\n ",
+            "start": 475,
+            "end": 518,
             "loc": {
               "start": {
                 "line": 21,
@@ -648,17 +521,65 @@
                 "line": 23,
                 "column": 3
               }
-            }
+            },
+            "range": [
+              475,
+              518
+            ]
           }
-        ],
-        "trailingComments": []
+        ]
       },
       "specifiers": [],
       "source": null,
-      "range": [
-        519,
-        562
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * When the user asked more than it had\n ",
+          "start": 374,
+          "end": 421,
+          "loc": {
+            "start": {
+              "line": 16,
+              "column": 0
+            },
+            "end": {
+              "line": 18,
+              "column": 3
+            }
+          },
+          "range": [
+            374,
+            421
+          ]
+        }
       ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * When the user cancels on its own\n ",
+          "start": 475,
+          "end": 518,
+          "loc": {
+            "start": {
+              "line": 21,
+              "column": 0
+            },
+            "end": {
+              "line": 23,
+              "column": 3
+            }
+          },
+          "range": [
+            475,
+            518
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "start": 519,
+      "end": 562,
       "loc": {
         "start": {
           "line": 24,
@@ -669,14 +590,106 @@
           "column": 43
         }
       },
+      "declaration": {
+        "type": "VariableDeclaration",
+        "start": 526,
+        "end": 562,
+        "loc": {
+          "start": {
+            "line": 24,
+            "column": 7
+          },
+          "end": {
+            "line": 24,
+            "column": 43
+          }
+        },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 532,
+            "end": 561,
+            "loc": {
+              "start": {
+                "line": 24,
+                "column": 13
+              },
+              "end": {
+                "line": 24,
+                "column": 42
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 532,
+              "end": 544,
+              "loc": {
+                "start": {
+                  "line": 24,
+                  "column": 13
+                },
+                "end": {
+                  "line": 24,
+                  "column": 25
+                }
+              },
+              "name": "USER_CANCELS",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "Literal",
+              "start": 547,
+              "end": 561,
+              "loc": {
+                "start": {
+                  "line": 24,
+                  "column": 28
+                },
+                "end": {
+                  "line": 24,
+                  "column": 42
+                }
+              },
+              "value": "USER_CANCELS",
+              "rawValue": "USER_CANCELS",
+              "raw": "'USER_CANCELS'"
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * When the user cancels on its own\n ",
+            "start": 475,
+            "end": 518,
+            "loc": {
+              "start": {
+                "line": 21,
+                "column": 0
+              },
+              "end": {
+                "line": 23,
+                "column": 3
+              }
+            },
+            "range": [
+              475,
+              518
+            ]
+          }
+        ],
+        "trailingComments": []
+      },
+      "specifiers": [],
+      "source": null,
       "leadingComments": [
         {
           "type": "Block",
           "value": "*\n * When the user cancels on its own\n ",
-          "range": [
-            475,
-            518
-          ],
+          "start": 475,
+          "end": 518,
           "loc": {
             "start": {
               "line": 21,
@@ -686,116 +699,13 @@
               "line": 23,
               "column": 3
             }
-          }
+          },
+          "range": [
+            475,
+            518
+          ]
         }
       ]
-    }
-  ],
-  "sourceType": "module",
-  "range": [
-    134,
-    562
-  ],
-  "loc": {
-    "start": {
-      "line": 9,
-      "column": 0
-    },
-    "end": {
-      "line": 24,
-      "column": 43
-    }
-  },
-  "comments": [
-    {
-      "type": "Block",
-      "value": "*\n * @file Contains the action generators\n * @author Edward Gonzalez\n ",
-      "range": [
-        0,
-        74
-      ],
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 0
-        },
-        "end": {
-          "line": 4,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": "Block",
-      "value": "*\n * When the user tried too much on an invalid pin\n ",
-      "range": [
-        76,
-        133
-      ],
-      "loc": {
-        "start": {
-          "line": 6,
-          "column": 0
-        },
-        "end": {
-          "line": 8,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": "Block",
-      "value": "*\n * When the user tried too much to withdraw on the excessive amount\n ",
-      "range": [
-        211,
-        286
-      ],
-      "loc": {
-        "start": {
-          "line": 11,
-          "column": 0
-        },
-        "end": {
-          "line": 13,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": "Block",
-      "value": "*\n * When the user asked more than it had\n ",
-      "range": [
-        374,
-        421
-      ],
-      "loc": {
-        "start": {
-          "line": 16,
-          "column": 0
-        },
-        "end": {
-          "line": 18,
-          "column": 3
-        }
-      }
-    },
-    {
-      "type": "Block",
-      "value": "*\n * When the user cancels on its own\n ",
-      "range": [
-        475,
-        518
-      ],
-      "loc": {
-        "start": {
-          "line": 21,
-          "column": 0
-        },
-        "end": {
-          "line": 23,
-          "column": 3
-        }
-      }
     }
   ]
 }

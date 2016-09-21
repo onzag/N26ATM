@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/views/WaitingForPin.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">actions</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-cardAndMoneyTaken">cardAndMoneyTaken</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-cardInserted">cardInserted</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-cardProcessed">cardProcessed</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-completeAbort">completeAbort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-finished">finished</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-moneyDelivered">moneyDelivered</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-performAbort">performAbort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pinInserted">pinInserted</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pinProcessedInvalid">pinProcessedInvalid</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pinProcessedValid">pinProcessedValid</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-withdraw">withdraw</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-withdrawFailed">withdrawFailed</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-withdrawSuscesful">withdrawSuscesful</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">constants</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NOT_ENOUGH_FUNDS">NOT_ENOUGH_FUNDS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TOO_MANY_FAILED_PIN_ATTEMPTS">TOO_MANY_FAILED_PIN_ATTEMPTS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TOO_MANY_FAILED_WITHDRAW_ATTEMPTS">TOO_MANY_FAILED_WITHDRAW_ATTEMPTS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-USER_CANCELS">USER_CANCELS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CARD_AND_MONEY_TAKEN">CARD_AND_MONEY_TAKEN</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CARD_INSERTED">CARD_INSERTED</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CARD_PROCESSED">CARD_PROCESSED</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-COMPLETE_ABORT">COMPLETE_ABORT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-FINISHED">FINISHED</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MONEY_DELIVERED">MONEY_DELIVERED</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PERFORM_ABORT">PERFORM_ABORT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PIN_INSERTED">PIN_INSERTED</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PIN_PROCESSED_INVALID">PIN_PROCESSED_INVALID</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PIN_PROCESSED_VALID">PIN_PROCESSED_VALID</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-WITHDRAW">WITHDRAW</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-WITHDRAW_FAILED">WITHDRAW_FAILED</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-WITHDRAW_SUSCESFUL">WITHDRAW_SUSCESFUL</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ABORTING">ABORTING</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DELIVERED">DELIVERED</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DELIVERING">DELIVERING</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DONE">DONE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PROCESSING_AMOUNT">PROCESSING_AMOUNT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PROCESSING_CARD">PROCESSING_CARD</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PROCESSING_PIN">PROCESSING_PIN</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-WAITING_FOR_AMOUNT">WAITING_FOR_AMOUNT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-WAITING_FOR_CARD">WAITING_FOR_CARD</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-WAITING_FOR_PIN">WAITING_FOR_PIN</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LIMIT_REACHED">LIMIT_REACHED</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-FUNDS">FUNDS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MAX_PIN_TRIES">MAX_PIN_TRIES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RIGHT_PIN">RIGHT_PIN</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">controllers</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/Aborting.js~AbortingController.html">AbortingController</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/ProcessingCard.js~ProcessingCardController.html">ProcessingCardController</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/ProcessingPin.js~ProcessingPinController.html">ProcessingPinController</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/WaitingForAmount.js~WaitingForAmountController.html">WaitingForAmountController</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/WaitingForCard.js~WaitingForCardController.html">WaitingForCardController</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/controllers/WaitingForPin.js~WaitingForPinController.html">WaitingForPinController</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">reducers</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-abortReason">abortReason</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-amount">amount</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pin">pin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pinAttempts">pinAttempts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-state">state</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-withdrawAttempts">withdrawAttempts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-withdrawFailReason">withdrawFailReason</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-rootReducer">rootReducer</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">views</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/views/Aborting.js~Aborting.html">Aborting</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/views/ProcessingCard.js~ProcessingCard.html">ProcessingCard</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/views/ProcessingPin.js~ProcessingPin.html">ProcessingPin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/views/WaitingForAmount.js~WaitingForAmount.html">WaitingForAmount</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/views/WaitingForCard.js~WaitingForCard.html">WaitingForCard</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/views/WaitingForPin.js~WaitingForPin.html">WaitingForPin</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">views/components</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/views/components/Button.js~Button.html">Button</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/views/components/NavBar.js~NavBar.html">NavBar</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/views/components/TextField.js~TextField.html">TextField</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/views/WaitingForPin.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @file Contains the waiting for pin screen view
+ * @author Edward Gonzalez
+ */
+
+import React from &apos;react&apos;;
+import NavBar from &apos;./components/NavBar&apos;;
+import Button from &apos;./components/Button&apos;;
+import TextField from &apos;./components/TextField&apos;;
+
+import {MAX_PIN_TRIES} from &apos;../constants/config&apos;;
+
+import * as AbortReasons from &apos;../constants/AbortReasons&apos;;
+
+import &apos;./css/WaitingForPin.css&apos;;
+
+/** 
+ * This is the view that represents the waiting for pin screen
+ */
+export default class WaitingForPin extends React.Component {
+	static propTypes = {
+		onPinInserted: React.PropTypes.func.isRequired,
+		onAbort:React.PropTypes.func.isRequired,
+		attemptsLeft: React.PropTypes.number.isRequired
+	}
+
+	/**
+	 * Constructor of the screen, initializes the pin and binds the functions
+	 * @param {Object} props the react properties
+	 */
+	constructor(props){
+		super(props);
+
+		/**
+		 * The main state of the component
+		 * @type {Object}
+		 * @property {String} pin the current pin
+		 */
+		this.state = {
+			&apos;pin&apos;:&apos;&apos;
+		};
+		this.updatePin = this.updatePin.bind(this);
+	}
+
+	/**
+	 * Updates the pin value in the screen
+	 * @param {String} pin the new pin
+	 * @return {undefined}
+	 */
+	updatePin(pin){
+		this.setState({pin});
+	}
+
+	/**
+	 * Render function
+	 * @return {React.Component}
+	 */
+	render(){
+		let label = &lt;div className=&quot;text full-width color medium-black light lg centered please-insert&quot;&gt;Please Insert your pin&lt;/div&gt;;
+		if (this.props.attemptsLeft &lt; MAX_PIN_TRIES){
+			label = &lt;div className=&quot;text full-width color red light lg centered invalid please-insert&quot;&gt;Invalid pin please try again&lt;/div&gt;
+		}
+		return (&lt;div className=&quot;WaitingForPin screen&quot;&gt;
+			&lt;NavBar canAbort onAbort={this.props.onAbort.bind(null,AbortReasons.USER_CANCELS)}/&gt;
+
+			{label}
+			&lt;TextField width={350} type=&quot;number&quot; onChange={this.updatePin} value={this.state.pin} validate={(pin)=&gt;{
+				if (pin.length &gt; 4){
+					return &quot;Pin too long&quot;
+				}
+			}}/&gt;
+			&lt;Button width={350} color=&quot;skyblue&quot; className=&quot;accept-pin&quot; onClick={this.props.onPinInserted.bind(null,this.state.pin)}
+				textType=&quot;white md&quot; disabled={this.state.pin.length !== 4}&gt;OK&lt;/Button&gt;
+
+			&lt;div className=&quot;text full-width color medium-gray md centered attempts-left&quot;&gt;You have &lt;span&gt;{this.props.attemptsLeft}&lt;/span&gt; attempts left&lt;/div&gt;
+		&lt;/div&gt;);
+	}
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.8)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
