@@ -19,12 +19,7 @@ export default class Aborting extends React.Component {
 		reason: React.PropTypes.oneOf(Object.keys(AbortReasons)).isRequired,
 		onAbortCompleted:React.PropTypes.func.isRequired
 	}
-	constructor(props){
-		super(props);
-		this.state = {
-			'pin':''
-		}
-	}
+
 	/**
 	 * Render function
 	 * @return {React.Component}

@@ -1,6 +1,14 @@
+/**
+ * @file Contains the button component
+ * @author Edward Gonzalez
+ */
+
 import React from 'react';
 import './css/Button.css';
 
+/**
+ * The button components represents a reusable component that is designed to be clicked
+ */
 export default class Button extends React.Component {
 	static propTypes = {
 		children:React.PropTypes.string,
@@ -17,9 +25,10 @@ export default class Button extends React.Component {
 		onClick: React.PropTypes.func,
 		width: React.PropTypes.number
 	}
-	constructor(props){
-		super(props);
-	}
+	/**
+	 * Render function
+	 * @return {React.Component}
+	 */
 	render(){
 		let className = "button color";
 		if (!this.props.color){

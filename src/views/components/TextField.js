@@ -24,6 +24,12 @@ export default class TextField extends React.Component {
 	 */
 	constructor(props){
 		super(props);
+
+		/**
+		 * The main state of the component
+		 * @type {Object}
+		 * @property {String} error the current error as given by the validate property function
+		 */
 		this.state = {
 			'error':''
 		};

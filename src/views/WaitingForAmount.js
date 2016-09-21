@@ -27,6 +27,12 @@ export default class WaitingForAmount extends React.Component {
 	 */
 	constructor(props){
 		super(props);
+
+		/**
+		 * The main state of the component
+		 * @type {Object}
+		 * @property {String} customValue the current value of the custom field
+		 */
 		this.state = {
 			'customValue':''
 		};

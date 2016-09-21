@@ -30,6 +30,12 @@ export default class WaitingForPin extends React.Component {
 	 */
 	constructor(props){
 		super(props);
+
+		/**
+		 * The main state of the component
+		 * @type {Object}
+		 * @property {String} pin the current pin
+		 */
 		this.state = {
 			'pin':''
 		};
