@@ -1,0 +1,20 @@
+.WaitingForAmount > .options {
+	width:100%;
+	max-width:450px;
+	padding: 0 48px;
+	margin-bottom:48px;
+}
+
+.WaitingForAmount > .options > .column {
+	width: 50%;
+	display:inline-block;
+}
+
+.WaitingForAmount > .main-option,
+.WaitingForAmount > .or-option {
+	margin-bottom:24px;
+}
+
+.WaitingForAmount > .button {
+	margin-top:12px;
+}
