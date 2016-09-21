@@ -14,7 +14,8 @@ export default class Button extends React.Component {
 		full:React.PropTypes.bool,
 		className:React.PropTypes.string,
 		right: React.PropTypes.bool,
-		onClick: React.PropTypes.func
+		onClick: React.PropTypes.func,
+		width: React.PropTypes.number
 	}
 	constructor(props){
 		super(props);
@@ -55,8 +56,13 @@ export default class Button extends React.Component {
 			spanClassName += "black"
 		}
 
+		let style = {};
+		if (this.props.width){
+			style.width = this.props.width;
+		}
+
 		return (<button disabled={this.props.disabled} type={this.props.type}
-			className={className} onClick={this.props.onClick}>
+			className={className} onClick={this.props.onClick} style={style}>
 				<span className={spanClassName}>{this.props.children}</span>
 			</button>);
 	}

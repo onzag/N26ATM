@@ -1,0 +1,28 @@
+.textField > input, .textField > span {
+	display:block;
+	width:100%;
+}
+.textField > span {
+	height:24px;
+	line-height:24px;
+	vertical-align:middle;
+	text-align:center;
+}
+.textField > input {
+	padding: 10px;
+	border: solid 1px #dcdcdc;
+	transition: box-shadow 0.3s, border 0.3s;
+}
+.textField > input:focus,
+.textField > input.focus {
+	border: solid 1px #707070;
+	box-shadow: 0 0 5px 1px #969696;
+}
+.textField.errored > input {
+	border: solid 1px #E30336;
+}
+.textField.errored > input.focus,
+.textField.errored > input:focus {
+	border: solid 1px #fc3664;
+	box-shadow: 0 0 5px 1px #fecdd8;
+}
