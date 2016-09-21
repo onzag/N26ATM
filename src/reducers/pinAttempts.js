@@ -10,7 +10,7 @@ import * as ActionTypes from '../constants/ActionTypes';
  * has attempted to put a pin in the ATM
  * The number will reset once the ATM finishes or aborts
  *
- * @param {String} state The current state, as provided by the store
+ * @param {Number} state The current state, as provided by the store
  * @param {Object} action The action that is executed
  */
 export default function pinAttempts(state = 0, action){
