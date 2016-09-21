@@ -5,7 +5,10 @@
 
 import React from 'react';
 
-import ProcessingCard from '../views/ProcessingPin';
+import ProcessingPin from '../views/ProcessingPin';
+import * as AbortReasons from '../constants/AbortReasons';
+
+import {MAX_PIN_TRIES, RIGHT_PIN} from '../constants/config';
 
 /** 
  * This is the controller that processes the pin operation
@@ -19,20 +22,24 @@ export default class ProcessingPinController extends React.Component {
 		}).isRequired,
 		actions: React.PropTypes.shape({
 			'pinProcessedValid':React.PropTypes.func.isRequired,
-			'pinProcessedInvalid':React.PropTypes.func.isRequired
+			'pinProcessedInvalid':React.PropTypes.func.isRequired,
+			'performAbort':React.PropTypes.func.isRequired
 		}).isRequired
 	}
 
 	/**
 	 * Waits 2 seconds before setting into valid or invalid state
+	 * It can also abort if done too many times
 	 * @return {undefined}
 	 */
 	componentDidMount(){
 		setTimeout(()=>{
-			if (this.props.ATMState.pin !== "1234"){
-				this.props.actions.pinProcessedInvalid();
-			} else {
+			if (this.props.ATMState.pin === RIGHT_PIN){
 				this.props.actions.pinProcessedValid();
+			} else if (this.props.ATMState.pinAttempts >= (MAX_PIN_TRIES - 1)){
+				this.props.actions.performAbort(AbortReasons.TOO_MANY_FAILED_PIN_ATTEMPTS);
+			} else {
+				this.props.actions.pinProcessedInvalid();
 			}
 		},2000);
 	}
@@ -42,6 +49,6 @@ export default class ProcessingPinController extends React.Component {
 	 * @return {React.Component}
 	 */
 	render(){
-		return (<ProcessingPin/>);
+		return (<ProcessingPin onAbort={this.props.actions.performAbort}/>);
 	}
 }
