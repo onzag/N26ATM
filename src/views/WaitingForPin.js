@@ -8,6 +8,8 @@ import NavBar from './components/NavBar';
 import Button from './components/Button';
 import TextField from './components/TextField';
 
+import {MAX_PIN_TRIES} from '../constants/config';
+
 import * as AbortReasons from '../constants/AbortReasons';
 
 import './css/WaitingForPin.css';
@@ -18,7 +20,8 @@ import './css/WaitingForPin.css';
 export default class WaitingForPin extends React.Component {
 	static propTypes = {
 		onPinInserted: React.PropTypes.func.isRequired,
-		onAbort:React.PropTypes.func.isRequired
+		onAbort:React.PropTypes.func.isRequired,
+		attemptsLeft: React.PropTypes.number.isRequired
 	}
 
 	/**
@@ -47,10 +50,14 @@ export default class WaitingForPin extends React.Component {
 	 * @return {React.Component}
 	 */
 	render(){
+		let label = <div className="text full-width color medium-black light lg centered please-insert">Please Insert your pin</div>;
+		if (this.props.attemptsLeft < MAX_PIN_TRIES){
+			label = <div className="text full-width color red light lg centered invalid please-insert">Invalid pin please try again</div>
+		}
 		return (<div className="WaitingForPin screen">
 			<NavBar canAbort onAbort={this.props.onAbort.bind(null,AbortReasons.USER_CANCELS)}/>
 
-			<div className="text full-width color medium-black light lg centered">Please Insert your pin</div>
+			{label}
 			<TextField width={350} type="number" onChange={this.updatePin} value={this.state.pin} validate={(pin)=>{
 				if (pin.length > 4){
 					return "Pin too long"
@@ -58,6 +65,8 @@ export default class WaitingForPin extends React.Component {
 			}}/>
 			<Button width={350} color="skyblue" className="accept-pin" onClick={this.props.onPinInserted.bind(null,this.state.pin)}
 				textType="white md" disabled={this.state.pin.length !== 4}>OK</Button>
+
+			<div className="text full-width color medium-gray md centered attempts-left">You have <span>{this.props.attemptsLeft}</span> attempts left</div>
 		</div>);
 	}
 }
