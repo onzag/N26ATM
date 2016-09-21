@@ -8,10 +8,11 @@ import state from './state';
 import pinAttempts from './pinAttempts';
 import withdrawAttempts from './withdrawAttempts';
 import abortReason from './abortReason';
+import withdrawFailReason from './withdrawFailReason';
 
 /**
  * This is the root reducer that will populate the store
  */
-const rootReducer = combineReducers({state,pinAttempts,abortReason});
+const rootReducer = combineReducers({state,pinAttempts,withdrawAttempts,abortReason,withdrawFailReason});
 
 export default rootReducer;
