@@ -30,3 +30,19 @@
 	vertical-align:middle;
 	height:100%;
 }
+.navBar > .ion-ios-close-outline {
+	position:absolute;
+	height:64px;
+	font-size:45px;
+	right:0;
+	border-radius:64px;
+	transition:background-color .3s;
+	width:64px;
+	text-align:center;
+	vertical-align:middle;
+	line-height:64px;
+	cursor:pointer;
+}
+.navBar > .ion-ios-close-outline:active {
+	background-color:rgba(0,0,0,0.15);
+}

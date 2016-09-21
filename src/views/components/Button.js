@@ -14,7 +14,7 @@ export default class Button extends React.Component {
 		full:React.PropTypes.bool,
 		className:React.PropTypes.string,
 		right: React.PropTypes.bool,
-		onClick: React.PropTypes.func.isRequired
+		onClick: React.PropTypes.func
 	}
 	constructor(props){
 		super(props);

@@ -22,7 +22,7 @@ export default class NavBar extends React.Component {
 
 		let abortButton = null;
 		if (this.props.canAbort){
-			//TODO
+			abortButton = (<div className="ion ion-ios-close-outline" onClick={this.props.onAbort}></div>);
 		}
 
 		return (<div className="navBar">
