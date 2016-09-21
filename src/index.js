@@ -25,6 +25,7 @@ if (process.env.NODE_ENV === 'production'){
 import './css/index.css';
 import './css/colors.css';
 import './css/text.css';
+import './css/screen.css';
 
 render(
 	<Provider store={store}>
