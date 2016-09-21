@@ -14,7 +14,8 @@ export default class TextField extends React.Component {
 		value: React.PropTypes.string.isRequired,
 		validate: React.PropTypes.func,
 		onChange: React.PropTypes.func.isRequired,
-		width: React.PropTypes.number
+		width: React.PropTypes.number,
+		currency: React.PropTypes.bool
 	}
 
 	/**
@@ -55,9 +56,15 @@ export default class TextField extends React.Component {
 			className += " errored";
 		}
 
+		let symbol = null;
+		if (this.props.currency){
+			symbol = (<span className="symbol text md medium-black color">&euro;</span>);
+		}
+
 		return (<div className={className} style={{width}}>
 			<input type={this.props.type || "text"} onChange={this.onInputChanged} value={this.props.value}/>
 			<span className="error text light sm color red">{this.state.error}</span>
+			{symbol}
 		</div>);
 	}
 }

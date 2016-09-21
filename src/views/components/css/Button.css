@@ -21,6 +21,9 @@
 .button:not(.inverse):not(:disabled):active {
 	opacity:0.8;
 }
+.button.inverse {
+	border:solid 1px #ccc;
+}
 .button.inverse:active {
 	background-color:rgba(0,0,0,0.1);
 }
