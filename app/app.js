@@ -56,17 +56,24 @@
 
 	var _reactRedux = __webpack_require__(186);
 
-	var _App = __webpack_require__(195);
+	var _reduxThunk = __webpack_require__(195);
+
+	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+
+	var _App = __webpack_require__(196);
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _reducers = __webpack_require__(196);
+	var _reducers = __webpack_require__(201);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var store = (0, _redux.createStore)(_reducers2.default);
+	var store = (0, _redux.createStore)(_reducers2.default, (0, _redux.applyMiddleware)(_reduxThunk2.default)); /**
+	                                                                                                             * @file The entry point for the application, where middlewares are applied and the store is created
+	                                                                                                             * @author Edward Gonzalez
+	                                                                                                             */
 
 	(0, _reactDom.render)(_react2.default.createElement(
 		_reactRedux.Provider,
@@ -23017,6 +23024,34 @@
 
 /***/ },
 /* 195 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	exports.__esModule = true;
+	function createThunkMiddleware(extraArgument) {
+	  return function (_ref) {
+	    var dispatch = _ref.dispatch;
+	    var getState = _ref.getState;
+	    return function (next) {
+	      return function (action) {
+	        if (typeof action === 'function') {
+	          return action(dispatch, getState, extraArgument);
+	        }
+
+	        return next(action);
+	      };
+	    };
+	  };
+	}
+
+	var thunk = createThunkMiddleware();
+	thunk.withExtraArgument = createThunkMiddleware;
+
+	exports['default'] = thunk;
+
+/***/ },
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23024,13 +23059,35 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-	exports.default = undefined;
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
+	                    * @file Contains the main app class that controls all the application behaviour
+	                    * @author Edward Gonzalez
+	                    */
 
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _redux = __webpack_require__(172);
+
+	var _reactRedux = __webpack_require__(186);
+
+	var _actions = __webpack_require__(197);
+
+	var actions = _interopRequireWildcard(_actions);
+
+	var _controllers = __webpack_require__(199);
+
+	var controllers = _interopRequireWildcard(_controllers);
+
+	var _States = __webpack_require__(200);
+
+	var States = _interopRequireWildcard(_States);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23040,7 +23097,11 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var App = function (_React$Component) {
+	/** 
+	 * This is the main application class that controls all the components that render a specific view
+	 * It uses the state out of the store in order to render the view
+	 */
+	var App = (_temp = _class = function (_React$Component) {
 		_inherits(App, _React$Component);
 
 		function App() {
@@ -23051,6 +23112,11 @@
 
 		_createClass(App, [{
 			key: 'render',
+
+			/**
+	   * Render function
+	   * @returns {React.Component}
+	   */
 			value: function render() {
 				return _react2.default.createElement(
 					'div',
@@ -23061,12 +23127,259 @@
 		}]);
 
 		return App;
-	}(_react2.default.Component);
+	}(_react2.default.Component), _class.propTypes = {
+		state: _react2.default.PropTypes.oneOf(Object.keys(States)).isRequired
+	}, _temp);
 
-	exports.default = App;
+	/**
+	 * @ignore
+	 */
+
+	var mapStateToProps = function mapStateToProps(state) {
+		state: state;
+	};
+
+	/**
+	 * @ignore
+	 */
+	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+		actions: (0, _redux.bindActionCreators)(actions, dispatch);
+	};
+
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(App);
 
 /***/ },
-/* 196 */
+/* 197 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.completeAbort = exports.performAbort = exports.finished = exports.cardAndMoneyTaken = exports.moneyDelivered = exports.withdrawFailed = exports.withdrawSuscesful = exports.withdraw = exports.pinProcessedInvalid = exports.pinProcessedValid = exports.pinInserted = exports.cardProcessed = exports.cardInserted = undefined;
+
+	var _ActionTypes = __webpack_require__(198);
+
+	var ActionTypes = _interopRequireWildcard(_ActionTypes);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	var cardInserted = exports.cardInserted = function cardInserted() {
+		return { 'type': ActionTypes.CARD_INSERTED };
+	};
+
+	var cardProcessed = exports.cardProcessed = function cardProcessed() {
+		return { 'type': ActionTypes.CARD_PROCESSED };
+	};
+
+	var pinInserted = exports.pinInserted = function pinInserted(pin) {
+		if (!pin || typeof pin !== "string") {
+			throw new Error('cannot execute action pinInserted without a valid pin', pin);
+		}
+		return { 'type': ActionTypes.PIN_INSERTED, 'payload': pin };
+	};
+
+	var pinProcessedValid = exports.pinProcessedValid = function pinProcessedValid() {
+		return { 'type': ActionTypes.PIN_PROCESSED_VALID };
+	};
+
+	var pinProcessedInvalid = exports.pinProcessedInvalid = function pinProcessedInvalid() {
+		return { 'type': ActionTypes.PIN_PROCESSED_INVALID };
+	};
+
+	var withdraw = exports.withdraw = function withdraw(amount) {
+		if (!amount || typeof amount !== "number") {
+			throw new Error('cannot execute action withdraw without a valid amount', amount);
+		}
+		return { 'type': ActionTypes.WITHDRAW, 'payload': amount };
+	};
+
+	var withdrawSuscesful = exports.withdrawSuscesful = function withdrawSuscesful() {
+		return { 'type': ActionTypes.WITHDRAW_SUSCESFUL };
+	};
+
+	var withdrawFailed = exports.withdrawFailed = function withdrawFailed(reason) {
+		if (!reason || typeof reason !== "string") {
+			throw new Error('cannot execute action withdrawFailed without a valid reason', reason);
+		}
+		return { 'type': ActionTypes.WITHDRAW_SUSCESFUL, 'payload': reason };
+	};
+
+	var moneyDelivered = exports.moneyDelivered = function moneyDelivered() {
+		return { 'type': ActionTypes.MONEY_DELIVERED };
+	};
+
+	var cardAndMoneyTaken = exports.cardAndMoneyTaken = function cardAndMoneyTaken() {
+		return { 'type': ActionTypes.CARD_AND_MONEY_TAKEN };
+	};
+
+	var finished = exports.finished = function finished() {
+		return { 'type': ActionTypes.FINISHED };
+	};
+
+	var performAbort = exports.performAbort = function performAbort(reason) {
+		if (!reason || typeof reason !== "string") {
+			throw new Error('cannot execute action performAbort without a valid reason', reason);
+		}
+		return { 'type': ActionTypes.PERFORM_ABORT };
+	};
+
+	var completeAbort = exports.completeAbort = function completeAbort() {
+		return { 'type': ActionTypes.COMPLETE_ABORT };
+	};
+
+/***/ },
+/* 198 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	/**
+	 * @file Contains the action types constants
+	 * @author Edward Gonzalez
+	 */
+
+	/**
+	 * The card has been inserted by the user
+	 */
+	var CARD_INSERTED = exports.CARD_INSERTED = 'CARD_INSERTED';
+
+	/**
+	 * The card has been processed by the ATM
+	 */
+	var CARD_PROCESSED = exports.CARD_PROCESSED = 'CARD_PROCESSED';
+
+	/**
+	 * The pin has been inserted by the user
+	 */
+	var PIN_INSERTED = exports.PIN_INSERTED = 'PIN_INSERTED';
+
+	/**
+	 * The pin is valid
+	 */
+	var PIN_PROCESSED_VALID = exports.PIN_PROCESSED_VALID = 'PIN_PROCESSED_VALID';
+
+	/**
+	 * The pin is invalid
+	 */
+	var PIN_PROCESSED_INVALID = exports.PIN_PROCESSED_INVALID = 'PIN_PROCESSED_INVALID';
+
+	/**
+	 * withdraw some money
+	 */
+	var WITHDRAW = exports.WITHDRAW = 'WITHDRAW';
+
+	/**
+	 * withdraw was suscesful
+	 */
+	var WITHDRAW_SUSCESFUL = exports.WITHDRAW_SUSCESFUL = 'WITHDRAW_SUSCESFUL';
+
+	/**
+	 * withdraw has failed
+	 */
+	var WITHDRAW_FAILED = exports.WITHDRAW_FAILED = 'WITHDRAW_FAILED';
+
+	/**
+	 * money has been delivered
+	 */
+	var MONEY_DELIVERED = exports.MONEY_DELIVERED = 'MONEY_DELIVERED';
+
+	/**
+	 * The user took his card and money
+	 */
+	var CARD_AND_MONEY_TAKEN = exports.CARD_AND_MONEY_TAKEN = 'CARD_AND_MONEY_TAKEN';
+
+	/**
+	 * Process finished
+	 */
+	var FINISHED = exports.FINISHED = 'FINISHED';
+
+	/**
+	 * Trigger an abort
+	 */
+	var PERFORM_ABORT = exports.PERFORM_ABORT = 'PERFORM_ABORT';
+
+	/**
+	 * Abort has been completed
+	 */
+	var COMPLETE_ABORT = exports.COMPLETE_ABORT = 'COMPLETE_ABORT';
+
+/***/ },
+/* 199 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+/***/ },
+/* 200 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	/**
+	 * @file Contains the ATM states
+	 * @author Edward Gonzalez
+	 */
+
+	/**
+	 * The ATM is waiting for the card
+	 */
+	var WAITING_FOR_CARD = exports.WAITING_FOR_CARD = 'WAITING_FOR_CARD';
+
+	/**
+	 * The ATM is processing the card
+	 */
+	var PROCESSING_CARD = exports.PROCESSING_CARD = 'PROCESSING_CARD';
+
+	/**
+	 * The ATM is waiting for the pin to be inserted
+	 */
+	var WAITING_FOR_PIN = exports.WAITING_FOR_PIN = 'WAITING_FOR_PIN';
+
+	/**
+	 * The ATM is processing the pin
+	 */
+	var PROCESSING_PIN = exports.PROCESSING_PIN = 'PROCESSING_PIN';
+
+	/**
+	 * The ATM is waiting for the amount to be set
+	 */
+	var WAITING_FOR_AMOUNT = exports.WAITING_FOR_AMOUNT = 'WAITING_FOR_AMOUNT';
+
+	/**
+	 * The ATM is processing the amount
+	 */
+	var PROCESSING_AMOUNT = exports.PROCESSING_AMOUNT = 'PROCESSING_AMOUNT';
+
+	/**
+	 * The ATM is delivering the money
+	 */
+	var DELIVERING = exports.DELIVERING = 'DELIVERING';
+
+	/**
+	 * The ATM has delivered the money
+	 */
+	var DELIVERED = exports.DELIVERED = 'DELIVERED';
+
+	/**
+	 * The ATM is done with the process and will restart
+	 */
+	var DONE = exports.DONE = 'DONE';
+
+	/**
+	 * The ATM is aborting
+	 */
+	var ABORTING = exports.ABORTING = 'ABORTING';
+
+/***/ },
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23077,9 +23390,93 @@
 
 	var _redux = __webpack_require__(172);
 
-	var rootReducer = (0, _redux.combineReducers)({});
+	var _state = __webpack_require__(202);
+
+	var _state2 = _interopRequireDefault(_state);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * This is the root reducer that will populate the store
+	 */
+	/**
+	 * @file Includes all the reducers that the application needs in order to execute
+	 * @author Edward Gonzalez
+	 */
+
+	var rootReducer = (0, _redux.combineReducers)({ state: _state2.default });
 
 	exports.default = rootReducer;
+
+/***/ },
+/* 202 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = state;
+
+	var _States = __webpack_require__(200);
+
+	var States = _interopRequireWildcard(_States);
+
+	var _ActionTypes = __webpack_require__(198);
+
+	var ActionTypes = _interopRequireWildcard(_ActionTypes);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	/**
+	 * This is the main state reducer and represents the main state of the application
+	 * it represents in which situation the ATM is
+	 *
+	 * @param {String} state The current state, as provided by the store
+	 * @param {Object} action The action that is executed
+	 */
+	/**
+	 * @file Contains the state reducer for the ATM current state
+	 * @author Edward Gonzalez
+	 */
+
+	function state() {
+		var state = arguments.length <= 0 || arguments[0] === undefined ? States.WAITING_FOR_CARD : arguments[0];
+		var action = arguments[1];
+
+		switch (action.type) {
+			case ActionTypes.CARD_INSERTED:
+				return States.PROCESSING_CARD;
+			case ActionTypes.CARD_PROCESSED:
+				return States.WAITING_FOR_PIN;
+			case ActionTypes.PIN_INSERTED:
+				return States.PROCESSING_PIN;
+			case ActionTypes.PIN_PROCESSED_VALID:
+				return States.WAITING_FOR_AMOUNT;
+			case ActionTypes.PIN_PROCESSED_INVALID:
+				return States.WAITING_FOR_PIN;
+			case ActionTypes.WITHDRAW:
+				return States.PROCESSING_AMOUNT;
+			case ActionTypes.WITHDRAW_SUSCESFUL:
+				return States.DELIVERING;
+			case ActionTypes.WITHDRAW_FAILED:
+				return States.WAITING_FOR_AMOUNT;
+			case ActionTypes.MONEY_DELIVERED:
+				return States.DELIVERED;
+			case ActionTypes.CARD_AND_MONEY_TAKEN:
+				return States.DONE;
+			case ActionTypes.FINISHED:
+				return States.WAITING_FOR_CARD;
+			case ActionTypes.PERFORM_ABORT:
+				return States.ABORTING;
+			case ActionTypes.COMPLETE_ABORT:
+				return States.WAITING_FOR_CARD;
+			default:
+				return States.WAITING_FOR_CARD;
+		}
+		return state;
+	}
 
 /***/ }
 /******/ ]);

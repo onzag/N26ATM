@@ -18,7 +18,8 @@ import * as States from '../constants/States';
 class App extends React.Component {
 	static propTypes = {
 		ATMState: React.PropTypes.shape({
-			'state':React.PropTypes.oneOf(Object.keys(States)).isRequired
+			'state':React.PropTypes.oneOf(Object.keys(States)).isRequired,
+			'pinAttempts':React.PropTypes.number.isRequired
 		})
 	}
 	/**
