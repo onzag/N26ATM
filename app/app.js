@@ -44,9 +44,9 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
-	var _react = __webpack_require__(1);
+	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
@@ -56,137 +56,49 @@
 
 	var _reactRedux = __webpack_require__(186);
 
-	var _reduxThunk = __webpack_require__(195);
-
-	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
-
-	var _App = __webpack_require__(196);
+	var _App = __webpack_require__(195);
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _reducers = __webpack_require__(203);
+	var _reducers = __webpack_require__(234);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
+	__webpack_require__(241);
+
+	__webpack_require__(243);
+
+	__webpack_require__(245);
+
+	__webpack_require__(247);
+
+	__webpack_require__(249);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var store = (0, _redux.createStore)(_reducers2.default, (0, _redux.applyMiddleware)(_reduxThunk2.default)); /**
-	                                                                                                             * @file The entry point for the application, where middlewares are applied and the store is created
-	                                                                                                             * @author Edward Gonzalez
-	                                                                                                             */
+	/**
+	 * @file The entry point for the application, where middlewares are applied and the store is created
+	 * @author Edward Gonzalez
+	 */
+
+	var store = void 0;
+	if (process.env.NODE_ENV === 'production') {
+		store = (0, _redux.createStore)(_reducers2.default);
+	} else {
+		var createLogger = __webpack_require__(251);
+		var logger = createLogger();
+		store = (0, _redux.createStore)(_reducers2.default, (0, _redux.applyMiddleware)(logger));
+	}
 
 	(0, _reactDom.render)(_react2.default.createElement(
 		_reactRedux.Provider,
 		{ store: store },
 		_react2.default.createElement(_App2.default, null)
 	), document.getElementById('container'));
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	module.exports = __webpack_require__(2);
-
-
-/***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-present, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule React
-	 */
-
-	'use strict';
-
-	var _assign = __webpack_require__(4);
-
-	var ReactChildren = __webpack_require__(5);
-	var ReactComponent = __webpack_require__(17);
-	var ReactPureComponent = __webpack_require__(20);
-	var ReactClass = __webpack_require__(21);
-	var ReactDOMFactories = __webpack_require__(26);
-	var ReactElement = __webpack_require__(9);
-	var ReactPropTypes = __webpack_require__(31);
-	var ReactVersion = __webpack_require__(32);
-
-	var onlyChild = __webpack_require__(33);
-	var warning = __webpack_require__(11);
-
-	var createElement = ReactElement.createElement;
-	var createFactory = ReactElement.createFactory;
-	var cloneElement = ReactElement.cloneElement;
-
-	if (process.env.NODE_ENV !== 'production') {
-	  var ReactElementValidator = __webpack_require__(27);
-	  createElement = ReactElementValidator.createElement;
-	  createFactory = ReactElementValidator.createFactory;
-	  cloneElement = ReactElementValidator.cloneElement;
-	}
-
-	var __spread = _assign;
-
-	if (process.env.NODE_ENV !== 'production') {
-	  var warned = false;
-	  __spread = function () {
-	    process.env.NODE_ENV !== 'production' ? warning(warned, 'React.__spread is deprecated and should not be used. Use ' + 'Object.assign directly or another helper function with similar ' + 'semantics. You may be seeing this warning due to your compiler. ' + 'See https://fb.me/react-spread-deprecation for more details.') : void 0;
-	    warned = true;
-	    return _assign.apply(null, arguments);
-	  };
-	}
-
-	var React = {
-
-	  // Modern
-
-	  Children: {
-	    map: ReactChildren.map,
-	    forEach: ReactChildren.forEach,
-	    count: ReactChildren.count,
-	    toArray: ReactChildren.toArray,
-	    only: onlyChild
-	  },
-
-	  Component: ReactComponent,
-	  PureComponent: ReactPureComponent,
-
-	  createElement: createElement,
-	  cloneElement: cloneElement,
-	  isValidElement: ReactElement.isValidElement,
-
-	  // Classic
-
-	  PropTypes: ReactPropTypes,
-	  createClass: ReactClass.createClass,
-	  createFactory: createFactory,
-	  createMixin: function (mixin) {
-	    // Currently a noop. Will be used to validate and trace mixins.
-	    return mixin;
-	  },
-
-	  // This looks DOM specific but these are actually isomorphic helpers
-	  // since they are just generating DOM strings.
-	  DOM: ReactDOMFactories,
-
-	  version: ReactVersion,
-
-	  // Deprecated hook for JSX spread, don't use this for anything.
-	  __spread: __spread
-	};
-
-	module.exports = React;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
-
-/***/ },
-/* 3 */
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -370,6 +282,110 @@
 	};
 	process.umask = function() { return 0; };
 
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	module.exports = __webpack_require__(3);
+
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule React
+	 */
+
+	'use strict';
+
+	var _assign = __webpack_require__(4);
+
+	var ReactChildren = __webpack_require__(5);
+	var ReactComponent = __webpack_require__(17);
+	var ReactPureComponent = __webpack_require__(20);
+	var ReactClass = __webpack_require__(21);
+	var ReactDOMFactories = __webpack_require__(26);
+	var ReactElement = __webpack_require__(9);
+	var ReactPropTypes = __webpack_require__(31);
+	var ReactVersion = __webpack_require__(32);
+
+	var onlyChild = __webpack_require__(33);
+	var warning = __webpack_require__(11);
+
+	var createElement = ReactElement.createElement;
+	var createFactory = ReactElement.createFactory;
+	var cloneElement = ReactElement.cloneElement;
+
+	if (process.env.NODE_ENV !== 'production') {
+	  var ReactElementValidator = __webpack_require__(27);
+	  createElement = ReactElementValidator.createElement;
+	  createFactory = ReactElementValidator.createFactory;
+	  cloneElement = ReactElementValidator.cloneElement;
+	}
+
+	var __spread = _assign;
+
+	if (process.env.NODE_ENV !== 'production') {
+	  var warned = false;
+	  __spread = function () {
+	    process.env.NODE_ENV !== 'production' ? warning(warned, 'React.__spread is deprecated and should not be used. Use ' + 'Object.assign directly or another helper function with similar ' + 'semantics. You may be seeing this warning due to your compiler. ' + 'See https://fb.me/react-spread-deprecation for more details.') : void 0;
+	    warned = true;
+	    return _assign.apply(null, arguments);
+	  };
+	}
+
+	var React = {
+
+	  // Modern
+
+	  Children: {
+	    map: ReactChildren.map,
+	    forEach: ReactChildren.forEach,
+	    count: ReactChildren.count,
+	    toArray: ReactChildren.toArray,
+	    only: onlyChild
+	  },
+
+	  Component: ReactComponent,
+	  PureComponent: ReactPureComponent,
+
+	  createElement: createElement,
+	  cloneElement: cloneElement,
+	  isValidElement: ReactElement.isValidElement,
+
+	  // Classic
+
+	  PropTypes: ReactPropTypes,
+	  createClass: ReactClass.createClass,
+	  createFactory: createFactory,
+	  createMixin: function (mixin) {
+	    // Currently a noop. Will be used to validate and trace mixins.
+	    return mixin;
+	  },
+
+	  // This looks DOM specific but these are actually isomorphic helpers
+	  // since they are just generating DOM strings.
+	  DOM: ReactDOMFactories,
+
+	  version: ReactVersion,
+
+	  // Deprecated hook for JSX spread, don't use this for anything.
+	  __spread: __spread
+	};
+
+	module.exports = React;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 4 */
@@ -781,7 +797,7 @@
 	};
 
 	module.exports = PooledClass;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 7 */
@@ -880,7 +896,7 @@
 	}
 
 	module.exports = invariant;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 9 */
@@ -1234,7 +1250,7 @@
 	ReactElement.REACT_ELEMENT_TYPE = REACT_ELEMENT_TYPE;
 
 	module.exports = ReactElement;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 10 */
@@ -1342,7 +1358,7 @@
 	}
 
 	module.exports = warning;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 12 */
@@ -1415,7 +1431,7 @@
 	}
 
 	module.exports = canDefineProperty;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 14 */
@@ -1588,7 +1604,7 @@
 	}
 
 	module.exports = traverseAllChildren;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 15 */
@@ -1822,7 +1838,7 @@
 	}
 
 	module.exports = ReactComponent;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 18 */
@@ -1924,7 +1940,7 @@
 	};
 
 	module.exports = ReactNoopUpdateQueue;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 19 */
@@ -1949,7 +1965,7 @@
 	}
 
 	module.exports = emptyObject;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 20 */
@@ -2734,7 +2750,7 @@
 	};
 
 	module.exports = ReactClass;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 22 */
@@ -2814,7 +2830,7 @@
 	};
 
 	module.exports = keyMirror;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 24 */
@@ -2844,7 +2860,7 @@
 	}
 
 	module.exports = ReactPropTypeLocationNames;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 25 */
@@ -3059,7 +3075,7 @@
 	};
 
 	module.exports = ReactDOMFactories;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 27 */
@@ -3293,7 +3309,7 @@
 	};
 
 	module.exports = ReactElementValidator;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 28 */
@@ -3641,7 +3657,7 @@
 	};
 
 	module.exports = ReactComponentTreeHook;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 29 */
@@ -3734,7 +3750,7 @@
 	}
 
 	module.exports = checkReactTypeSpec;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 30 */
@@ -4192,7 +4208,7 @@
 	}
 
 	module.exports = ReactPropTypes;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 32 */
@@ -4255,7 +4271,7 @@
 	}
 
 	module.exports = onlyChild;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 34 */
@@ -4380,7 +4396,7 @@
 	}
 
 	module.exports = ReactDOM;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 36 */
@@ -4574,7 +4590,7 @@
 	};
 
 	module.exports = ReactDOMComponentTree;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 37 */
@@ -4786,7 +4802,7 @@
 	};
 
 	module.exports = DOMProperty;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 38 */
@@ -5538,7 +5554,7 @@
 	};
 
 	module.exports = EventPropagators;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 43 */
@@ -5795,7 +5811,7 @@
 	};
 
 	module.exports = EventPluginHub;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 44 */
@@ -6048,7 +6064,7 @@
 	};
 
 	module.exports = EventPluginRegistry;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 45 */
@@ -6283,7 +6299,7 @@
 	};
 
 	module.exports = EventPluginUtils;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 46 */
@@ -6365,7 +6381,7 @@
 	}
 
 	module.exports = ReactErrorUtils;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 47 */
@@ -6429,7 +6445,7 @@
 	}
 
 	module.exports = accumulateInto;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 48 */
@@ -6958,7 +6974,7 @@
 	    process.env.NODE_ENV !== 'production' ? warning(warningCondition, 'This synthetic event is reused for performance reasons. If you\'re seeing this, ' + 'you\'re %s `%s` on a released/nullified synthetic event. %s. ' + 'If you must keep the original synthetic event around, use event.persist(). ' + 'See https://fb.me/react-event-pooling for more information.', action, propName, result) : void 0;
 	  }
 	}
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 54 */
@@ -7587,7 +7603,7 @@
 	};
 
 	module.exports = ReactUpdates;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 57 */
@@ -7699,7 +7715,7 @@
 	PooledClass.addPoolingTo(CallbackQueue);
 
 	module.exports = CallbackQueue;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 58 */
@@ -7900,7 +7916,7 @@
 	};
 
 	module.exports = ReactReconciler;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 60 */
@@ -8085,7 +8101,7 @@
 	};
 
 	module.exports = ReactOwner;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 62 */
@@ -8112,7 +8128,7 @@
 	}
 
 	module.exports = { debugTool: debugTool };
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 63 */
@@ -8419,7 +8435,7 @@
 	}
 
 	module.exports = ReactDebugTool;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 64 */
@@ -8461,7 +8477,7 @@
 	};
 
 	module.exports = ReactInvalidSetStateWarningHook;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 65 */
@@ -8563,7 +8579,7 @@
 	};
 
 	module.exports = ReactChildrenMutationWarningHook;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 67 */
@@ -8867,7 +8883,7 @@
 	};
 
 	module.exports = Transaction;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 70 */
@@ -9843,7 +9859,7 @@
 	};
 
 	module.exports = DOMChildrenOperations;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 82 */
@@ -10366,7 +10382,7 @@
 	};
 
 	module.exports = Danger;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 89 */
@@ -10455,7 +10471,7 @@
 	}
 
 	module.exports = createNodesFromMarkup;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 90 */
@@ -10587,7 +10603,7 @@
 	}
 
 	module.exports = createArrayFromMixed;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 91 */
@@ -10687,7 +10703,7 @@
 	}
 
 	module.exports = getMarkupWrap;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 92 */
@@ -11775,7 +11791,7 @@
 	_assign(ReactDOMComponent.prototype, ReactDOMComponent.Mixin, ReactMultiChild.Mixin);
 
 	module.exports = ReactDOMComponent;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 95 */
@@ -12046,7 +12062,7 @@
 	};
 
 	module.exports = CSSPropertyOperations;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 98 */
@@ -12364,7 +12380,7 @@
 	}
 
 	module.exports = dangerousStyleValue;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 102 */
@@ -12705,7 +12721,7 @@
 	};
 
 	module.exports = DOMPropertyOperations;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 106 */
@@ -13574,7 +13590,7 @@
 	}
 
 	module.exports = ReactDOMInput;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 113 */
@@ -13716,7 +13732,7 @@
 	};
 
 	module.exports = LinkedValueUtils;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 114 */
@@ -13845,7 +13861,7 @@
 	};
 
 	module.exports = ReactDOMOption;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 115 */
@@ -14052,7 +14068,7 @@
 	}
 
 	module.exports = ReactDOMSelect;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 116 */
@@ -14213,7 +14229,7 @@
 	}
 
 	module.exports = ReactDOMTextarea;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 117 */
@@ -14670,7 +14686,7 @@
 	};
 
 	module.exports = ReactMultiChild;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 118 */
@@ -14721,7 +14737,7 @@
 	};
 
 	module.exports = ReactComponentEnvironment;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 119 */
@@ -14934,7 +14950,7 @@
 	};
 
 	module.exports = ReactChildReconciler;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 121 */
@@ -15059,7 +15075,7 @@
 	}
 
 	module.exports = instantiateReactComponent;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 122 */
@@ -15969,7 +15985,7 @@
 	};
 
 	module.exports = ReactCompositeComponent;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 123 */
@@ -16015,7 +16031,7 @@
 	};
 
 	module.exports = ReactNodeTypes;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 124 */
@@ -16250,7 +16266,7 @@
 	};
 
 	module.exports = ReactHostComponent;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 128 */
@@ -16332,7 +16348,7 @@
 	}
 
 	module.exports = flattenChildren;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 129 */
@@ -16428,7 +16444,7 @@
 	PooledClass.addPoolingTo(ReactServerRenderingTransaction);
 
 	module.exports = ReactServerRenderingTransaction;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 130 */
@@ -16575,7 +16591,7 @@
 	}();
 
 	module.exports = ReactServerUpdateQueue;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 131 */
@@ -16807,7 +16823,7 @@
 	};
 
 	module.exports = ReactUpdateQueue;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 132 */
@@ -17195,7 +17211,7 @@
 	}
 
 	module.exports = validateDOMNesting;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 133 */
@@ -17402,7 +17418,7 @@
 	  traverseTwoPhase: traverseTwoPhase,
 	  traverseEnterLeave: traverseEnterLeave
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 135 */
@@ -17572,7 +17588,7 @@
 	});
 
 	module.exports = ReactDOMTextComponent;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 136 */
@@ -17896,7 +17912,7 @@
 	};
 
 	module.exports = EventListener;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 139 */
@@ -18164,7 +18180,7 @@
 	PooledClass.addPoolingTo(ReactReconcileTransaction);
 
 	module.exports = ReactReconcileTransaction;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 142 */
@@ -19877,7 +19893,7 @@
 	};
 
 	module.exports = SimpleEventPlugin;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 152 */
@@ -20990,7 +21006,7 @@
 	};
 
 	module.exports = ReactMount;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 163 */
@@ -21029,7 +21045,7 @@
 	}
 
 	module.exports = ReactDOMContainerInfo;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 164 */
@@ -21222,7 +21238,7 @@
 	}
 
 	module.exports = findDOMNode;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 168 */
@@ -21396,7 +21412,7 @@
 	};
 
 	module.exports = ReactDOMUnknownPropertyHook;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 171 */
@@ -21445,7 +21461,7 @@
 	};
 
 	module.exports = ReactDOMNullInputValuePropHook;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 172 */
@@ -21497,7 +21513,7 @@
 	exports.bindActionCreators = _bindActionCreators2['default'];
 	exports.applyMiddleware = _applyMiddleware2['default'];
 	exports.compose = _compose2['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 173 */
@@ -22116,7 +22132,7 @@
 	    return hasChanged ? nextState : state;
 	  };
 	}
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 182 */
@@ -22341,7 +22357,7 @@
 	exports.__esModule = true;
 	exports["default"] = undefined;
 
-	var _react = __webpack_require__(1);
+	var _react = __webpack_require__(2);
 
 	var _storeShape = __webpack_require__(188);
 
@@ -22414,7 +22430,7 @@
 	Provider.childContextTypes = {
 	  store: _storeShape2["default"].isRequired
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 188 */
@@ -22424,7 +22440,7 @@
 
 	exports.__esModule = true;
 
-	var _react = __webpack_require__(1);
+	var _react = __webpack_require__(2);
 
 	exports["default"] = _react.PropTypes.shape({
 	  subscribe: _react.PropTypes.func.isRequired,
@@ -22472,7 +22488,7 @@
 	exports.__esModule = true;
 	exports["default"] = connect;
 
-	var _react = __webpack_require__(1);
+	var _react = __webpack_require__(2);
 
 	var _storeShape = __webpack_require__(188);
 
@@ -22858,7 +22874,7 @@
 	    return (0, _hoistNonReactStatics2["default"])(Connect, WrappedComponent);
 	  };
 	}
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 191 */
@@ -23020,38 +23036,10 @@
 
 	module.exports = invariant;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
 /* 195 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	exports.__esModule = true;
-	function createThunkMiddleware(extraArgument) {
-	  return function (_ref) {
-	    var dispatch = _ref.dispatch;
-	    var getState = _ref.getState;
-	    return function (next) {
-	      return function (action) {
-	        if (typeof action === 'function') {
-	          return action(dispatch, getState, extraArgument);
-	        }
-
-	        return next(action);
-	      };
-	    };
-	  };
-	}
-
-	var thunk = createThunkMiddleware();
-	thunk.withExtraArgument = createThunkMiddleware;
-
-	exports['default'] = thunk;
-
-/***/ },
-/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23067,7 +23055,7 @@
 	                    * @author Edward Gonzalez
 	                    */
 
-	var _react = __webpack_require__(1);
+	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
@@ -23075,17 +23063,25 @@
 
 	var _reactRedux = __webpack_require__(186);
 
-	var _actions = __webpack_require__(197);
+	var _actions = __webpack_require__(196);
 
 	var actions = _interopRequireWildcard(_actions);
 
-	var _controllers = __webpack_require__(201);
+	var _controllers = __webpack_require__(200);
 
 	var controllers = _interopRequireWildcard(_controllers);
 
-	var _States = __webpack_require__(202);
+	var _States = __webpack_require__(233);
 
 	var States = _interopRequireWildcard(_States);
+
+	var _AbortReasons = __webpack_require__(198);
+
+	var AbortReasons = _interopRequireWildcard(_AbortReasons);
+
+	var _WithdrawFailReasons = __webpack_require__(199);
+
+	var WithdrawFailReasons = _interopRequireWildcard(_WithdrawFailReasons);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -23118,11 +23114,24 @@
 	   * @returns {React.Component}
 	   */
 			value: function render() {
-				return _react2.default.createElement(
-					'div',
-					null,
-					'Application View'
-				);
+				switch (this.props.ATMState.state) {
+					case States.WAITING_FOR_CARD:
+						return _react2.default.createElement(controllers.WaitingForCard, { ATMState: this.props.ATMState, actions: this.props.actions });
+					case States.PROCESSING_CARD:
+						return _react2.default.createElement(controllers.ProcessingCard, { ATMState: this.props.ATMState, actions: this.props.actions });
+					case States.WAITING_FOR_PIN:
+						return _react2.default.createElement(controllers.WaitingForPin, { ATMState: this.props.ATMState, actions: this.props.actions });
+					case States.PROCESSING_PIN:
+						return _react2.default.createElement(controllers.ProcessingPin, { ATMState: this.props.ATMState, actions: this.props.actions });
+					case States.ABORTING:
+						return _react2.default.createElement(controllers.Aborting, { ATMState: this.props.ATMState, actions: this.props.actions });
+					default:
+						return _react2.default.createElement(
+							'div',
+							null,
+							'NOT IMPLEMENTED'
+						);
+				}
 			}
 		}]);
 
@@ -23130,7 +23139,10 @@
 	}(_react2.default.Component), _class.propTypes = {
 		ATMState: _react2.default.PropTypes.shape({
 			'state': _react2.default.PropTypes.oneOf(Object.keys(States)).isRequired,
-			'pinAttempts': _react2.default.PropTypes.number.isRequired
+			'pinAttempts': _react2.default.PropTypes.number.isRequired,
+			'withdrawAttempts': _react2.default.PropTypes.number.isRequired,
+			'abortReason': _react2.default.PropTypes.oneOf(Object.keys(AbortReasons)),
+			'withdrawFailReason': _react2.default.PropTypes.oneOf(Object.keys(WithdrawFailReasons))
 		})
 	}, _temp);
 
@@ -23148,13 +23160,15 @@
 	 * @ignore
 	 */
 	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-		return { actions: (0, _redux.bindActionCreators)(actions, dispatch) };
+		return {
+			actions: (0, _redux.bindActionCreators)(actions, dispatch)
+		};
 	};
 
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(App);
 
 /***/ },
-/* 197 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23164,15 +23178,15 @@
 	});
 	exports.completeAbort = exports.performAbort = exports.finished = exports.cardAndMoneyTaken = exports.moneyDelivered = exports.withdrawFailed = exports.withdrawSuscesful = exports.withdraw = exports.pinProcessedInvalid = exports.pinProcessedValid = exports.pinInserted = exports.cardProcessed = exports.cardInserted = undefined;
 
-	var _ActionTypes = __webpack_require__(198);
+	var _ActionTypes = __webpack_require__(197);
 
 	var ActionTypes = _interopRequireWildcard(_ActionTypes);
 
-	var _AbortReasons = __webpack_require__(199);
+	var _AbortReasons = __webpack_require__(198);
 
 	var AbortReasons = _interopRequireWildcard(_AbortReasons);
 
-	var _WithdrawFailReasons = __webpack_require__(200);
+	var _WithdrawFailReasons = __webpack_require__(199);
 
 	var WithdrawFailReasons = _interopRequireWildcard(_WithdrawFailReasons);
 
@@ -23326,7 +23340,7 @@
 	};
 
 /***/ },
-/* 198 */
+/* 197 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23405,7 +23419,7 @@
 	var COMPLETE_ABORT = exports.COMPLETE_ABORT = 'COMPLETE_ABORT';
 
 /***/ },
-/* 199 */
+/* 198 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23439,7 +23453,7 @@
 	var USER_CANCELS = exports.USER_CANCELS = 'USER_CANCELS';
 
 /***/ },
-/* 200 */
+/* 199 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23458,13 +23472,1918 @@
 	var LIMIT_REACHED = exports.LIMIT_REACHED = 'LIMIT_REACHED';
 
 /***/ },
+/* 200 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.ProcessingPin = exports.Aborting = exports.WaitingForPin = exports.ProcessingCard = exports.WaitingForCard = undefined;
+
+	var _WaitingForCard = __webpack_require__(201);
+
+	var _WaitingForCard2 = _interopRequireDefault(_WaitingForCard);
+
+	var _ProcessingCard = __webpack_require__(213);
+
+	var _ProcessingCard2 = _interopRequireDefault(_ProcessingCard);
+
+	var _WaitingForPin = __webpack_require__(217);
+
+	var _WaitingForPin2 = _interopRequireDefault(_WaitingForPin);
+
+	var _Aborting = __webpack_require__(225);
+
+	var _Aborting2 = _interopRequireDefault(_Aborting);
+
+	var _ProcessingPin = __webpack_require__(229);
+
+	var _ProcessingPin2 = _interopRequireDefault(_ProcessingPin);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.WaitingForCard = _WaitingForCard2.default;
+	exports.ProcessingCard = _ProcessingCard2.default;
+	exports.WaitingForPin = _WaitingForPin2.default;
+	exports.Aborting = _Aborting2.default;
+	exports.ProcessingPin = _ProcessingPin2.default;
+
+/***/ },
 /* 201 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
+	                    * @file Contains the waiting for card controller that tells what to do when it's waiting for a card
+	                    * @author Edward Gonzalez
+	                    */
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _WaitingForCard = __webpack_require__(202);
+
+	var _WaitingForCard2 = _interopRequireDefault(_WaitingForCard);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/** 
+	 * This is the controller class that handles such
+	 */
+	var WaitingForCardController = (_temp = _class = function (_React$Component) {
+		_inherits(WaitingForCardController, _React$Component);
+
+		function WaitingForCardController() {
+			_classCallCheck(this, WaitingForCardController);
+
+			return _possibleConstructorReturn(this, (WaitingForCardController.__proto__ || Object.getPrototypeOf(WaitingForCardController)).apply(this, arguments));
+		}
+
+		_createClass(WaitingForCardController, [{
+			key: 'render',
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
+			value: function render() {
+				return _react2.default.createElement(_WaitingForCard2.default, { onCardInserted: this.props.actions.cardInserted });
+			}
+		}]);
+
+		return WaitingForCardController;
+	}(_react2.default.Component), _class.propTypes = {
+		actions: _react2.default.PropTypes.shape({
+			'cardInserted': _react2.default.PropTypes.func.isRequired
+		}).isRequired
+	}, _temp);
+	exports.default = WaitingForCardController;
+
+/***/ },
+/* 202 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
+	                    * @file Contains the waiting for card screen view
+	                    * @author Edward Gonzalez
+	                    */
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _NavBar = __webpack_require__(203);
+
+	var _NavBar2 = _interopRequireDefault(_NavBar);
+
+	var _Button = __webpack_require__(208);
+
+	var _Button2 = _interopRequireDefault(_Button);
+
+	__webpack_require__(211);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/** 
+	 * This is the view that represents the waiting for card screen
+	 */
+	var WaitingForCard = (_temp = _class = function (_React$Component) {
+		_inherits(WaitingForCard, _React$Component);
+
+		function WaitingForCard() {
+			_classCallCheck(this, WaitingForCard);
+
+			return _possibleConstructorReturn(this, (WaitingForCard.__proto__ || Object.getPrototypeOf(WaitingForCard)).apply(this, arguments));
+		}
+
+		_createClass(WaitingForCard, [{
+			key: 'render',
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					{ className: 'WaitingForCard screen' },
+					_react2.default.createElement(_NavBar2.default, { canAbort: false }),
+					_react2.default.createElement('div', { className: 'ion ion-card color dark-gray text full-width centered' }),
+					_react2.default.createElement(
+						'p',
+						{ className: 'text full-width centered light lg color dark-gray' },
+						'Insert your card to begin'
+					),
+					_react2.default.createElement('div', { className: 'ion ion-chevron-down color light-gray text full-width centered' }),
+					_react2.default.createElement(
+						_Button2.default,
+						{ full: true, large: true, color: 'blue', className: 'insert-card-button', textType: 'light white lg', onClick: this.props.onCardInserted },
+						'Insert Card'
+					)
+				);
+			}
+		}]);
+
+		return WaitingForCard;
+	}(_react2.default.Component), _class.propTypes = {
+		onCardInserted: _react2.default.PropTypes.func.isRequired
+	}, _temp);
+	exports.default = WaitingForCard;
+
+/***/ },
+/* 203 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
+	                    * @file Contains the NavBar that is used across the ATM screens
+	                    * @author Edward Gonzalez
+	                    */
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(204);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/** 
+	 * This is the component that represents the navbar element
+	 */
+	var NavBar = (_temp = _class = function (_React$Component) {
+		_inherits(NavBar, _React$Component);
+
+		function NavBar() {
+			_classCallCheck(this, NavBar);
+
+			return _possibleConstructorReturn(this, (NavBar.__proto__ || Object.getPrototypeOf(NavBar)).apply(this, arguments));
+		}
+
+		_createClass(NavBar, [{
+			key: 'render',
+
+			/**
+	   * Render function
+	   * @returns {React.Component}
+	   */
+			value: function render() {
+
+				var abortButton = null;
+				if (this.props.canAbort) {
+					abortButton = _react2.default.createElement('div', { className: 'ion ion-ios-close-outline', onClick: this.props.onAbort });
+				}
+
+				return _react2.default.createElement(
+					'div',
+					{ className: 'navBar' },
+					_react2.default.createElement('div', { className: 'ion ion-social-euro color dark-gray text' }),
+					_react2.default.createElement(
+						'div',
+						{ className: 'text color medium-black md brand' },
+						_react2.default.createElement(
+							'span',
+							{ className: 'text bold' },
+							'k'
+						),
+						_react2.default.createElement(
+							'span',
+							{ className: 'text color skyblue bold' },
+							'ATM'
+						)
+					),
+					abortButton
+				);
+			}
+		}]);
+
+		return NavBar;
+	}(_react2.default.Component), _class.propTypes = {
+		onAbort: _react2.default.PropTypes.func,
+		canAbort: _react2.default.PropTypes.bool.isRequired
+	}, _temp);
+	exports.default = NavBar;
+
+/***/ },
+/* 204 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(205);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(207)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./NavBar.css", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./NavBar.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 205 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(206)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".navBar {\n\tposition:absolute;\n\ttop:0;\n\tleft:0;\n\tright:0;\n\theight:64px;\n\tborder-bottom: solid 1px #ccc;\n}\n\n.navBar > .ion-social-euro {\n\tfont-size:24px;\n\theight:100%;\n\tmargin-left:24px;\n\tline-height:64px;\n\tvertical-align:middle;\n\tdisplay:inline-block;\n}\n.navBar > .ion-social-euro {\n\tfont-size:24px;\n\theight:100%;\n\tmargin-left:24px;\n\tline-height:64px;\n\tvertical-align:middle;\n\tdisplay:inline-block;\n}\n.navBar > .brand {\n\tdisplay:inline-block;\n\tpadding-left:12px;\n\tline-height:64px;\n\tvertical-align:middle;\n\theight:100%;\n}\n.navBar > .ion-ios-close-outline {\n\tposition:absolute;\n\theight:64px;\n\tfont-size:45px;\n\tright:0;\n\tborder-radius:64px;\n\ttransition:background-color .3s;\n\twidth:64px;\n\ttext-align:center;\n\tvertical-align:middle;\n\tline-height:64px;\n\tcursor:pointer;\n}\n.navBar > .ion-ios-close-outline:active {\n\tbackground-color:rgba(0,0,0,0.15);\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 206 */
+/***/ function(module, exports) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+/* 207 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	var stylesInDom = {},
+		memoize = function(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		isOldIE = memoize(function() {
+			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		}),
+		getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		singletonElement = null,
+		singletonCounter = 0,
+		styleElementsInsertedAtTop = [];
+
+	module.exports = function(list, options) {
+		if(false) {
+			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+		}
+
+		options = options || {};
+		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+		// tags it will allow on a page
+		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+
+		// By default, add <style> tags to the bottom of <head>.
+		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+
+		var styles = listToStyles(list);
+		addStylesToDom(styles, options);
+
+		return function update(newList) {
+			var mayRemove = [];
+			for(var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				domStyle.refs--;
+				mayRemove.push(domStyle);
+			}
+			if(newList) {
+				var newStyles = listToStyles(newList);
+				addStylesToDom(newStyles, options);
+			}
+			for(var i = 0; i < mayRemove.length; i++) {
+				var domStyle = mayRemove[i];
+				if(domStyle.refs === 0) {
+					for(var j = 0; j < domStyle.parts.length; j++)
+						domStyle.parts[j]();
+					delete stylesInDom[domStyle.id];
+				}
+			}
+		};
+	}
+
+	function addStylesToDom(styles, options) {
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			if(domStyle) {
+				domStyle.refs++;
+				for(var j = 0; j < domStyle.parts.length; j++) {
+					domStyle.parts[j](item.parts[j]);
+				}
+				for(; j < item.parts.length; j++) {
+					domStyle.parts.push(addStyle(item.parts[j], options));
+				}
+			} else {
+				var parts = [];
+				for(var j = 0; j < item.parts.length; j++) {
+					parts.push(addStyle(item.parts[j], options));
+				}
+				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+			}
+		}
+	}
+
+	function listToStyles(list) {
+		var styles = [];
+		var newStyles = {};
+		for(var i = 0; i < list.length; i++) {
+			var item = list[i];
+			var id = item[0];
+			var css = item[1];
+			var media = item[2];
+			var sourceMap = item[3];
+			var part = {css: css, media: media, sourceMap: sourceMap};
+			if(!newStyles[id])
+				styles.push(newStyles[id] = {id: id, parts: [part]});
+			else
+				newStyles[id].parts.push(part);
+		}
+		return styles;
+	}
+
+	function insertStyleElement(options, styleElement) {
+		var head = getHeadElement();
+		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+		if (options.insertAt === "top") {
+			if(!lastStyleElementInsertedAtTop) {
+				head.insertBefore(styleElement, head.firstChild);
+			} else if(lastStyleElementInsertedAtTop.nextSibling) {
+				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+			} else {
+				head.appendChild(styleElement);
+			}
+			styleElementsInsertedAtTop.push(styleElement);
+		} else if (options.insertAt === "bottom") {
+			head.appendChild(styleElement);
+		} else {
+			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+		}
+	}
+
+	function removeStyleElement(styleElement) {
+		styleElement.parentNode.removeChild(styleElement);
+		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+		if(idx >= 0) {
+			styleElementsInsertedAtTop.splice(idx, 1);
+		}
+	}
+
+	function createStyleElement(options) {
+		var styleElement = document.createElement("style");
+		styleElement.type = "text/css";
+		insertStyleElement(options, styleElement);
+		return styleElement;
+	}
+
+	function createLinkElement(options) {
+		var linkElement = document.createElement("link");
+		linkElement.rel = "stylesheet";
+		insertStyleElement(options, linkElement);
+		return linkElement;
+	}
+
+	function addStyle(obj, options) {
+		var styleElement, update, remove;
+
+		if (options.singleton) {
+			var styleIndex = singletonCounter++;
+			styleElement = singletonElement || (singletonElement = createStyleElement(options));
+			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		} else if(obj.sourceMap &&
+			typeof URL === "function" &&
+			typeof URL.createObjectURL === "function" &&
+			typeof URL.revokeObjectURL === "function" &&
+			typeof Blob === "function" &&
+			typeof btoa === "function") {
+			styleElement = createLinkElement(options);
+			update = updateLink.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+				if(styleElement.href)
+					URL.revokeObjectURL(styleElement.href);
+			};
+		} else {
+			styleElement = createStyleElement(options);
+			update = applyToTag.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+			};
+		}
+
+		update(obj);
+
+		return function updateStyle(newObj) {
+			if(newObj) {
+				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+					return;
+				update(obj = newObj);
+			} else {
+				remove();
+			}
+		};
+	}
+
+	var replaceText = (function () {
+		var textStore = [];
+
+		return function (index, replacement) {
+			textStore[index] = replacement;
+			return textStore.filter(Boolean).join('\n');
+		};
+	})();
+
+	function applyToSingletonTag(styleElement, index, remove, obj) {
+		var css = remove ? "" : obj.css;
+
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = replaceText(index, css);
+		} else {
+			var cssNode = document.createTextNode(css);
+			var childNodes = styleElement.childNodes;
+			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+			if (childNodes.length) {
+				styleElement.insertBefore(cssNode, childNodes[index]);
+			} else {
+				styleElement.appendChild(cssNode);
+			}
+		}
+	}
+
+	function applyToTag(styleElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+
+		if(media) {
+			styleElement.setAttribute("media", media)
+		}
+
+		if(styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = css;
+		} else {
+			while(styleElement.firstChild) {
+				styleElement.removeChild(styleElement.firstChild);
+			}
+			styleElement.appendChild(document.createTextNode(css));
+		}
+	}
+
+	function updateLink(linkElement, obj) {
+		var css = obj.css;
+		var sourceMap = obj.sourceMap;
+
+		if(sourceMap) {
+			// http://stackoverflow.com/a/26603875
+			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+		}
+
+		var blob = new Blob([css], { type: "text/css" });
+
+		var oldSrc = linkElement.href;
+
+		linkElement.href = URL.createObjectURL(blob);
+
+		if(oldSrc)
+			URL.revokeObjectURL(oldSrc);
+	}
+
+
+/***/ },
+/* 208 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp;
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(209);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Button = (_temp = _class = function (_React$Component) {
+		_inherits(Button, _React$Component);
+
+		function Button(props) {
+			_classCallCheck(this, Button);
+
+			return _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this, props));
+		}
+
+		_createClass(Button, [{
+			key: 'render',
+			value: function render() {
+				var className = "button color";
+				if (!this.props.color) {
+					className += " green";
+				} else {
+					className += " " + this.props.color;
+				}
+				if (this.props.inverse) {
+					className += " text inverse";
+				} else {
+					className += " background";
+				}
+				if (this.props.full) {
+					className += " full";
+				}
+				if (this.props.disabled) {
+					className += " disabled";
+				}
+				if (this.props.large) {
+					className += " large";
+				}
+				if (this.props.right) {
+					className += " right";
+				}
+
+				if (this.props.className) {
+					className += " " + this.props.className;
+				}
+
+				var spanClassName = "color text ";
+				if (this.props.textType) {
+					spanClassName += " " + this.props.textType;
+				} else {
+					spanClassName += "black";
+				}
+
+				var style = {};
+				if (this.props.width) {
+					style.width = this.props.width;
+				}
+
+				return _react2.default.createElement(
+					'button',
+					{ disabled: this.props.disabled, type: this.props.type,
+						className: className, onClick: this.props.onClick, style: style },
+					_react2.default.createElement(
+						'span',
+						{ className: spanClassName },
+						this.props.children
+					)
+				);
+			}
+		}]);
+
+		return Button;
+	}(_react2.default.Component), _class.propTypes = {
+		children: _react2.default.PropTypes.string,
+		inverse: _react2.default.PropTypes.bool,
+		large: _react2.default.PropTypes.bool,
+		color: _react2.default.PropTypes.string,
+		textColor: _react2.default.PropTypes.string,
+		textType: _react2.default.PropTypes.string,
+		disabled: _react2.default.PropTypes.bool,
+		type: _react2.default.PropTypes.string,
+		full: _react2.default.PropTypes.bool,
+		className: _react2.default.PropTypes.string,
+		right: _react2.default.PropTypes.bool,
+		onClick: _react2.default.PropTypes.func,
+		width: _react2.default.PropTypes.number
+	}, _temp);
+	exports.default = Button;
+
+/***/ },
+/* 209 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(210);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(207)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./Button.css", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./Button.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 210 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(206)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".button {\n\theight:45px;\n\ttransition:opacity 0.3s, background-color 0.3s, box-shadow 0.3s;\n\t-moz-transition:opacity 0.3s, background-color 0.3s, box-shadow 0.3s;\n\t-webkit-transition:opacity 0.3s, background-color 0.3s, box-shadow 0.3s;\n\tpadding-left:24px;\n\tpadding-right:24px;\n\tbackground-position:center;\n\tbackground-repeat:no-repeat;\n\tbackground-size:cover;\n}\n.button:not(:disabled), .button:not(:disabled) > span {\n\tcursor:pointer;\n}\n.button.large {\n\theight:84px;\n}\n.button.right {\n\tfloat:right;\n}\n.button:not(.inverse):not(:disabled):active {\n\topacity:0.8;\n}\n.button.inverse:active {\n\tbackground-color:rgba(0,0,0,0.1);\n}\n.button.full {\n\tmargin:0;\n\twidth:100%;\n\theight:45px;\n}\n.button:not(.inverse):disabled {\n\tcursor:default;\n\tbackground-color:#9b9b9b !important;\n\topacity:0.6;\n}\n.button.inverse:disabled {\n\tcursor:default;\n\tbackground-color: #e6e6e6;\n\tcolor: white;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 211 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(212);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(207)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./WaitingForCard.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./WaitingForCard.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 212 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(206)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".WaitingForCard > .ion-card {\n\tfont-size:192px;\n}\n\n.WaitingForCard > .ion-chevron-down {\n\tfont-size:92px;\n\t-webkit-animation: mover 2s infinite alternate;\n\t-moz-animation: mover 2s infinite alternate;\n\tanimation: mover 2s infinite alternate;\n}\n\n.WaitingForCard > .insert-card-button {\n\tposition:absolute;\n\tleft:0;\n\tbottom:0;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 213 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
+	                    * @file Contains the processing card controller
+	                    * @author Edward Gonzalez
+	                    */
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ProcessingCard = __webpack_require__(214);
+
+	var _ProcessingCard2 = _interopRequireDefault(_ProcessingCard);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/** 
+	 * This is the controller that processes the card operation
+	 * Because it's a dummy controller it only waits after a specific timeout
+	 */
+	var ProcessingCardController = (_temp = _class = function (_React$Component) {
+		_inherits(ProcessingCardController, _React$Component);
+
+		function ProcessingCardController() {
+			_classCallCheck(this, ProcessingCardController);
+
+			return _possibleConstructorReturn(this, (ProcessingCardController.__proto__ || Object.getPrototypeOf(ProcessingCardController)).apply(this, arguments));
+		}
+
+		_createClass(ProcessingCardController, [{
+			key: 'componentDidMount',
+
+
+			/**
+	   * Waits 2 seconds before setting into card processed state
+	   * @return {undefined}
+	   */
+			value: function componentDidMount() {
+				var _this2 = this;
+
+				setTimeout(function () {
+					_this2.props.actions.cardProcessed();
+				}, 2000);
+			}
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
+
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(_ProcessingCard2.default, null);
+			}
+		}]);
+
+		return ProcessingCardController;
+	}(_react2.default.Component), _class.propTypes = {
+		actions: _react2.default.PropTypes.shape({
+			'cardProcessed': _react2.default.PropTypes.func.isRequired
+		}).isRequired
+	}, _temp);
+	exports.default = ProcessingCardController;
+
+/***/ },
+/* 214 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
+	                    * @file Contains the processing card screen
+	                    * @author Edward Gonzalez
+	                    */
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _NavBar = __webpack_require__(203);
+
+	var _NavBar2 = _interopRequireDefault(_NavBar);
+
+	__webpack_require__(215);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/** 
+	 * This is the view that represents the processing card screen
+	 */
+	var ProcessingCard = (_temp = _class = function (_React$Component) {
+		_inherits(ProcessingCard, _React$Component);
+
+		function ProcessingCard() {
+			_classCallCheck(this, ProcessingCard);
+
+			return _possibleConstructorReturn(this, (ProcessingCard.__proto__ || Object.getPrototypeOf(ProcessingCard)).apply(this, arguments));
+		}
+
+		_createClass(ProcessingCard, [{
+			key: 'render',
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					{ className: 'ProcessingCard screen' },
+					_react2.default.createElement(_NavBar2.default, { canAbort: false }),
+					_react2.default.createElement('div', { className: 'ion ion-card color dark-gray text full-width centered' }),
+					_react2.default.createElement(
+						'p',
+						{ className: 'text full-width centered light lg color dark-gray' },
+						'Please wait while your card is being processed'
+					),
+					_react2.default.createElement('div', { className: 'ion ion-load-c color light-gray text full-width centered' })
+				);
+			}
+		}]);
+
+		return ProcessingCard;
+	}(_react2.default.Component), _class.propTypes = {}, _temp);
+	exports.default = ProcessingCard;
+
+/***/ },
+/* 215 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(216);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(207)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./ProcessingCard.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./ProcessingCard.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 216 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(206)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".ProcessingCard > .ion-card {\n\tfont-size:192px;\n}\n\n.ProcessingCard > .ion-load-c {\n\tfont-size:92px;\n\t-webkit-animation: rotator 1s linear infinite;\n\t-moz-animation: rotator 1s linear infinite;\n\tanimation: rotator 1s linear infinite;\n\ttransform:translateY(30px);\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 217 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
+	                    * @file Contains the waiting for card controller that tells what to do when it's waiting for a pin input
+	                    * @author Edward Gonzalez
+	                    */
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _WaitingForPin = __webpack_require__(218);
+
+	var _WaitingForPin2 = _interopRequireDefault(_WaitingForPin);
+
+	var _config = __webpack_require__(222);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/** 
+	 * This is the controller class that will handle the input data
+	 */
+	var WaitingForPinController = (_temp = _class = function (_React$Component) {
+		_inherits(WaitingForPinController, _React$Component);
+
+		function WaitingForPinController() {
+			_classCallCheck(this, WaitingForPinController);
+
+			return _possibleConstructorReturn(this, (WaitingForPinController.__proto__ || Object.getPrototypeOf(WaitingForPinController)).apply(this, arguments));
+		}
+
+		_createClass(WaitingForPinController, [{
+			key: 'render',
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
+			value: function render() {
+				return _react2.default.createElement(_WaitingForPin2.default, { onPinInserted: this.props.actions.pinInserted, onAbort: this.props.actions.performAbort,
+					attemptsLeft: _config.MAX_PIN_TRIES - this.props.ATMState.pinAttempts });
+			}
+		}]);
+
+		return WaitingForPinController;
+	}(_react2.default.Component), _class.propTypes = {
+		ATMState: _react2.default.PropTypes.shape({
+			'pinAttempts': _react2.default.PropTypes.number.isRequired
+		}),
+		actions: _react2.default.PropTypes.shape({
+			'pinInserted': _react2.default.PropTypes.func.isRequired,
+			'performAbort': _react2.default.PropTypes.func.isRequired
+		}).isRequired
+	}, _temp);
+	exports.default = WaitingForPinController;
+
+/***/ },
+/* 218 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
+	                    * @file Contains the waiting for pin screen view
+	                    * @author Edward Gonzalez
+	                    */
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _NavBar = __webpack_require__(203);
+
+	var _NavBar2 = _interopRequireDefault(_NavBar);
+
+	var _Button = __webpack_require__(208);
+
+	var _Button2 = _interopRequireDefault(_Button);
+
+	var _TextField = __webpack_require__(219);
+
+	var _TextField2 = _interopRequireDefault(_TextField);
+
+	var _config = __webpack_require__(222);
+
+	var _AbortReasons = __webpack_require__(198);
+
+	var AbortReasons = _interopRequireWildcard(_AbortReasons);
+
+	__webpack_require__(223);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/** 
+	 * This is the view that represents the waiting for pin screen
+	 */
+	var WaitingForPin = (_temp = _class = function (_React$Component) {
+		_inherits(WaitingForPin, _React$Component);
+
+		/**
+	  * Constructor of the screen, initializes the pin and binds the functions
+	  * @param {Object} props the react properties
+	  */
+		function WaitingForPin(props) {
+			_classCallCheck(this, WaitingForPin);
+
+			var _this = _possibleConstructorReturn(this, (WaitingForPin.__proto__ || Object.getPrototypeOf(WaitingForPin)).call(this, props));
+
+			_this.state = {
+				'pin': ''
+			};
+			_this.updatePin = _this.updatePin.bind(_this);
+			return _this;
+		}
+
+		/**
+	  * Updates the pin value in the screen
+	  * @param {String} pin the new pin
+	  * @return {undefined}
+	  */
+
+
+		_createClass(WaitingForPin, [{
+			key: 'updatePin',
+			value: function updatePin(pin) {
+				this.setState({ pin: pin });
+			}
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
+
+		}, {
+			key: 'render',
+			value: function render() {
+				var label = _react2.default.createElement(
+					'div',
+					{ className: 'text full-width color medium-black light lg centered please-insert' },
+					'Please Insert your pin'
+				);
+				if (this.props.attemptsLeft < _config.MAX_PIN_TRIES) {
+					label = _react2.default.createElement(
+						'div',
+						{ className: 'text full-width color red light lg centered invalid please-insert' },
+						'Invalid pin please try again'
+					);
+				}
+				return _react2.default.createElement(
+					'div',
+					{ className: 'WaitingForPin screen' },
+					_react2.default.createElement(_NavBar2.default, { canAbort: true, onAbort: this.props.onAbort.bind(null, AbortReasons.USER_CANCELS) }),
+					label,
+					_react2.default.createElement(_TextField2.default, { width: 350, type: 'number', onChange: this.updatePin, value: this.state.pin, validate: function validate(pin) {
+							if (pin.length > 4) {
+								return "Pin too long";
+							}
+						} }),
+					_react2.default.createElement(
+						_Button2.default,
+						{ width: 350, color: 'skyblue', className: 'accept-pin', onClick: this.props.onPinInserted.bind(null, this.state.pin),
+							textType: 'white md', disabled: this.state.pin.length !== 4 },
+						'OK'
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'text full-width color medium-gray md centered attempts-left' },
+						'You have ',
+						_react2.default.createElement(
+							'span',
+							null,
+							this.props.attemptsLeft
+						),
+						' attempts left'
+					)
+				);
+			}
+		}]);
+
+		return WaitingForPin;
+	}(_react2.default.Component), _class.propTypes = {
+		onPinInserted: _react2.default.PropTypes.func.isRequired,
+		onAbort: _react2.default.PropTypes.func.isRequired,
+		attemptsLeft: _react2.default.PropTypes.number.isRequired
+	}, _temp);
+	exports.default = WaitingForPin;
+
+/***/ },
+/* 219 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
+	                    * @file Contains the TextField that is used across the ATM screens
+	                    * @author Edward Gonzalez
+	                    */
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(220);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/** 
+	 * This is the component that represents the textfield element
+	 */
+	var TextField = (_temp = _class = function (_React$Component) {
+		_inherits(TextField, _React$Component);
+
+		/**
+	  * Constructor of the screen, initializes the pin and binds the functions
+	  * @param {Object} props the react properties
+	  */
+		function TextField(props) {
+			_classCallCheck(this, TextField);
+
+			var _this = _possibleConstructorReturn(this, (TextField.__proto__ || Object.getPrototypeOf(TextField)).call(this, props));
+
+			_this.state = {
+				'error': ''
+			};
+			_this.onInputChanged = _this.onInputChanged.bind(_this);
+			return _this;
+		}
+
+		/**
+	  * Triggers when the input has changed
+	  * @param {Event} e The triggering event
+	  */
+
+
+		_createClass(TextField, [{
+			key: 'onInputChanged',
+			value: function onInputChanged(e) {
+				if (this.props.validate) {
+					this.setState({ 'error': this.props.validate(e.target.value) || '' });
+				}
+				this.props.onChange(e.target.value);
+			}
+
+			/**
+	   * Render function
+	   * @returns {React.Component}
+	   */
+
+		}, {
+			key: 'render',
+			value: function render() {
+				var width = "100%";
+				if (this.props.width) {
+					width = this.props.width;
+				}
+
+				var className = "textField";
+				if (this.state.error) {
+					className += " errored";
+				}
+
+				return _react2.default.createElement(
+					'div',
+					{ className: className, style: { width: width } },
+					_react2.default.createElement('input', { type: this.props.type || "text", onChange: this.onInputChanged, value: this.props.value }),
+					_react2.default.createElement(
+						'span',
+						{ className: 'error text light sm color red' },
+						this.state.error
+					)
+				);
+			}
+		}]);
+
+		return TextField;
+	}(_react2.default.Component), _class.propTypes = {
+		value: _react2.default.PropTypes.string.isRequired,
+		validate: _react2.default.PropTypes.func,
+		onChange: _react2.default.PropTypes.func.isRequired,
+		width: _react2.default.PropTypes.number
+	}, _temp);
+	exports.default = TextField;
+
+/***/ },
+/* 220 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(221);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(207)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./TextField.css", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./TextField.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 221 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(206)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".textField > input, .textField > span {\n\tdisplay:block;\n\twidth:100%;\n}\n.textField > span {\n\theight:24px;\n\tline-height:24px;\n\tvertical-align:middle;\n\ttext-align:center;\n}\n.textField > input {\n\tpadding: 10px;\n\tborder: solid 1px #dcdcdc;\n\ttransition: box-shadow 0.3s, border 0.3s;\n}\n.textField > input:focus,\n.textField > input.focus {\n\tborder: solid 1px #707070;\n\tbox-shadow: 0 0 5px 1px #969696;\n}\n.textField.errored > input {\n\tborder: solid 1px #E30336;\n}\n.textField.errored > input.focus,\n.textField.errored > input:focus {\n\tborder: solid 1px #fc3664;\n\tbox-shadow: 0 0 5px 1px #fecdd8;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 222 */
 /***/ function(module, exports) {
 
 	"use strict";
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	/**
+	 * @file Contains the configuration of the ATM
+	 * @author Edward Gonzalez
+	 */
+
+	/**
+	 * The maximum times you can retry to input the pin
+	 */
+	var MAX_PIN_TRIES = exports.MAX_PIN_TRIES = 3;
+
+	/**
+	 * Right pin number
+	 */
+	var RIGHT_PIN = exports.RIGHT_PIN = "1234";
+
 /***/ },
-/* 202 */
+/* 223 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(224);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(207)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./WaitingForPin.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./WaitingForPin.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 224 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(206)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".WaitingForPin > .attempts-left {\n\tpadding-top:24px;\n}\n.WaitingForPin input {\n\t-webkit-text-security: disc;\n}\n.WaitingForPin > .please-insert {\n\tpadding-bottom:12px;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 225 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
+	                    * @file Contains the aborting controller that shows a message as well as tells to retrieve the card
+	                    * @author Edward Gonzalez
+	                    */
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _AbortReasons = __webpack_require__(198);
+
+	var AbortReasons = _interopRequireWildcard(_AbortReasons);
+
+	var _Aborting = __webpack_require__(226);
+
+	var _Aborting2 = _interopRequireDefault(_Aborting);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/** 
+	 * This is the controller class that will handle the aborting operation
+	 */
+	var AbortingController = (_temp = _class = function (_React$Component) {
+		_inherits(AbortingController, _React$Component);
+
+		function AbortingController() {
+			_classCallCheck(this, AbortingController);
+
+			return _possibleConstructorReturn(this, (AbortingController.__proto__ || Object.getPrototypeOf(AbortingController)).apply(this, arguments));
+		}
+
+		_createClass(AbortingController, [{
+			key: 'render',
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
+			value: function render() {
+				return _react2.default.createElement(_Aborting2.default, { reason: this.props.ATMState.abortReason, onAbortCompleted: this.props.actions.completeAbort });
+			}
+		}]);
+
+		return AbortingController;
+	}(_react2.default.Component), _class.propTypes = {
+		actions: _react2.default.PropTypes.shape({
+			'completeAbort': _react2.default.PropTypes.func.isRequired
+		}).isRequired,
+		ATMState: _react2.default.PropTypes.shape({
+			'abortReason': _react2.default.PropTypes.oneOf(Object.keys(AbortReasons)).isRequired
+		}).isRequired
+	}, _temp);
+	exports.default = AbortingController;
+
+/***/ },
+/* 226 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
+	                    * @file Contains the aborting screen view
+	                    * @author Edward Gonzalez
+	                    */
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _NavBar = __webpack_require__(203);
+
+	var _NavBar2 = _interopRequireDefault(_NavBar);
+
+	var _Button = __webpack_require__(208);
+
+	var _Button2 = _interopRequireDefault(_Button);
+
+	var _AbortReasons = __webpack_require__(198);
+
+	var AbortReasons = _interopRequireWildcard(_AbortReasons);
+
+	__webpack_require__(227);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/** 
+	 * This is the view that represents the aborting screen
+	 */
+	var Aborting = (_temp = _class = function (_React$Component) {
+		_inherits(Aborting, _React$Component);
+
+		function Aborting(props) {
+			_classCallCheck(this, Aborting);
+
+			var _this = _possibleConstructorReturn(this, (Aborting.__proto__ || Object.getPrototypeOf(Aborting)).call(this, props));
+
+			_this.state = {
+				'pin': ''
+			};
+			return _this;
+		}
+		/**
+	  * Render function
+	  * @return {React.Component}
+	  */
+
+
+		_createClass(Aborting, [{
+			key: 'render',
+			value: function render() {
+				var reason = void 0;
+				switch (this.props.reason) {
+					case AbortReasons.TOO_MANY_FAILED_PIN_ATTEMPTS:
+						reason = 'Too many failed pin attempts';
+						break;
+					case AbortReasons.TOO_MANY_FAILED_WITHDRAW_ATTEMPTS:
+						reason = 'Too many failed withdraw attempts';
+						break;
+					case AbortReasons.NOT_ENOUGH_FUNDS:
+						reason = 'You do not have enough funds';
+						break;
+					case AbortReasons.USER_CANCELS:
+						reason = 'You cancelled the operation';
+						break;
+					default:
+						reason = 'Unknown aborting process';
+						break;
+				}
+				return _react2.default.createElement(
+					'div',
+					{ className: 'Aborting screen' },
+					_react2.default.createElement(_NavBar2.default, { canAbort: false }),
+					_react2.default.createElement(
+						'div',
+						{ className: 'full-width text lg color medium-black centered light' },
+						reason
+					),
+					_react2.default.createElement('div', { className: 'ion ion-close-round color red text full-width centered' }),
+					_react2.default.createElement(
+						'div',
+						{ className: 'full-width text lg color medium-black centered light' },
+						'Please retrieve your card'
+					),
+					_react2.default.createElement('div', { className: 'ion ion-chevron-down color light-gray text full-width centered' }),
+					_react2.default.createElement(
+						_Button2.default,
+						{ full: true, large: true, color: 'blue', className: 'retrieve-card-button', textType: 'light white lg', onClick: this.props.onAbortCompleted },
+						'Retrieve Card'
+					)
+				);
+			}
+		}]);
+
+		return Aborting;
+	}(_react2.default.Component), _class.propTypes = {
+		reason: _react2.default.PropTypes.oneOf(Object.keys(AbortReasons)).isRequired,
+		onAbortCompleted: _react2.default.PropTypes.func.isRequired
+	}, _temp);
+	exports.default = Aborting;
+
+/***/ },
+/* 227 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(228);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(207)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./Aborting.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./Aborting.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 228 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(206)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".Aborting > .ion-close-round {\n\tfont-size:192px;\n}\n\n.Aborting > .ion-chevron-down {\n\tfont-size:92px;\n\t-webkit-animation: mover 2s infinite alternate;\n\t-moz-animation: mover 2s infinite alternate;\n\tanimation: mover 2s infinite alternate;\n}\n\n.Aborting > .retrieve-card-button {\n\tposition:absolute;\n\tleft:0;\n\tbottom:0;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 229 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
+	                    * @file Contains the processing card controller
+	                    * @author Edward Gonzalez
+	                    */
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ProcessingPin = __webpack_require__(230);
+
+	var _ProcessingPin2 = _interopRequireDefault(_ProcessingPin);
+
+	var _AbortReasons = __webpack_require__(198);
+
+	var AbortReasons = _interopRequireWildcard(_AbortReasons);
+
+	var _config = __webpack_require__(222);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/** 
+	 * This is the controller that processes the pin operation
+	 * Because it's a dummy controller it only waits after a specific timeout
+	 * The only valid pin is 1234
+	 */
+	var ProcessingPinController = (_temp = _class = function (_React$Component) {
+		_inherits(ProcessingPinController, _React$Component);
+
+		function ProcessingPinController() {
+			_classCallCheck(this, ProcessingPinController);
+
+			return _possibleConstructorReturn(this, (ProcessingPinController.__proto__ || Object.getPrototypeOf(ProcessingPinController)).apply(this, arguments));
+		}
+
+		_createClass(ProcessingPinController, [{
+			key: 'componentDidMount',
+
+
+			/**
+	   * Waits 2 seconds before setting into valid or invalid state
+	   * It can also abort if done too many times
+	   * @return {undefined}
+	   */
+			value: function componentDidMount() {
+				var _this2 = this;
+
+				setTimeout(function () {
+					if (_this2.props.ATMState.pin === _config.RIGHT_PIN) {
+						_this2.props.actions.pinProcessedValid();
+					} else if (_this2.props.ATMState.pinAttempts >= _config.MAX_PIN_TRIES - 1) {
+						_this2.props.actions.performAbort(AbortReasons.TOO_MANY_FAILED_PIN_ATTEMPTS);
+					} else {
+						_this2.props.actions.pinProcessedInvalid();
+					}
+				}, 2000);
+			}
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
+
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(_ProcessingPin2.default, { onAbort: this.props.actions.performAbort });
+			}
+		}]);
+
+		return ProcessingPinController;
+	}(_react2.default.Component), _class.propTypes = {
+		ATMState: _react2.default.PropTypes.shape({
+			'pin': _react2.default.PropTypes.string.isRequired
+		}).isRequired,
+		actions: _react2.default.PropTypes.shape({
+			'pinProcessedValid': _react2.default.PropTypes.func.isRequired,
+			'pinProcessedInvalid': _react2.default.PropTypes.func.isRequired,
+			'performAbort': _react2.default.PropTypes.func.isRequired
+		}).isRequired
+	}, _temp);
+	exports.default = ProcessingPinController;
+
+/***/ },
+/* 230 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
+	                    * @file Contains the processing card screen
+	                    * @author Edward Gonzalez
+	                    */
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _NavBar = __webpack_require__(203);
+
+	var _NavBar2 = _interopRequireDefault(_NavBar);
+
+	var _AbortReasons = __webpack_require__(198);
+
+	var AbortReasons = _interopRequireWildcard(_AbortReasons);
+
+	__webpack_require__(231);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/** 
+	 * This is the view that represents the processing card screen
+	 */
+	var ProcessingPin = (_temp = _class = function (_React$Component) {
+		_inherits(ProcessingPin, _React$Component);
+
+		function ProcessingPin() {
+			_classCallCheck(this, ProcessingPin);
+
+			return _possibleConstructorReturn(this, (ProcessingPin.__proto__ || Object.getPrototypeOf(ProcessingPin)).apply(this, arguments));
+		}
+
+		_createClass(ProcessingPin, [{
+			key: 'render',
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					{ className: 'ProcessingPin screen' },
+					_react2.default.createElement(_NavBar2.default, { canAbort: true, onAbort: this.props.onAbort.bind(null, AbortReasons.USER_CANCELS) }),
+					_react2.default.createElement(
+						'p',
+						{ className: 'text full-width centered light lg color dark-gray' },
+						'Please wait while we get the required information'
+					),
+					_react2.default.createElement('div', { className: 'ion ion-load-c color light-gray text full-width centered' })
+				);
+			}
+		}]);
+
+		return ProcessingPin;
+	}(_react2.default.Component), _class.propTypes = {
+		onAbort: _react2.default.PropTypes.func.isRequired
+	}, _temp);
+	exports.default = ProcessingPin;
+
+/***/ },
+/* 231 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(232);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(207)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./ProcessingPin.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./ProcessingPin.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 232 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(206)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".ProcessingPin > .ion-load-c {\n\tfont-size:92px;\n\t-webkit-animation: rotator 1s linear infinite;\n\t-moz-animation: rotator 1s linear infinite;\n\tanimation: rotator 1s linear infinite;\n\ttransform:translateY(30px);\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 233 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23528,7 +25447,7 @@
 	var ABORTING = exports.ABORTING = 'ABORTING';
 
 /***/ },
-/* 203 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23539,36 +25458,44 @@
 
 	var _redux = __webpack_require__(172);
 
-	var _state = __webpack_require__(204);
+	var _state = __webpack_require__(235);
 
 	var _state2 = _interopRequireDefault(_state);
 
-	var _pinAttempts = __webpack_require__(205);
+	var _pin = __webpack_require__(236);
+
+	var _pin2 = _interopRequireDefault(_pin);
+
+	var _pinAttempts = __webpack_require__(237);
 
 	var _pinAttempts2 = _interopRequireDefault(_pinAttempts);
 
-	var _withdrawAttempts = __webpack_require__(206);
+	var _withdrawAttempts = __webpack_require__(238);
 
 	var _withdrawAttempts2 = _interopRequireDefault(_withdrawAttempts);
 
-	var _abortReason = __webpack_require__(207);
+	var _abortReason = __webpack_require__(239);
 
 	var _abortReason2 = _interopRequireDefault(_abortReason);
+
+	var _withdrawFailReason = __webpack_require__(240);
+
+	var _withdrawFailReason2 = _interopRequireDefault(_withdrawFailReason);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
 	 * This is the root reducer that will populate the store
 	 */
-	var rootReducer = (0, _redux.combineReducers)({ state: _state2.default, pinAttempts: _pinAttempts2.default, abortReason: _abortReason2.default }); /**
-	                                                                                                                                                    * @file Includes all the reducers that the application needs in order to execute
-	                                                                                                                                                    * @author Edward Gonzalez
-	                                                                                                                                                    */
+	var rootReducer = (0, _redux.combineReducers)({ state: _state2.default, pinAttempts: _pinAttempts2.default, withdrawAttempts: _withdrawAttempts2.default, abortReason: _abortReason2.default, withdrawFailReason: _withdrawFailReason2.default, pin: _pin2.default }); /**
+	                                                                                                                                                                                                                                                                        * @file Includes all the reducers that the application needs in order to execute
+	                                                                                                                                                                                                                                                                        * @author Edward Gonzalez
+	                                                                                                                                                                                                                                                                        */
 
 	exports.default = rootReducer;
 
 /***/ },
-/* 204 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23578,11 +25505,11 @@
 	});
 	exports.default = state;
 
-	var _States = __webpack_require__(202);
+	var _States = __webpack_require__(233);
 
 	var States = _interopRequireWildcard(_States);
 
-	var _ActionTypes = __webpack_require__(198);
+	var _ActionTypes = __webpack_require__(197);
 
 	var ActionTypes = _interopRequireWildcard(_ActionTypes);
 
@@ -23637,7 +25564,51 @@
 	}
 
 /***/ },
-/* 205 */
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = pin;
+
+	var _ActionTypes = __webpack_require__(197);
+
+	var ActionTypes = _interopRequireWildcard(_ActionTypes);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	/**
+	 * This is the state reducer that represents the current pin that was
+	 * set into the ATM and it holded only for a brief time until is valid or invalid
+	 *
+	 * @param {String} state The current state, as provided by the store
+	 * @param {Object} action The action that is executed
+	 */
+	function pin() {
+		var state = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+		var action = arguments[1];
+
+		switch (action.type) {
+			case ActionTypes.PIN_INSERTED:
+				return action.payload;
+			case ActionTypes.PIN_PROCESSED_VALID:
+			case ActionTypes.PIN_PROCESSED_INVALID:
+			case ActionTypes.COMPLETE_ABORT:
+			case ActionTypes.PERFORM_ABORT:
+				return null;
+			default:
+				return state;
+		}
+	} /**
+	   * @file Contains information about the current pin to use for processing
+	   * @author Edward Gonzalez
+	   */
+
+/***/ },
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23647,7 +25618,7 @@
 	});
 	exports.default = pinAttempts;
 
-	var _ActionTypes = __webpack_require__(198);
+	var _ActionTypes = __webpack_require__(197);
 
 	var ActionTypes = _interopRequireWildcard(_ActionTypes);
 
@@ -23658,7 +25629,7 @@
 	 * has attempted to put a pin in the ATM
 	 * The number will reset once the ATM finishes or aborts
 	 *
-	 * @param {String} state The current state, as provided by the store
+	 * @param {Number} state The current state, as provided by the store
 	 * @param {Object} action The action that is executed
 	 */
 	function pinAttempts() {
@@ -23681,7 +25652,7 @@
 	   */
 
 /***/ },
-/* 206 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23691,18 +25662,18 @@
 	});
 	exports.default = withdrawAttempts;
 
-	var _ActionTypes = __webpack_require__(198);
+	var _ActionTypes = __webpack_require__(197);
 
 	var ActionTypes = _interopRequireWildcard(_ActionTypes);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	/**
-	 * This is the main state reducer and represents the amount of times the user
+	 * This is the reducer represents the amount of times the user
 	 * has attempted to withdraw some money
 	 * The number will reset once the ATM finishes or aborts
 	 *
-	 * @param {String} state The current state, as provided by the store
+	 * @param {Number} state The current state, as provided by the store
 	 * @param {Object} action The action that is executed
 	 */
 	function withdrawAttempts() {
@@ -23725,7 +25696,7 @@
 	   */
 
 /***/ },
-/* 207 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23735,7 +25706,7 @@
 	});
 	exports.default = abortReason;
 
-	var _ActionTypes = __webpack_require__(198);
+	var _ActionTypes = __webpack_require__(197);
 
 	var ActionTypes = _interopRequireWildcard(_ActionTypes);
 
@@ -23763,6 +25734,481 @@
 	   * @file Contains the abortion reason from the ATM
 	   * @author Edward Gonzalez
 	   */
+
+/***/ },
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = withdrawFailReason;
+
+	var _ActionTypes = __webpack_require__(197);
+
+	var ActionTypes = _interopRequireWildcard(_ActionTypes);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	/**
+	 * This reducer represents the reason why the ATM failed to withdraw some money
+	 *
+	 * @param {String} state The current state, as provided by the store
+	 * @param {Object} action The action that is executed
+	 */
+	function withdrawFailReason() {
+		var state = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+		var action = arguments[1];
+
+		switch (action.type) {
+			case ActionTypes.WITHDRAW_FAILED:
+				return action.payload;
+			case ActionTypes.WITHDRAW:
+			case ActionTypes.FINISHED:
+			case ActionTypes.COMPLETE_ABORT:
+				return null;
+			default:
+				return state;
+		}
+	} /**
+	   * @file Contains the state reducer for the ATM withdraw failed reason
+	   * @author Edward Gonzalez
+	   */
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(242);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(207)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./index.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./index.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(206)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "html, body {\n\theight:100%;\n\tmargin:0;\n}\n.react-container {\n\toverflow:hidden;\n\tposition:relative;\n\twidth:100%;\n}\n* {\n\tbox-sizing:border-box;\n\tmargin:0;\n\tpadding:0;\n\tfont-family:Roboto;\n\t-webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n\t-moz-tap-highlight-color: rgba(0, 0, 0, 0);\n\t-webkit-touch-callout: none;\n\tuser-select:none;\n\t-webkit-user-select: none;\n\t-khtml-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\tcursor:default;\n}\ntextarea:focus, input:focus, select:focus, button {\n\toutline: none;\n\tborder: none;\n\tbackground: none;\n}\ninput, input:before, input:after, textarea, textarea:before, textarea:after, button {\n\t-webkit-user-select: initial;\n\t-khtml-user-select: initial;\n\t-moz-user-select: initial;\n\t-ms-user-select: initial;\n\tuser-select: initial;\n\tborder-radius:0;\n\tborder: none;\n\toverflow: auto;\n\toutline: none;\n\tresize: none;\n\n\t-webkit-box-shadow: none;\n\t-moz-box-shadow: none;\n\tbox-shadow: none;\n}\nselect, select:before, select:after, button {\n\tborder-radius:0;\n\t-webkit-appearance: none;\n\t-webkit-border-radius: 0px\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 243 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(244);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(207)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./colors.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./colors.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 244 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(206)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".color.white.background {\n\tbackground-color:white;\n}\n.color.white.text {\n\tcolor:white;\n}\n.color.black.background {\n\tbackground-color:#000;\n\tcolor:white;\n}\n.color.black.text {\n\tcolor:#000;\n}\n.color.medium-black.background {\n\tbackground-color:#161616;\n\tcolor:white;\n}\n.color.medium-black.text {\n\tcolor:#161616;\n}\n.color.dark-gray.background {\n\tbackground-color:#424242;\n\tcolor: white;\n}\n.color.dark-gray.text {\n\tcolor:#424242;\n}\n.color.medium-gray.background {\n\tbackground-color:#9b9b9b;\n}\n.color.medium-gray.text {\n\tcolor:#9b9b9b;\n}\n.color.light-gray.background {\n\tbackground-color:#e6e6e6;\n}\n.color.light-gray.text {\n\tcolor:#e6e6e6;\n}\n.color.orange.background {\n\tbackground-color:#E45B00;\n\tcolor: white;\n}\n.color.orange.text {\n\tcolor:#E45B00;\n}\n.color.green.background {\n\tbackground-color:#108285;\n\tcolor: white;\n}\n.color.green.text {\n\tcolor:#108285;\n}\n.color.red.background {\n\tbackground-color:#E30336;\n\tcolor: white;\n}\n.color.red.text {\n\tcolor:#E30336;\n}\n.color.yellow.background {\n\tbackground-color:#FBD01F;\n\tcolor: white;\n}\n.color.yellow.text {\n\tcolor:#FBD01F;\n}\n.color.purple.background {\n\tbackground-color:#AB035F;\n\tcolor: white;\n}\n.color.purple.text {\n\tcolor: #AB035F;\n}\n.color.blue.background {\n\tbackground-color:#25415C;\n\tcolor: white;\n}\n.color.blue.text {\n\tcolor: #25415C;\n}\n.color.skyblue.background {\n\tbackground-color:#02A9DB;\n\tcolor: white;\n}\n.color.skyblue.text {\n\tcolor: #02A9DB;\n}\n.color.danger.background {\n\tbackground-color:#e30336;\n}\n.color.danger.text {\n\tcolor:#e30336;\n}\n.color.success.background {\n\tbackground-color:#25c601;\n}\n.color.success.text {\n\tcolor:#25c601;\n}\n.color.info.background {\n\tbackground-color:#FBD01F;\n}\n.color.info.text {\n\tcolor:#FBD01F;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(246);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(207)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./text.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./text.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(206)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".text.light {\n\tfont-weight:300;\n}\n.text.medium {\n\tfont-weight:500;\n}\n.text.bold {\n\tfont-weight:700;\n}\n\n.text.xl {\n\tfont-size:33px;\n}\n.text.lg {\n\tfont-size:24px;\n}\n.text.md {\n\tfont-size:16px;\n}\n.text.sm {\n\tfont-size:14px;\n}\n.text.xs {\n\tfont-size:12px;\n}\n\n.text.centered {\n\ttext-align:center;\n}\n\n.text.full-width {\n\twidth:100%;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(248);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(207)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./screen.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./screen.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(206)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".screen {\n\twidth:100%;\n\theight:100%;\n\tposition:fixed;\n\tdisplay:-webkit-flex;\n\tdisplay:-moz-flex;\n\tdisplay:-ms-flex;\n\tdisplay:flex;\n\t-webkit-align-items:center;\n\t-moz-align-items:center;\n\t-ms-align-items:center;\n\talign-items:center;\n\t-webkit-justify-content:center;\n\t-moz-justify-content:center;\n\t-ms-justify-content:center;\n\tjustify-content:center;\n\t-webkit-flex-direction:column;\n\t-moz-flex-direction:column;\n\t-ms-flex-direction:column;\n\tflex-direction:column;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(250);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(207)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./animations.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./animations.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 250 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(206)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "@-webkit-keyframes rotator {\n\tfrom {\n\t\t-ms-transform: translateY(30px) rotate(0deg);\n\t\t-moz-transform: translateY(30px) rotate(0deg);\n\t\t-webkit-transform: translateY(30px) rotate(0deg);\n\t\t-o-transform: translateY(30px) rotate(0deg);\n\t\ttransform: translateY(30px) rotate(0deg);\n\t}\n\tto {\n\t\t-ms-transform: translateY(30px) rotate(360deg);\n\t\t-moz-transform: translateY(30px) rotate(360deg);\n\t\t-webkit-transform: translateY(30px) rotate(360deg);\n\t\t-o-transform: translateY(30px) rotate(360deg);\n\t\ttransform: translateY(30px) rotate(360deg);\n\t}\n}\n@keyframes rotator {\n\tfrom {\n\t\t-ms-transform: translateY(30px) rotate(0deg);\n\t\t-moz-transform: translateY(30px) rotate(0deg);\n\t\t-webkit-transform: translateY(30px) rotate(0deg);\n\t\t-o-transform: translateY(30px) rotate(0deg);\n\t\ttransform: translateY(30px) rotate(0deg);\n\t}\n\tto {\n\t\t-ms-transform: translateY(30px) rotate(360deg);\n\t\t-moz-transform: translateY(30px) rotate(360deg);\n\t\t-webkit-transform: translateY(30px) rotate(360deg);\n\t\t-o-transform: translateY(30px) rotate(360deg);\n\t\ttransform: translateY(30px) rotate(360deg);\n\t}\n}\n\n@-moz-keyframes mover {\n\t0% { transform: translateY(0); }\n\t100% { transform: translateY(20px); }\n}\n@-webkit-keyframes mover {\n\t0% { transform: translateY(0); }\n\t100% { transform: translateY(20px); }\n}\n@keyframes mover {\n\t0% { transform: translateY(0); }\n\t100% { transform: translateY(20px); }\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 251 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+	function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
+
+	var repeat = function repeat(str, times) {
+	  return new Array(times + 1).join(str);
+	};
+	var pad = function pad(num, maxLength) {
+	  return repeat("0", maxLength - num.toString().length) + num;
+	};
+	var formatTime = function formatTime(time) {
+	  return "@ " + pad(time.getHours(), 2) + ":" + pad(time.getMinutes(), 2) + ":" + pad(time.getSeconds(), 2) + "." + pad(time.getMilliseconds(), 3);
+	};
+
+	// Use the new performance api to get better precision if available
+	var timer = typeof performance !== "undefined" && typeof performance.now === "function" ? performance : Date;
+
+	/**
+	 * parse the level option of createLogger
+	 *
+	 * @property {string | function | object} level - console[level]
+	 * @property {object} action
+	 * @property {array} payload
+	 * @property {string} type
+	 */
+
+	function getLogLevel(level, action, payload, type) {
+	  switch (typeof level === "undefined" ? "undefined" : _typeof(level)) {
+	    case "object":
+	      return typeof level[type] === "function" ? level[type].apply(level, _toConsumableArray(payload)) : level[type];
+	    case "function":
+	      return level(action);
+	    default:
+	      return level;
+	  }
+	}
+
+	/**
+	 * Creates logger with followed options
+	 *
+	 * @namespace
+	 * @property {object} options - options for logger
+	 * @property {string | function | object} options.level - console[level]
+	 * @property {boolean} options.duration - print duration of each action?
+	 * @property {boolean} options.timestamp - print timestamp with each action?
+	 * @property {object} options.colors - custom colors
+	 * @property {object} options.logger - implementation of the `console` API
+	 * @property {boolean} options.logErrors - should errors in action execution be caught, logged, and re-thrown?
+	 * @property {boolean} options.collapsed - is group collapsed?
+	 * @property {boolean} options.predicate - condition which resolves logger behavior
+	 * @property {function} options.stateTransformer - transform state before print
+	 * @property {function} options.actionTransformer - transform action before print
+	 * @property {function} options.errorTransformer - transform error before print
+	 */
+
+	function createLogger() {
+	  var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+	  var _options$level = options.level;
+	  var level = _options$level === undefined ? "log" : _options$level;
+	  var _options$logger = options.logger;
+	  var logger = _options$logger === undefined ? console : _options$logger;
+	  var _options$logErrors = options.logErrors;
+	  var logErrors = _options$logErrors === undefined ? true : _options$logErrors;
+	  var collapsed = options.collapsed;
+	  var predicate = options.predicate;
+	  var _options$duration = options.duration;
+	  var duration = _options$duration === undefined ? false : _options$duration;
+	  var _options$timestamp = options.timestamp;
+	  var timestamp = _options$timestamp === undefined ? true : _options$timestamp;
+	  var transformer = options.transformer;
+	  var _options$stateTransfo = options.stateTransformer;
+	  var // deprecated
+	  stateTransformer = _options$stateTransfo === undefined ? function (state) {
+	    return state;
+	  } : _options$stateTransfo;
+	  var _options$actionTransf = options.actionTransformer;
+	  var actionTransformer = _options$actionTransf === undefined ? function (actn) {
+	    return actn;
+	  } : _options$actionTransf;
+	  var _options$errorTransfo = options.errorTransformer;
+	  var errorTransformer = _options$errorTransfo === undefined ? function (error) {
+	    return error;
+	  } : _options$errorTransfo;
+	  var _options$colors = options.colors;
+	  var colors = _options$colors === undefined ? {
+	    title: function title() {
+	      return "#000000";
+	    },
+	    prevState: function prevState() {
+	      return "#9E9E9E";
+	    },
+	    action: function action() {
+	      return "#03A9F4";
+	    },
+	    nextState: function nextState() {
+	      return "#4CAF50";
+	    },
+	    error: function error() {
+	      return "#F20404";
+	    }
+	  } : _options$colors;
+
+	  // exit if console undefined
+
+	  if (typeof logger === "undefined") {
+	    return function () {
+	      return function (next) {
+	        return function (action) {
+	          return next(action);
+	        };
+	      };
+	    };
+	  }
+
+	  if (transformer) {
+	    console.error("Option 'transformer' is deprecated, use stateTransformer instead");
+	  }
+
+	  var logBuffer = [];
+	  function printBuffer() {
+	    logBuffer.forEach(function (logEntry, key) {
+	      var started = logEntry.started;
+	      var startedTime = logEntry.startedTime;
+	      var action = logEntry.action;
+	      var prevState = logEntry.prevState;
+	      var error = logEntry.error;
+	      var took = logEntry.took;
+	      var nextState = logEntry.nextState;
+
+	      var nextEntry = logBuffer[key + 1];
+	      if (nextEntry) {
+	        nextState = nextEntry.prevState;
+	        took = nextEntry.started - started;
+	      }
+	      // message
+	      var formattedAction = actionTransformer(action);
+	      var isCollapsed = typeof collapsed === "function" ? collapsed(function () {
+	        return nextState;
+	      }, action) : collapsed;
+
+	      var formattedTime = formatTime(startedTime);
+	      var titleCSS = colors.title ? "color: " + colors.title(formattedAction) + ";" : null;
+	      var title = "action " + (timestamp ? formattedTime : "") + " " + formattedAction.type + " " + (duration ? "(in " + took.toFixed(2) + " ms)" : "");
+
+	      // render
+	      try {
+	        if (isCollapsed) {
+	          if (colors.title) logger.groupCollapsed("%c " + title, titleCSS);else logger.groupCollapsed(title);
+	        } else {
+	          if (colors.title) logger.group("%c " + title, titleCSS);else logger.group(title);
+	        }
+	      } catch (e) {
+	        logger.log(title);
+	      }
+
+	      var prevStateLevel = getLogLevel(level, formattedAction, [prevState], "prevState");
+	      var actionLevel = getLogLevel(level, formattedAction, [formattedAction], "action");
+	      var errorLevel = getLogLevel(level, formattedAction, [error, prevState], "error");
+	      var nextStateLevel = getLogLevel(level, formattedAction, [nextState], "nextState");
+
+	      if (prevStateLevel) {
+	        if (colors.prevState) logger[prevStateLevel]("%c prev state", "color: " + colors.prevState(prevState) + "; font-weight: bold", prevState);else logger[prevStateLevel]("prev state", prevState);
+	      }
+
+	      if (actionLevel) {
+	        if (colors.action) logger[actionLevel]("%c action", "color: " + colors.action(formattedAction) + "; font-weight: bold", formattedAction);else logger[actionLevel]("action", formattedAction);
+	      }
+
+	      if (error && errorLevel) {
+	        if (colors.error) logger[errorLevel]("%c error", "color: " + colors.error(error, prevState) + "; font-weight: bold", error);else logger[errorLevel]("error", error);
+	      }
+
+	      if (nextStateLevel) {
+	        if (colors.nextState) logger[nextStateLevel]("%c next state", "color: " + colors.nextState(nextState) + "; font-weight: bold", nextState);else logger[nextStateLevel]("next state", nextState);
+	      }
+
+	      try {
+	        logger.groupEnd();
+	      } catch (e) {
+	        logger.log("—— log end ——");
+	      }
+	    });
+	    logBuffer.length = 0;
+	  }
+
+	  return function (_ref) {
+	    var getState = _ref.getState;
+	    return function (next) {
+	      return function (action) {
+	        // exit early if predicate function returns false
+	        if (typeof predicate === "function" && !predicate(getState, action)) {
+	          return next(action);
+	        }
+
+	        var logEntry = {};
+	        logBuffer.push(logEntry);
+
+	        logEntry.started = timer.now();
+	        logEntry.startedTime = new Date();
+	        logEntry.prevState = stateTransformer(getState());
+	        logEntry.action = action;
+
+	        var returnedValue = undefined;
+	        if (logErrors) {
+	          try {
+	            returnedValue = next(action);
+	          } catch (e) {
+	            logEntry.error = errorTransformer(e);
+	          }
+	        } else {
+	          returnedValue = next(action);
+	        }
+
+	        logEntry.took = timer.now() - logEntry.started;
+	        logEntry.nextState = stateTransformer(getState());
+
+	        printBuffer();
+
+	        if (logEntry.error) throw logEntry.error;
+	        return returnedValue;
+	      };
+	    };
+	  };
+	}
+
+	module.exports = createLogger;
 
 /***/ }
 /******/ ]);
