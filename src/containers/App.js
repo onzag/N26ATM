@@ -39,6 +39,8 @@ class App extends React.Component {
 				return (<controllers.ProcessingCard ATMState={this.props.ATMState} actions={this.props.actions}/>);
 			case States.WAITING_FOR_PIN:
 				return (<controllers.WaitingForPin ATMState={this.props.ATMState} actions={this.props.actions}/>);
+			case States.PROCESSING_PIN:
+				return (<controllers.ProcessingPin ATMState={this.props.ATMState} actions={this.props.actions}/>);
 			case States.ABORTING:
 				return (<controllers.Aborting ATMState={this.props.ATMState} actions={this.props.actions}/>);
 			default:
