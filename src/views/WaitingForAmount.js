@@ -35,7 +35,7 @@ export default class WaitingForAmount extends React.Component {
 
 	/**
 	 * Updates the custom value in the screen
-	 * @param {String} pin the new pin
+	 * @param {String} customValue the new custom value
 	 * @return {undefined}
 	 */
 	updateCustomValue(customValue){
