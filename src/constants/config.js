@@ -12,3 +12,8 @@ export const MAX_PIN_TRIES = 3;
  * Right pin number
  */
 export const RIGHT_PIN = "1234";
+
+/**
+ * The funds of the user
+ */
+export const FUNDS = 1200;
