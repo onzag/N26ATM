@@ -97,7 +97,7 @@ export const withdrawFailed = (reason)=>{
 	if (WithdrawFailReasonsList.indexOf(reason) === -1){
 		throw new Error('cannot execute action withdrawFailed without a valid reason',reason,'from',WithdrawFailReasonsList);
 	}
-	return {'type':ActionTypes.WITHDRAW_SUSCESFUL,'payload':reason};
+	return {'type':ActionTypes.WITHDRAW_FAILED,'payload':reason};
 }
 
 /**
