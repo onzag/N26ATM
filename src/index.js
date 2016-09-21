@@ -7,11 +7,20 @@ import React from 'react';
 import { render } from 'react-dom';
 import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
 import App from './containers/App';
 import reducer from './reducers';
 
-const store = createStore(reducer,applyMiddleware(thunk));
+let store;
+if (process.env.NODE_ENV === 'production'){
+	store = createStore(reducer);
+} else {
+	let createLogger = require('redux-logger');
+	const logger = createLogger();
+	store = createStore(
+		reducer,
+		applyMiddleware(logger)
+	);
+}
 
 import './css/index.css';
 import './css/colors.css';
