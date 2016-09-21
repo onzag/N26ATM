@@ -10,6 +10,8 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import * as controllers from '../controllers';
 import * as States from '../constants/States';
+import * as AbortReasons from '../constants/AbortReasons';
+import * as WithdrawFailReasons from '../constants/WithdrawFailReasons';
 
 /** 
  * This is the main application class that controls all the components that render a specific view
@@ -19,7 +21,10 @@ class App extends React.Component {
 	static propTypes = {
 		ATMState: React.PropTypes.shape({
 			'state':React.PropTypes.oneOf(Object.keys(States)).isRequired,
-			'pinAttempts':React.PropTypes.number.isRequired
+			'pinAttempts':React.PropTypes.number.isRequired,
+			'withdrawAttempts':React.PropTypes.number.isRequired,
+			'abortReason':React.PropTypes.oneOf(Object.keys(AbortReasons)),
+			'withdrawFailReason':React.PropTypes.oneOf(Object.keys(WithdrawFailReasons))
 		})
 	}
 	/**
@@ -27,9 +32,12 @@ class App extends React.Component {
 	 * @returns {React.Component}
 	 */
 	render(){
-		return (<div>
-			Application View
-		</div>);
+		switch (this.props.ATMState.state){
+			case States.WAITING_FOR_CARD:
+				return (<controllers.WaitingForCard AMTState={this.props.ATMState} actions={this.props.actions}/>);
+			default:
+				return (<div>NOT IMPLEMENTED</div>);
+		}
 	}
 }
 
