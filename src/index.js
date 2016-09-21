@@ -13,6 +13,10 @@ import reducer from './reducers';
 
 const store = createStore(reducer,applyMiddleware(thunk));
 
+import './css/index.css';
+import './css/colors.css';
+import './css/text.css';
+
 render(
 	<Provider store={store}>
 		<App/>
