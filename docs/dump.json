@@ -1,0 +1,1386 @@
+[
+  {
+    "__docId__": 0,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/constants/ActionTypes.js",
+    "memberof": null,
+    "longname": "src/constants/ActionTypes.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 9,
+    "content": "/**\n * @file Contains the action types constants\n * @author Edward Gonzalez\n */\n\n/**\n * The card has been inserted by the user\n */\nexport const CARD_INSERTED = 'CARD_INSERTED';\n\n/**\n * The card has been processed by the ATM\n */\nexport const CARD_PROCESSED = 'CARD_PROCESSED';\n\n/**\n * The pin has been inserted by the user\n */\nexport const PIN_INSERTED = 'PIN_INSERTED';\n\n/**\n * The pin is valid\n */\nexport const PIN_PROCESSED_VALID = 'PIN_PROCESSED_VALID';\n\n/**\n * The pin is invalid\n */\nexport const PIN_PROCESSED_INVALID = 'PIN_PROCESSED_INVALID';\n\n/**\n * withdraw some money\n */\nexport const WITHDRAW = 'WITHDRAW';\n\n/**\n * withdraw was suscesful\n */\nexport const WITHDRAW_SUSCESFUL = 'WITHDRAW_SUSCESFUL';\n\n/**\n * withdraw has failed\n */\nexport const WITHDRAW_FAILED = 'WITHDRAW_FAILED';\n\n/**\n * money has been delivered\n */\nexport const MONEY_DELIVERED = 'MONEY_DELIVERED';\n\n/**\n * The user took his card and money\n */\nexport const CARD_AND_MONEY_TAKEN = 'CARD_AND_MONEY_TAKEN';\n\n/**\n * Process finished\n */\nexport const FINISHED = 'FINISHED';\n\n/**\n * Trigger an abort\n */\nexport const PERFORM_ABORT = 'PERFORM_ABORT';\n\n/**\n * Abort has been completed\n */\nexport const COMPLETE_ABORT = 'COMPLETE_ABORT';\n"
+  },
+  {
+    "__docId__": 1,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "CARD_INSERTED",
+    "memberof": "src/constants/ActionTypes.js",
+    "longname": "src/constants/ActionTypes.js~CARD_INSERTED",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/ActionTypes.js",
+    "importStyle": "{CARD_INSERTED}",
+    "description": "The card has been inserted by the user",
+    "lineNumber": 9,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 2,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "CARD_PROCESSED",
+    "memberof": "src/constants/ActionTypes.js",
+    "longname": "src/constants/ActionTypes.js~CARD_PROCESSED",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/ActionTypes.js",
+    "importStyle": "{CARD_PROCESSED}",
+    "description": "The card has been processed by the ATM",
+    "lineNumber": 14,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 3,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "PIN_INSERTED",
+    "memberof": "src/constants/ActionTypes.js",
+    "longname": "src/constants/ActionTypes.js~PIN_INSERTED",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/ActionTypes.js",
+    "importStyle": "{PIN_INSERTED}",
+    "description": "The pin has been inserted by the user",
+    "lineNumber": 19,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 4,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "PIN_PROCESSED_VALID",
+    "memberof": "src/constants/ActionTypes.js",
+    "longname": "src/constants/ActionTypes.js~PIN_PROCESSED_VALID",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/ActionTypes.js",
+    "importStyle": "{PIN_PROCESSED_VALID}",
+    "description": "The pin is valid",
+    "lineNumber": 24,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 5,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "PIN_PROCESSED_INVALID",
+    "memberof": "src/constants/ActionTypes.js",
+    "longname": "src/constants/ActionTypes.js~PIN_PROCESSED_INVALID",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/ActionTypes.js",
+    "importStyle": "{PIN_PROCESSED_INVALID}",
+    "description": "The pin is invalid",
+    "lineNumber": 29,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 6,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "WITHDRAW",
+    "memberof": "src/constants/ActionTypes.js",
+    "longname": "src/constants/ActionTypes.js~WITHDRAW",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/ActionTypes.js",
+    "importStyle": "{WITHDRAW}",
+    "description": "withdraw some money",
+    "lineNumber": 34,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 7,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "WITHDRAW_SUSCESFUL",
+    "memberof": "src/constants/ActionTypes.js",
+    "longname": "src/constants/ActionTypes.js~WITHDRAW_SUSCESFUL",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/ActionTypes.js",
+    "importStyle": "{WITHDRAW_SUSCESFUL}",
+    "description": "withdraw was suscesful",
+    "lineNumber": 39,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 8,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "WITHDRAW_FAILED",
+    "memberof": "src/constants/ActionTypes.js",
+    "longname": "src/constants/ActionTypes.js~WITHDRAW_FAILED",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/ActionTypes.js",
+    "importStyle": "{WITHDRAW_FAILED}",
+    "description": "withdraw has failed",
+    "lineNumber": 44,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 9,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "MONEY_DELIVERED",
+    "memberof": "src/constants/ActionTypes.js",
+    "longname": "src/constants/ActionTypes.js~MONEY_DELIVERED",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/ActionTypes.js",
+    "importStyle": "{MONEY_DELIVERED}",
+    "description": "money has been delivered",
+    "lineNumber": 49,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 10,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "CARD_AND_MONEY_TAKEN",
+    "memberof": "src/constants/ActionTypes.js",
+    "longname": "src/constants/ActionTypes.js~CARD_AND_MONEY_TAKEN",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/ActionTypes.js",
+    "importStyle": "{CARD_AND_MONEY_TAKEN}",
+    "description": "The user took his card and money",
+    "lineNumber": 54,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 11,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "FINISHED",
+    "memberof": "src/constants/ActionTypes.js",
+    "longname": "src/constants/ActionTypes.js~FINISHED",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/ActionTypes.js",
+    "importStyle": "{FINISHED}",
+    "description": "Process finished",
+    "lineNumber": 59,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 12,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "PERFORM_ABORT",
+    "memberof": "src/constants/ActionTypes.js",
+    "longname": "src/constants/ActionTypes.js~PERFORM_ABORT",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/ActionTypes.js",
+    "importStyle": "{PERFORM_ABORT}",
+    "description": "Trigger an abort",
+    "lineNumber": 64,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 13,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "COMPLETE_ABORT",
+    "memberof": "src/constants/ActionTypes.js",
+    "longname": "src/constants/ActionTypes.js~COMPLETE_ABORT",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/ActionTypes.js",
+    "importStyle": "{COMPLETE_ABORT}",
+    "description": "Abort has been completed",
+    "lineNumber": 69,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 14,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/constants/States.js",
+    "memberof": null,
+    "longname": "src/constants/States.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 9,
+    "content": "/**\n * @file Contains the ATM states\n * @author Edward Gonzalez\n */\n\n/**\n * The ATM is waiting for the card\n */\nexport const WAITING_FOR_CARD = 'WAITING_FOR_CARD';\n\n/**\n * The ATM is processing the card\n */\nexport const PROCESSING_CARD = 'PROCESSING_CARD';\n\n/**\n * The ATM is waiting for the pin to be inserted\n */\nexport const WAITING_FOR_PIN = 'WAITING_FOR_PIN';\n\n/**\n * The ATM is processing the pin\n */\nexport const PROCESSING_PIN = 'PROCESSING_PIN';\n\n/**\n * The ATM is waiting for the amount to be set\n */\nexport const WAITING_FOR_AMOUNT = 'WAITING_FOR_AMOUNT';\n\n/**\n * The ATM is processing the amount\n */\nexport const PROCESSING_AMOUNT = 'PROCESSING_AMOUNT';\n\n/**\n * The ATM is delivering the money\n */\nexport const DELIVERING = 'DELIVERING';\n\n/**\n * The ATM has delivered the money\n */\nexport const DELIVERED = 'DELIVERED';\n\n/**\n * The ATM is done with the process and will restart\n */\nexport const DONE = 'DONE';\n\n/**\n * The ATM is aborting\n */\nexport const ABORTING = 'ABORTING';\n"
+  },
+  {
+    "__docId__": 15,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "WAITING_FOR_CARD",
+    "memberof": "src/constants/States.js",
+    "longname": "src/constants/States.js~WAITING_FOR_CARD",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/States.js",
+    "importStyle": "{WAITING_FOR_CARD}",
+    "description": "The ATM is waiting for the card",
+    "lineNumber": 9,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 16,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "PROCESSING_CARD",
+    "memberof": "src/constants/States.js",
+    "longname": "src/constants/States.js~PROCESSING_CARD",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/States.js",
+    "importStyle": "{PROCESSING_CARD}",
+    "description": "The ATM is processing the card",
+    "lineNumber": 14,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 17,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "WAITING_FOR_PIN",
+    "memberof": "src/constants/States.js",
+    "longname": "src/constants/States.js~WAITING_FOR_PIN",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/States.js",
+    "importStyle": "{WAITING_FOR_PIN}",
+    "description": "The ATM is waiting for the pin to be inserted",
+    "lineNumber": 19,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 18,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "PROCESSING_PIN",
+    "memberof": "src/constants/States.js",
+    "longname": "src/constants/States.js~PROCESSING_PIN",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/States.js",
+    "importStyle": "{PROCESSING_PIN}",
+    "description": "The ATM is processing the pin",
+    "lineNumber": 24,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 19,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "WAITING_FOR_AMOUNT",
+    "memberof": "src/constants/States.js",
+    "longname": "src/constants/States.js~WAITING_FOR_AMOUNT",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/States.js",
+    "importStyle": "{WAITING_FOR_AMOUNT}",
+    "description": "The ATM is waiting for the amount to be set",
+    "lineNumber": 29,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 20,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "PROCESSING_AMOUNT",
+    "memberof": "src/constants/States.js",
+    "longname": "src/constants/States.js~PROCESSING_AMOUNT",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/States.js",
+    "importStyle": "{PROCESSING_AMOUNT}",
+    "description": "The ATM is processing the amount",
+    "lineNumber": 34,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 21,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "DELIVERING",
+    "memberof": "src/constants/States.js",
+    "longname": "src/constants/States.js~DELIVERING",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/States.js",
+    "importStyle": "{DELIVERING}",
+    "description": "The ATM is delivering the money",
+    "lineNumber": 39,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 22,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "DELIVERED",
+    "memberof": "src/constants/States.js",
+    "longname": "src/constants/States.js~DELIVERED",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/States.js",
+    "importStyle": "{DELIVERED}",
+    "description": "The ATM has delivered the money",
+    "lineNumber": 44,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 23,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "DONE",
+    "memberof": "src/constants/States.js",
+    "longname": "src/constants/States.js~DONE",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/States.js",
+    "importStyle": "{DONE}",
+    "description": "The ATM is done with the process and will restart",
+    "lineNumber": 49,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 24,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "ABORTING",
+    "memberof": "src/constants/States.js",
+    "longname": "src/constants/States.js~ABORTING",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/constants/States.js",
+    "importStyle": "{ABORTING}",
+    "description": "The ATM is aborting",
+    "lineNumber": 54,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 25,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/containers/App.js",
+    "memberof": null,
+    "longname": "src/containers/App.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 6,
+    "content": "/**\n * @file Contains the main app class that controls all the application behaviour\n * @author Edward Gonzalez\n */\n\nimport React from 'react';\n\n/** \n * This is the main application class that controls all the components that render a specific view\n * It uses the state out of the store in order to render the view\n */\nexport default class App extends React.Component {\n\t/**\n\t * Render function\n\t * @returns {React.Component}\n\t */\n\trender(){\n\t\treturn (<div>\n\t\t\tApplication View\n\t\t</div>);\n\t}\n}\n"
+  },
+  {
+    "__docId__": 26,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "App",
+    "memberof": "src/containers/App.js",
+    "longname": "src/containers/App.js~App",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/containers/App.js",
+    "importStyle": "App",
+    "description": "This is the main application class that controls all the components that render a specific view\nIt uses the state out of the store in order to render the view",
+    "lineNumber": 12,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 27,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "render",
+    "memberof": "src/containers/App.js~App",
+    "longname": "src/containers/App.js~App#render",
+    "access": null,
+    "description": "Render function",
+    "lineNumber": 17,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{React.Component}"
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "React.Component"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 28,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/index.js",
+    "memberof": null,
+    "longname": "src/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 6,
+    "content": "/**\n * @file The entry point for the application, where middlewares are applied and the store is created\n * @author Edward Gonzalez\n */\n\nimport React from 'react';\nimport { render } from 'react-dom';\nimport { applyMiddleware, createStore } from 'redux';\nimport { Provider } from 'react-redux';\nimport thunk from 'redux-thunk';\nimport App from './containers/App';\nimport reducer from './reducers';\n\nconst store = createStore(reducer,applyMiddleware(thunk));\n\nrender(\n\t<Provider store={store}>\n\t\t<App/>\n\t</Provider>,\n\tdocument.getElementById('container')\n);\n"
+  },
+  {
+    "__docId__": 29,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "store",
+    "memberof": "src/index.js",
+    "longname": "src/index.js~store",
+    "access": null,
+    "export": false,
+    "importPath": "N26ATM/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 30,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/reducers/index.js",
+    "memberof": null,
+    "longname": "src/reducers/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 6,
+    "content": "/**\n * @file Includes all the reducers that the application needs in order to execute\n * @author Edward Gonzalez\n */\n\nimport { combineReducers } from 'redux';\nimport state from './state';\n\n/**\n * This is the root reducer that will populate the store\n */\nconst rootReducer = combineReducers({state});\n\nexport default rootReducer;\n"
+  },
+  {
+    "__docId__": 31,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "rootReducer",
+    "memberof": "src/reducers/index.js",
+    "longname": "src/reducers/index.js~rootReducer",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/reducers/index.js",
+    "importStyle": "rootReducer",
+    "description": "This is the root reducer that will populate the store",
+    "lineNumber": 12,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 32,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/reducers/state.js",
+    "memberof": null,
+    "longname": "src/reducers/state.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 6,
+    "content": "/**\n * @file Contains the state reducer for the ATM current state\n * @author Edward Gonzalez\n */\n\nimport * as States from '../constants/States';\nimport * as ActionTypes from '../constants/ActionTypes';\n\n/**\n * This is the main state reducer and represents the main state of the application\n * it represents in which situation the ATM is\n *\n * @param {String} state The current state, as provided by the store\n * @param {Object} action The action that is executed\n */\nexport default function state(state = States.WAITING_FOR_CARD, action){\n\tswitch (action.type){\n\t\tcase ActionTypes.CARD_INSERTED:\n\t\t\treturn States.PROCESSING_CARD;\n\t\tcase ActionTypes.CARD_PROCESSED:\n\t\t\treturn States.WAITING_FOR_PIN;\n\t\tcase ActionTypes.PIN_INSERTED:\n\t\t\treturn States.PROCESSING_PIN;\n\t\tcase ActionTypes.PIN_PROCESSED_VALID:\n\t\t\treturn States.WAITING_FOR_AMOUNT;\n\t\tcase ActionTypes.PIN_PROCESSED_INVALID:\n\t\t\treturn States.WAITING_FOR_PIN;\n\t\tcase ActionTypes.WITHDRAW:\n\t\t\treturn States.PROCESSING_AMOUNT;\n\t\tcase ActionTypes.WITHDRAW_SUSCESFUL:\n\t\t\treturn States.DELIVERING;\n\t\tcase ActionTypes.WITHDRAW_FAILED:\n\t\t\treturn States.WAITING_FOR_AMOUNT;\n\t\tcase ActionTypes.MONEY_DELIVERED:\n\t\t\treturn States.DELIVERED;\n\t\tcase ActionTypes.CARD_AND_MONEY_TAKEN:\n\t\t\treturn States.DONE;\n\t\tcase ActionTypes.FINISHED:\n\t\t\treturn States.WAITING_FOR_CARD;\n\t\tcase ActionTypes.PERFORM_ABORT:\n\t\t\treturn States.ABORTING;\n\t\tcase ActionTypes.COMPLETE_ABORT:\n\t\t\treturn States.WAITING_FOR_CARD;\n\t\tdefault:\n\t\t\treturn States.WAITING_FOR_CARD;\n\t}\n\treturn state;\n}\n"
+  },
+  {
+    "__docId__": 33,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "state",
+    "memberof": "src/reducers/state.js",
+    "longname": "src/reducers/state.js~state",
+    "access": null,
+    "export": true,
+    "importPath": "N26ATM/src/reducers/state.js",
+    "importStyle": "state",
+    "description": "This is the main state reducer and represents the main state of the application\nit represents in which situation the ATM is",
+    "lineNumber": 16,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "state",
+        "description": "The current state, as provided by the store"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "action",
+        "description": "The action that is executed"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Infinity",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~NaN",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~undefined",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~null",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Symbol",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Error",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~EvalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~InternalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 49,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RangeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 50,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 51,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 52,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~TypeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 53,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~URIError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 54,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 55,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 56,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Date",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 57,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~String",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 58,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~string",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 59,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RegExp",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 60,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 61,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 62,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 63,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 64,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 65,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 66,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 67,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 68,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 69,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 70,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Map",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 71,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Set",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 72,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 73,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 74,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 75,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~DataView",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 76,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~JSON",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 77,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Promise",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 78,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Generator",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 79,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 80,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Reflect",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 81,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Proxy",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 83,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "CanvasRenderingContext2D",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 84,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "DocumentFragment",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 85,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Element",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Element",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Element",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 86,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Event",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Event",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Event",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 87,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Node",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Node",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Node",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 88,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "NodeList",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/NodeList",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~NodeList",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 89,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "XMLHttpRequest",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 90,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "AudioContext",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/AudioContext",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~AudioContext",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  }
+]
