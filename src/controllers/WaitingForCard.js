@@ -1,10 +1,20 @@
+/**
+ * @file Contains the waiting for card controller that tells what to do when it's waiting for a card
+ * @author Edward Gonzalez
+ */
+
 import React from 'react';
 
 import * as States from '../constants/States';
 import * as AbortReasons from '../constants/AbortReasons';
 import * as WithdrawFailReasons from '../constants/WithdrawFailReasons';
 
-export default class WaitingForCard extends React.Component {
+import WaitingForCard from '../views/WaitingForCard';
+
+/** 
+ * This is the controller class that handles such
+ */
+export default class WaitingForCardController extends React.Component {
 	static propTypes = {
 		ATMState: React.PropTypes.shape({
 			'state':React.PropTypes.oneOf(Object.keys(States)).isRequired,
@@ -19,6 +29,6 @@ export default class WaitingForCard extends React.Component {
 	 * @returns {React.Component}
 	 */
 	render(){
-		return (<div>Waiting for card</div>);
+		return (<WaitingForCard onCardInserted={this.props.actions.cardInserted}/>);
 	}
 }
