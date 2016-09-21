@@ -1,0 +1,66 @@
+.ProcessingCard {
+	width:100%;
+	height:100%;
+	position:fixed;
+	display:-webkit-flex;
+	display:-moz-flex;
+	display:-ms-flex;
+	display:flex;
+	-webkit-align-items:center;
+	-moz-align-items:center;
+	-ms-align-items:center;
+	align-items:center;
+	-webkit-justify-content:center;
+	-moz-justify-content:center;
+	-ms-justify-content:center;
+	justify-content:center;
+	-webkit-flex-direction:column;
+	-moz-flex-direction:column;
+	-ms-flex-direction:column;
+	flex-direction:column;
+}
+
+.ProcessingCard > .ion-card {
+	font-size:192px;
+}
+
+.ProcessingCard > .ion-load-c {
+	font-size:92px;
+	-webkit-animation: rotator 1s linear infinite;
+	-moz-animation: rotator 1s linear infinite;
+	animation: rotator 1s linear infinite;
+	transform:translateY(30px);
+}
+
+@-webkit-keyframes rotator {
+	from {
+		-ms-transform: translateY(30px) rotate(0deg);
+		-moz-transform: translateY(30px) rotate(0deg);
+		-webkit-transform: translateY(30px) rotate(0deg);
+		-o-transform: translateY(30px) rotate(0deg);
+		transform: translateY(30px) rotate(0deg);
+	}
+	to {
+		-ms-transform: translateY(30px) rotate(360deg);
+		-moz-transform: translateY(30px) rotate(360deg);
+		-webkit-transform: translateY(30px) rotate(360deg);
+		-o-transform: translateY(30px) rotate(360deg);
+		transform: translateY(30px) rotate(360deg);
+	}
+}
+@keyframes rotator {
+	from {
+		-ms-transform: translateY(30px) rotate(0deg);
+		-moz-transform: translateY(30px) rotate(0deg);
+		-webkit-transform: translateY(30px) rotate(0deg);
+		-o-transform: translateY(30px) rotate(0deg);
+		transform: translateY(30px) rotate(0deg);
+	}
+	to {
+		-ms-transform: translateY(30px) rotate(360deg);
+		-moz-transform: translateY(30px) rotate(360deg);
+		-webkit-transform: translateY(30px) rotate(360deg);
+		-o-transform: translateY(30px) rotate(360deg);
+		transform: translateY(30px) rotate(360deg);
+	}
+}

@@ -18,7 +18,7 @@ export default class WaitingForCard extends React.Component {
 	}
 	/**
 	 * Render function
-	 * @returns {React.Component}
+	 * @return {React.Component}
 	 */
 	render(){
 		return (<div className="WaitingForCard">
