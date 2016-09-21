@@ -21,7 +21,7 @@ export default class WaitingForCard extends React.Component {
 	 * @return {React.Component}
 	 */
 	render(){
-		return (<div className="WaitingForCard">
+		return (<div className="WaitingForCard screen">
 			<NavBar canAbort={false}/>
 			<div className="ion ion-card color dark-gray text full-width centered"/>
 			<p className="text full-width centered light lg color dark-gray">Insert your card to begin</p>
