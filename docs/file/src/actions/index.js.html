@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/reducers/state.js | API Document</title>
+  <title data-ice="title">src/actions/index.js | API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -82,53 +82,156 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/reducers/state.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">src/actions/index.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
- * @file Contains the state reducer for the ATM current state
+ * @file Contains the action generators
  * @author Edward Gonzalez
  */
 
-import * as States from &apos;../constants/States&apos;;
 import * as ActionTypes from &apos;../constants/ActionTypes&apos;;
+import * as AbortReasons from &apos;../constants/AbortReasons&apos;;
+import * as WithdrawFailReasons from &apos;../constants/WithdrawFailReasons&apos;;
+
+/*
+ * @ignore
+ */
+const AbortReasonsList = Object.keys(AbortReasons);
+
+/*
+ * @ignore
+ */
+const WithdrawFailReasonsList = Object.keys(WithdrawFailReasons);
 
 /**
- * This is the main state reducer and represents the main state of the application
- * it represents in which situation the ATM is
- *
- * @param {String} state The current state, as provided by the store
- * @param {Object} action The action that is executed
+ * Executes when the card has been inserted by the user
+ * @return {Object} The generated action
+ * @property {String} type The type constant as defined in ActionTypes
  */
-export default function state(state = States.WAITING_FOR_CARD, action){
-	switch (action.type){
-		case ActionTypes.CARD_INSERTED:
-			return States.PROCESSING_CARD;
-		case ActionTypes.CARD_PROCESSED:
-			return States.WAITING_FOR_PIN;
-		case ActionTypes.PIN_INSERTED:
-			return States.PROCESSING_PIN;
-		case ActionTypes.PIN_PROCESSED_VALID:
-			return States.WAITING_FOR_AMOUNT;
-		case ActionTypes.PIN_PROCESSED_INVALID:
-			return States.WAITING_FOR_PIN;
-		case ActionTypes.WITHDRAW:
-			return States.PROCESSING_AMOUNT;
-		case ActionTypes.WITHDRAW_SUSCESFUL:
-			return States.DELIVERING;
-		case ActionTypes.WITHDRAW_FAILED:
-			return States.WAITING_FOR_AMOUNT;
-		case ActionTypes.MONEY_DELIVERED:
-			return States.DELIVERED;
-		case ActionTypes.CARD_AND_MONEY_TAKEN:
-			return States.DONE;
-		case ActionTypes.FINISHED:
-			return States.WAITING_FOR_CARD;
-		case ActionTypes.PERFORM_ABORT:
-			return States.ABORTING;
-		case ActionTypes.COMPLETE_ABORT:
-			return States.WAITING_FOR_CARD;
-		default:
-			return States.WAITING_FOR_CARD;
+export const cardInserted = ()=&gt;{
+	return {&apos;type&apos;:ActionTypes.CARD_INSERTED}
+}
+
+/**
+ * Executes when the card has been processed by the ATM
+ * @return {Object} The generated action
+ * @property {String} type The type constant as defined in ActionTypes
+ */
+export const cardProcessed = ()=&gt;{
+	return {&apos;type&apos;:ActionTypes.CARD_PROCESSED}
+}
+
+/**
+ * Executes when the pin has been inserted by the user
+ * @return {Object} The generated action
+ * @property {String} type The type constant as defined in ActionTypes
+ * @property {String} payload The inserted pin
+ */
+export const pinInserted = (pin)=&gt;{
+	if (!pin || typeof(pin) !== &quot;string&quot;){
+		throw new Error(&apos;cannot execute action pinInserted without a valid pin&apos;,pin);
 	}
+	return {&apos;type&apos;:ActionTypes.PIN_INSERTED,&apos;payload&apos;:pin};
+}
+
+/**
+ * Executes when the pin processed is valid
+ * @return {Object} The generated action
+ * @property {String} type The type constant as defined in ActionTypes
+ */
+export const pinProcessedValid = ()=&gt;{
+	return {&apos;type&apos;:ActionTypes.PIN_PROCESSED_VALID};
+}
+
+/**
+ * Executes when the pin processed is not valid
+ * @return {Object} The generated action
+ * @property {String} type The type constant as defined in ActionTypes
+ */
+export const pinProcessedInvalid = ()=&gt;{
+	return {&apos;type&apos;:ActionTypes.PIN_PROCESSED_INVALID};
+}
+
+/**
+ * Executes when the user specifies that he wants to withdraw some money
+ * @return {Object} The generated action
+ * @property {String} type The type constant as defined in ActionTypes
+ */
+export const withdraw = (amount)=&gt;{
+	if (!amount || typeof(amount) !== &quot;number&quot; || amount &lt; 0){
+		throw new Error(&apos;cannot execute action withdraw without a valid amount&apos;,amount);
+	}
+	return {&apos;type&apos;:ActionTypes.WITHDRAW,&apos;payload&apos;:amount};
+}
+
+/**
+ * Executes when the withdraw was suscesful
+ * @return {Object} The generated action
+ * @property {String} type The type constant as defined in ActionTypes
+ */
+export const withdrawSuscesful = ()=&gt;{
+	return {&apos;type&apos;:ActionTypes.WITHDRAW_SUSCESFUL};
+}
+
+/**
+ * Executes when the withdraw has failed
+ * @return {Object} The generated action
+ * @property {String} type The type constant as defined in ActionTypes
+ * @property {String} payload The inserted pin as defined in WithdrawFailReasons
+ */
+export const withdrawFailed = (reason)=&gt;{
+	if (WithdrawFailReasonsList.indexOf(reason) === -1){
+		throw new Error(&apos;cannot execute action withdrawFailed without a valid reason&apos;,reason,&apos;from&apos;,WithdrawFailReasonsList);
+	}
+	return {&apos;type&apos;:ActionTypes.WITHDRAW_SUSCESFUL,&apos;payload&apos;:reason};
+}
+
+/**
+ * Executes when the money is delivered
+ * @return {Object} The generated action
+ * @property {String} type The type constant as defined in ActionTypes
+ */
+export const moneyDelivered = ()=&gt;{
+	return {&apos;type&apos;:ActionTypes.MONEY_DELIVERED};
+}
+
+/**
+ * Executes when the user takes the card and the money
+ * @return {Object} The generated action
+ * @property {String} type The type constant as defined in ActionTypes
+ */
+export const cardAndMoneyTaken = ()=&gt;{
+	return {&apos;type&apos;:ActionTypes.CARD_AND_MONEY_TAKEN};
+}
+
+/**
+ * Executes when the ATM is done
+ * @return {Object} The generated action
+ * @property {String} type The type constant as defined in ActionTypes
+ */
+export const finished = ()=&gt;{
+	return {&apos;type&apos;:ActionTypes.FINISHED};
+}
+
+/**
+ * Executes when the ATM aborts for some reason
+ * @return {Object} The generated action
+ * @property {String} type The type constant as defined in ActionTypes
+ * @property {String} payload The reason why it aborts as defined in AbortReasons
+ */
+export const performAbort = (reason)=&gt;{
+	if (AbortReasonsList.indexOf(reason) === -1){
+		throw new Error(&apos;cannot execute action performAbort without a valid reason&apos;,reason,&apos;from&apos;,AbortReasonsList);
+	}
+	return {&apos;type&apos;:ActionTypes.PERFORM_ABORT,&apos;payload&apos;:reason};
+}
+
+/**
+ * Executes when the ATM completes the abort process
+ * @return {Object} The generated action
+ * @property {String} type The type constant as defined in ActionTypes
+ */
+export const completeAbort = ()=&gt;{
+	return {&apos;type&apos;:ActionTypes.COMPLETE_ABORT};
 }
 </code></pre>
 

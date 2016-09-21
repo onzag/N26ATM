@@ -2356,46 +2356,11 @@
                   "column": 2
                 }
               }
-            },
-            {
-              "type": "ReturnStatement",
-              "argument": {
-                "type": "Identifier",
-                "name": "state",
-                "range": [
-                  1504,
-                  1509
-                ],
-                "loc": {
-                  "start": {
-                    "line": 47,
-                    "column": 8
-                  },
-                  "end": {
-                    "line": 47,
-                    "column": 13
-                  }
-                }
-              },
-              "range": [
-                1497,
-                1510
-              ],
-              "loc": {
-                "start": {
-                  "line": 47,
-                  "column": 1
-                },
-                "end": {
-                  "line": 47,
-                  "column": 14
-                }
-              }
             }
           ],
           "range": [
             537,
-            1512
+            1497
           ],
           "loc": {
             "start": {
@@ -2403,7 +2368,7 @@
               "column": 70
             },
             "end": {
-              "line": 48,
+              "line": 47,
               "column": 1
             }
           }
@@ -2412,7 +2377,7 @@
         "expression": false,
         "range": [
           482,
-          1512
+          1497
         ],
         "loc": {
           "start": {
@@ -2420,7 +2385,7 @@
             "column": 15
           },
           "end": {
-            "line": 48,
+            "line": 47,
             "column": 1
           }
         },
@@ -2448,7 +2413,7 @@
       },
       "range": [
         467,
-        1512
+        1497
       ],
       "loc": {
         "start": {
@@ -2456,7 +2421,7 @@
           "column": 0
         },
         "end": {
-          "line": 48,
+          "line": 47,
           "column": 1
         }
       },
@@ -2485,7 +2450,7 @@
   "sourceType": "module",
   "range": [
     98,
-    1512
+    1497
   ],
   "loc": {
     "start": {
@@ -2493,7 +2458,7 @@
       "column": 0
     },
     "end": {
-      "line": 48,
+      "line": 47,
       "column": 1
     }
   },

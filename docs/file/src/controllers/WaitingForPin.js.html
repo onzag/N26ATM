@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/reducers/state.js | API Document</title>
+  <title data-ice="title">src/controllers/WaitingForPin.js | API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -82,56 +82,9 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/reducers/state.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
- * @file Contains the state reducer for the ATM current state
- * @author Edward Gonzalez
- */
-
-import * as States from &apos;../constants/States&apos;;
-import * as ActionTypes from &apos;../constants/ActionTypes&apos;;
-
-/**
- * This is the main state reducer and represents the main state of the application
- * it represents in which situation the ATM is
- *
- * @param {String} state The current state, as provided by the store
- * @param {Object} action The action that is executed
- */
-export default function state(state = States.WAITING_FOR_CARD, action){
-	switch (action.type){
-		case ActionTypes.CARD_INSERTED:
-			return States.PROCESSING_CARD;
-		case ActionTypes.CARD_PROCESSED:
-			return States.WAITING_FOR_PIN;
-		case ActionTypes.PIN_INSERTED:
-			return States.PROCESSING_PIN;
-		case ActionTypes.PIN_PROCESSED_VALID:
-			return States.WAITING_FOR_AMOUNT;
-		case ActionTypes.PIN_PROCESSED_INVALID:
-			return States.WAITING_FOR_PIN;
-		case ActionTypes.WITHDRAW:
-			return States.PROCESSING_AMOUNT;
-		case ActionTypes.WITHDRAW_SUSCESFUL:
-			return States.DELIVERING;
-		case ActionTypes.WITHDRAW_FAILED:
-			return States.WAITING_FOR_AMOUNT;
-		case ActionTypes.MONEY_DELIVERED:
-			return States.DELIVERED;
-		case ActionTypes.CARD_AND_MONEY_TAKEN:
-			return States.DONE;
-		case ActionTypes.FINISHED:
-			return States.WAITING_FOR_CARD;
-		case ActionTypes.PERFORM_ABORT:
-			return States.ABORTING;
-		case ActionTypes.COMPLETE_ABORT:
-			return States.WAITING_FOR_CARD;
-		default:
-			return States.WAITING_FOR_CARD;
-	}
-}
-</code></pre>
-
+<div class="content" data-ice="content"><h1 data-ice="title">src/controllers/WaitingForPin.js</h1>
+<pre class="source-code line-number raw-source-code"></pre>
+<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
 </div>
 
 <footer class="footer">
