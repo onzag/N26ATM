@@ -6,7 +6,7 @@
 import * as ActionTypes from '../constants/ActionTypes';
 
 /**
- * This is the main state reducer and represents the amount of times the user
+ * This is the reducer represents the amount of times the user
  * has attempted to withdraw some money
  * The number will reset once the ATM finishes or aborts
  *
