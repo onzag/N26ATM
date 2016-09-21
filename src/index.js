@@ -26,6 +26,7 @@ import './css/index.css';
 import './css/colors.css';
 import './css/text.css';
 import './css/screen.css';
+import './css/animations.css';
 
 render(
 	<Provider store={store}>
