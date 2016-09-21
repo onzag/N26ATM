@@ -1,0 +1,33 @@
+.text.light {
+	font-weight:300;
+}
+.text.medium {
+	font-weight:500;
+}
+.text.bold {
+	font-weight:700;
+}
+
+.text.xl {
+	font-size:33px;
+}
+.text.lg {
+	font-size:24px;
+}
+.text.md {
+	font-size:16px;
+}
+.text.sm {
+	font-size:14px;
+}
+.text.xs {
+	font-size:12px;
+}
+
+.text.centered {
+	text-align:center;
+}
+
+.text.full-width {
+	width:100%;
+}

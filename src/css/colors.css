@@ -1,0 +1,106 @@
+.color.white.background {
+	background-color:white;
+}
+.color.white.text {
+	color:white;
+}
+.color.black.background {
+	background-color:#000;
+	color:white;
+}
+.color.black.text {
+	color:#000;
+}
+.color.medium-black.background {
+	background-color:#161616;
+	color:white;
+}
+.color.medium-black.text {
+	color:#161616;
+}
+.color.dark-gray.background {
+	background-color:#424242;
+	color: white;
+}
+.color.dark-gray.text {
+	color:#424242;
+}
+.color.medium-gray.background {
+	background-color:#9b9b9b;
+}
+.color.medium-gray.text {
+	color:#9b9b9b;
+}
+.color.light-gray.background {
+	background-color:#e6e6e6;
+}
+.color.light-gray.text {
+	color:#e6e6e6;
+}
+.color.orange.background {
+	background-color:#E45B00;
+	color: white;
+}
+.color.orange.text {
+	color:#E45B00;
+}
+.color.green.background {
+	background-color:#108285;
+	color: white;
+}
+.color.green.text {
+	color:#108285;
+}
+.color.red.background {
+	background-color:#E30336;
+	color: white;
+}
+.color.red.text {
+	color:#E30336;
+}
+.color.yellow.background {
+	background-color:#FBD01F;
+	color: white;
+}
+.color.yellow.text {
+	color:#FBD01F;
+}
+.color.purple.background {
+	background-color:#AB035F;
+	color: white;
+}
+.color.purple.text {
+	color: #AB035F;
+}
+.color.dark-blue.background {
+	background-color:#25415C;
+	color: white;
+}
+.color.dark-blue.text {
+	color: #25415C;
+}
+.color.skyblue.background {
+	background-color:#02A9DB;
+	color: white;
+}
+.color.skyblue.text {
+	color: #02A9DB;
+}
+.color.danger.background {
+	background-color:#e30336;
+}
+.color.danger.text {
+	color:#e30336;
+}
+.color.success.background {
+	background-color:#25c601;
+}
+.color.success.text {
+	color:#25c601;
+}
+.color.info.background {
+	background-color:#FBD01F;
+}
+.color.info.text {
+	color:#FBD01F;
+}
