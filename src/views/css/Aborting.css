@@ -1,15 +1,15 @@
-.WaitingForCard > .ion-card {
+.Aborting > .ion-close-round {
 	font-size:192px;
 }
 
-.WaitingForCard > .ion-chevron-down {
+.Aborting > .ion-chevron-down {
 	font-size:92px;
 	-webkit-animation: mover 2s infinite alternate;
 	-moz-animation: mover 2s infinite alternate;
 	animation: mover 2s infinite alternate;
 }
 
-.WaitingForCard > .insert-card-button {
+.Aborting > .retrieve-card-button {
 	position:absolute;
 	left:0;
 	bottom:0;
