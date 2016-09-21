@@ -64,7 +64,7 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _reducers = __webpack_require__(201);
+	var _reducers = __webpack_require__(203);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -23079,11 +23079,11 @@
 
 	var actions = _interopRequireWildcard(_actions);
 
-	var _controllers = __webpack_require__(199);
+	var _controllers = __webpack_require__(201);
 
 	var controllers = _interopRequireWildcard(_controllers);
 
-	var _States = __webpack_require__(200);
+	var _States = __webpack_require__(202);
 
 	var States = _interopRequireWildcard(_States);
 
@@ -23128,7 +23128,10 @@
 
 		return App;
 	}(_react2.default.Component), _class.propTypes = {
-		state: _react2.default.PropTypes.oneOf(Object.keys(States)).isRequired
+		ATMState: _react2.default.PropTypes.shape({
+			'state': _react2.default.PropTypes.oneOf(Object.keys(States)).isRequired,
+			'pinAttempts': _react2.default.PropTypes.number.isRequired
+		})
 	}, _temp);
 
 	/**
@@ -23136,14 +23139,16 @@
 	 */
 
 	var mapStateToProps = function mapStateToProps(state) {
-		state: state;
+		return {
+			ATMState: state
+		};
 	};
 
 	/**
 	 * @ignore
 	 */
 	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-		actions: (0, _redux.bindActionCreators)(actions, dispatch);
+		return { actions: (0, _redux.bindActionCreators)(actions, dispatch) };
 	};
 
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(App);
@@ -23155,7 +23160,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	  value: true
 	});
 	exports.completeAbort = exports.performAbort = exports.finished = exports.cardAndMoneyTaken = exports.moneyDelivered = exports.withdrawFailed = exports.withdrawSuscesful = exports.withdraw = exports.pinProcessedInvalid = exports.pinProcessedValid = exports.pinInserted = exports.cardProcessed = exports.cardInserted = undefined;
 
@@ -23163,70 +23168,161 @@
 
 	var ActionTypes = _interopRequireWildcard(_ActionTypes);
 
+	var _AbortReasons = __webpack_require__(199);
+
+	var AbortReasons = _interopRequireWildcard(_AbortReasons);
+
+	var _WithdrawFailReasons = __webpack_require__(200);
+
+	var WithdrawFailReasons = _interopRequireWildcard(_WithdrawFailReasons);
+
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
+	/*
+	 * @ignore
+	 */
+	var AbortReasonsList = Object.keys(AbortReasons);
+
+	/*
+	 * @ignore
+	 */
+	/**
+	 * @file Contains the action generators
+	 * @author Edward Gonzalez
+	 */
+
+	var WithdrawFailReasonsList = Object.keys(WithdrawFailReasons);
+
+	/**
+	 * Executes when the card has been inserted by the user
+	 * @return {Object} The generated action
+	 * @property {String} type The type constant as defined in ActionTypes
+	 */
 	var cardInserted = exports.cardInserted = function cardInserted() {
-		return { 'type': ActionTypes.CARD_INSERTED };
+	  return { 'type': ActionTypes.CARD_INSERTED };
 	};
 
+	/**
+	 * Executes when the card has been processed by the ATM
+	 * @return {Object} The generated action
+	 * @property {String} type The type constant as defined in ActionTypes
+	 */
 	var cardProcessed = exports.cardProcessed = function cardProcessed() {
-		return { 'type': ActionTypes.CARD_PROCESSED };
+	  return { 'type': ActionTypes.CARD_PROCESSED };
 	};
 
+	/**
+	 * Executes when the pin has been inserted by the user
+	 * @return {Object} The generated action
+	 * @property {String} type The type constant as defined in ActionTypes
+	 * @property {String} payload The inserted pin
+	 */
 	var pinInserted = exports.pinInserted = function pinInserted(pin) {
-		if (!pin || typeof pin !== "string") {
-			throw new Error('cannot execute action pinInserted without a valid pin', pin);
-		}
-		return { 'type': ActionTypes.PIN_INSERTED, 'payload': pin };
+	  if (!pin || typeof pin !== "string") {
+	    throw new Error('cannot execute action pinInserted without a valid pin', pin);
+	  }
+	  return { 'type': ActionTypes.PIN_INSERTED, 'payload': pin };
 	};
 
+	/**
+	 * Executes when the pin processed is valid
+	 * @return {Object} The generated action
+	 * @property {String} type The type constant as defined in ActionTypes
+	 */
 	var pinProcessedValid = exports.pinProcessedValid = function pinProcessedValid() {
-		return { 'type': ActionTypes.PIN_PROCESSED_VALID };
+	  return { 'type': ActionTypes.PIN_PROCESSED_VALID };
 	};
 
+	/**
+	 * Executes when the pin processed is not valid
+	 * @return {Object} The generated action
+	 * @property {String} type The type constant as defined in ActionTypes
+	 */
 	var pinProcessedInvalid = exports.pinProcessedInvalid = function pinProcessedInvalid() {
-		return { 'type': ActionTypes.PIN_PROCESSED_INVALID };
+	  return { 'type': ActionTypes.PIN_PROCESSED_INVALID };
 	};
 
+	/**
+	 * Executes when the user specifies that he wants to withdraw some money
+	 * @return {Object} The generated action
+	 * @property {String} type The type constant as defined in ActionTypes
+	 */
 	var withdraw = exports.withdraw = function withdraw(amount) {
-		if (!amount || typeof amount !== "number") {
-			throw new Error('cannot execute action withdraw without a valid amount', amount);
-		}
-		return { 'type': ActionTypes.WITHDRAW, 'payload': amount };
+	  if (!amount || typeof amount !== "number" || amount < 0) {
+	    throw new Error('cannot execute action withdraw without a valid amount', amount);
+	  }
+	  return { 'type': ActionTypes.WITHDRAW, 'payload': amount };
 	};
 
+	/**
+	 * Executes when the withdraw was suscesful
+	 * @return {Object} The generated action
+	 * @property {String} type The type constant as defined in ActionTypes
+	 */
 	var withdrawSuscesful = exports.withdrawSuscesful = function withdrawSuscesful() {
-		return { 'type': ActionTypes.WITHDRAW_SUSCESFUL };
+	  return { 'type': ActionTypes.WITHDRAW_SUSCESFUL };
 	};
 
+	/**
+	 * Executes when the withdraw has failed
+	 * @return {Object} The generated action
+	 * @property {String} type The type constant as defined in ActionTypes
+	 * @property {String} payload The inserted pin as defined in WithdrawFailReasons
+	 */
 	var withdrawFailed = exports.withdrawFailed = function withdrawFailed(reason) {
-		if (!reason || typeof reason !== "string") {
-			throw new Error('cannot execute action withdrawFailed without a valid reason', reason);
-		}
-		return { 'type': ActionTypes.WITHDRAW_SUSCESFUL, 'payload': reason };
+	  if (WithdrawFailReasonsList.indexOf(reason) === -1) {
+	    throw new Error('cannot execute action withdrawFailed without a valid reason', reason, 'from', WithdrawFailReasonsList);
+	  }
+	  return { 'type': ActionTypes.WITHDRAW_SUSCESFUL, 'payload': reason };
 	};
 
+	/**
+	 * Executes when the money is delivered
+	 * @return {Object} The generated action
+	 * @property {String} type The type constant as defined in ActionTypes
+	 */
 	var moneyDelivered = exports.moneyDelivered = function moneyDelivered() {
-		return { 'type': ActionTypes.MONEY_DELIVERED };
+	  return { 'type': ActionTypes.MONEY_DELIVERED };
 	};
 
+	/**
+	 * Executes when the user takes the card and the money
+	 * @return {Object} The generated action
+	 * @property {String} type The type constant as defined in ActionTypes
+	 */
 	var cardAndMoneyTaken = exports.cardAndMoneyTaken = function cardAndMoneyTaken() {
-		return { 'type': ActionTypes.CARD_AND_MONEY_TAKEN };
+	  return { 'type': ActionTypes.CARD_AND_MONEY_TAKEN };
 	};
 
+	/**
+	 * Executes when the ATM is done
+	 * @return {Object} The generated action
+	 * @property {String} type The type constant as defined in ActionTypes
+	 */
 	var finished = exports.finished = function finished() {
-		return { 'type': ActionTypes.FINISHED };
+	  return { 'type': ActionTypes.FINISHED };
 	};
 
+	/**
+	 * Executes when the ATM aborts for some reason
+	 * @return {Object} The generated action
+	 * @property {String} type The type constant as defined in ActionTypes
+	 * @property {String} payload The reason why it aborts as defined in AbortReasons
+	 */
 	var performAbort = exports.performAbort = function performAbort(reason) {
-		if (!reason || typeof reason !== "string") {
-			throw new Error('cannot execute action performAbort without a valid reason', reason);
-		}
-		return { 'type': ActionTypes.PERFORM_ABORT };
+	  if (AbortReasonsList.indexOf(reason) === -1) {
+	    throw new Error('cannot execute action performAbort without a valid reason', reason, 'from', AbortReasonsList);
+	  }
+	  return { 'type': ActionTypes.PERFORM_ABORT, 'payload': reason };
 	};
 
+	/**
+	 * Executes when the ATM completes the abort process
+	 * @return {Object} The generated action
+	 * @property {String} type The type constant as defined in ActionTypes
+	 */
 	var completeAbort = exports.completeAbort = function completeAbort() {
-		return { 'type': ActionTypes.COMPLETE_ABORT };
+	  return { 'type': ActionTypes.COMPLETE_ABORT };
 	};
 
 /***/ },
@@ -23312,10 +23408,63 @@
 /* 199 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	/**
+	 * @file Contains the action generators
+	 * @author Edward Gonzalez
+	 */
+
+	/**
+	 * When the user tried too much on an invalid pin
+	 */
+	var TOO_MANY_FAILED_PIN_ATTEMPTS = exports.TOO_MANY_FAILED_PIN_ATTEMPTS = 'TOO_MANY_FAILED_PIN_ATTEMPTS';
+
+	/**
+	 * When the user tried too much to withdraw on the excessive amount
+	 */
+	var TOO_MANY_FAILED_WITHDRAW_ATTEMPTS = exports.TOO_MANY_FAILED_WITHDRAW_ATTEMPTS = 'TOO_MANY_FAILED_WITHDRAW_ATTEMPTS';
+
+	/**
+	 * When the user asked more than it had
+	 */
+	var NOT_ENOUGH_FUNDS = exports.NOT_ENOUGH_FUNDS = 'NOT_ENOUGH_FUNDS';
+
+	/**
+	 * When the user cancels on its own
+	 */
+	var USER_CANCELS = exports.USER_CANCELS = 'USER_CANCELS';
 
 /***/ },
 /* 200 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	/**
+	 * @file Contains the reasons why a withdraw action may fail (note that this should allow to try again)
+	 * @author Edward Gonzalez
+	 */
+
+	/**
+	 * Specifies that the limit of the transaction size is reached
+	 */
+	var LIMIT_REACHED = exports.LIMIT_REACHED = 'LIMIT_REACHED';
+
+/***/ },
+/* 201 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+/***/ },
+/* 202 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23379,7 +23528,7 @@
 	var ABORTING = exports.ABORTING = 'ABORTING';
 
 /***/ },
-/* 201 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23390,26 +23539,36 @@
 
 	var _redux = __webpack_require__(172);
 
-	var _state = __webpack_require__(202);
+	var _state = __webpack_require__(204);
 
 	var _state2 = _interopRequireDefault(_state);
+
+	var _pinAttempts = __webpack_require__(205);
+
+	var _pinAttempts2 = _interopRequireDefault(_pinAttempts);
+
+	var _withdrawAttempts = __webpack_require__(206);
+
+	var _withdrawAttempts2 = _interopRequireDefault(_withdrawAttempts);
+
+	var _abortReason = __webpack_require__(207);
+
+	var _abortReason2 = _interopRequireDefault(_abortReason);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
 	 * This is the root reducer that will populate the store
 	 */
-	/**
-	 * @file Includes all the reducers that the application needs in order to execute
-	 * @author Edward Gonzalez
-	 */
-
-	var rootReducer = (0, _redux.combineReducers)({ state: _state2.default });
+	var rootReducer = (0, _redux.combineReducers)({ state: _state2.default, pinAttempts: _pinAttempts2.default, abortReason: _abortReason2.default }); /**
+	                                                                                                                                                    * @file Includes all the reducers that the application needs in order to execute
+	                                                                                                                                                    * @author Edward Gonzalez
+	                                                                                                                                                    */
 
 	exports.default = rootReducer;
 
 /***/ },
-/* 202 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23419,7 +23578,7 @@
 	});
 	exports.default = state;
 
-	var _States = __webpack_require__(200);
+	var _States = __webpack_require__(202);
 
 	var States = _interopRequireWildcard(_States);
 
@@ -23475,8 +23634,135 @@
 			default:
 				return States.WAITING_FOR_CARD;
 		}
-		return state;
 	}
+
+/***/ },
+/* 205 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = pinAttempts;
+
+	var _ActionTypes = __webpack_require__(198);
+
+	var ActionTypes = _interopRequireWildcard(_ActionTypes);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	/**
+	 * This is the main state reducer and represents the amount of times the user
+	 * has attempted to put a pin in the ATM
+	 * The number will reset once the ATM finishes or aborts
+	 *
+	 * @param {String} state The current state, as provided by the store
+	 * @param {Object} action The action that is executed
+	 */
+	function pinAttempts() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? 0 : arguments[0];
+	  var action = arguments[1];
+
+	  switch (action.type) {
+	    case ActionTypes.PIN_PROCESSED_VALID:
+	    case ActionTypes.PIN_PROCESSED_INVALID:
+	      return state + 1;
+	    case ActionTypes.FINISHED:
+	    case ActionTypes.COMPLETE_ABORT:
+	      return 0;
+	    default:
+	      return state;
+	  }
+	} /**
+	   * @file Contains the state reducer for the ATM pin attempts
+	   * @author Edward Gonzalez
+	   */
+
+/***/ },
+/* 206 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = withdrawAttempts;
+
+	var _ActionTypes = __webpack_require__(198);
+
+	var ActionTypes = _interopRequireWildcard(_ActionTypes);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	/**
+	 * This is the main state reducer and represents the amount of times the user
+	 * has attempted to withdraw some money
+	 * The number will reset once the ATM finishes or aborts
+	 *
+	 * @param {String} state The current state, as provided by the store
+	 * @param {Object} action The action that is executed
+	 */
+	function withdrawAttempts() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? 0 : arguments[0];
+	  var action = arguments[1];
+
+	  switch (action.type) {
+	    case ActionTypes.WITHDRAW_SUSCESFUL:
+	    case ActionTypes.WITHDRAW_FAILED:
+	      return state + 1;
+	    case ActionTypes.FINISHED:
+	    case ActionTypes.COMPLETE_ABORT:
+	      return 0;
+	    default:
+	      return state;
+	  }
+	} /**
+	   * @file Contains the state reducer for the ATM withdraw attempts
+	   * @author Edward Gonzalez
+	   */
+
+/***/ },
+/* 207 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = abortReason;
+
+	var _ActionTypes = __webpack_require__(198);
+
+	var ActionTypes = _interopRequireWildcard(_ActionTypes);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	/**
+	 * This is the reducer for the abortion reason of the application
+	 *
+	 * @param {String} state The current state, as provided by the store
+	 * @param {Object} action The action that is executed
+	 */
+	function abortReason() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+	  var action = arguments[1];
+
+	  switch (action.type) {
+	    case ActionTypes.PERFORM_ABORT:
+	      return action.payload;
+	    case ActionTypes.COMPLETE_ABORT:
+	      return null;
+	    default:
+	      return state;
+	  }
+	} /**
+	   * @file Contains the abortion reason from the ATM
+	   * @author Edward Gonzalez
+	   */
 
 /***/ }
 /******/ ]);
