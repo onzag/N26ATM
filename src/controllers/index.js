@@ -1,3 +1,4 @@
 import WaitingForCard from './WaitingForCard';
+import ProcessingCard from './ProcessingCard';
 
-export {WaitingForCard};
+export {WaitingForCard,ProcessingCard};

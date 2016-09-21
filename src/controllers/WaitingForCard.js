@@ -5,10 +5,6 @@
 
 import React from 'react';
 
-import * as States from '../constants/States';
-import * as AbortReasons from '../constants/AbortReasons';
-import * as WithdrawFailReasons from '../constants/WithdrawFailReasons';
-
 import WaitingForCard from '../views/WaitingForCard';
 
 /** 
@@ -16,17 +12,13 @@ import WaitingForCard from '../views/WaitingForCard';
  */
 export default class WaitingForCardController extends React.Component {
 	static propTypes = {
-		ATMState: React.PropTypes.shape({
-			'state':React.PropTypes.oneOf(Object.keys(States)).isRequired,
-			'pinAttempts':React.PropTypes.number.isRequired,
-			'withdrawAttempts':React.PropTypes.number.isRequired,
-			'abortReason':React.PropTypes.oneOf(Object.keys(AbortReasons)),
-			'withdrawFailReason':React.PropTypes.oneOf(Object.keys(WithdrawFailReasons))
-		})
+		actions:  React.PropTypes.shape({
+			'cardInserted':React.PropTypes.func.isRequired
+		}).isRequired
 	}
 	/**
 	 * Render function
-	 * @returns {React.Component}
+	 * @return {React.Component}
 	 */
 	render(){
 		return (<WaitingForCard onCardInserted={this.props.actions.cardInserted}/>);
