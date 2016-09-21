@@ -18,6 +18,8 @@ export default function pin(state = null, action){
 			return action.payload;
 		case ActionTypes.PIN_PROCESSED_VALID:
 		case ActionTypes.PIN_PROCESSED_INVALID:
+		case ActionTypes.COMPLETE_ABORT:
+		case ActionTypes.PERFORM_ABORT:
 			return null;
 		default:
 			return state;
