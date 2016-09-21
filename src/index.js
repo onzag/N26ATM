@@ -1,3 +1,8 @@
+/**
+ * @file The entry point for the application, where middlewares are applied and the store is created
+ * @author Edward Gonzalez
+ */
+
 import React from 'react';
 import { render } from 'react-dom';
 import { applyMiddleware, createStore } from 'redux';
