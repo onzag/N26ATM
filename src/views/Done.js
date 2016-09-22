@@ -24,7 +24,7 @@ export default class Done extends React.Component {
 				<span className="color skyblue text bold">k</span>
 				<span className="color medium-black text bold">ATM</span>
 			</div>
-			<p className="text full-width centered light lg color dark-gray">Thanks for usng our services</p>
+			<p className="text full-width centered light lg color dark-gray">Thanks for using our services</p>
 		</div>);
 	}
 }
