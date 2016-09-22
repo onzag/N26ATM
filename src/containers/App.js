@@ -47,6 +47,8 @@ class App extends React.Component {
 				return (<controllers.ProcessingAmount ATMState={this.props.ATMState} actions={this.props.actions}/>);
 			case States.DELIVERING:
 				return (<controllers.Delivering ATMState={this.props.ATMState} actions={this.props.actions}/>);
+			case States.DELIVERED:
+				return (<controllers.Delivered ATMState={this.props.ATMState} actions={this.props.actions}/>);
 			default:
 				return (<div>NOT IMPLEMENTED</div>);
 		}

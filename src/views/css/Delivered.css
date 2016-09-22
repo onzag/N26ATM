@@ -1,0 +1,16 @@
+.Delivered > .ion-cash {
+	font-size:192px;
+}
+
+.Delivered > .ion-chevron-down {
+	font-size:92px;
+	-webkit-animation: mover 2s infinite alternate;
+	-moz-animation: mover 2s infinite alternate;
+	animation: mover 2s infinite alternate;
+}
+
+.Delivered > .take-card-and-money-button {
+	position:absolute;
+	left:0;
+	bottom:0;
+}
