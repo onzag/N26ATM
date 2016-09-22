@@ -64,9 +64,9 @@ export default class ProcessingPinController extends React.Component {
 	 * Performs the abort and cancels the waiting operation
 	 * @return {undefined}
 	 */
-	abort(){
+	abort(reason){
 		clearTimeout(this.timeout);
-		this.props.actions.performAbort();
+		this.props.actions.performAbort(reason);
 	}
 
 	/**
