@@ -1,0 +1,11 @@
+.Delivering > .ion-cash {
+	font-size:192px;
+}
+
+.Delivering > .ion-load-c {
+	font-size:92px;
+	-webkit-animation: rotator 1s linear infinite;
+	-moz-animation: rotator 1s linear infinite;
+	animation: rotator 1s linear infinite;
+	transform:translateY(30px);
+}
