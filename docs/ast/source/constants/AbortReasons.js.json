@@ -1,7 +1,7 @@
 {
   "type": "Program",
   "start": 0,
-  "end": 563,
+  "end": 535,
   "loc": {
     "start": {
       "line": 1,
@@ -141,9 +141,9 @@
         "trailingComments": [
           {
             "type": "Block",
-            "value": "*\n * When the user tried too much to withdraw on the excessive amount\n ",
+            "value": "*\n * When the user failed to withdraw due to the withdraw limit\n ",
             "start": 211,
-            "end": 286,
+            "end": 280,
             "loc": {
               "start": {
                 "line": 11,
@@ -156,7 +156,7 @@
             },
             "range": [
               211,
-              286
+              280
             ]
           }
         ]
@@ -208,9 +208,9 @@
       "trailingComments": [
         {
           "type": "Block",
-          "value": "*\n * When the user tried too much to withdraw on the excessive amount\n ",
+          "value": "*\n * When the user failed to withdraw due to the withdraw limit\n ",
           "start": 211,
-          "end": 286,
+          "end": 280,
           "loc": {
             "start": {
               "line": 11,
@@ -223,15 +223,15 @@
           },
           "range": [
             211,
-            286
+            280
           ]
         }
       ]
     },
     {
       "type": "ExportNamedDeclaration",
-      "start": 287,
-      "end": 372,
+      "start": 281,
+      "end": 344,
       "loc": {
         "start": {
           "line": 14,
@@ -239,13 +239,13 @@
         },
         "end": {
           "line": 14,
-          "column": 85
+          "column": 63
         }
       },
       "declaration": {
         "type": "VariableDeclaration",
-        "start": 294,
-        "end": 372,
+        "start": 288,
+        "end": 344,
         "loc": {
           "start": {
             "line": 14,
@@ -253,14 +253,14 @@
           },
           "end": {
             "line": 14,
-            "column": 85
+            "column": 63
           }
         },
         "declarations": [
           {
             "type": "VariableDeclarator",
-            "start": 300,
-            "end": 371,
+            "start": 294,
+            "end": 343,
             "loc": {
               "start": {
                 "line": 14,
@@ -268,13 +268,13 @@
               },
               "end": {
                 "line": 14,
-                "column": 84
+                "column": 62
               }
             },
             "id": {
               "type": "Identifier",
-              "start": 300,
-              "end": 333,
+              "start": 294,
+              "end": 316,
               "loc": {
                 "start": {
                   "line": 14,
@@ -282,29 +282,29 @@
                 },
                 "end": {
                   "line": 14,
-                  "column": 46
+                  "column": 35
                 }
               },
-              "name": "TOO_MANY_FAILED_WITHDRAW_ATTEMPTS",
+              "name": "WITHDRAW_LIMIT_REACHED",
               "leadingComments": null
             },
             "init": {
               "type": "Literal",
-              "start": 336,
-              "end": 371,
+              "start": 319,
+              "end": 343,
               "loc": {
                 "start": {
                   "line": 14,
-                  "column": 49
+                  "column": 38
                 },
                 "end": {
                   "line": 14,
-                  "column": 84
+                  "column": 62
                 }
               },
-              "value": "TOO_MANY_FAILED_WITHDRAW_ATTEMPTS",
-              "rawValue": "TOO_MANY_FAILED_WITHDRAW_ATTEMPTS",
-              "raw": "'TOO_MANY_FAILED_WITHDRAW_ATTEMPTS'"
+              "value": "WITHDRAW_LIMIT_REACHED",
+              "rawValue": "WITHDRAW_LIMIT_REACHED",
+              "raw": "'WITHDRAW_LIMIT_REACHED'"
             },
             "leadingComments": null
           }
@@ -313,9 +313,9 @@
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * When the user tried too much to withdraw on the excessive amount\n ",
+            "value": "*\n * When the user failed to withdraw due to the withdraw limit\n ",
             "start": 211,
-            "end": 286,
+            "end": 280,
             "loc": {
               "start": {
                 "line": 11,
@@ -328,7 +328,7 @@
             },
             "range": [
               211,
-              286
+              280
             ]
           }
         ],
@@ -336,8 +336,8 @@
           {
             "type": "Block",
             "value": "*\n * When the user asked more than it had\n ",
-            "start": 374,
-            "end": 421,
+            "start": 346,
+            "end": 393,
             "loc": {
               "start": {
                 "line": 16,
@@ -349,8 +349,8 @@
               }
             },
             "range": [
-              374,
-              421
+              346,
+              393
             ]
           }
         ]
@@ -360,9 +360,9 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * When the user tried too much to withdraw on the excessive amount\n ",
+          "value": "*\n * When the user failed to withdraw due to the withdraw limit\n ",
           "start": 211,
-          "end": 286,
+          "end": 280,
           "loc": {
             "start": {
               "line": 11,
@@ -375,7 +375,7 @@
           },
           "range": [
             211,
-            286
+            280
           ]
         }
       ],
@@ -383,8 +383,8 @@
         {
           "type": "Block",
           "value": "*\n * When the user asked more than it had\n ",
-          "start": 374,
-          "end": 421,
+          "start": 346,
+          "end": 393,
           "loc": {
             "start": {
               "line": 16,
@@ -396,16 +396,16 @@
             }
           },
           "range": [
-            374,
-            421
+            346,
+            393
           ]
         }
       ]
     },
     {
       "type": "ExportNamedDeclaration",
-      "start": 422,
-      "end": 473,
+      "start": 394,
+      "end": 445,
       "loc": {
         "start": {
           "line": 19,
@@ -418,8 +418,8 @@
       },
       "declaration": {
         "type": "VariableDeclaration",
-        "start": 429,
-        "end": 473,
+        "start": 401,
+        "end": 445,
         "loc": {
           "start": {
             "line": 19,
@@ -433,8 +433,8 @@
         "declarations": [
           {
             "type": "VariableDeclarator",
-            "start": 435,
-            "end": 472,
+            "start": 407,
+            "end": 444,
             "loc": {
               "start": {
                 "line": 19,
@@ -447,8 +447,8 @@
             },
             "id": {
               "type": "Identifier",
-              "start": 435,
-              "end": 451,
+              "start": 407,
+              "end": 423,
               "loc": {
                 "start": {
                   "line": 19,
@@ -464,8 +464,8 @@
             },
             "init": {
               "type": "Literal",
-              "start": 454,
-              "end": 472,
+              "start": 426,
+              "end": 444,
               "loc": {
                 "start": {
                   "line": 19,
@@ -488,8 +488,8 @@
           {
             "type": "Block",
             "value": "*\n * When the user asked more than it had\n ",
-            "start": 374,
-            "end": 421,
+            "start": 346,
+            "end": 393,
             "loc": {
               "start": {
                 "line": 16,
@@ -501,8 +501,8 @@
               }
             },
             "range": [
-              374,
-              421
+              346,
+              393
             ]
           }
         ],
@@ -510,8 +510,8 @@
           {
             "type": "Block",
             "value": "*\n * When the user cancels on its own\n ",
-            "start": 475,
-            "end": 518,
+            "start": 447,
+            "end": 490,
             "loc": {
               "start": {
                 "line": 21,
@@ -523,8 +523,8 @@
               }
             },
             "range": [
-              475,
-              518
+              447,
+              490
             ]
           }
         ]
@@ -535,8 +535,8 @@
         {
           "type": "Block",
           "value": "*\n * When the user asked more than it had\n ",
-          "start": 374,
-          "end": 421,
+          "start": 346,
+          "end": 393,
           "loc": {
             "start": {
               "line": 16,
@@ -548,8 +548,8 @@
             }
           },
           "range": [
-            374,
-            421
+            346,
+            393
           ]
         }
       ],
@@ -557,8 +557,8 @@
         {
           "type": "Block",
           "value": "*\n * When the user cancels on its own\n ",
-          "start": 475,
-          "end": 518,
+          "start": 447,
+          "end": 490,
           "loc": {
             "start": {
               "line": 21,
@@ -570,16 +570,16 @@
             }
           },
           "range": [
-            475,
-            518
+            447,
+            490
           ]
         }
       ]
     },
     {
       "type": "ExportNamedDeclaration",
-      "start": 519,
-      "end": 562,
+      "start": 491,
+      "end": 534,
       "loc": {
         "start": {
           "line": 24,
@@ -592,8 +592,8 @@
       },
       "declaration": {
         "type": "VariableDeclaration",
-        "start": 526,
-        "end": 562,
+        "start": 498,
+        "end": 534,
         "loc": {
           "start": {
             "line": 24,
@@ -607,8 +607,8 @@
         "declarations": [
           {
             "type": "VariableDeclarator",
-            "start": 532,
-            "end": 561,
+            "start": 504,
+            "end": 533,
             "loc": {
               "start": {
                 "line": 24,
@@ -621,8 +621,8 @@
             },
             "id": {
               "type": "Identifier",
-              "start": 532,
-              "end": 544,
+              "start": 504,
+              "end": 516,
               "loc": {
                 "start": {
                   "line": 24,
@@ -638,8 +638,8 @@
             },
             "init": {
               "type": "Literal",
-              "start": 547,
-              "end": 561,
+              "start": 519,
+              "end": 533,
               "loc": {
                 "start": {
                   "line": 24,
@@ -662,8 +662,8 @@
           {
             "type": "Block",
             "value": "*\n * When the user cancels on its own\n ",
-            "start": 475,
-            "end": 518,
+            "start": 447,
+            "end": 490,
             "loc": {
               "start": {
                 "line": 21,
@@ -675,8 +675,8 @@
               }
             },
             "range": [
-              475,
-              518
+              447,
+              490
             ]
           }
         ],
@@ -688,8 +688,8 @@
         {
           "type": "Block",
           "value": "*\n * When the user cancels on its own\n ",
-          "start": 475,
-          "end": 518,
+          "start": 447,
+          "end": 490,
           "loc": {
             "start": {
               "line": 21,
@@ -701,8 +701,8 @@
             }
           },
           "range": [
-            475,
-            518
+            447,
+            490
           ]
         }
       ]

@@ -66,6 +66,42 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "n26atm/src/views/delivered.js~delivered",
+    "class/src/views/Delivered.js~Delivered.html",
+    "<span>Delivered</span> <span class=\"search-result-import-path\">N26ATM/src/views/Delivered.js</span>",
+    "class"
+  ],
+  [
+    "n26atm/src/controllers/delivered.js~deliveredcontroller",
+    "class/src/controllers/Delivered.js~DeliveredController.html",
+    "<span>DeliveredController</span> <span class=\"search-result-import-path\">N26ATM/src/controllers/Delivered.js</span>",
+    "class"
+  ],
+  [
+    "n26atm/src/views/delivering.js~delivering",
+    "class/src/views/Delivering.js~Delivering.html",
+    "<span>Delivering</span> <span class=\"search-result-import-path\">N26ATM/src/views/Delivering.js</span>",
+    "class"
+  ],
+  [
+    "n26atm/src/controllers/delivering.js~deliveringcontroller",
+    "class/src/controllers/Delivering.js~DeliveringController.html",
+    "<span>DeliveringController</span> <span class=\"search-result-import-path\">N26ATM/src/controllers/Delivering.js</span>",
+    "class"
+  ],
+  [
+    "n26atm/src/views/done.js~done",
+    "class/src/views/Done.js~Done.html",
+    "<span>Done</span> <span class=\"search-result-import-path\">N26ATM/src/views/Done.js</span>",
+    "class"
+  ],
+  [
+    "n26atm/src/controllers/done.js~donecontroller",
+    "class/src/controllers/Done.js~DoneController.html",
+    "<span>DoneController</span> <span class=\"search-result-import-path\">N26ATM/src/controllers/Done.js</span>",
+    "class"
+  ],
+  [
     "n26atm/src/constants/actiontypes.js~finished",
     "variable/index.html#static-variable-FINISHED",
     "<span>FINISHED</span> <span class=\"search-result-import-path\">N26ATM/src/constants/ActionTypes.js</span>",
@@ -75,12 +111,6 @@ window.esdocSearchIndex = [
     "n26atm/src/constants/config.js~funds",
     "variable/index.html#static-variable-FUNDS",
     "<span>FUNDS</span> <span class=\"search-result-import-path\">N26ATM/src/constants/config.js</span>",
-    "variable"
-  ],
-  [
-    "n26atm/src/constants/withdrawfailreasons.js~limit_reached",
-    "variable/index.html#static-variable-LIMIT_REACHED",
-    "<span>LIMIT_REACHED</span> <span class=\"search-result-import-path\">N26ATM/src/constants/WithdrawFailReasons.js</span>",
     "variable"
   ],
   [
@@ -150,6 +180,18 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "n26atm/src/views/processingamount.js~processingamount",
+    "class/src/views/ProcessingAmount.js~ProcessingAmount.html",
+    "<span>ProcessingAmount</span> <span class=\"search-result-import-path\">N26ATM/src/views/ProcessingAmount.js</span>",
+    "class"
+  ],
+  [
+    "n26atm/src/controllers/processingamount.js~processingamountcontroller",
+    "class/src/controllers/ProcessingAmount.js~ProcessingAmountController.html",
+    "<span>ProcessingAmountController</span> <span class=\"search-result-import-path\">N26ATM/src/controllers/ProcessingAmount.js</span>",
+    "class"
+  ],
+  [
     "n26atm/src/views/processingcard.js~processingcard",
     "class/src/views/ProcessingCard.js~ProcessingCard.html",
     "<span>ProcessingCard</span> <span class=\"search-result-import-path\">N26ATM/src/views/ProcessingCard.js</span>",
@@ -183,12 +225,6 @@ window.esdocSearchIndex = [
     "n26atm/src/constants/abortreasons.js~too_many_failed_pin_attempts",
     "variable/index.html#static-variable-TOO_MANY_FAILED_PIN_ATTEMPTS",
     "<span>TOO_MANY_FAILED_PIN_ATTEMPTS</span> <span class=\"search-result-import-path\">N26ATM/src/constants/AbortReasons.js</span>",
-    "variable"
-  ],
-  [
-    "n26atm/src/constants/abortreasons.js~too_many_failed_withdraw_attempts",
-    "variable/index.html#static-variable-TOO_MANY_FAILED_WITHDRAW_ATTEMPTS",
-    "<span>TOO_MANY_FAILED_WITHDRAW_ATTEMPTS</span> <span class=\"search-result-import-path\">N26ATM/src/constants/AbortReasons.js</span>",
     "variable"
   ],
   [
@@ -228,9 +264,15 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
-    "n26atm/src/constants/actiontypes.js~withdraw_failed",
-    "variable/index.html#static-variable-WITHDRAW_FAILED",
-    "<span>WITHDRAW_FAILED</span> <span class=\"search-result-import-path\">N26ATM/src/constants/ActionTypes.js</span>",
+    "n26atm/src/constants/config.js~withdraw_limit",
+    "variable/index.html#static-variable-WITHDRAW_LIMIT",
+    "<span>WITHDRAW_LIMIT</span> <span class=\"search-result-import-path\">N26ATM/src/constants/config.js</span>",
+    "variable"
+  ],
+  [
+    "n26atm/src/constants/abortreasons.js~withdraw_limit_reached",
+    "variable/index.html#static-variable-WITHDRAW_LIMIT_REACHED",
+    "<span>WITHDRAW_LIMIT_REACHED</span> <span class=\"search-result-import-path\">N26ATM/src/constants/AbortReasons.js</span>",
     "variable"
   ],
   [
@@ -375,24 +417,6 @@ window.esdocSearchIndex = [
     "n26atm/src/actions/index.js~withdraw",
     "variable/index.html#static-variable-withdraw",
     "<span>withdraw</span> <span class=\"search-result-import-path\">N26ATM/src/actions/index.js</span>",
-    "variable"
-  ],
-  [
-    "n26atm/src/reducers/withdrawattempts.js~withdrawattempts",
-    "function/index.html#static-function-withdrawAttempts",
-    "<span>withdrawAttempts</span> <span class=\"search-result-import-path\">N26ATM/src/reducers/withdrawAttempts.js</span>",
-    "function"
-  ],
-  [
-    "n26atm/src/reducers/withdrawfailreason.js~withdrawfailreason",
-    "function/index.html#static-function-withdrawFailReason",
-    "<span>withdrawFailReason</span> <span class=\"search-result-import-path\">N26ATM/src/reducers/withdrawFailReason.js</span>",
-    "function"
-  ],
-  [
-    "n26atm/src/actions/index.js~withdrawfailed",
-    "variable/index.html#static-variable-withdrawFailed",
-    "<span>withdrawFailed</span> <span class=\"search-result-import-path\">N26ATM/src/actions/index.js</span>",
     "variable"
   ],
   [
@@ -756,12 +780,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/constants/withdrawfailreasons.js",
-    "file/src/constants/WithdrawFailReasons.js.html",
-    "src/constants/WithdrawFailReasons.js",
-    "file"
-  ],
-  [
     "src/constants/config.js",
     "file/src/constants/config.js.html",
     "src/constants/config.js",
@@ -792,10 +810,28 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/controllers/delivered.js~deliveredcontroller#render",
+    "class/src/controllers/Delivered.js~DeliveredController.html#instance-method-render",
+    "src/controllers/Delivered.js~DeliveredController#render",
+    "method"
+  ],
+  [
     "src/controllers/delivering.js",
     "file/src/controllers/Delivering.js.html",
     "src/controllers/Delivering.js",
     "file"
+  ],
+  [
+    "src/controllers/delivering.js~deliveringcontroller#componentdidmount",
+    "class/src/controllers/Delivering.js~DeliveringController.html#instance-method-componentDidMount",
+    "src/controllers/Delivering.js~DeliveringController#componentDidMount",
+    "method"
+  ],
+  [
+    "src/controllers/delivering.js~deliveringcontroller#render",
+    "class/src/controllers/Delivering.js~DeliveringController.html#instance-method-render",
+    "src/controllers/Delivering.js~DeliveringController#render",
+    "method"
   ],
   [
     "src/controllers/done.js",
@@ -804,10 +840,52 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/controllers/done.js~donecontroller#componentdidmount",
+    "class/src/controllers/Done.js~DoneController.html#instance-method-componentDidMount",
+    "src/controllers/Done.js~DoneController#componentDidMount",
+    "method"
+  ],
+  [
+    "src/controllers/done.js~donecontroller#render",
+    "class/src/controllers/Done.js~DoneController.html#instance-method-render",
+    "src/controllers/Done.js~DoneController#render",
+    "method"
+  ],
+  [
     "src/controllers/processingamount.js",
     "file/src/controllers/ProcessingAmount.js.html",
     "src/controllers/ProcessingAmount.js",
     "file"
+  ],
+  [
+    "src/controllers/processingamount.js~processingamountcontroller#abort",
+    "class/src/controllers/ProcessingAmount.js~ProcessingAmountController.html#instance-method-abort",
+    "src/controllers/ProcessingAmount.js~ProcessingAmountController#abort",
+    "method"
+  ],
+  [
+    "src/controllers/processingamount.js~processingamountcontroller#componentdidmount",
+    "class/src/controllers/ProcessingAmount.js~ProcessingAmountController.html#instance-method-componentDidMount",
+    "src/controllers/ProcessingAmount.js~ProcessingAmountController#componentDidMount",
+    "method"
+  ],
+  [
+    "src/controllers/processingamount.js~processingamountcontroller#constructor",
+    "class/src/controllers/ProcessingAmount.js~ProcessingAmountController.html#instance-constructor-constructor",
+    "src/controllers/ProcessingAmount.js~ProcessingAmountController#constructor",
+    "method"
+  ],
+  [
+    "src/controllers/processingamount.js~processingamountcontroller#render",
+    "class/src/controllers/ProcessingAmount.js~ProcessingAmountController.html#instance-method-render",
+    "src/controllers/ProcessingAmount.js~ProcessingAmountController#render",
+    "method"
+  ],
+  [
+    "src/controllers/processingamount.js~processingamountcontroller#timeout",
+    "class/src/controllers/ProcessingAmount.js~ProcessingAmountController.html#instance-member-timeout",
+    "src/controllers/ProcessingAmount.js~ProcessingAmountController#timeout",
+    "member"
   ],
   [
     "src/controllers/processingcard.js",
@@ -834,9 +912,21 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/controllers/processingpin.js~processingpincontroller#abort",
+    "class/src/controllers/ProcessingPin.js~ProcessingPinController.html#instance-method-abort",
+    "src/controllers/ProcessingPin.js~ProcessingPinController#abort",
+    "method"
+  ],
+  [
     "src/controllers/processingpin.js~processingpincontroller#componentdidmount",
     "class/src/controllers/ProcessingPin.js~ProcessingPinController.html#instance-method-componentDidMount",
     "src/controllers/ProcessingPin.js~ProcessingPinController#componentDidMount",
+    "method"
+  ],
+  [
+    "src/controllers/processingpin.js~processingpincontroller#constructor",
+    "class/src/controllers/ProcessingPin.js~ProcessingPinController.html#instance-constructor-constructor",
+    "src/controllers/ProcessingPin.js~ProcessingPinController#constructor",
     "method"
   ],
   [
@@ -844,6 +934,12 @@ window.esdocSearchIndex = [
     "class/src/controllers/ProcessingPin.js~ProcessingPinController.html#instance-method-render",
     "src/controllers/ProcessingPin.js~ProcessingPinController#render",
     "method"
+  ],
+  [
+    "src/controllers/processingpin.js~processingpincontroller#timeout",
+    "class/src/controllers/ProcessingPin.js~ProcessingPinController.html#instance-member-timeout",
+    "src/controllers/ProcessingPin.js~ProcessingPinController#timeout",
+    "member"
   ],
   [
     "src/controllers/waitingforamount.js",
@@ -930,18 +1026,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/reducers/withdrawattempts.js",
-    "file/src/reducers/withdrawAttempts.js.html",
-    "src/reducers/withdrawAttempts.js",
-    "file"
-  ],
-  [
-    "src/reducers/withdrawfailreason.js",
-    "file/src/reducers/withdrawFailReason.js.html",
-    "src/reducers/withdrawFailReason.js",
-    "file"
-  ],
-  [
     "src/views/aborting.js",
     "file/src/views/Aborting.js.html",
     "src/views/Aborting.js",
@@ -951,6 +1035,54 @@ window.esdocSearchIndex = [
     "src/views/aborting.js~aborting#render",
     "class/src/views/Aborting.js~Aborting.html#instance-method-render",
     "src/views/Aborting.js~Aborting#render",
+    "method"
+  ],
+  [
+    "src/views/delivered.js",
+    "file/src/views/Delivered.js.html",
+    "src/views/Delivered.js",
+    "file"
+  ],
+  [
+    "src/views/delivered.js~delivered#render",
+    "class/src/views/Delivered.js~Delivered.html#instance-method-render",
+    "src/views/Delivered.js~Delivered#render",
+    "method"
+  ],
+  [
+    "src/views/delivering.js",
+    "file/src/views/Delivering.js.html",
+    "src/views/Delivering.js",
+    "file"
+  ],
+  [
+    "src/views/delivering.js~delivering#render",
+    "class/src/views/Delivering.js~Delivering.html#instance-method-render",
+    "src/views/Delivering.js~Delivering#render",
+    "method"
+  ],
+  [
+    "src/views/done.js",
+    "file/src/views/Done.js.html",
+    "src/views/Done.js",
+    "file"
+  ],
+  [
+    "src/views/done.js~done#render",
+    "class/src/views/Done.js~Done.html#instance-method-render",
+    "src/views/Done.js~Done#render",
+    "method"
+  ],
+  [
+    "src/views/processingamount.js",
+    "file/src/views/ProcessingAmount.js.html",
+    "src/views/ProcessingAmount.js",
+    "file"
+  ],
+  [
+    "src/views/processingamount.js~processingamount#render",
+    "class/src/views/ProcessingAmount.js~ProcessingAmount.html#instance-method-render",
+    "src/views/ProcessingAmount.js~ProcessingAmount#render",
     "method"
   ],
   [

@@ -1,14 +1,14 @@
 {
   "type": "Program",
   "start": 0,
-  "end": 298,
+  "end": 397,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 20,
+      "line": 25,
       "column": 0
     }
   },
@@ -506,7 +506,28 @@
             ]
           }
         ],
-        "trailingComments": []
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * The limit of the transaction size for this account\n ",
+            "start": 299,
+            "end": 360,
+            "loc": {
+              "start": {
+                "line": 21,
+                "column": 0
+              },
+              "end": {
+                "line": 23,
+                "column": 3
+              }
+            },
+            "range": [
+              299,
+              360
+            ]
+          }
+        ]
       },
       "specifiers": [],
       "source": null,
@@ -529,6 +550,159 @@
           "range": [
             238,
             270
+          ]
+        }
+      ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * The limit of the transaction size for this account\n ",
+          "start": 299,
+          "end": 360,
+          "loc": {
+            "start": {
+              "line": 21,
+              "column": 0
+            },
+            "end": {
+              "line": 23,
+              "column": 3
+            }
+          },
+          "range": [
+            299,
+            360
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "start": 361,
+      "end": 396,
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 0
+        },
+        "end": {
+          "line": 24,
+          "column": 35
+        }
+      },
+      "declaration": {
+        "type": "VariableDeclaration",
+        "start": 368,
+        "end": 396,
+        "loc": {
+          "start": {
+            "line": 24,
+            "column": 7
+          },
+          "end": {
+            "line": 24,
+            "column": 35
+          }
+        },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 374,
+            "end": 395,
+            "loc": {
+              "start": {
+                "line": 24,
+                "column": 13
+              },
+              "end": {
+                "line": 24,
+                "column": 34
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 374,
+              "end": 388,
+              "loc": {
+                "start": {
+                  "line": 24,
+                  "column": 13
+                },
+                "end": {
+                  "line": 24,
+                  "column": 27
+                }
+              },
+              "name": "WITHDRAW_LIMIT",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "Literal",
+              "start": 391,
+              "end": 395,
+              "loc": {
+                "start": {
+                  "line": 24,
+                  "column": 30
+                },
+                "end": {
+                  "line": 24,
+                  "column": 34
+                }
+              },
+              "value": 2000,
+              "rawValue": 2000,
+              "raw": "2000"
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * The limit of the transaction size for this account\n ",
+            "start": 299,
+            "end": 360,
+            "loc": {
+              "start": {
+                "line": 21,
+                "column": 0
+              },
+              "end": {
+                "line": 23,
+                "column": 3
+              }
+            },
+            "range": [
+              299,
+              360
+            ]
+          }
+        ],
+        "trailingComments": []
+      },
+      "specifiers": [],
+      "source": null,
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * The limit of the transaction size for this account\n ",
+          "start": 299,
+          "end": 360,
+          "loc": {
+            "start": {
+              "line": 21,
+              "column": 0
+            },
+            "end": {
+              "line": 23,
+              "column": 3
+            }
+          },
+          "range": [
+            299,
+            360
           ]
         }
       ]

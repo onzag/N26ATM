@@ -1,7 +1,7 @@
 {
   "coverage": "100%",
-  "expectCount": 93,
-  "actualCount": 93,
+  "expectCount": 114,
+  "actualCount": 114,
   "files": {
     "src/constants/States.js": {
       "expectCount": 10,
@@ -24,18 +24,43 @@
       "undocumentLines": []
     },
     "src/constants/ActionTypes.js": {
-      "expectCount": 13,
-      "actualCount": 13,
+      "expectCount": 12,
+      "actualCount": 12,
       "undocumentLines": []
     },
-    "src/constants/config.js": {
+    "src/views/Delivered.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/controllers/Delivered.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/views/Delivering.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/controllers/Delivering.js": {
       "expectCount": 3,
       "actualCount": 3,
       "undocumentLines": []
     },
-    "src/constants/WithdrawFailReasons.js": {
-      "expectCount": 1,
-      "actualCount": 1,
+    "src/views/Done.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/controllers/Done.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/constants/config.js": {
+      "expectCount": 4,
+      "actualCount": 4,
       "undocumentLines": []
     },
     "src/constants/AbortReasons.js": {
@@ -46,6 +71,16 @@
     "src/views/components/NavBar.js": {
       "expectCount": 2,
       "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/views/ProcessingAmount.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/controllers/ProcessingAmount.js": {
+      "expectCount": 6,
+      "actualCount": 6,
       "undocumentLines": []
     },
     "src/views/ProcessingCard.js": {
@@ -64,8 +99,8 @@
       "undocumentLines": []
     },
     "src/controllers/ProcessingPin.js": {
-      "expectCount": 3,
-      "actualCount": 3,
+      "expectCount": 6,
+      "actualCount": 6,
       "undocumentLines": []
     },
     "src/views/components/TextField.js": {
@@ -114,8 +149,8 @@
       "undocumentLines": []
     },
     "src/actions/index.js": {
-      "expectCount": 13,
-      "actualCount": 13,
+      "expectCount": 12,
+      "actualCount": 12,
       "undocumentLines": []
     },
     "src/reducers/pin.js": {
@@ -134,16 +169,6 @@
       "undocumentLines": []
     },
     "src/reducers/state.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "src/reducers/withdrawAttempts.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "src/reducers/withdrawFailReason.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []

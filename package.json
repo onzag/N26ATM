@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "server": "node server.js",
-    "docs": "esdoc -c esdoc.json"
+    "docs": "esdoc -c esdoc.json",
+    "generate-production":"NODE_ENV=production webpack",
+    "generate":"webpack"
   },
   "author": "Edward Gonzalez",
   "license": "MIT",
