@@ -17,3 +17,8 @@ export const RIGHT_PIN = "1234";
  * The funds of the user
  */
 export const FUNDS = 1200;
+
+/**
+ * The limit of the transaction size for this account
+ */
+export const WITHDRAW_LIMIT = 2000;
