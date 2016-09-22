@@ -1236,6 +1236,48 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/views/__test__/aborting.test.js",
+    "file/src/views/__test__/Aborting.test.js.html",
+    "src/views/__test__/Aborting.test.js",
+    "file"
+  ],
+  [
+    "src/views/__test__/delivered.test.js",
+    "file/src/views/__test__/Delivered.test.js.html",
+    "src/views/__test__/Delivered.test.js",
+    "file"
+  ],
+  [
+    "src/views/__test__/processingamount.test.js",
+    "file/src/views/__test__/ProcessingAmount.test.js.html",
+    "src/views/__test__/ProcessingAmount.test.js",
+    "file"
+  ],
+  [
+    "src/views/__test__/processingpin.js",
+    "file/src/views/__test__/ProcessingPin.js.html",
+    "src/views/__test__/ProcessingPin.js",
+    "file"
+  ],
+  [
+    "src/views/__test__/waitingforamount.js",
+    "file/src/views/__test__/WaitingForAmount.js.html",
+    "src/views/__test__/WaitingForAmount.js",
+    "file"
+  ],
+  [
+    "src/views/__test__/waitingforcard.js",
+    "file/src/views/__test__/WaitingForCard.js.html",
+    "src/views/__test__/WaitingForCard.js",
+    "file"
+  ],
+  [
+    "src/views/__test__/waitingforpin.js",
+    "file/src/views/__test__/WaitingForPin.js.html",
+    "src/views/__test__/WaitingForPin.js",
+    "file"
+  ],
+  [
     "src/views/components/button.js",
     "file/src/views/components/Button.js.html",
     "src/views/components/Button.js",
@@ -1288,5 +1330,23 @@ window.esdocSearchIndex = [
     "class/src/views/components/TextField.js~TextField.html#instance-member-state",
     "src/views/components/TextField.js~TextField#state",
     "member"
+  ],
+  [
+    "src/views/components/__test__/button.test.js",
+    "file/src/views/components/__test__/Button.test.js.html",
+    "src/views/components/__test__/Button.test.js",
+    "file"
+  ],
+  [
+    "src/views/components/__test__/navbar.test.js",
+    "file/src/views/components/__test__/Navbar.test.js.html",
+    "src/views/components/__test__/Navbar.test.js",
+    "file"
+  ],
+  [
+    "src/views/components/__test__/textfield.test.js",
+    "file/src/views/components/__test__/TextField.test.js.html",
+    "src/views/components/__test__/TextField.test.js",
+    "file"
   ]
 ]
