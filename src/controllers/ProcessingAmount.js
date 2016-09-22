@@ -28,11 +28,27 @@ export default class ProcessingAmountController extends React.Component {
 	}
 
 	/**
+	 * React constructor
+	 * @param {Object} props the react properties
+	 */
+	constructor(props){
+		super(props);
+
+		/**
+		 * Contains the timeout variable
+		 * @type {?Number}
+		 */
+		this.timeout = null;
+
+		this.abort = this.abort.bind(this);
+	}
+
+	/**
 	 * Waits 2 seconds before performing the action regarding the funds as well as the limit
 	 * @return {undefined}
 	 */
 	componentDidMount(){
-		setTimeout(()=>{
+		this.timeout = setTimeout(()=>{
 			if (this.props.ATMState.amount > WITHDRAW_LIMIT){
 				this.props.actions.performAbort(AbortReasons.WITHDRAW_LIMIT_REACHED);
 			} else if (this.props.ATMState.amount > FUNDS){
@@ -44,10 +60,19 @@ export default class ProcessingAmountController extends React.Component {
 	}
 
 	/**
+	 * Performs the abort and cancels the waiting operation
+	 * @return {undefined}
+	 */
+	abort(){
+		clearTimeout(this.timeout);
+		this.props.actions.performAbort();
+	}
+
+	/**
 	 * Render function
 	 * @return {React.Component}
 	 */
 	render(){
-		return (<ProcessingAmount onAbort={this.props.actions.performAbort} amount={this.props.ATMState.amount}/>);
+		return (<ProcessingAmount onAbort={this.abort} amount={this.props.ATMState.amount}/>);
 	}
 }

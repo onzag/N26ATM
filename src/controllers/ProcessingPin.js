@@ -28,12 +28,28 @@ export default class ProcessingPinController extends React.Component {
 	}
 
 	/**
+	 * React constructor
+	 * @param {Object} props the react properties
+	 */
+	constructor(props){
+		super(props);
+
+		/**
+		 * Contains the timeout variable
+		 * @type {?Number}
+		 */
+		this.timeout = null;
+
+		this.abort = this.abort.bind(this);
+	}
+
+	/**
 	 * Waits 2 seconds before setting into valid or invalid state
 	 * It can also abort if done too many times
 	 * @return {undefined}
 	 */
 	componentDidMount(){
-		setTimeout(()=>{
+		this.timeout = setTimeout(()=>{
 			if (this.props.ATMState.pin === RIGHT_PIN){
 				this.props.actions.pinProcessedValid();
 			} else if (this.props.ATMState.pinAttempts >= (MAX_PIN_TRIES - 1)){
@@ -45,10 +61,19 @@ export default class ProcessingPinController extends React.Component {
 	}
 
 	/**
+	 * Performs the abort and cancels the waiting operation
+	 * @return {undefined}
+	 */
+	abort(){
+		clearTimeout(this.timeout);
+		this.props.actions.performAbort();
+	}
+
+	/**
 	 * Render function
 	 * @return {React.Component}
 	 */
 	render(){
-		return (<ProcessingPin onAbort={this.props.actions.performAbort}/>);
+		return (<ProcessingPin onAbort={this.abort}/>);
 	}
 }
