@@ -11,7 +11,7 @@ export const TOO_MANY_FAILED_PIN_ATTEMPTS = 'TOO_MANY_FAILED_PIN_ATTEMPTS';
 /**
  * When the user failed to withdraw due to the withdraw limit
  */
-export const WITHDRAW_LIMIT = 'WITHDRAW_LIMIT';
+export const WITHDRAW_LIMIT_REACHED = 'WITHDRAW_LIMIT_REACHED';
 
 /**
  * When the user asked more than it had
