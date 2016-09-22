@@ -26758,7 +26758,7 @@
 			case ActionTypes.COMPLETE_ABORT:
 				return States.WAITING_FOR_CARD;
 			default:
-				return States.WAITING_FOR_CARD;
+				return state;
 		}
 	}
 
@@ -26813,7 +26813,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+		value: true
 	});
 	exports.default = pinAttempts;
 
@@ -26832,19 +26832,20 @@
 	 * @param {Object} action The action that is executed
 	 */
 	function pinAttempts() {
-	  var state = arguments.length <= 0 || arguments[0] === undefined ? 0 : arguments[0];
-	  var action = arguments[1];
+		var state = arguments.length <= 0 || arguments[0] === undefined ? 0 : arguments[0];
+		var action = arguments[1];
 
-	  switch (action.type) {
-	    case ActionTypes.PIN_PROCESSED_VALID:
-	    case ActionTypes.PIN_PROCESSED_INVALID:
-	      return state + 1;
-	    case ActionTypes.FINISHED:
-	    case ActionTypes.COMPLETE_ABORT:
-	      return 0;
-	    default:
-	      return state;
-	  }
+		switch (action.type) {
+			case ActionTypes.PIN_PROCESSED_VALID:
+			case ActionTypes.PIN_PROCESSED_INVALID:
+				return state + 1;
+			case ActionTypes.FINISHED:
+			case ActionTypes.PERFORM_ABORT:
+			case ActionTypes.COMPLETE_ABORT:
+				return 0;
+			default:
+				return state;
+		}
 	} /**
 	   * @file Contains the state reducer for the ATM pin attempts
 	   * @author Edward Gonzalez
