@@ -14,6 +14,7 @@ Github pages can be caching, if there's missing functionability be aware of cach
 4. Your user has a limit of 2000 per transaction, this limits superseeds the the funds limit, that means this error takes priority, if you set an amount bigger than 2000 it'll abort as a limit error.
 5. The version at https://onzag.github.io/N26ATM is a development version, and you can use the dev tools to see the redux logger in action and how the state of the application changes, the log messages
 will appear in the console as you interact with it.
+6. To test you need `jest` by running `npm run test` it should run all the written unit tests.
 
 ## Details 
 
@@ -22,6 +23,7 @@ will appear in the console as you interact with it.
 3. It uses the redux paradigm with some MVC flavour.
 4. It is highly modular, every module does a little thing.
 5. It was developed on iterations.
+6. It contains unit testing.
 
 ## Requeriments
 For this project you need an up to date `Node.js` as well as to have `webpack` installed, webpack is a module bundler for the next generation web, it resides at `https://webpack.github.io/`
