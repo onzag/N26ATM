@@ -6,6 +6,8 @@ The documentation is avaliable at https://onzag.github.io/N26ATM/docs
 
 Github pages can be caching, if there's missing functionability be aware of caching.
 
+To run the testing please do `jest` or `npm run test`
+
 ## Description
 
 1. You have only 3 attempts to introduce the right PIN.
