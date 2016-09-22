@@ -19,6 +19,7 @@ export default function pinAttempts(state = 0, action){
 		case ActionTypes.PIN_PROCESSED_INVALID:
 			return state + 1;
 		case ActionTypes.FINISHED:
+		case ActionTypes.PERFORM_ABORT:
 		case ActionTypes.COMPLETE_ABORT:
 			return 0;
 		default:
