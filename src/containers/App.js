@@ -20,6 +20,7 @@ class App extends React.Component {
 	static propTypes = {
 		ATMState: React.PropTypes.shape({
 			'state':React.PropTypes.oneOf(Object.keys(States)).isRequired,
+			'pin':React.PropTypes.string,
 			'pinAttempts':React.PropTypes.number.isRequired,
 			'abortReason':React.PropTypes.oneOf(Object.keys(AbortReasons)),
 		})
@@ -42,6 +43,10 @@ class App extends React.Component {
 				return (<controllers.Aborting ATMState={this.props.ATMState} actions={this.props.actions}/>);
 			case States.WAITING_FOR_AMOUNT:
 				return (<controllers.WaitingForAmount ATMState={this.props.ATMState} actions={this.props.actions}/>);
+			case States.PROCESSING_AMOUNT:
+				return (<controllers.ProcessingAmount ATMState={this.props.ATMState} actions={this.props.actions}/>);
+			case States.DELIVERING:
+				return (<controllers.Delivering ATMState={this.props.ATMState} actions={this.props.actions}/>);
 			default:
 				return (<div>NOT IMPLEMENTED</div>);
 		}
