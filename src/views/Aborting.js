@@ -30,7 +30,7 @@ export default class Aborting extends React.Component {
 			case AbortReasons.TOO_MANY_FAILED_PIN_ATTEMPTS:
 				reason = 'Too many failed pin attempts';
 				break;
-			case AbortReasons.WITHDRAW_LIMIT:
+			case AbortReasons.WITHDRAW_LIMIT_REACHED:
 				reason = 'Withdraw operation limit reached';
 				break;
 			case AbortReasons.NOT_ENOUGH_FUNDS:
