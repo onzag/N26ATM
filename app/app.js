@@ -26534,7 +26534,7 @@
 					_react2.default.createElement(
 						'p',
 						{ className: 'text full-width centered light lg color dark-gray' },
-						'Thanks for usng our services'
+						'Thanks for using our services'
 					)
 				);
 			}
