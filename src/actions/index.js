@@ -5,17 +5,11 @@
 
 import * as ActionTypes from '../constants/ActionTypes';
 import * as AbortReasons from '../constants/AbortReasons';
-import * as WithdrawFailReasons from '../constants/WithdrawFailReasons';
 
 /*
  * @ignore
  */
 const AbortReasonsList = Object.keys(AbortReasons);
-
-/*
- * @ignore
- */
-const WithdrawFailReasonsList = Object.keys(WithdrawFailReasons);
 
 /**
  * Executes when the card has been inserted by the user
@@ -85,19 +79,6 @@ export const withdraw = (amount)=>{
  */
 export const withdrawSuscesful = ()=>{
 	return {'type':ActionTypes.WITHDRAW_SUSCESFUL};
-}
-
-/**
- * Executes when the withdraw has failed
- * @return {Object} The generated action
- * @property {String} type The type constant as defined in ActionTypes
- * @property {String} payload The inserted pin as defined in WithdrawFailReasons
- */
-export const withdrawFailed = (reason)=>{
-	if (WithdrawFailReasonsList.indexOf(reason) === -1){
-		throw new Error('cannot execute action withdrawFailed without a valid reason',reason,'from',WithdrawFailReasonsList);
-	}
-	return {'type':ActionTypes.WITHDRAW_FAILED,'payload':reason};
 }
 
 /**

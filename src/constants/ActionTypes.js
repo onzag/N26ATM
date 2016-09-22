@@ -39,11 +39,6 @@ export const WITHDRAW = 'WITHDRAW';
 export const WITHDRAW_SUSCESFUL = 'WITHDRAW_SUSCESFUL';
 
 /**
- * withdraw has failed
- */
-export const WITHDRAW_FAILED = 'WITHDRAW_FAILED';
-
-/**
  * money has been delivered
  */
 export const MONEY_DELIVERED = 'MONEY_DELIVERED';

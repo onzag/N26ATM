@@ -9,9 +9,9 @@
 export const TOO_MANY_FAILED_PIN_ATTEMPTS = 'TOO_MANY_FAILED_PIN_ATTEMPTS';
 
 /**
- * When the user tried too much to withdraw on the excessive amount
+ * When the user failed to withdraw due to the withdraw limit
  */
-export const TOO_MANY_FAILED_WITHDRAW_ATTEMPTS = 'TOO_MANY_FAILED_WITHDRAW_ATTEMPTS';
+export const WITHDRAW_LIMIT = 'WITHDRAW_LIMIT';
 
 /**
  * When the user asked more than it had

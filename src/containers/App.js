@@ -11,7 +11,6 @@ import * as actions from '../actions';
 import * as controllers from '../controllers';
 import * as States from '../constants/States';
 import * as AbortReasons from '../constants/AbortReasons';
-import * as WithdrawFailReasons from '../constants/WithdrawFailReasons';
 
 /** 
  * This is the main application class that controls all the components that render a specific view
@@ -22,9 +21,7 @@ class App extends React.Component {
 		ATMState: React.PropTypes.shape({
 			'state':React.PropTypes.oneOf(Object.keys(States)).isRequired,
 			'pinAttempts':React.PropTypes.number.isRequired,
-			'withdrawAttempts':React.PropTypes.number.isRequired,
 			'abortReason':React.PropTypes.oneOf(Object.keys(AbortReasons)),
-			'withdrawFailReason':React.PropTypes.oneOf(Object.keys(WithdrawFailReasons))
 		})
 	}
 	/**

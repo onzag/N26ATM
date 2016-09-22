@@ -16,7 +16,6 @@ export default function amount(state = null, action){
 	switch (action.type){
 		case ActionTypes.WITHDRAW:
 			return action.payload;
-		case ActionTypes.WITHDRAW_FAILED:
 		case ActionTypes.COMPLETE_ABORT:
 		case ActionTypes.PERFORM_ABORT:
 			return null;

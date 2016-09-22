@@ -29,8 +29,6 @@ export default function state(state = States.WAITING_FOR_CARD, action){
 			return States.PROCESSING_AMOUNT;
 		case ActionTypes.WITHDRAW_SUSCESFUL:
 			return States.DELIVERING;
-		case ActionTypes.WITHDRAW_FAILED:
-			return States.WAITING_FOR_AMOUNT;
 		case ActionTypes.MONEY_DELIVERED:
 			return States.DELIVERED;
 		case ActionTypes.CARD_AND_MONEY_TAKEN:
