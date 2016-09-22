@@ -40,6 +40,6 @@ export default function state(state = States.WAITING_FOR_CARD, action){
 		case ActionTypes.COMPLETE_ABORT:
 			return States.WAITING_FOR_CARD;
 		default:
-			return States.WAITING_FOR_CARD;
+			return state;
 	}
 }
