@@ -9,7 +9,10 @@
     "test": "jest"
   },
   "jest": {
-    "rootDir": "./src"
+    "moduleNameMapper": {
+      "^.+\\.(css|less)$": "<rootDir>/jest/styleMock.js",
+      "^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/jest/fileMock.js"
+    }
   },
   "author": "Edward Gonzalez",
   "license": "MIT",
@@ -29,12 +32,13 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "css-loader": "^0.25.0",
+    "enzyme": "^2.4.1",
     "esdoc-es7-plugin": "0.0.3",
     "file-loader": "^0.9.0",
     "jest": "^15.1.1",
     "json-loader": "^0.5.4",
-    "react-addons-test-utils": "^15.3.2",
     "redux-logger": "^2.6.1",
+    "sinon": "^1.17.6",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.0",
