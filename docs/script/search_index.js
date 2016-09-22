@@ -756,6 +756,12 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "src/actions/__test__/index.test.js",
+    "file/src/actions/__test__/index.test.js.html",
+    "src/actions/__test__/index.test.js",
+    "file"
+  ],
+  [
     "src/actions/index.js",
     "file/src/actions/index.js.html",
     "src/actions/index.js",
@@ -777,6 +783,24 @@ window.esdocSearchIndex = [
     "src/constants/states.js",
     "file/src/constants/States.js.html",
     "src/constants/States.js",
+    "file"
+  ],
+  [
+    "src/constants/__test__/abortreasons.test.js",
+    "file/src/constants/__test__/AbortReasons.test.js.html",
+    "src/constants/__test__/AbortReasons.test.js",
+    "file"
+  ],
+  [
+    "src/constants/__test__/actiontypes.test.js",
+    "file/src/constants/__test__/ActionTypes.test.js.html",
+    "src/constants/__test__/ActionTypes.test.js",
+    "file"
+  ],
+  [
+    "src/constants/__test__/states.test.js",
+    "file/src/constants/__test__/States.test.js.html",
+    "src/constants/__test__/States.test.js",
     "file"
   ],
   [
@@ -987,6 +1011,36 @@ window.esdocSearchIndex = [
     "src/index.js",
     "file/src/index.js.html",
     "src/index.js",
+    "file"
+  ],
+  [
+    "src/reducers/__test__/abortreason.test.js",
+    "file/src/reducers/__test__/abortReason.test.js.html",
+    "src/reducers/__test__/abortReason.test.js",
+    "file"
+  ],
+  [
+    "src/reducers/__test__/amount.test.js",
+    "file/src/reducers/__test__/amount.test.js.html",
+    "src/reducers/__test__/amount.test.js",
+    "file"
+  ],
+  [
+    "src/reducers/__test__/pin.test.js",
+    "file/src/reducers/__test__/pin.test.js.html",
+    "src/reducers/__test__/pin.test.js",
+    "file"
+  ],
+  [
+    "src/reducers/__test__/pinattempts.test.js",
+    "file/src/reducers/__test__/pinAttempts.test.js.html",
+    "src/reducers/__test__/pinAttempts.test.js",
+    "file"
+  ],
+  [
+    "src/reducers/__test__/state.test.js",
+    "file/src/reducers/__test__/state.test.js.html",
+    "src/reducers/__test__/state.test.js",
     "file"
   ],
   [
