@@ -18,6 +18,7 @@ export default function amount(state = null, action){
 			return action.payload;
 		case ActionTypes.COMPLETE_ABORT:
 		case ActionTypes.PERFORM_ABORT:
+		case ActionTypes.FINISHED:
 			return null;
 		default:
 			return state;
