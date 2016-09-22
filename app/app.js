@@ -60,19 +60,19 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _reducers = __webpack_require__(238);
+	var _reducers = __webpack_require__(253);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
-	__webpack_require__(246);
+	__webpack_require__(259);
 
-	__webpack_require__(248);
+	__webpack_require__(261);
 
-	__webpack_require__(250);
+	__webpack_require__(263);
 
-	__webpack_require__(252);
+	__webpack_require__(265);
 
-	__webpack_require__(254);
+	__webpack_require__(267);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -85,7 +85,7 @@
 	if (process.env.NODE_ENV === 'production') {
 		store = (0, _redux.createStore)(_reducers2.default);
 	} else {
-		var createLogger = __webpack_require__(256);
+		var createLogger = __webpack_require__(269);
 		var logger = createLogger();
 		store = (0, _redux.createStore)(_reducers2.default, (0, _redux.applyMiddleware)(logger));
 	}
@@ -23067,21 +23067,17 @@
 
 	var actions = _interopRequireWildcard(_actions);
 
-	var _controllers = __webpack_require__(200);
+	var _controllers = __webpack_require__(199);
 
 	var controllers = _interopRequireWildcard(_controllers);
 
-	var _States = __webpack_require__(237);
+	var _States = __webpack_require__(252);
 
 	var States = _interopRequireWildcard(_States);
 
 	var _AbortReasons = __webpack_require__(198);
 
 	var AbortReasons = _interopRequireWildcard(_AbortReasons);
-
-	var _WithdrawFailReasons = __webpack_require__(199);
-
-	var WithdrawFailReasons = _interopRequireWildcard(_WithdrawFailReasons);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -23127,6 +23123,14 @@
 						return _react2.default.createElement(controllers.Aborting, { ATMState: this.props.ATMState, actions: this.props.actions });
 					case States.WAITING_FOR_AMOUNT:
 						return _react2.default.createElement(controllers.WaitingForAmount, { ATMState: this.props.ATMState, actions: this.props.actions });
+					case States.PROCESSING_AMOUNT:
+						return _react2.default.createElement(controllers.ProcessingAmount, { ATMState: this.props.ATMState, actions: this.props.actions });
+					case States.DELIVERING:
+						return _react2.default.createElement(controllers.Delivering, { ATMState: this.props.ATMState, actions: this.props.actions });
+					case States.DELIVERED:
+						return _react2.default.createElement(controllers.Delivered, { ATMState: this.props.ATMState, actions: this.props.actions });
+					case States.DONE:
+						return _react2.default.createElement(controllers.Done, { ATMState: this.props.ATMState, actions: this.props.actions });
 					default:
 						return _react2.default.createElement(
 							'div',
@@ -23141,10 +23145,9 @@
 	}(_react2.default.Component), _class.propTypes = {
 		ATMState: _react2.default.PropTypes.shape({
 			'state': _react2.default.PropTypes.oneOf(Object.keys(States)).isRequired,
+			'pin': _react2.default.PropTypes.string,
 			'pinAttempts': _react2.default.PropTypes.number.isRequired,
-			'withdrawAttempts': _react2.default.PropTypes.number.isRequired,
-			'abortReason': _react2.default.PropTypes.oneOf(Object.keys(AbortReasons)),
-			'withdrawFailReason': _react2.default.PropTypes.oneOf(Object.keys(WithdrawFailReasons))
+			'abortReason': _react2.default.PropTypes.oneOf(Object.keys(AbortReasons))
 		})
 	}, _temp);
 
@@ -23178,7 +23181,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.completeAbort = exports.performAbort = exports.finished = exports.cardAndMoneyTaken = exports.moneyDelivered = exports.withdrawFailed = exports.withdrawSuscesful = exports.withdraw = exports.pinProcessedInvalid = exports.pinProcessedValid = exports.pinInserted = exports.cardProcessed = exports.cardInserted = undefined;
+	exports.completeAbort = exports.performAbort = exports.finished = exports.cardAndMoneyTaken = exports.moneyDelivered = exports.withdrawSuscesful = exports.withdraw = exports.pinProcessedInvalid = exports.pinProcessedValid = exports.pinInserted = exports.cardProcessed = exports.cardInserted = undefined;
 
 	var _ActionTypes = __webpack_require__(197);
 
@@ -23188,16 +23191,7 @@
 
 	var AbortReasons = _interopRequireWildcard(_AbortReasons);
 
-	var _WithdrawFailReasons = __webpack_require__(199);
-
-	var WithdrawFailReasons = _interopRequireWildcard(_WithdrawFailReasons);
-
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-	/*
-	 * @ignore
-	 */
-	var AbortReasonsList = Object.keys(AbortReasons);
 
 	/*
 	 * @ignore
@@ -23207,7 +23201,7 @@
 	 * @author Edward Gonzalez
 	 */
 
-	var WithdrawFailReasonsList = Object.keys(WithdrawFailReasons);
+	var AbortReasonsList = Object.keys(AbortReasons);
 
 	/**
 	 * Executes when the card has been inserted by the user
@@ -23277,19 +23271,6 @@
 	 */
 	var withdrawSuscesful = exports.withdrawSuscesful = function withdrawSuscesful() {
 	  return { 'type': ActionTypes.WITHDRAW_SUSCESFUL };
-	};
-
-	/**
-	 * Executes when the withdraw has failed
-	 * @return {Object} The generated action
-	 * @property {String} type The type constant as defined in ActionTypes
-	 * @property {String} payload The inserted pin as defined in WithdrawFailReasons
-	 */
-	var withdrawFailed = exports.withdrawFailed = function withdrawFailed(reason) {
-	  if (WithdrawFailReasonsList.indexOf(reason) === -1) {
-	    throw new Error('cannot execute action withdrawFailed without a valid reason', reason, 'from', WithdrawFailReasonsList);
-	  }
-	  return { 'type': ActionTypes.WITHDRAW_FAILED, 'payload': reason };
 	};
 
 	/**
@@ -23391,11 +23372,6 @@
 	var WITHDRAW_SUSCESFUL = exports.WITHDRAW_SUSCESFUL = 'WITHDRAW_SUSCESFUL';
 
 	/**
-	 * withdraw has failed
-	 */
-	var WITHDRAW_FAILED = exports.WITHDRAW_FAILED = 'WITHDRAW_FAILED';
-
-	/**
 	 * money has been delivered
 	 */
 	var MONEY_DELIVERED = exports.MONEY_DELIVERED = 'MONEY_DELIVERED';
@@ -23440,9 +23416,9 @@
 	var TOO_MANY_FAILED_PIN_ATTEMPTS = exports.TOO_MANY_FAILED_PIN_ATTEMPTS = 'TOO_MANY_FAILED_PIN_ATTEMPTS';
 
 	/**
-	 * When the user tried too much to withdraw on the excessive amount
+	 * When the user failed to withdraw due to the withdraw limit
 	 */
-	var TOO_MANY_FAILED_WITHDRAW_ATTEMPTS = exports.TOO_MANY_FAILED_WITHDRAW_ATTEMPTS = 'TOO_MANY_FAILED_WITHDRAW_ATTEMPTS';
+	var WITHDRAW_LIMIT_REACHED = exports.WITHDRAW_LIMIT_REACHED = 'WITHDRAW_LIMIT_REACHED';
 
 	/**
 	 * When the user asked more than it had
@@ -23456,25 +23432,6 @@
 
 /***/ },
 /* 199 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	/**
-	 * @file Contains the reasons why a withdraw action may fail (note that this should allow to try again)
-	 * @author Edward Gonzalez
-	 */
-
-	/**
-	 * Specifies that the limit of the transaction size is reached
-	 */
-	var LIMIT_REACHED = exports.LIMIT_REACHED = 'LIMIT_REACHED';
-
-/***/ },
-/* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23482,31 +23439,47 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.WaitingForAmount = exports.ProcessingPin = exports.Aborting = exports.WaitingForPin = exports.ProcessingCard = exports.WaitingForCard = undefined;
+	exports.Done = exports.Delivered = exports.Delivering = exports.ProcessingAmount = exports.WaitingForAmount = exports.ProcessingPin = exports.Aborting = exports.WaitingForPin = exports.ProcessingCard = exports.WaitingForCard = undefined;
 
-	var _WaitingForCard = __webpack_require__(201);
+	var _WaitingForCard = __webpack_require__(200);
 
 	var _WaitingForCard2 = _interopRequireDefault(_WaitingForCard);
 
-	var _ProcessingCard = __webpack_require__(213);
+	var _ProcessingCard = __webpack_require__(212);
 
 	var _ProcessingCard2 = _interopRequireDefault(_ProcessingCard);
 
-	var _WaitingForPin = __webpack_require__(217);
+	var _WaitingForPin = __webpack_require__(216);
 
 	var _WaitingForPin2 = _interopRequireDefault(_WaitingForPin);
 
-	var _WaitingForAmount = __webpack_require__(225);
+	var _WaitingForAmount = __webpack_require__(224);
 
 	var _WaitingForAmount2 = _interopRequireDefault(_WaitingForAmount);
 
-	var _Aborting = __webpack_require__(229);
+	var _Aborting = __webpack_require__(228);
 
 	var _Aborting2 = _interopRequireDefault(_Aborting);
 
-	var _ProcessingPin = __webpack_require__(233);
+	var _ProcessingPin = __webpack_require__(232);
 
 	var _ProcessingPin2 = _interopRequireDefault(_ProcessingPin);
+
+	var _ProcessingAmount = __webpack_require__(236);
+
+	var _ProcessingAmount2 = _interopRequireDefault(_ProcessingAmount);
+
+	var _Delivering = __webpack_require__(240);
+
+	var _Delivering2 = _interopRequireDefault(_Delivering);
+
+	var _Delivered = __webpack_require__(244);
+
+	var _Delivered2 = _interopRequireDefault(_Delivered);
+
+	var _Done = __webpack_require__(248);
+
+	var _Done2 = _interopRequireDefault(_Done);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23516,9 +23489,13 @@
 	exports.Aborting = _Aborting2.default;
 	exports.ProcessingPin = _ProcessingPin2.default;
 	exports.WaitingForAmount = _WaitingForAmount2.default;
+	exports.ProcessingAmount = _ProcessingAmount2.default;
+	exports.Delivering = _Delivering2.default;
+	exports.Delivered = _Delivered2.default;
+	exports.Done = _Done2.default;
 
 /***/ },
-/* 201 */
+/* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23539,7 +23516,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _WaitingForCard = __webpack_require__(202);
+	var _WaitingForCard = __webpack_require__(201);
 
 	var _WaitingForCard2 = _interopRequireDefault(_WaitingForCard);
 
@@ -23584,7 +23561,7 @@
 	exports.default = WaitingForCardController;
 
 /***/ },
-/* 202 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23605,15 +23582,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _NavBar = __webpack_require__(203);
+	var _NavBar = __webpack_require__(202);
 
 	var _NavBar2 = _interopRequireDefault(_NavBar);
 
-	var _Button = __webpack_require__(208);
+	var _Button = __webpack_require__(207);
 
 	var _Button2 = _interopRequireDefault(_Button);
 
-	__webpack_require__(211);
+	__webpack_require__(210);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23670,7 +23647,7 @@
 	exports.default = WaitingForCard;
 
 /***/ },
-/* 203 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23691,7 +23668,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(204);
+	__webpack_require__(203);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23758,16 +23735,16 @@
 	exports.default = NavBar;
 
 /***/ },
-/* 204 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(205);
+	var content = __webpack_require__(204);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(207)(content, {});
+	var update = __webpack_require__(206)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -23784,10 +23761,10 @@
 	}
 
 /***/ },
-/* 205 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(206)();
+	exports = module.exports = __webpack_require__(205)();
 	// imports
 
 
@@ -23798,7 +23775,7 @@
 
 
 /***/ },
-/* 206 */
+/* 205 */
 /***/ function(module, exports) {
 
 	/*
@@ -23854,7 +23831,7 @@
 
 
 /***/ },
-/* 207 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -24106,7 +24083,7 @@
 
 
 /***/ },
-/* 208 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24118,13 +24095,16 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _class, _temp;
+	var _class, _temp; /**
+	                    * @file Contains the button component
+	                    * @author Edward Gonzalez
+	                    */
 
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(209);
+	__webpack_require__(208);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24134,17 +24114,25 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	/**
+	 * The button components represents a reusable component that is designed to be clicked
+	 */
 	var Button = (_temp = _class = function (_React$Component) {
 		_inherits(Button, _React$Component);
 
-		function Button(props) {
+		function Button() {
 			_classCallCheck(this, Button);
 
-			return _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this, props));
+			return _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).apply(this, arguments));
 		}
 
 		_createClass(Button, [{
 			key: 'render',
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
 			value: function render() {
 				var className = "button color";
 				if (!this.props.color) {
@@ -24218,16 +24206,16 @@
 	exports.default = Button;
 
 /***/ },
-/* 209 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(210);
+	var content = __webpack_require__(209);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(207)(content, {});
+	var update = __webpack_require__(206)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -24244,10 +24232,10 @@
 	}
 
 /***/ },
-/* 210 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(206)();
+	exports = module.exports = __webpack_require__(205)();
 	// imports
 
 
@@ -24258,16 +24246,16 @@
 
 
 /***/ },
-/* 211 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(212);
+	var content = __webpack_require__(211);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(207)(content, {});
+	var update = __webpack_require__(206)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -24284,10 +24272,10 @@
 	}
 
 /***/ },
-/* 212 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(206)();
+	exports = module.exports = __webpack_require__(205)();
 	// imports
 
 
@@ -24298,7 +24286,7 @@
 
 
 /***/ },
-/* 213 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24319,7 +24307,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ProcessingCard = __webpack_require__(214);
+	var _ProcessingCard = __webpack_require__(213);
 
 	var _ProcessingCard2 = _interopRequireDefault(_ProcessingCard);
 
@@ -24381,7 +24369,7 @@
 	exports.default = ProcessingCardController;
 
 /***/ },
-/* 214 */
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24402,11 +24390,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _NavBar = __webpack_require__(203);
+	var _NavBar = __webpack_require__(202);
 
 	var _NavBar2 = _interopRequireDefault(_NavBar);
 
-	__webpack_require__(215);
+	__webpack_require__(214);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24456,16 +24444,16 @@
 	exports.default = ProcessingCard;
 
 /***/ },
-/* 215 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(216);
+	var content = __webpack_require__(215);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(207)(content, {});
+	var update = __webpack_require__(206)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -24482,10 +24470,10 @@
 	}
 
 /***/ },
-/* 216 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(206)();
+	exports = module.exports = __webpack_require__(205)();
 	// imports
 
 
@@ -24496,7 +24484,7 @@
 
 
 /***/ },
-/* 217 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24517,11 +24505,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _WaitingForPin = __webpack_require__(218);
+	var _WaitingForPin = __webpack_require__(217);
 
 	var _WaitingForPin2 = _interopRequireDefault(_WaitingForPin);
 
-	var _config = __webpack_require__(222);
+	var _config = __webpack_require__(221);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24569,7 +24557,7 @@
 	exports.default = WaitingForPinController;
 
 /***/ },
-/* 218 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24590,25 +24578,25 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _NavBar = __webpack_require__(203);
+	var _NavBar = __webpack_require__(202);
 
 	var _NavBar2 = _interopRequireDefault(_NavBar);
 
-	var _Button = __webpack_require__(208);
+	var _Button = __webpack_require__(207);
 
 	var _Button2 = _interopRequireDefault(_Button);
 
-	var _TextField = __webpack_require__(219);
+	var _TextField = __webpack_require__(218);
 
 	var _TextField2 = _interopRequireDefault(_TextField);
 
-	var _config = __webpack_require__(222);
+	var _config = __webpack_require__(221);
 
 	var _AbortReasons = __webpack_require__(198);
 
 	var AbortReasons = _interopRequireWildcard(_AbortReasons);
 
-	__webpack_require__(223);
+	__webpack_require__(222);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -24633,6 +24621,11 @@
 		function WaitingForPin(props) {
 			_classCallCheck(this, WaitingForPin);
 
+			/**
+	   * The main state of the component
+	   * @type {Object}
+	   * @property {String} pin the current pin
+	   */
 			var _this = _possibleConstructorReturn(this, (WaitingForPin.__proto__ || Object.getPrototypeOf(WaitingForPin)).call(this, props));
 
 			_this.state = {
@@ -24715,7 +24708,7 @@
 	exports.default = WaitingForPin;
 
 /***/ },
-/* 219 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24736,7 +24729,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(220);
+	__webpack_require__(219);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24759,6 +24752,11 @@
 		function TextField(props) {
 			_classCallCheck(this, TextField);
 
+			/**
+	   * The main state of the component
+	   * @type {Object}
+	   * @property {String} error the current error as given by the validate property function
+	   */
 			var _this = _possibleConstructorReturn(this, (TextField.__proto__ || Object.getPrototypeOf(TextField)).call(this, props));
 
 			_this.state = {
@@ -24835,16 +24833,16 @@
 	exports.default = TextField;
 
 /***/ },
-/* 220 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(221);
+	var content = __webpack_require__(220);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(207)(content, {});
+	var update = __webpack_require__(206)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -24861,10 +24859,10 @@
 	}
 
 /***/ },
-/* 221 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(206)();
+	exports = module.exports = __webpack_require__(205)();
 	// imports
 
 
@@ -24875,7 +24873,7 @@
 
 
 /***/ },
-/* 222 */
+/* 221 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -24903,17 +24901,22 @@
 	 */
 	var FUNDS = exports.FUNDS = 1200;
 
+	/**
+	 * The limit of the transaction size for this account
+	 */
+	var WITHDRAW_LIMIT = exports.WITHDRAW_LIMIT = 2000;
+
 /***/ },
-/* 223 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(224);
+	var content = __webpack_require__(223);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(207)(content, {});
+	var update = __webpack_require__(206)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -24930,10 +24933,10 @@
 	}
 
 /***/ },
-/* 224 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(206)();
+	exports = module.exports = __webpack_require__(205)();
 	// imports
 
 
@@ -24944,7 +24947,7 @@
 
 
 /***/ },
-/* 225 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24965,7 +24968,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _WaitingForAmount = __webpack_require__(226);
+	var _WaitingForAmount = __webpack_require__(225);
 
 	var _WaitingForAmount2 = _interopRequireDefault(_WaitingForAmount);
 
@@ -25014,7 +25017,7 @@
 	exports.default = WaitingForAmountController;
 
 /***/ },
-/* 226 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25035,15 +25038,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _NavBar = __webpack_require__(203);
+	var _NavBar = __webpack_require__(202);
 
 	var _NavBar2 = _interopRequireDefault(_NavBar);
 
-	var _Button = __webpack_require__(208);
+	var _Button = __webpack_require__(207);
 
 	var _Button2 = _interopRequireDefault(_Button);
 
-	var _TextField = __webpack_require__(219);
+	var _TextField = __webpack_require__(218);
 
 	var _TextField2 = _interopRequireDefault(_TextField);
 
@@ -25051,7 +25054,7 @@
 
 	var AbortReasons = _interopRequireWildcard(_AbortReasons);
 
-	__webpack_require__(227);
+	__webpack_require__(226);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -25076,6 +25079,11 @@
 		function WaitingForAmount(props) {
 			_classCallCheck(this, WaitingForAmount);
 
+			/**
+	   * The main state of the component
+	   * @type {Object}
+	   * @property {String} customValue the current value of the custom field
+	   */
 			var _this = _possibleConstructorReturn(this, (WaitingForAmount.__proto__ || Object.getPrototypeOf(WaitingForAmount)).call(this, props));
 
 			_this.state = {
@@ -25087,7 +25095,7 @@
 
 		/**
 	  * Updates the custom value in the screen
-	  * @param {String} pin the new pin
+	  * @param {String} customValue the new custom value
 	  * @return {undefined}
 	  */
 
@@ -25192,16 +25200,16 @@
 	exports.default = WaitingForAmount;
 
 /***/ },
-/* 227 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(228);
+	var content = __webpack_require__(227);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(207)(content, {});
+	var update = __webpack_require__(206)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -25218,10 +25226,10 @@
 	}
 
 /***/ },
-/* 228 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(206)();
+	exports = module.exports = __webpack_require__(205)();
 	// imports
 
 
@@ -25232,7 +25240,7 @@
 
 
 /***/ },
-/* 229 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25257,7 +25265,7 @@
 
 	var AbortReasons = _interopRequireWildcard(_AbortReasons);
 
-	var _Aborting = __webpack_require__(230);
+	var _Aborting = __webpack_require__(229);
 
 	var _Aborting2 = _interopRequireDefault(_Aborting);
 
@@ -25307,7 +25315,7 @@
 	exports.default = AbortingController;
 
 /***/ },
-/* 230 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25328,11 +25336,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _NavBar = __webpack_require__(203);
+	var _NavBar = __webpack_require__(202);
 
 	var _NavBar2 = _interopRequireDefault(_NavBar);
 
-	var _Button = __webpack_require__(208);
+	var _Button = __webpack_require__(207);
 
 	var _Button2 = _interopRequireDefault(_Button);
 
@@ -25340,7 +25348,7 @@
 
 	var AbortReasons = _interopRequireWildcard(_AbortReasons);
 
-	__webpack_require__(231);
+	__webpack_require__(230);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -25358,32 +25366,28 @@
 	var Aborting = (_temp = _class = function (_React$Component) {
 		_inherits(Aborting, _React$Component);
 
-		function Aborting(props) {
+		function Aborting() {
 			_classCallCheck(this, Aborting);
 
-			var _this = _possibleConstructorReturn(this, (Aborting.__proto__ || Object.getPrototypeOf(Aborting)).call(this, props));
-
-			_this.state = {
-				'pin': ''
-			};
-			return _this;
+			return _possibleConstructorReturn(this, (Aborting.__proto__ || Object.getPrototypeOf(Aborting)).apply(this, arguments));
 		}
-		/**
-	  * Render function
-	  * @return {React.Component}
-	  */
-
 
 		_createClass(Aborting, [{
 			key: 'render',
+
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
 			value: function render() {
 				var reason = void 0;
 				switch (this.props.reason) {
 					case AbortReasons.TOO_MANY_FAILED_PIN_ATTEMPTS:
 						reason = 'Too many failed pin attempts';
 						break;
-					case AbortReasons.TOO_MANY_FAILED_WITHDRAW_ATTEMPTS:
-						reason = 'Too many failed withdraw attempts';
+					case AbortReasons.WITHDRAW_LIMIT_REACHED:
+						reason = 'Withdraw operation limit reached';
 						break;
 					case AbortReasons.NOT_ENOUGH_FUNDS:
 						reason = 'You do not have enough funds';
@@ -25428,16 +25432,16 @@
 	exports.default = Aborting;
 
 /***/ },
-/* 231 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(232);
+	var content = __webpack_require__(231);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(207)(content, {});
+	var update = __webpack_require__(206)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -25454,10 +25458,10 @@
 	}
 
 /***/ },
-/* 232 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(206)();
+	exports = module.exports = __webpack_require__(205)();
 	// imports
 
 
@@ -25468,7 +25472,7 @@
 
 
 /***/ },
-/* 233 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25489,7 +25493,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ProcessingPin = __webpack_require__(234);
+	var _ProcessingPin = __webpack_require__(233);
 
 	var _ProcessingPin2 = _interopRequireDefault(_ProcessingPin);
 
@@ -25497,7 +25501,7 @@
 
 	var AbortReasons = _interopRequireWildcard(_AbortReasons);
 
-	var _config = __webpack_require__(222);
+	var _config = __webpack_require__(221);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -25517,25 +25521,38 @@
 	var ProcessingPinController = (_temp = _class = function (_React$Component) {
 		_inherits(ProcessingPinController, _React$Component);
 
-		function ProcessingPinController() {
+		/**
+	  * React constructor
+	  * @param {Object} props the react properties
+	  */
+		function ProcessingPinController(props) {
 			_classCallCheck(this, ProcessingPinController);
 
-			return _possibleConstructorReturn(this, (ProcessingPinController.__proto__ || Object.getPrototypeOf(ProcessingPinController)).apply(this, arguments));
+			/**
+	   * Contains the timeout variable
+	   * @type {?Number}
+	   */
+			var _this = _possibleConstructorReturn(this, (ProcessingPinController.__proto__ || Object.getPrototypeOf(ProcessingPinController)).call(this, props));
+
+			_this.timeout = null;
+
+			_this.abort = _this.abort.bind(_this);
+			return _this;
 		}
+
+		/**
+	  * Waits 2 seconds before setting into valid or invalid state
+	  * It can also abort if done too many times
+	  * @return {undefined}
+	  */
+
 
 		_createClass(ProcessingPinController, [{
 			key: 'componentDidMount',
-
-
-			/**
-	   * Waits 2 seconds before setting into valid or invalid state
-	   * It can also abort if done too many times
-	   * @return {undefined}
-	   */
 			value: function componentDidMount() {
 				var _this2 = this;
 
-				setTimeout(function () {
+				this.timeout = setTimeout(function () {
 					if (_this2.props.ATMState.pin === _config.RIGHT_PIN) {
 						_this2.props.actions.pinProcessedValid();
 					} else if (_this2.props.ATMState.pinAttempts >= _config.MAX_PIN_TRIES - 1) {
@@ -25547,6 +25564,18 @@
 			}
 
 			/**
+	   * Performs the abort and cancels the waiting operation
+	   * @return {undefined}
+	   */
+
+		}, {
+			key: 'abort',
+			value: function abort(reason) {
+				clearTimeout(this.timeout);
+				this.props.actions.performAbort(reason);
+			}
+
+			/**
 	   * Render function
 	   * @return {React.Component}
 	   */
@@ -25554,7 +25583,7 @@
 		}, {
 			key: 'render',
 			value: function render() {
-				return _react2.default.createElement(_ProcessingPin2.default, { onAbort: this.props.actions.performAbort });
+				return _react2.default.createElement(_ProcessingPin2.default, { onAbort: this.abort });
 			}
 		}]);
 
@@ -25572,7 +25601,7 @@
 	exports.default = ProcessingPinController;
 
 /***/ },
-/* 234 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25593,7 +25622,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _NavBar = __webpack_require__(203);
+	var _NavBar = __webpack_require__(202);
 
 	var _NavBar2 = _interopRequireDefault(_NavBar);
 
@@ -25601,7 +25630,7 @@
 
 	var AbortReasons = _interopRequireWildcard(_AbortReasons);
 
-	__webpack_require__(235);
+	__webpack_require__(234);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -25654,16 +25683,16 @@
 	exports.default = ProcessingPin;
 
 /***/ },
-/* 235 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(236);
+	var content = __webpack_require__(235);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(207)(content, {});
+	var update = __webpack_require__(206)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -25680,10 +25709,10 @@
 	}
 
 /***/ },
-/* 236 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(206)();
+	exports = module.exports = __webpack_require__(205)();
 	// imports
 
 
@@ -25694,7 +25723,870 @@
 
 
 /***/ },
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
+	                    * @file Contains the processing amount controller
+	                    * @author Edward Gonzalez
+	                    */
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ProcessingAmount = __webpack_require__(237);
+
+	var _ProcessingAmount2 = _interopRequireDefault(_ProcessingAmount);
+
+	var _AbortReasons = __webpack_require__(198);
+
+	var AbortReasons = _interopRequireWildcard(_AbortReasons);
+
+	var _config = __webpack_require__(221);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/** 
+	 * This is the controller that processes the amount
+	 * Because it's a dummy controller it only waits after a specific timeout
+	 * It takes the withdraw limit and launchs an abort screen in case it surpasses it
+	 * Otherwise it checks against the funds and sends a message regarding that
+	 */
+	var ProcessingAmountController = (_temp = _class = function (_React$Component) {
+		_inherits(ProcessingAmountController, _React$Component);
+
+		/**
+	  * React constructor
+	  * @param {Object} props the react properties
+	  */
+		function ProcessingAmountController(props) {
+			_classCallCheck(this, ProcessingAmountController);
+
+			/**
+	   * Contains the timeout variable
+	   * @type {?Number}
+	   */
+			var _this = _possibleConstructorReturn(this, (ProcessingAmountController.__proto__ || Object.getPrototypeOf(ProcessingAmountController)).call(this, props));
+
+			_this.timeout = null;
+
+			_this.abort = _this.abort.bind(_this);
+			return _this;
+		}
+
+		/**
+	  * Waits 2 seconds before performing the action regarding the funds as well as the limit
+	  * @return {undefined}
+	  */
+
+
+		_createClass(ProcessingAmountController, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				var _this2 = this;
+
+				this.timeout = setTimeout(function () {
+					if (_this2.props.ATMState.amount > _config.WITHDRAW_LIMIT) {
+						_this2.props.actions.performAbort(AbortReasons.WITHDRAW_LIMIT_REACHED);
+					} else if (_this2.props.ATMState.amount > _config.FUNDS) {
+						_this2.props.actions.performAbort(AbortReasons.NOT_ENOUGH_FUNDS);
+					} else {
+						_this2.props.actions.withdrawSuscesful();
+					}
+				}, 2000);
+			}
+
+			/**
+	   * Performs the abort and cancels the waiting operation
+	   * @return {undefined}
+	   */
+
+		}, {
+			key: 'abort',
+			value: function abort(reason) {
+				clearTimeout(this.timeout);
+				this.props.actions.performAbort(reason);
+			}
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
+
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(_ProcessingAmount2.default, { onAbort: this.abort, amount: this.props.ATMState.amount });
+			}
+		}]);
+
+		return ProcessingAmountController;
+	}(_react2.default.Component), _class.propTypes = {
+		ATMState: _react2.default.PropTypes.shape({
+			'amount': _react2.default.PropTypes.number.isRequired
+		}).isRequired,
+		actions: _react2.default.PropTypes.shape({
+			'withdrawSuscesful': _react2.default.PropTypes.func.isRequired,
+			'performAbort': _react2.default.PropTypes.func.isRequired
+		}).isRequired
+	}, _temp);
+	exports.default = ProcessingAmountController;
+
+/***/ },
 /* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
+	                    * @file Contains the processing amount screen
+	                    * @author Edward Gonzalez
+	                    */
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _NavBar = __webpack_require__(202);
+
+	var _NavBar2 = _interopRequireDefault(_NavBar);
+
+	var _AbortReasons = __webpack_require__(198);
+
+	var AbortReasons = _interopRequireWildcard(_AbortReasons);
+
+	__webpack_require__(238);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/** 
+	 * This is the view that represents the processing amount screen
+	 * it shows a message with the specific amount
+	 */
+	var ProcessingAmount = (_temp = _class = function (_React$Component) {
+		_inherits(ProcessingAmount, _React$Component);
+
+		function ProcessingAmount() {
+			_classCallCheck(this, ProcessingAmount);
+
+			return _possibleConstructorReturn(this, (ProcessingAmount.__proto__ || Object.getPrototypeOf(ProcessingAmount)).apply(this, arguments));
+		}
+
+		_createClass(ProcessingAmount, [{
+			key: 'render',
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					{ className: 'ProcessingAmount screen' },
+					_react2.default.createElement(_NavBar2.default, { canAbort: true, onAbort: this.props.onAbort.bind(null, AbortReasons.USER_CANCELS) }),
+					_react2.default.createElement(
+						'p',
+						{ className: 'text full-width centered light lg color dark-gray' },
+						'Attempting to withdraw ',
+						_react2.default.createElement(
+							'span',
+							null,
+							this.props.amount
+						),
+						' €'
+					),
+					_react2.default.createElement('div', { className: 'ion ion-load-c color light-gray text full-width centered' })
+				);
+			}
+		}]);
+
+		return ProcessingAmount;
+	}(_react2.default.Component), _class.propTypes = {
+		onAbort: _react2.default.PropTypes.func.isRequired,
+		amount: _react2.default.PropTypes.number.isRequired
+	}, _temp);
+	exports.default = ProcessingAmount;
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(239);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(206)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./ProcessingAmount.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./ProcessingAmount.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(205)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".ProcessingAmount > .ion-load-c {\n\tfont-size:92px;\n\t-webkit-animation: rotator 1s linear infinite;\n\t-moz-animation: rotator 1s linear infinite;\n\tanimation: rotator 1s linear infinite;\n\ttransform:translateY(30px);\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
+	                    * @file Contains the controller that displays the view for the delivering screen
+	                    * @author Edward Gonzalez
+	                    */
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Delivering = __webpack_require__(241);
+
+	var _Delivering2 = _interopRequireDefault(_Delivering);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/** 
+	 * This is the controller class that handles such
+	 * It's a dummy controller and just waits two second to consider it delivered
+	 */
+	var DeliveringController = (_temp = _class = function (_React$Component) {
+		_inherits(DeliveringController, _React$Component);
+
+		function DeliveringController() {
+			_classCallCheck(this, DeliveringController);
+
+			return _possibleConstructorReturn(this, (DeliveringController.__proto__ || Object.getPrototypeOf(DeliveringController)).apply(this, arguments));
+		}
+
+		_createClass(DeliveringController, [{
+			key: 'componentDidMount',
+
+
+			/**
+	   * Waits 2 seconds before setting the state to devivered
+	   * @return {undefined}
+	   */
+			value: function componentDidMount() {
+				var _this2 = this;
+
+				setTimeout(function () {
+					_this2.props.actions.moneyDelivered();
+				}, 2000);
+			}
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
+
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(_Delivering2.default, null);
+			}
+		}]);
+
+		return DeliveringController;
+	}(_react2.default.Component), _class.propTypes = {
+		actions: _react2.default.PropTypes.shape({
+			'moneyDelivered': _react2.default.PropTypes.func.isRequired
+		}).isRequired
+	}, _temp);
+	exports.default = DeliveringController;
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _NavBar = __webpack_require__(202);
+
+	var _NavBar2 = _interopRequireDefault(_NavBar);
+
+	__webpack_require__(242);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @file Contains the delivering screen view
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author Edward Gonzalez
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+	/** 
+	 * This is the view that represents the delivering screen
+	 * It shows that the money is being processed
+	 */
+	var Delivering = function (_React$Component) {
+		_inherits(Delivering, _React$Component);
+
+		function Delivering() {
+			_classCallCheck(this, Delivering);
+
+			return _possibleConstructorReturn(this, (Delivering.__proto__ || Object.getPrototypeOf(Delivering)).apply(this, arguments));
+		}
+
+		_createClass(Delivering, [{
+			key: 'render',
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					{ className: 'Delivering screen' },
+					_react2.default.createElement(_NavBar2.default, { canAbort: false }),
+					_react2.default.createElement('div', { className: 'ion ion-cash color dark-gray text full-width centered' }),
+					_react2.default.createElement(
+						'p',
+						{ className: 'text full-width centered light lg color dark-gray' },
+						'Please wait...'
+					),
+					_react2.default.createElement('div', { className: 'ion ion-load-c color light-gray text full-width centered' })
+				);
+			}
+		}]);
+
+		return Delivering;
+	}(_react2.default.Component);
+
+	exports.default = Delivering;
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(243);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(206)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./Delivering.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./Delivering.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 243 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(205)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".Delivering > .ion-cash {\n\tfont-size:192px;\n}\n\n.Delivering > .ion-load-c {\n\tfont-size:92px;\n\t-webkit-animation: rotator 1s linear infinite;\n\t-moz-animation: rotator 1s linear infinite;\n\tanimation: rotator 1s linear infinite;\n\ttransform:translateY(30px);\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 244 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
+	                    * @file Contains the controller that displays the screen that the money was delivered
+	                    * @author Edward Gonzalez
+	                    */
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Delivered = __webpack_require__(245);
+
+	var _Delivered2 = _interopRequireDefault(_Delivered);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/** 
+	 * This is the controller class that handles such
+	 * Once the user gives the input it will trigger the card and money taken action
+	 */
+	var DeliveredController = (_temp = _class = function (_React$Component) {
+		_inherits(DeliveredController, _React$Component);
+
+		function DeliveredController() {
+			_classCallCheck(this, DeliveredController);
+
+			return _possibleConstructorReturn(this, (DeliveredController.__proto__ || Object.getPrototypeOf(DeliveredController)).apply(this, arguments));
+		}
+
+		_createClass(DeliveredController, [{
+			key: 'render',
+
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
+			value: function render() {
+				return _react2.default.createElement(_Delivered2.default, { onCardAndMoneyTaken: this.props.actions.cardAndMoneyTaken });
+			}
+		}]);
+
+		return DeliveredController;
+	}(_react2.default.Component), _class.propTypes = {
+		actions: _react2.default.PropTypes.shape({
+			'cardAndMoneyTaken': _react2.default.PropTypes.func.isRequired
+		}).isRequired
+	}, _temp);
+	exports.default = DeliveredController;
+
+/***/ },
+/* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
+	                    * @file Contains the delivered screen view that expects the user to take the money and card
+	                    * @author Edward Gonzalez
+	                    */
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _NavBar = __webpack_require__(202);
+
+	var _NavBar2 = _interopRequireDefault(_NavBar);
+
+	var _Button = __webpack_require__(207);
+
+	var _Button2 = _interopRequireDefault(_Button);
+
+	__webpack_require__(246);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/** 
+	 * This is the view that represents the delivered screen
+	 * It shows that the money is done
+	 * Waits for the user on input to keep going and show thanks screen
+	 */
+	var Delivered = (_temp = _class = function (_React$Component) {
+		_inherits(Delivered, _React$Component);
+
+		function Delivered() {
+			_classCallCheck(this, Delivered);
+
+			return _possibleConstructorReturn(this, (Delivered.__proto__ || Object.getPrototypeOf(Delivered)).apply(this, arguments));
+		}
+
+		_createClass(Delivered, [{
+			key: 'render',
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					{ className: 'Delivered screen' },
+					_react2.default.createElement(_NavBar2.default, { canAbort: false }),
+					_react2.default.createElement('div', { className: 'ion ion-cash color dark-gray text full-width centered' }),
+					_react2.default.createElement(
+						'p',
+						{ className: 'text full-width centered light lg color dark-gray' },
+						'Your cash is ready'
+					),
+					_react2.default.createElement('div', { className: 'ion ion-chevron-down color light-gray text full-width centered' }),
+					_react2.default.createElement(
+						_Button2.default,
+						{ full: true, large: true, color: 'blue', className: 'take-card-and-money-button', textType: 'light white lg',
+							onClick: this.props.onCardAndMoneyTaken },
+						'Take card and money'
+					)
+				);
+			}
+		}]);
+
+		return Delivered;
+	}(_react2.default.Component), _class.propTypes = {
+		onCardAndMoneyTaken: _react2.default.PropTypes.func.isRequired
+	}, _temp);
+	exports.default = Delivered;
+
+/***/ },
+/* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(247);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(206)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./Delivered.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./Delivered.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(205)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".Delivered > .ion-cash {\n\tfont-size:192px;\n}\n\n.Delivered > .ion-chevron-down {\n\tfont-size:92px;\n\t-webkit-animation: mover 2s infinite alternate;\n\t-moz-animation: mover 2s infinite alternate;\n\tanimation: mover 2s infinite alternate;\n}\n\n.Delivered > .take-card-and-money-button {\n\tposition:absolute;\n\tleft:0;\n\tbottom:0;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp; /**
+	                    * @file Contains the controller that displays the thanks screen
+	                    * @author Edward Gonzalez
+	                    */
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Done = __webpack_require__(249);
+
+	var _Done2 = _interopRequireDefault(_Done);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/** 
+	 * This is the controller class that handles such
+	 * It just shows itself for two seconds before finishing
+	 */
+	var DoneController = (_temp = _class = function (_React$Component) {
+		_inherits(DoneController, _React$Component);
+
+		function DoneController() {
+			_classCallCheck(this, DoneController);
+
+			return _possibleConstructorReturn(this, (DoneController.__proto__ || Object.getPrototypeOf(DoneController)).apply(this, arguments));
+		}
+
+		_createClass(DoneController, [{
+			key: 'componentDidMount',
+
+
+			/**
+	   * Waits 2 seconds before restarting by triggering the finished event
+	   * @return {undefined}
+	   */
+			value: function componentDidMount() {
+				var _this2 = this;
+
+				setTimeout(function () {
+					_this2.props.actions.finished();
+				}, 2000);
+			}
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
+
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(_Done2.default, null);
+			}
+		}]);
+
+		return DoneController;
+	}(_react2.default.Component), _class.propTypes = {
+		actions: _react2.default.PropTypes.shape({
+			'finished': _react2.default.PropTypes.func.isRequired
+		}).isRequired
+	}, _temp);
+	exports.default = DoneController;
+
+/***/ },
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _NavBar = __webpack_require__(202);
+
+	var _NavBar2 = _interopRequireDefault(_NavBar);
+
+	__webpack_require__(250);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @file Contains the done screen view
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author Edward Gonzalez
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+	/** 
+	 * This is the view that represents the done screen
+	 * It only shows thanks you for a while before rest
+	 */
+	var Done = function (_React$Component) {
+		_inherits(Done, _React$Component);
+
+		function Done() {
+			_classCallCheck(this, Done);
+
+			return _possibleConstructorReturn(this, (Done.__proto__ || Object.getPrototypeOf(Done)).apply(this, arguments));
+		}
+
+		_createClass(Done, [{
+			key: 'render',
+
+			/**
+	   * Render function
+	   * @return {React.Component}
+	   */
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					{ className: 'Done screen' },
+					_react2.default.createElement(_NavBar2.default, { canAbort: false }),
+					_react2.default.createElement(
+						'div',
+						{ className: 'logo text centered' },
+						_react2.default.createElement(
+							'span',
+							{ className: 'color skyblue text bold' },
+							'k'
+						),
+						_react2.default.createElement(
+							'span',
+							{ className: 'color medium-black text bold' },
+							'ATM'
+						)
+					),
+					_react2.default.createElement(
+						'p',
+						{ className: 'text full-width centered light lg color dark-gray' },
+						'Thanks for usng our services'
+					)
+				);
+			}
+		}]);
+
+		return Done;
+	}(_react2.default.Component);
+
+	exports.default = Done;
+
+/***/ },
+/* 250 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(251);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(206)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./Done.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./Done.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 251 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(205)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".Done > .logo {\n\tfont-size:124px;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 252 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -25758,7 +26650,7 @@
 	var ABORTING = exports.ABORTING = 'ABORTING';
 
 /***/ },
-/* 238 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25769,31 +26661,23 @@
 
 	var _redux = __webpack_require__(172);
 
-	var _state = __webpack_require__(239);
+	var _state = __webpack_require__(254);
 
 	var _state2 = _interopRequireDefault(_state);
 
-	var _pin = __webpack_require__(240);
+	var _pin = __webpack_require__(255);
 
 	var _pin2 = _interopRequireDefault(_pin);
 
-	var _pinAttempts = __webpack_require__(241);
+	var _pinAttempts = __webpack_require__(256);
 
 	var _pinAttempts2 = _interopRequireDefault(_pinAttempts);
 
-	var _withdrawAttempts = __webpack_require__(242);
-
-	var _withdrawAttempts2 = _interopRequireDefault(_withdrawAttempts);
-
-	var _abortReason = __webpack_require__(243);
+	var _abortReason = __webpack_require__(257);
 
 	var _abortReason2 = _interopRequireDefault(_abortReason);
 
-	var _withdrawFailReason = __webpack_require__(244);
-
-	var _withdrawFailReason2 = _interopRequireDefault(_withdrawFailReason);
-
-	var _amount = __webpack_require__(245);
+	var _amount = __webpack_require__(258);
 
 	var _amount2 = _interopRequireDefault(_amount);
 
@@ -25807,12 +26691,12 @@
 	 * @author Edward Gonzalez
 	 */
 
-	var rootReducer = (0, _redux.combineReducers)({ state: _state2.default, pinAttempts: _pinAttempts2.default, withdrawAttempts: _withdrawAttempts2.default, abortReason: _abortReason2.default, withdrawFailReason: _withdrawFailReason2.default, pin: _pin2.default, amount: _amount2.default });
+	var rootReducer = (0, _redux.combineReducers)({ state: _state2.default, pinAttempts: _pinAttempts2.default, abortReason: _abortReason2.default, pin: _pin2.default, amount: _amount2.default });
 
 	exports.default = rootReducer;
 
 /***/ },
-/* 239 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25822,7 +26706,7 @@
 	});
 	exports.default = state;
 
-	var _States = __webpack_require__(237);
+	var _States = __webpack_require__(252);
 
 	var States = _interopRequireWildcard(_States);
 
@@ -25863,8 +26747,6 @@
 				return States.PROCESSING_AMOUNT;
 			case ActionTypes.WITHDRAW_SUSCESFUL:
 				return States.DELIVERING;
-			case ActionTypes.WITHDRAW_FAILED:
-				return States.WAITING_FOR_AMOUNT;
 			case ActionTypes.MONEY_DELIVERED:
 				return States.DELIVERED;
 			case ActionTypes.CARD_AND_MONEY_TAKEN:
@@ -25881,7 +26763,7 @@
 	}
 
 /***/ },
-/* 240 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25925,7 +26807,7 @@
 	   */
 
 /***/ },
-/* 241 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25969,51 +26851,7 @@
 	   */
 
 /***/ },
-/* 242 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = withdrawAttempts;
-
-	var _ActionTypes = __webpack_require__(197);
-
-	var ActionTypes = _interopRequireWildcard(_ActionTypes);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-	/**
-	 * This is the reducer represents the amount of times the user
-	 * has attempted to withdraw some money
-	 * The number will reset once the ATM finishes or aborts
-	 *
-	 * @param {Number} state The current state, as provided by the store
-	 * @param {Object} action The action that is executed
-	 */
-	function withdrawAttempts() {
-	  var state = arguments.length <= 0 || arguments[0] === undefined ? 0 : arguments[0];
-	  var action = arguments[1];
-
-	  switch (action.type) {
-	    case ActionTypes.WITHDRAW_SUSCESFUL:
-	    case ActionTypes.WITHDRAW_FAILED:
-	      return state + 1;
-	    case ActionTypes.FINISHED:
-	    case ActionTypes.COMPLETE_ABORT:
-	      return 0;
-	    default:
-	      return state;
-	  }
-	} /**
-	   * @file Contains the state reducer for the ATM withdraw attempts
-	   * @author Edward Gonzalez
-	   */
-
-/***/ },
-/* 243 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26053,49 +26891,7 @@
 	   */
 
 /***/ },
-/* 244 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.default = withdrawFailReason;
-
-	var _ActionTypes = __webpack_require__(197);
-
-	var ActionTypes = _interopRequireWildcard(_ActionTypes);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-	/**
-	 * This reducer represents the reason why the ATM failed to withdraw some money
-	 *
-	 * @param {String} state The current state, as provided by the store
-	 * @param {Object} action The action that is executed
-	 */
-	function withdrawFailReason() {
-		var state = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
-		var action = arguments[1];
-
-		switch (action.type) {
-			case ActionTypes.WITHDRAW_FAILED:
-				return action.payload;
-			case ActionTypes.WITHDRAW:
-			case ActionTypes.FINISHED:
-			case ActionTypes.COMPLETE_ABORT:
-				return null;
-			default:
-				return state;
-		}
-	} /**
-	   * @file Contains the state reducer for the ATM withdraw failed reason
-	   * @author Edward Gonzalez
-	   */
-
-/***/ },
-/* 245 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26125,9 +26921,9 @@
 		switch (action.type) {
 			case ActionTypes.WITHDRAW:
 				return action.payload;
-			case ActionTypes.WITHDRAW_FAILED:
 			case ActionTypes.COMPLETE_ABORT:
 			case ActionTypes.PERFORM_ABORT:
+			case ActionTypes.FINISHED:
 				return null;
 			default:
 				return state;
@@ -26138,16 +26934,16 @@
 	   */
 
 /***/ },
-/* 246 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(247);
+	var content = __webpack_require__(260);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(207)(content, {});
+	var update = __webpack_require__(206)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -26164,10 +26960,10 @@
 	}
 
 /***/ },
-/* 247 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(206)();
+	exports = module.exports = __webpack_require__(205)();
 	// imports
 
 
@@ -26178,16 +26974,16 @@
 
 
 /***/ },
-/* 248 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(249);
+	var content = __webpack_require__(262);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(207)(content, {});
+	var update = __webpack_require__(206)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -26204,10 +27000,10 @@
 	}
 
 /***/ },
-/* 249 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(206)();
+	exports = module.exports = __webpack_require__(205)();
 	// imports
 
 
@@ -26218,16 +27014,16 @@
 
 
 /***/ },
-/* 250 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(251);
+	var content = __webpack_require__(264);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(207)(content, {});
+	var update = __webpack_require__(206)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -26244,10 +27040,10 @@
 	}
 
 /***/ },
-/* 251 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(206)();
+	exports = module.exports = __webpack_require__(205)();
 	// imports
 
 
@@ -26258,16 +27054,16 @@
 
 
 /***/ },
-/* 252 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(253);
+	var content = __webpack_require__(266);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(207)(content, {});
+	var update = __webpack_require__(206)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -26284,10 +27080,10 @@
 	}
 
 /***/ },
-/* 253 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(206)();
+	exports = module.exports = __webpack_require__(205)();
 	// imports
 
 
@@ -26298,16 +27094,16 @@
 
 
 /***/ },
-/* 254 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(255);
+	var content = __webpack_require__(268);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(207)(content, {});
+	var update = __webpack_require__(206)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -26324,10 +27120,10 @@
 	}
 
 /***/ },
-/* 255 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(206)();
+	exports = module.exports = __webpack_require__(205)();
 	// imports
 
 
@@ -26338,7 +27134,7 @@
 
 
 /***/ },
-/* 256 */
+/* 269 */
 /***/ function(module, exports) {
 
 	"use strict";
